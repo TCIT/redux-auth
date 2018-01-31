@@ -9,8 +9,8 @@ class SignOutSuccessModal extends React.Component {
         {...this.props}
         containerClass="sign-out-success-modal"
         closeAction={hideSignOutSuccessModal}
-        title="Goodbye!">
-        You have been successfully signed out.
+        title="Hasta pronto!">
+        Tu sesión se ha cerrado exitosamente.
       </Modal>
     );
   }

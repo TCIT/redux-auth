@@ -8,12 +8,12 @@ class EmailSignInSuccessModal extends React.Component {
     return (
       <Modal
         {...this.props}
-        title="Welcome Back"
+        title="Bienvenido"
         closeAction={hideEmailSignInSuccessModal}
         containerClass="email-sign-in-success-modal">
         <p>
-          You are now signed in
-          as {this.props.auth.getIn(["user", "attributes", "email"])}.
+          Has iniciado sesión
+          como {this.props.auth.getIn(["user", "attributes", "email"])}.
         </p>
       </Modal>
     );
