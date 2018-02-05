@@ -14,7 +14,7 @@ class SignOutButton extends React.Component {
 
   static defaultProps = {
     next: () => {},
-    children: <span>Sign Out</span>,
+    children: <span>Cerrar sesión</span>,
     icon: ActionLock
   };
 

@@ -8,12 +8,13 @@ class SignOutErrorModal extends React.Component {
       <Modal
         {...this.props}
         containerClass="sign-out-error-modal"
-        title="Sign Out Error"
+        title="Error de cierre de sesión"
         closeAction={hideSignOutErrorModal}>
         <p>
-          The server encountered an error while trying to sign you out. Your
-          account information has been wiped from this browser, but you may
-          want to sign in and then sign back out again to resolve any issues.
+          Ocurrió un error en el servidor intentando cerrar la sesión.
+          La información de tu cuenta ha sido borrada de este
+          navegador, pero recomendamos iniciar sesión y cerrarla
+          de nuevo para resolver cualquier problema.
         </p>
       </Modal>
     );
