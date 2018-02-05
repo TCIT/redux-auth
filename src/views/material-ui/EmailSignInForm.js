@@ -66,7 +66,7 @@ class EmailSignInForm extends React.Component {
                {...this.props.inputProps.email} />
 
         <Input type="password"
-               floatingLabelText="Password"
+               floatingLabelText="Contraseña"
                className="email-sign-in-password"
                disabled={disabled}
                value={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"])}
@@ -83,7 +83,7 @@ class EmailSignInForm extends React.Component {
                       onClick={this.handleSubmit.bind(this)}
                       primary={true}
                       {...this.props.inputProps.submit}>
-          Sign In
+          Iniciar sesión
         </ButtonLoader>
       </form>
     );

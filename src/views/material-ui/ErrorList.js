@@ -17,12 +17,11 @@ class ErrorList extends React.Component {
 
     if (errorCount > 0) {
       // pluralize message
-      let errorWord = "error";
-      errorWord += (errorCount === 1) ? "" : "s";
+      const errorWord = (errorCount === 1) ? "el siguiente error" : "los siguientes errores";
 
       return (
         <div className="has-error">
-          <p>Please correct the following {errorWord}:</p>
+          <p>Por favor corrige {errorWord}:</p>
           {this.props.errors.map((err, i) => {
             return (
               <p
@@ -51,8 +50,7 @@ class ErrorList extends React.Component {
               position: "absolute",
               left: 0,
               top: 3}}
-            color={Colors.red500} /> There was an error processing this form.
-          Please check each field and try again.
+            color={Colors.red500} /> Por favor revisa los valores de los campos e intenta de nuevo
         </p>
       );
     }
