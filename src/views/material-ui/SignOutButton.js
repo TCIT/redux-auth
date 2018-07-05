@@ -1,6 +1,6 @@
 import React, { PropTypes } from "react";
 import ButtonLoader from "./ButtonLoader";
-import ActionLock from "material-ui/svg-icons/action/lock";
+import { ActionLock } from "@material-ui/core";
 import { connect } from "react-redux";
 import { signOut } from "../../actions/sign-out";
 
@@ -13,12 +13,12 @@ class SignOutButton extends React.Component {
   };
 
   static defaultProps = {
-    next: () => {},
+    next: () => { },
     children: <span>Sign Out</span>,
     icon: ActionLock
   };
 
-  getEndpoint () {
+  getEndpoint() {
     return (
       this.props.endpoint ||
       this.props.auth.getIn(["configure", "currentEndpointKey"]) ||
@@ -26,13 +26,13 @@ class SignOutButton extends React.Component {
     );
   }
 
-  handleClick () {
+  handleClick() {
     this.props.dispatch(signOut(this.getEndpoint()))
       .then(this.props.next)
-      .catch(() => {});
+      .catch(() => { });
   }
 
-  render () {
+  render() {
     let disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
     return (
       <ButtonLoader
