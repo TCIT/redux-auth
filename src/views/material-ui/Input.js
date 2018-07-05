@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import * as Colors from "@material-ui/core/colors";
 import { TextField } from "@material-ui/core";
 import { AlertError } from "@material-ui/core";
@@ -6,11 +6,6 @@ import Immutable from "immutable";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class AuthInput extends React.Component {
-  static propTypes = {
-    label: PropTypes.string,
-    value: PropTypes.string,
-    errors: PropTypes.object
-  };
 
   static defaultProps = {
     label: "",

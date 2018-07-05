@@ -1,12 +1,9 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import * as Colors from "@material-ui/core/colors";
 import { AlertError }from "@material-ui/core";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {
-  static propTypes = {
-    errors: PropTypes.object
-  };
 
   static defaultProps = {
     errors: Immutable.fromJS([])
