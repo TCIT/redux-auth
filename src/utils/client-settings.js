@@ -93,12 +93,7 @@ export function applyConfig({dispatch, endpoint={}, settings={}, reset=false}={}
 
   let savedCreds = retrieveData(C.SAVED_CREDS_KEY);
 
-  if (getCurrentSettings().initialCredentials) {
-    // skip initial headers check (i.e. check was already done server-side)
-    let {user, headers} = getCurrentSettings().initialCredentials;
-    persistData(C.SAVED_CREDS_KEY, headers);
-    return Promise.resolve(user);
-  } else if (savedCreds) {
+  if (savedCreds) {
     // verify session credentials with API
     return fetch(`${getApiUrl(currentEndpointKey)}${currentEndpoint[currentEndpointKey].tokenValidationPath}`)
     .then(response => {
