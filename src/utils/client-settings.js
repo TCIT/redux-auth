@@ -94,6 +94,9 @@ export function applyConfig({dispatch, endpoint={}, settings={}, reset=false}={}
 
   let savedCreds = retrieveData(C.SAVED_CREDS_KEY);
 
+  console.log('Version 0.fail');
+  
+
   if (getCurrentSettings().initialCredentials) {
     // skip initial headers check (i.e. check was already done server-side)
     let headers = getCurrentSettings().initialCredentials;
