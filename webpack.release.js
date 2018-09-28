@@ -1,6 +1,5 @@
 var webpack = require("webpack");
 var path = require("path");
-const MUI_GENERATOR_COUNTER = __MUI_GENERATOR_COUNTER__ = 0;
 
 module.exports = {
   target: "web",
@@ -55,19 +54,18 @@ module.exports = {
     }
   ],
   plugins: [
+    new webpack.DefinePlugin({ __CLIENT__: true, __SERVER__: false }),
     new webpack.DefinePlugin({
-      __CLIENT__: true,
-      __SERVER__: false,
       "process.env": {
-        NODE_ENV: 'production'
-      }
+        NODE_ENV: "\"production\""
+      },
       // "global": {
-      //   [MUI_GENERATOR_COUNTER]: 0
+      //   __MUI_GENERATOR_COUNTER__: 0
       // }
     }),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin()
-    // new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [
