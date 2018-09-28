@@ -1,6 +1,6 @@
 import React from "react";
 import * as Colors from "@material-ui/core/colors";
-import { TextField,  } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 import {MuiThemeProvider} from '@material-ui/core/styles';
