@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
+const __MUI_GENERATOR_COUNTER__ = 0;
 
 module.exports = {
   target: "web",
@@ -60,7 +61,7 @@ module.exports = {
         NODE_ENV: "\"production\""
       },
       "global": {
-        '__MUI_GENERATOR_COUNTER__': 0
+        __MUI_GENERATOR_COUNTER__: 0
       }
     }),
     new webpack.optimize.DedupePlugin(),
