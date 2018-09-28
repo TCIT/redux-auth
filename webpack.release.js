@@ -1,6 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
-const __MUI_GENERATOR_COUNTER__ = 0;
+const MUI_GENERATOR_COUNTER = __MUI_GENERATOR_COUNTER__ = 0;
 
 module.exports = {
   target: "web",
@@ -60,10 +60,10 @@ module.exports = {
       __SERVER__: false,
       "process.env": {
         NODE_ENV: "\"production\""
-      },
-      "global": {
-        __MUI_GENERATOR_COUNTER__: 0
       }
+      // "global": {
+      //   [MUI_GENERATOR_COUNTER]: 0
+      // }
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin()
