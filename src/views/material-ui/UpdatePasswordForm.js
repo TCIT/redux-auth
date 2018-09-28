@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
-import Lock from "@material-ui/icons/Lock";
+import { Lock } from "@material-ui/icons";
 import { updatePassword, updatePasswordFormUpdate } from "../../actions/update-password";
 import { connect } from "react-redux";
 

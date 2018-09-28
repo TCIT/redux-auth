@@ -2,14 +2,14 @@ import React from "react";
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
 import { connect } from "react-redux";
-import {ContentSend} from "@material-ui/core";
+import { Send } from "@material-ui/icons";
 import {
   requestPasswordResetFormUpdate,
   requestPasswordReset
 } from "../../actions/request-password-reset";
 
 class RequestPasswordResetForm extends React.Component {
-  
+
   static defaultProps = {
     inputProps: {
       email: {},
@@ -17,7 +17,7 @@ class RequestPasswordResetForm extends React.Component {
     }
   };
 
-  getEndpoint () {
+  getEndpoint() {
     return (
       this.props.endpoint ||
       this.props.auth.getIn(["configure", "currentEndpointKey"]) ||
@@ -25,26 +25,26 @@ class RequestPasswordResetForm extends React.Component {
     );
   }
 
-  handleInput (key, val) {
+  handleInput(key, val) {
     this.props.dispatch(requestPasswordResetFormUpdate(this.getEndpoint(), key, val));
   }
 
-  handleSubmit (event) {
+  handleSubmit(event) {
     event.preventDefault();
     let formData = this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "form"]).toJS();
     this.props.dispatch(requestPasswordReset(formData, this.getEndpoint()));
   }
 
-  render () {
-    let endpoint       = this.getEndpoint();
-    let loading        = this.props.auth.getIn(["requestPasswordReset", endpoint, "loading"]);
-    let inputDisabled  = this.props.auth.getIn(["user", "isSignedIn"]);
+  render() {
+    let endpoint = this.getEndpoint();
+    let loading = this.props.auth.getIn(["requestPasswordReset", endpoint, "loading"]);
+    let inputDisabled = this.props.auth.getIn(["user", "isSignedIn"]);
     let submitDisabled = !this.props.auth.getIn(["requestPasswordReset", endpoint, "form", "email"]);
 
     return (
       <form
         className='redux-auth request-password-reset-form clearfix'
-        style={{clear: "both", overflow: "hidden"}}
+        style={{ clear: "both", overflow: "hidden" }}
         onSubmit={this.handleSubmit.bind(this)}>
 
         <Input
@@ -61,8 +61,8 @@ class RequestPasswordResetForm extends React.Component {
           loading={loading}
           type="submit"
           primary={true}
-          icon={ContentSend}
-          style={{float: "right"}}
+          icon={Send}
+          style={{ float: "right" }}
           className="request-password-reset-submit"
           disabled={inputDisabled || submitDisabled}
           onClick={this.handleSubmit.bind(this)}

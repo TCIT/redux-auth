@@ -1,6 +1,6 @@
 import React from "react";
 import * as Colors from "@material-ui/core/colors";
-import Error from "@material-ui/icons/Error";
+import { Error } from "@material-ui/icons";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {
@@ -51,7 +51,7 @@ class ErrorList extends React.Component {
               top: 3
             }}
             color={Colors.red500} /> There was an error processing this form.
-        Please check each field and try again.
+      Please check each field and try again.
         </p>
       );
     }

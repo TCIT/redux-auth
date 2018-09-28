@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog, Button } from "@material-ui/core";
-import Lock from "@material-ui/icons/Lock";
+import {Lock} from "@material-ui/icons";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import ButtonLoader from "../ButtonLoader";
 import Input from "../Input";

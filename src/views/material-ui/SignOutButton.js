@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonLoader from "./ButtonLoader";
-import Lock from "@material-ui/icons/Lock";
+import { Lock } from "@material-ui/icons";
 import { connect } from "react-redux";
 import { signOut } from "../../actions/sign-out";
 

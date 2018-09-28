@@ -1,12 +1,3735 @@
-!function(e,t){for(var n in t)e[n]=t[n]}(exports,function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={exports:{},id:r,loaded:!1};return e[r].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var n={};return t.m=e,t.c=n,t.p="",t(0)}(function(e){for(var t in e)if(Object.prototype.hasOwnProperty.call(e,t))switch(typeof e[t]){case"function":break;case"object":e[t]=function(t){var n=t.slice(1),r=e[t[0]];return function(e,t,o){r.apply(this,[e,t,o].concat(n))}}(e[t]);break;default:e[t]=e[e[t]]}return e}([function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0}),t.ButtonLoader=t.TokenBridge=t.DestroyAccountButton=t.UpdatePasswordForm=t.OAuthSignInButton=t.RequestPasswordResetForm=t.SignOutButton=t.EmailSignUpForm=t.EmailSignInForm=t.AuthGlobals=void 0;var o=n(195),i=r(o),a=n(197),u=r(a),s=n(198),l=r(s),f=n(202),c=r(f),p=n(201),d=r(p),h=n(200),y=r(h),b=n(203),v=r(b),g=n(196),m=r(g),_=n(23),O=r(_),w=n(17),P=r(w);t.AuthGlobals=i["default"],t.EmailSignInForm=u["default"],t.EmailSignUpForm=l["default"],t.SignOutButton=c["default"],t.RequestPasswordResetForm=d["default"],t.OAuthSignInButton=y["default"],t.UpdatePasswordForm=v["default"],t.DestroyAccountButton=m["default"],t.TokenBridge=O["default"],t.ButtonLoader=P["default"]},function(e,t){e.exports=require("react")},function(e,t){e.exports=require("redux-auth")},function(e,t){e.exports=require("react-redux")},function(e,t){e.exports=require("immutable")},function(e,t){function n(e){return e&&e.__esModule?e:{"default":e}}e.exports=n},,,,function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}function i(e){return Array.isArray(e)?e:Array.from(e)}function a(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function u(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function s(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),f=n(1),c=r(f),p=n(18),d=n(199),h=r(d),y=n(3),b=n(47),v=function(e){function t(){return a(this,t),u(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return s(t,e),l(t,[{key:"close",value:function(){this.props.dispatch(this.props.closeAction())}},{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"getErrorList",value:function(){var e=i(this.props.errorAddr),t=e[0],n=e.slice(1);return c["default"].createElement(h["default"],{errors:this.props.auth.getIn([t,this.getEndpoint()].concat(o(n)))})}},{key:"render",value:function(){var e=this.props.errorAddr?this.getErrorList():this.props.children;return c["default"].createElement(b.MuiThemeProvider,null,c["default"].createElement(p.Dialog,{open:this.props.show,contentClassName:"redux-auth-modal "+this.props.containerClass,title:this.props.title,actions:[c["default"].createElement(p.Button,{key:"close",className:this.props.containerClass+"-close",onClick:this.close.bind(this)},this.props.closeBtnLabel)].concat(o(this.props.actions))},e))}}]),t}(c["default"].Component);v.defaultProps={show:!1,errorAddr:null,closeBtnLabel:"Ok",actions:[]},t["default"]=(0,y.connect)(function(e){return{auth:e.get("auth")}})(v)},,,,,function(e,t,n){"use strict";var r=!1,o=function(){};if(r){var i=function(e,t){var n=arguments.length;t=new Array(n>2?n-2:0);for(var r=2;r<n;r++)t[r-2]=arguments[r];var o=0,i="Warning: "+e.replace(/%s/g,function(){return t[o++]});"undefined"!=typeof console&&console.error(i);try{throw new Error(i)}catch(a){}};o=function(e,t,n){var r=arguments.length;n=new Array(r>2?r-2:0);for(var o=2;o<r;o++)n[o-2]=arguments[o];if(void 0===t)throw new Error("`warning(condition, format, ...args)` requires a warning message argument");e||i.apply(null,[t].concat(n))}}e.exports=o},,,function(e,t,n){"use strict";function r(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t["default"]=e,t}function o(e){return e&&e.__esModule?e:{"default":e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function u(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},l=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},f=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),c=n(1),p=o(c),d=n(18),h=n(35),y=r(h),b=n(33),v=o(b),g=n(47),m=function(e){function t(){return i(this,t),a(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return u(t,e),f(t,[{key:"handleClick",value:function(e){e.preventDefault(),this.props.onClick(e)}},{key:"getColor",value:function(){return this.props.disabled?this.props.spinColorDisabled:this.props.primary||this.props.secondary?this.props.spinColorLight:this.props.spinColorDark}},{key:"renderIcon",value:function(){var e=void 0,t=this.getColor();return e=this.props.loading?p["default"].createElement("div",{style:{position:"absolute",top:15,left:7}},p["default"].createElement(v["default"],l({ref:"spinner"},this.props.spinConfig,{color:t,loaded:!1}))):"object"===s(this.props.icon)?this.props.icon:p["default"].createElement(this.props.icon,{color:t,style:{width:15,height:15}}),p["default"].createElement("span",{style:{width:15,height:15,position:"absolute",left:10,top:3}},e)}},{key:"render",value:function(){var e=this.getColor(),t={backgroundColor:this.props.backgroundColor,children:this.props.children,className:this.props.className,disabled:this.props.disabled||this.props.loading,disabledBackgroundColor:this.props.disabledBackgroundColor,disabledLabelColor:this.props.disabledLabelColor,fullWidth:this.props.fullWidth,href:this.props.href,label:this.props.label||p["default"].createElement("span",{style:{paddingLeft:15,color:e}},this.props.children),labelColor:this.props.labelColor||e,labelPosition:this.props.labelPosition||"after",labelStyle:this.props.labelStyle,primary:this.props.primary,rippleStyle:this.props.rippleStyle,secondary:this.props.secondary,style:this.props.style,type:this.props.type};return p["default"].createElement(g.MuiThemeProvider,null,p["default"].createElement(d.RaisedButton,l({},t,{onClick:this.handleClick.bind(this)}),this.renderIcon()))}}]),t}(p["default"].Component);m.defaultProps={icon:d.ActionFavorite,loading:!1,spinConfig:{lines:10,length:4,width:2,radius:3},spinColorDark:y.darkBlack,spinColorLight:y.darkWhite,spinColorDisabled:y.minBlack,children:p["default"].createElement("span",null,"Submit"),style:{}},t["default"]=m},function(e,t){e.exports=require("@material-ui/core")},,function(e,t,n){function r(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{},r=Object.keys(n);"function"==typeof Object.getOwnPropertySymbols&&(r=r.concat(Object.getOwnPropertySymbols(n).filter(function(e){return Object.getOwnPropertyDescriptor(n,e).enumerable}))),r.forEach(function(t){o(e,t,n[t])})}return e}var o=n(34);e.exports=r},5,,function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(1),l=r(s),f=n(3),c=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),u(t,[{key:"render",value:function(){return l["default"].createElement("script",{id:"token-bridge",type:"application/json",dangerouslySetInnerHTML:{__html:this.props.initialCredentials}})}}]),t}(l["default"].Component);t["default"]=(0,f.connect)(function(e){var t=e.get("auth"),n=t.getIn(["server","headers"]);return{initialCredentials:n&&JSON.stringify({user:t.getIn(["server","user"]),mustResetPassword:t.getIn(["server","mustResetPassword"]),firstTimeLogin:t.getIn(["server","firstTimeLogin"]),currentEndpointKey:t.getIn(["configure","currentEndpointKey"]),defaultEndpointKey:t.getIn(["configure","defaultEndpointKey"]),headers:n})}})(c)},function(e,t){function n(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(e);for(r=0;r<a.length;r++)n=a[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}e.exports=n},,function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},u=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(27),l=r(s),f=n(57),c=r(f),p=n(46),d=r(p),h=function(){function e(t,n,r){o(this,e),this.type="style",this.isProcessed=!1;var i=r.sheet,a=r.Renderer,u=r.selector;this.key=t,this.options=r,this.style=n,u&&(this.selectorText=u),this.renderer=i?i.renderer:new a}return u(e,[{key:"prop",value:function(e,t){if(void 0===t)return this.style[e];if(this.style[e]===t)return this;t=this.options.jss.plugins.onChangeValue(t,e,this);var n=null==t||t===!1,r=e in this.style;if(n&&!r)return this;var o=n&&r;if(o?delete this.style[e]:this.style[e]=t,this.renderable)return o?this.renderer.removeProperty(this.renderable,e):this.renderer.setProperty(this.renderable,e,t),this;var i=this.options.sheet;return i&&i.attached&&(0,l["default"])(!1,'Rule is not linked. Missing sheet option "link: true".'),this}},{key:"applyTo",value:function(e){var t=this.toJSON();for(var n in t)this.renderer.setProperty(e,n,t[n]);return this}},{key:"toJSON",value:function(){var e={};for(var t in this.style){var n=this.style[t];"object"!==("undefined"==typeof n?"undefined":a(n))?e[t]=n:Array.isArray(n)&&(e[t]=(0,d["default"])(n))}return e}},{key:"toString",value:function(e){var t=this.options.sheet,n=!!t&&t.options.link,r=n?i({},e,{allowEmpty:!0}):e;return(0,c["default"])(this.selector,this.style,r)}},{key:"selector",set:function(e){if(e!==this.selectorText&&(this.selectorText=e,this.renderable)){var t=this.renderer.setSelector(this.renderable,e);if(!t&&this.renderable){var n=this.renderer.replaceRule(this.renderable,this);n&&(this.renderable=n)}}},get:function(){return this.selectorText}}]),e}();t["default"]=h},function(e,t,n){"use strict";var r=function(){};e.exports=r},,,function(e,t,n){"use strict";function r(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t["default"]=e,t}function o(e){return e&&e.__esModule?e:{"default":e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function u(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),f=n(1),c=o(f),p=n(35),d=r(p),h=n(18),y=n(48),b=o(y),v=n(4),g=o(v),m=n(47),_=function(e){function t(){return i(this,t),a(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return u(t,e),l(t,[{key:"handleInput",value:function(e){e.preventDefault(),this.props.onChange(e.target.value)}},{key:"renderErrorList",value:function(){var e=this;return this.props.errors.size?c["default"].createElement("div",{className:"auth-error-message"},this.props.errors.map(function(t,n){return c["default"].createElement("p",{className:"inline-error-item",style:{paddingLeft:"20px",position:"relative",marginBottom:"28px"},key:n},c["default"].createElement(b["default"],{viewBox:"0 0 50 50",color:d.red500,style:{position:"absolute",left:0,top:0}}),e.props.floatingLabelText," ",t)})):null}},{key:"render",value:function(){return c["default"].createElement(m.MuiThemeProvider,null,c["default"].createElement(h.TextField,s({fullWidth:!0,id:this.props.className},this.props,{errorText:this.renderErrorList(),onChange:this.handleInput.bind(this)})))}}]),t}(c["default"].Component);_.defaultProps={label:"",value:null,errors:g["default"].fromJS([])},t["default"]=_},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),u=n(45),s=r(u),l=n(76),f=r(l),c=n(26),p=r(c),d=n(250),h=r(d),y=function(){function e(t){var n=this;o(this,e),this.map={},this.raw={},this.index=[],this.update=function(e,t){var r=n.options,o=r.jss.plugins,i=r.sheet;if("string"==typeof e)o.onUpdate(t,n.get(e),i);else for(var a=0;a<n.index.length;a++)o.onUpdate(e,n.index[a],i)},this.options=t,this.classes=t.classes}return a(e,[{key:"add",value:function(e,t,n){var r=this.options,o=r.parent,a=r.sheet,u=r.jss,l=r.Renderer,f=r.generateClassName;n=i({classes:this.classes,parent:o,sheet:a,jss:u,Renderer:l,generateClassName:f},n),!n.selector&&this.classes[e]&&(n.selector="."+(0,h["default"])(this.classes[e])),this.raw[e]=t;var c=(0,s["default"])(e,t,n),d=void 0;!n.selector&&c instanceof p["default"]&&(d=f(c,a),c.selector="."+(0,h["default"])(d)),this.register(c,d);var y=void 0===n.index?this.index.length:n.index;return this.index.splice(y,0,c),c}},{key:"get",value:function(e){return this.map[e]}},{key:"remove",value:function(e){this.unregister(e),this.index.splice(this.indexOf(e),1)}},{key:"indexOf",value:function(e){return this.index.indexOf(e)}},{key:"process",value:function(){var e=this.options.jss.plugins;this.index.slice(0).forEach(e.onProcessRule,e)}},{key:"register",value:function(e,t){this.map[e.key]=e,e instanceof p["default"]&&(this.map[e.selector]=e,t&&(this.classes[e.key]=t))}},{key:"unregister",value:function(e){delete this.map[e.key],e instanceof p["default"]&&(delete this.map[e.selector],delete this.classes[e.key])}},{key:"link",value:function(e){for(var t=this.options.sheet.renderer.getUnescapedKeysMap(this.index),n=0;n<e.length;n++){var r=e[n],o=this.options.sheet.renderer.getKey(r);t[o]&&(o=t[o]);var i=this.map[o];i&&(0,f["default"])(i,r)}}},{key:"toString",value:function(e){for(var t="",n=this.options.sheet,r=!!n&&n.options.link,o=0;o<this.index.length;o++){var i=this.index[o],a=i.toString(e);(a||r)&&(t&&(t+="\n"),t+=a)}return t}}]),e}();t["default"]=y},function(e,t,n){e.exports=n(255)()},function(e,t){e.exports=require("react-loader")},function(e,t){function n(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}e.exports=n},function(e,t,n){"use strict";var r=n(5);Object.defineProperty(t,"__esModule",{value:!0}),Object.defineProperty(t,"common",{enumerable:!0,get:function(){return o["default"]}}),Object.defineProperty(t,"red",{enumerable:!0,get:function(){return i["default"]}}),Object.defineProperty(t,"pink",{enumerable:!0,get:function(){return a["default"]}}),Object.defineProperty(t,"purple",{enumerable:!0,get:function(){return u["default"]}}),Object.defineProperty(t,"deepPurple",{enumerable:!0,get:function(){return s["default"]}}),Object.defineProperty(t,"indigo",{enumerable:!0,get:function(){return l["default"]}}),Object.defineProperty(t,"blue",{enumerable:!0,get:function(){return f["default"]}}),Object.defineProperty(t,"lightBlue",{enumerable:!0,get:function(){return c["default"]}}),Object.defineProperty(t,"cyan",{enumerable:!0,get:function(){return p["default"]}}),Object.defineProperty(t,"teal",{enumerable:!0,get:function(){return d["default"]}}),Object.defineProperty(t,"green",{enumerable:!0,get:function(){return h["default"]}}),Object.defineProperty(t,"lightGreen",{enumerable:!0,get:function(){return y["default"]}}),Object.defineProperty(t,"lime",{enumerable:!0,get:function(){return b["default"]}}),Object.defineProperty(t,"yellow",{enumerable:!0,get:function(){return v["default"]}}),Object.defineProperty(t,"amber",{enumerable:!0,get:function(){return g["default"]}}),Object.defineProperty(t,"orange",{enumerable:!0,get:function(){return m["default"]}}),Object.defineProperty(t,"deepOrange",{enumerable:!0,get:function(){return _["default"]}}),Object.defineProperty(t,"brown",{enumerable:!0,get:function(){return O["default"]}}),Object.defineProperty(t,"grey",{enumerable:!0,get:function(){return w["default"]}}),Object.defineProperty(t,"blueGrey",{enumerable:!0,get:function(){return P["default"]}});var o=r(n(61)),i=r(n(65)),a=r(n(64)),u=r(n(100)),s=r(n(94)),l=r(n(63)),f=r(n(89)),c=r(n(96)),p=r(n(92)),d=r(n(101)),h=r(n(95)),y=r(n(97)),b=r(n(98)),v=r(n(102)),g=r(n(88)),m=r(n(99)),_=r(n(93)),O=r(n(91)),w=r(n(62)),P=r(n(90))},,,,,,,,function(e,t,n){!function(t,n){e.exports=n()}(this,function(){"use strict";function e(e){return!!e&&"object"==typeof e}function t(e){var t=Object.prototype.toString.call(e);return"[object RegExp]"===t||"[object Date]"===t||n(e)}function n(e){return e.$$typeof===f}function r(e){return Array.isArray(e)?[]:{}}function o(e,t){return t.clone!==!1&&t.isMergeableObject(e)?u(r(e),e,t):e}function i(e,t,n){return e.concat(t).map(function(e){return o(e,n)})}function a(e,t,n){var r={};return n.isMergeableObject(e)&&Object.keys(e).forEach(function(t){r[t]=o(e[t],n)}),Object.keys(t).forEach(function(i){n.isMergeableObject(t[i])&&e[i]?r[i]=u(e[i],t[i],n):r[i]=o(t[i],n)}),r}function u(e,t,n){n=n||{},n.arrayMerge=n.arrayMerge||i,n.isMergeableObject=n.isMergeableObject||s;var r=Array.isArray(t),u=Array.isArray(e),l=r===u;return l?r?n.arrayMerge(e,t,n):a(e,t,n):o(t,n)}var s=function(n){return e(n)&&!t(n)},l="function"==typeof Symbol&&Symbol["for"],f=l?Symbol["for"]("react.element"):60103;u.all=function(e,t){if(!Array.isArray(e))throw new Error("first argument should be an array");return e.reduce(function(e,n){return u(e,n,t)},{})};var c=u;return c})},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},r=t.isBrowser="object"===("undefined"==typeof window?"undefined":n(window))&&"object"===("undefined"==typeof document?"undefined":n(document))&&9===document.nodeType;t["default"]=r},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"unnamed",t=arguments[1],n=arguments[2],r=n.jss,o=(0,f["default"])(t),i=r.plugins.onCreateRule(e,o,n);return i?i:("@"===e[0]&&(0,a["default"])(!1,"[JSS] Unknown at-rule %s",e),new s["default"](e,o,n))}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o;var i=n(27),a=r(i),u=n(26),s=r(u),l=n(249),f=r(l)},function(e,t){"use strict";function n(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1];if(!Array.isArray(e))return e;var n="";if(Array.isArray(e[0]))for(var o=0;o<e.length&&"!important"!==e[o];o++)n&&(n+=", "),n+=r(e[o]," ");else n=r(e,", ");return t||"!important"!==e[e.length-1]||(n+=" !important"),n}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n;var r=function(e,t){for(var n="",r=0;r<e.length&&"!important"!==e[r];r++)n&&(n+=t),n+=e[r];return n}},function(e,t){e.exports=require("@material-ui/core/styles")},function(e,t,n){"use strict";var r=n(21);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var o=r(n(1)),i=r(n(68)),a=(0,i["default"])(o["default"].createElement(o["default"].Fragment,null,o["default"].createElement("path",{fill:"none",d:"M0 0h24v24H0z"}),o["default"].createElement("path",{d:"M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"})),"Error");t["default"]=a},function(e,t,n){"use strict";var r=n(21);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var o=r(n(1)),i=r(n(68)),a=(0,i["default"])(o["default"].createElement(o["default"].Fragment,null,o["default"].createElement("path",{fill:"none",d:"M0 0h24v24H0z"}),o["default"].createElement("path",{d:"M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"})),"Lock");t["default"]=a},,,,,,function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(44),i=r(o),a="",u="";if(i["default"]){var s={Moz:"-moz-",ms:"-ms-",O:"-o-",Webkit:"-webkit-"},l=document.createElement("p").style,f="Transform";for(var c in s)if(c+f in l){a=c,u=s[c];break}}t["default"]={js:a,css:u}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(71),i=r(o);t["default"]=new i["default"]},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){for(var n="",r=0;r<t;r++)n+="  ";return n+e}function i(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r="";if(!t)return r;var i=n.indent,a=void 0===i?0:i,s=t.fallbacks;if(a++,s)if(Array.isArray(s))for(var l=0;l<s.length;l++){var f=s[l];for(var c in f){var p=f[c];null!=p&&(r+="\n"+o(c+": "+(0,u["default"])(p)+";",a))}}else for(var d in s){var h=s[d];null!=h&&(r+="\n"+o(d+": "+(0,u["default"])(h)+";",a))}for(var y in t){var b=t[y];null!=b&&"fallbacks"!==y&&(r+="\n"+o(y+": "+(0,u["default"])(b)+";",a))}return r||n.allowEmpty?(a--,r=o(e+" {"+r+"\n",a)+o("}",a)):r}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=i;var a=n(46),u=r(a)},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){if("string"==typeof e)return e;if(e)return e.displayName||e.name||"Component"};t["default"]=n},function(e,t){function n(){return e.exports=n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},n.apply(this,arguments)}e.exports=n},function(e,t){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(t){return"function"==typeof Symbol&&"symbol"===n(Symbol.iterator)?e.exports=r=function(e){return n(e)}:e.exports=r=function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":n(e)},r(t)}e.exports=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={black:"#000",white:"#fff"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#fafafa",100:"#f5f5f5",200:"#eeeeee",300:"#e0e0e0",400:"#bdbdbd",500:"#9e9e9e",600:"#757575",700:"#616161",800:"#424242",900:"#212121",A100:"#d5d5d5",A200:"#aaaaaa",A400:"#303030",A700:"#616161"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#e8eaf6",100:"#c5cae9",200:"#9fa8da",300:"#7986cb",400:"#5c6bc0",500:"#3f51b5",600:"#3949ab",700:"#303f9f",800:"#283593",900:"#1a237e",A100:"#8c9eff",A200:"#536dfe",A400:"#3d5afe",A700:"#304ffe"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#fce4ec",100:"#f8bbd0",200:"#f48fb1",300:"#f06292",400:"#ec407a",500:"#e91e63",600:"#d81b60",700:"#c2185b",800:"#ad1457",900:"#880e4f",A100:"#ff80ab",A200:"#ff4081",A400:"#f50057",A700:"#c51162"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#ffebee",100:"#ffcdd2",200:"#ef9a9a",300:"#e57373",400:"#ef5350",500:"#f44336",600:"#e53935",700:"#d32f2f",800:"#c62828",900:"#b71c1c",A100:"#ff8a80",A200:"#ff5252",A400:"#ff1744",A700:"#d50000"},r=n;t["default"]=r},function(e,t,n){"use strict";var r=n(21);t.__esModule=!0,t["default"]=void 0;var o=r(n(125)),i=function(e){return(0,o["default"])("displayName",e)},a=i;t["default"]=a},function(e,t,n){"use strict";var r=n(21);t.__esModule=!0,t["default"]=void 0;var o=r(n(123)),i=function(e,t){return t+"("+(0,o["default"])(e)+")"},a=i;t["default"]=a},function(e,t,n){"use strict";function r(e,t){var n=function(t){return i["default"].createElement(u["default"],t,e)};return n.displayName="".concat(t,"Icon"),n=(0,a["default"])(n),n.muiName="SvgIcon",n}var o=n(21);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var i=o(n(1)),a=o(n(124)),u=o(n(87)),s=r;t["default"]=s},,,function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=function(){function e(){n(this,e),this.registry=[]}return r(e,[{key:"add",value:function(e){var t=this.registry,n=e.options.index;if(t.indexOf(e)===-1){if(0===t.length||n>=this.index)return void t.push(e);for(var r=0;r<t.length;r++)if(t[r].options.index>n)return void t.splice(r,0,e)}}},{key:"reset",value:function(){this.registry=[]}},{key:"remove",value:function(e){var t=this.registry.indexOf(e);this.registry.splice(t,1)}},{key:"toString",value:function(e){return this.registry.filter(function(e){return e.attached}).map(function(t){return t.toString(e)}).join("\n")}},{key:"index",get:function(){return 0===this.registry.length?0:this.registry[this.registry.length-1].options.index}}]),e}();t["default"]=o},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),u=n(76),s=r(u),l=n(31),f=r(l),c=function(){function e(t,n){var r=this;o(this,e),this.update=function(e,t){return"string"==typeof e?r.rules.update(e,t):r.rules.update(e),r},this.attached=!1,this.deployed=!1,this.linked=!1,this.classes={},this.options=i({},n,{sheet:this,parent:this,classes:this.classes}),this.renderer=new n.Renderer(this),this.rules=new f["default"](this.options);for(var a in t)this.rules.add(a,t[a]);this.rules.process()}return a(e,[{key:"attach",value:function(){return this.attached?this:(this.deployed||this.deploy(),this.renderer.attach(),!this.linked&&this.options.link&&this.link(),this.attached=!0,this)}},{key:"detach",value:function(){return this.attached?(this.renderer.detach(),this.attached=!1,this):this}},{key:"addRule",value:function(e,t,n){var r=this.queue;this.attached&&!r&&(this.queue=[]);var o=this.rules.add(e,t,n);return this.options.jss.plugins.onProcessRule(o),this.attached?this.deployed?(r?r.push(o):(this.insertRule(o),this.queue&&(this.queue.forEach(this.insertRule,this),this.queue=void 0)),o):o:(this.deployed=!1,o)}},{key:"insertRule",value:function(e){var t=this.renderer.insertRule(e);t&&this.options.link&&(0,s["default"])(e,t)}},{key:"addRules",value:function(e,t){var n=[];for(var r in e)n.push(this.addRule(r,e[r],t));return n}},{key:"getRule",value:function(e){return this.rules.get(e)}},{key:"deleteRule",value:function(e){var t=this.rules.get(e);return!!t&&(this.rules.remove(t),!this.attached||!t.renderable||this.renderer.deleteRule(t.renderable))}},{key:"indexOf",value:function(e){return this.rules.indexOf(e)}},{key:"deploy",value:function(){return this.renderer.deploy(),this.deployed=!0,this}},{key:"link",value:function(){var e=this.renderer.getRules();
-return e&&this.rules.link(e),this.linked=!0,this}},{key:"toString",value:function(e){return this.rules.toString(e)}}]),e}();t["default"]=c},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0}),t.create=t.createGenerateClassName=t.sheets=t.RuleList=t.SheetsManager=t.SheetsRegistry=t.toCssValue=t.getDynamicStyles=void 0;var o=n(251);Object.defineProperty(t,"getDynamicStyles",{enumerable:!0,get:function(){return r(o)["default"]}});var i=n(46);Object.defineProperty(t,"toCssValue",{enumerable:!0,get:function(){return r(i)["default"]}});var a=n(71);Object.defineProperty(t,"SheetsRegistry",{enumerable:!0,get:function(){return r(a)["default"]}});var u=n(238);Object.defineProperty(t,"SheetsManager",{enumerable:!0,get:function(){return r(u)["default"]}});var s=n(31);Object.defineProperty(t,"RuleList",{enumerable:!0,get:function(){return r(s)["default"]}});var l=n(56);Object.defineProperty(t,"sheets",{enumerable:!0,get:function(){return r(l)["default"]}});var f=n(74);Object.defineProperty(t,"createGenerateClassName",{enumerable:!0,get:function(){return r(f)["default"]}});var c=n(236),p=r(c),d=t.create=function(e){return new p["default"](e)};t["default"]=d()},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(27),i=r(o),a=n(72),u=(r(a),n(252)),s=r(u),l=1e10,f="production";t["default"]=function(){var e=0,t="production"===f?"c":"";return function(n,r){e+=1,e>l&&(0,i["default"])(!1,"[JSS] You might have a memory leak. Rule counter is at %s.",e);var o=t,a="";return r&&(o=r.options.classNamePrefix||t,null!=r.options.jss.id&&(a+=r.options.jss.id)),"production"===f?""+o+s["default"]+a+e:o+n.key+"-"+s["default"]+(a&&"-"+a)+"-"+e}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(253),i=r(o);t["default"]=function(e){return e&&e[i["default"]]&&e===e[i["default"]]()}},function(e,t){"use strict";function n(e,t){e.renderable=t,e.rules&&t.cssRules&&e.rules.link(t.cssRules)}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.jss="64a55d578f856d258dc345b094a2a2b3",t.sheetsRegistry="d4bd0baacbc52bbd48bbb9eb24344ecd",t.managers="b768b78919504fba9de2c03545c5cd3a",t.sheetOptions="6fc570d6bd61383819d0f9e7407c452d"},,function(e,t){function n(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}e.exports=n},function(e,t){function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}e.exports=n},function(e,t){function n(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function r(e,t,r){return t&&n(e.prototype,t),r&&n(e,r),e}e.exports=r},function(e,t,n){function r(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&o(e,t)}var o=n(85);e.exports=r},function(e,t){function n(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)if(Object.prototype.hasOwnProperty.call(e,n)){var r=Object.defineProperty&&Object.getOwnPropertyDescriptor?Object.getOwnPropertyDescriptor(e,n):{};r.get||r.set?Object.defineProperty(t,n,r):t[n]=e[n]}return t["default"]=e,t}e.exports=n},function(e,t,n){function r(e,t){return!t||"object"!==o(t)&&"function"!=typeof t?i(e):t}var o=n(2),i=n(79);e.exports=r},function(e,t){function n(t,r){return e.exports=n=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e},n(t,r)}e.exports=n},function(e,t,n){"use strict";function r(e){var t,n=e.children,r=e.classes,o=e.className,f=e.color,p=e.component,d=e.fontSize,h=e.nativeColor,y=e.titleAccess,b=e.viewBox,v=(0,u["default"])(e,["children","classes","className","color","component","fontSize","nativeColor","titleAccess","viewBox"]),g=(0,l["default"])(r.root,(t={},(0,a["default"])(t,r["fontSize".concat((0,c.capitalize)(d))],"default"!==d),(0,a["default"])(t,r["color".concat((0,c.capitalize)(f))],"inherit"!==f),t),o);return s["default"].createElement(p,(0,i["default"])({className:g,focusable:"false",viewBox:b,color:h,"aria-hidden":y?"false":"true"},v),n,y?s["default"].createElement("title",null,y):null)}var o=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=t.styles=void 0;var i=o(n(59)),a=o(n(34)),u=o(n(24)),s=o(n(1)),l=(o(n(32)),o(n(261))),f=o(n(119)),c=n(121),p=function(e){return{root:{userSelect:"none",width:"1em",height:"1em",display:"inline-block",fill:"currentColor",flexShrink:0,fontSize:24,transition:e.transitions.create("fill",{duration:e.transitions.duration.shorter})},colorPrimary:{color:e.palette.primary.main},colorSecondary:{color:e.palette.secondary.main},colorAction:{color:e.palette.action.active},colorError:{color:e.palette.error.main},colorDisabled:{color:e.palette.action.disabled},fontSizeInherit:{fontSize:"inherit"}}};t.styles=p,r.propTypes={},r.defaultProps={color:"inherit",component:"svg",fontSize:"default",viewBox:"0 0 24 24"},r.muiName="SvgIcon";var d=(0,f["default"])(p,{name:"MuiSvgIcon"})(r);t["default"]=d},function(e,t,n){"use strict";var r=n(5);Object.defineProperty(t,"__esModule",{value:!0}),Object.defineProperty(t,"default",{enumerable:!0,get:function(){return o["default"]}});var o=r(n(86))},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#fff8e1",100:"#ffecb3",200:"#ffe082",300:"#ffd54f",400:"#ffca28",500:"#ffc107",600:"#ffb300",700:"#ffa000",800:"#ff8f00",900:"#ff6f00",A100:"#ffe57f",A200:"#ffd740",A400:"#ffc400",A700:"#ffab00"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#e3f2fd",100:"#bbdefb",200:"#90caf9",300:"#64b5f6",400:"#42a5f5",500:"#2196f3",600:"#1e88e5",700:"#1976d2",800:"#1565c0",900:"#0d47a1",A100:"#82b1ff",A200:"#448aff",A400:"#2979ff",A700:"#2962ff"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#eceff1",100:"#cfd8dc",200:"#b0bec5",300:"#90a4ae",400:"#78909c",500:"#607d8b",600:"#546e7a",700:"#455a64",800:"#37474f",900:"#263238",A100:"#cfd8dc",A200:"#b0bec5",A400:"#78909c",A700:"#455a64"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#efebe9",100:"#d7ccc8",200:"#bcaaa4",300:"#a1887f",400:"#8d6e63",500:"#795548",600:"#6d4c41",700:"#5d4037",800:"#4e342e",900:"#3e2723",A100:"#d7ccc8",A200:"#bcaaa4",A400:"#8d6e63",A700:"#5d4037"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#e0f7fa",100:"#b2ebf2",200:"#80deea",300:"#4dd0e1",400:"#26c6da",500:"#00bcd4",600:"#00acc1",700:"#0097a7",800:"#00838f",900:"#006064",A100:"#84ffff",A200:"#18ffff",A400:"#00e5ff",A700:"#00b8d4"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#fbe9e7",100:"#ffccbc",200:"#ffab91",300:"#ff8a65",400:"#ff7043",500:"#ff5722",600:"#f4511e",700:"#e64a19",800:"#d84315",900:"#bf360c",A100:"#ff9e80",A200:"#ff6e40",A400:"#ff3d00",A700:"#dd2c00"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#ede7f6",100:"#d1c4e9",200:"#b39ddb",300:"#9575cd",400:"#7e57c2",500:"#673ab7",600:"#5e35b1",700:"#512da8",800:"#4527a0",900:"#311b92",A100:"#b388ff",A200:"#7c4dff",A400:"#651fff",A700:"#6200ea"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#e8f5e9",100:"#c8e6c9",200:"#a5d6a7",300:"#81c784",400:"#66bb6a",500:"#4caf50",600:"#43a047",700:"#388e3c",800:"#2e7d32",900:"#1b5e20",A100:"#b9f6ca",A200:"#69f0ae",A400:"#00e676",A700:"#00c853"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#e1f5fe",100:"#b3e5fc",200:"#81d4fa",300:"#4fc3f7",400:"#29b6f6",500:"#03a9f4",600:"#039be5",700:"#0288d1",800:"#0277bd",900:"#01579b",A100:"#80d8ff",A200:"#40c4ff",A400:"#00b0ff",A700:"#0091ea"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#f1f8e9",100:"#dcedc8",200:"#c5e1a5",300:"#aed581",400:"#9ccc65",500:"#8bc34a",600:"#7cb342",700:"#689f38",800:"#558b2f",900:"#33691e",A100:"#ccff90",A200:"#b2ff59",A400:"#76ff03",A700:"#64dd17"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#f9fbe7",100:"#f0f4c3",200:"#e6ee9c",300:"#dce775",400:"#d4e157",500:"#cddc39",600:"#c0ca33",700:"#afb42b",800:"#9e9d24",900:"#827717",A100:"#f4ff81",A200:"#eeff41",A400:"#c6ff00",A700:"#aeea00"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#fff3e0",100:"#ffe0b2",200:"#ffcc80",300:"#ffb74d",400:"#ffa726",500:"#ff9800",600:"#fb8c00",700:"#f57c00",800:"#ef6c00",900:"#e65100",A100:"#ffd180",A200:"#ffab40",A400:"#ff9100",A700:"#ff6d00"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#f3e5f5",100:"#e1bee7",200:"#ce93d8",300:"#ba68c8",400:"#ab47bc",500:"#9c27b0",600:"#8e24aa",700:"#7b1fa2",800:"#6a1b9a",900:"#4a148c",A100:"#ea80fc",A200:"#e040fb",A400:"#d500f9",A700:"#aa00ff"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#e0f2f1",100:"#b2dfdb",200:"#80cbc4",300:"#4db6ac",400:"#26a69a",500:"#009688",600:"#00897b",700:"#00796b",800:"#00695c",900:"#004d40",A100:"#a7ffeb",A200:"#64ffda",A400:"#1de9b6",A700:"#00bfa5"},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={50:"#fffde7",100:"#fff9c4",200:"#fff59d",300:"#fff176",400:"#ffee58",500:"#ffeb3b",600:"#fdd835",700:"#fbc02d",800:"#f9a825",900:"#f57f17",A100:"#ffff8d",A200:"#ffff00",A400:"#ffea00",A700:"#ffd600"},r=n;t["default"]=r},function(e,t,n){"use strict";function r(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0,n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:1;return e<t?t:e>n?n:e}function o(e){e=e.substr(1);var t=new RegExp(".{1,".concat(e.length/3,"}"),"g"),n=e.match(t);return n&&1===n[0].length&&(n=n.map(function(e){return e+e})),n?"rgb(".concat(n.map(function(e){return parseInt(e,16)}).join(", "),")"):""}function i(e){if("#"===e.charAt(0))return i(o(e));var t=e.indexOf("("),n=e.substring(0,t),r=e.substring(t+1,e.length-1).split(",");return r=r.map(function(e){return parseFloat(e)}),{type:n,values:r}}function a(e){var t=e.type,n=e.values;return t.indexOf("rgb")!==-1&&(n=n.map(function(e,t){return t<3?parseInt(e,10):e})),t.indexOf("hsl")!==-1&&(n[1]="".concat(n[1],"%"),n[2]="".concat(n[2],"%")),"".concat(e.type,"(").concat(n.join(", "),")")}function u(e,t){var n=s(e),r=s(t);return(Math.max(n,r)+.05)/(Math.min(n,r)+.05)}function s(e){var t=i(e);if(t.type.indexOf("rgb")!==-1){var n=t.values.map(function(e){return e/=255,e<=.03928?e/12.92:Math.pow((e+.055)/1.055,2.4)});return Number((.2126*n[0]+.7152*n[1]+.0722*n[2]).toFixed(3))}return t.values[2]/100}function l(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:.15;return s(e)>.5?c(e,t):p(e,t)}function f(e,t){return e?(e=i(e),t=r(t),"rgb"!==e.type&&"hsl"!==e.type||(e.type+="a"),e.values[3]=t,a(e)):e}function c(e,t){if(!e)return e;if(e=i(e),t=r(t),e.type.indexOf("hsl")!==-1)e.values[2]*=1-t;else if(e.type.indexOf("rgb")!==-1)for(var n=0;n<3;n+=1)e.values[n]*=1-t;return a(e)}function p(e,t){if(!e)return e;if(e=i(e),t=r(t),e.type.indexOf("hsl")!==-1)e.values[2]+=(100-e.values[2])*t;else if(e.type.indexOf("rgb")!==-1)for(var n=0;n<3;n+=1)e.values[n]+=(255-e.values[n])*t;return a(e)}var d=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t.convertHexToRGB=o,t.decomposeColor=i,t.recomposeColor=a,t.getContrastRatio=u,t.getLuminance=s,t.emphasize=l,t.fade=f,t.darken=c,t.lighten=p;d(n(14))},function(e,t,n){"use strict";function r(e){function t(e){var t="number"==typeof f[e]?f[e]:e;return"@media (min-width:".concat(t).concat(p,")")}function n(e){var n=u.indexOf(e)+1,r=f[u[n]];if(n===u.length)return t("xs");var o="number"==typeof r&&n>0?r:e;return"@media (max-width:".concat(o-h/100).concat(p,")")}function r(e,n){var r=u.indexOf(n)+1;return r===u.length?t(e):"@media (min-width:".concat(f[e]).concat(p,") and ")+"(max-width:".concat(f[u[r]]-h/100).concat(p,")")}function o(e){return r(e,e)}function s(e){return f[e]}var l=e.values,f=void 0===l?{xs:0,sm:600,md:960,lg:1280,xl:1920}:l,c=e.unit,p=void 0===c?"px":c,d=e.step,h=void 0===d?5:d,y=(0,a["default"])(e,["values","unit","step"]);return(0,i["default"])({keys:u,values:f,up:t,down:n,between:r,only:o,width:s},y)}var o=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=r,t.keys=void 0;var i=o(n(20)),a=o(n(24)),u=["xs","sm","md","lg","xl"];t.keys=u},function(e,t,n){(function(e){"use strict";function r(e){var t=String(e);return t.replace(a,"-")}function o(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=t.dangerouslyUseGlobalCSS,o=void 0!==n&&n,i=t.productionPrefix,a=void 0===i?"jss":i,u=0;return"undefined"!=typeof window&&(e.__MUI_GENERATOR_COUNTER__+=1,e.__MUI_GENERATOR_COUNTER__>2&&console.error(["Material-UI: we have detected more than needed creation of the class name generator.","You should only use one class name generator on the client side.","If you do otherwise, you take the risk to have conflicting class names in production."].join("\n"))),function(e,t){if(u+=1,o){if(t&&t.options.classNamePrefix){var n=r(t.options.classNamePrefix);if(n.match(/^Mui/))return"".concat(n,"-").concat(e.key)}return"".concat(a).concat(u)}return"".concat(a).concat(u)}}var i=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o;i(n(14));e.__MUI_GENERATOR_COUNTER__=0;var a=/([[\].#*$><+~=|^:(),"'`\s])/g}).call(t,function(){return this}())},function(e,t,n){"use strict";function r(e,t,n){var r;return(0,a["default"])({gutters:function(){var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return(0,a["default"])({paddingLeft:2*t.unit,paddingRight:2*t.unit},n,(0,i["default"])({},e.up("sm"),(0,a["default"])({paddingLeft:3*t.unit,paddingRight:3*t.unit},n[e.up("sm")])))},toolbar:(r={minHeight:56},(0,i["default"])(r,"".concat(e.up("xs")," and (orientation: landscape)"),{minHeight:48}),(0,i["default"])(r,e.up("sm"),{minHeight:64}),r)},n)}var o=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=r;var i=o(n(34)),a=o(n(20))},function(e,t,n){"use strict";function r(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.breakpoints,n=void 0===t?{}:t,r=e.mixins,o=void 0===r?{}:r,v=e.palette,g=void 0===v?{}:v,m=e.shadows,_=e.typography,O=void 0===_?{}:_,w=(0,a["default"])(e,["breakpoints","mixins","palette","shadows","typography"]),P=(0,f["default"])(g),j=(0,s["default"])(n),E=(0,i["default"])({breakpoints:j,direction:"ltr",mixins:(0,l["default"])(j,h["default"],o),overrides:{},palette:P,props:{},shadows:m||p["default"],typography:(0,c["default"])(P,O)},(0,u["default"])({shape:d["default"],spacing:h["default"],transitions:y["default"],zIndex:b["default"]},w));return E}var o=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var i=o(n(20)),a=o(n(24)),u=o(n(43)),s=(o(n(14)),o(n(104))),l=o(n(106)),f=o(n(108)),c=o(n(109)),p=o(n(114)),d=o(n(115)),h=o(n(116)),y=o(n(118)),b=o(n(120)),v=r;t["default"]=v},function(e,t,n){"use strict";function r(e,t,n,r){e[t]||(e.hasOwnProperty(n)?e[t]=e[n]:"light"===t?e.light=(0,h.lighten)(e.main,r):"dark"===t&&(e.dark=(0,h.darken)(e.main,1.5*r)))}function o(e){function t(e){var t=(0,h.getContrastRatio)(e,b.text.primary)>=j?b.text.primary:y.text.primary;return t}function n(e,n,o,i){!e.main&&e[n]&&(e.main=e[n]),r(e,"light",o,x),r(e,"dark",i,x),e.contrastText||(e.contrastText=t(e.main))}var o=e.primary,i=void 0===o?{light:l["default"][300],main:l["default"][500],dark:l["default"][700]}:o,v=e.secondary,g=void 0===v?{light:f["default"].A200,main:f["default"].A400,dark:f["default"].A700}:v,m=e.error,_=void 0===m?{light:p["default"][300],main:p["default"][500],dark:p["default"][700]}:m,O=e.type,w=void 0===O?"light":O,P=e.contrastThreshold,j=void 0===P?3:P,E=e.tonalOffset,x=void 0===E?.2:E,S=(0,u["default"])(e,["primary","secondary","error","type","contrastThreshold","tonalOffset"]);n(i,500,300,700),n(g,"A400","A200","A700"),n(_,500,300,700);var k={dark:b,light:y},M=(0,s["default"])((0,a["default"])({common:d["default"],type:w,primary:i,secondary:g,error:_,grey:c["default"],contrastThreshold:j,getContrastText:t,augmentColor:n,tonalOffset:x},k[w]),S,{clone:!1});return M}var i=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o,t.dark=t.light=void 0;var a=i(n(20)),u=i(n(24)),s=(i(n(14)),i(n(43))),l=i(n(63)),f=i(n(64)),c=i(n(62)),p=i(n(65)),d=i(n(61)),h=n(103),y={text:{primary:"rgba(0, 0, 0, 0.87)",secondary:"rgba(0, 0, 0, 0.54)",disabled:"rgba(0, 0, 0, 0.38)",hint:"rgba(0, 0, 0, 0.38)"},divider:"rgba(0, 0, 0, 0.12)",background:{paper:d["default"].white,"default":c["default"][50]},action:{active:"rgba(0, 0, 0, 0.54)",hover:"rgba(0, 0, 0, 0.08)",hoverOpacity:.08,selected:"rgba(0, 0, 0, 0.14)",disabled:"rgba(0, 0, 0, 0.26)",disabledBackground:"rgba(0, 0, 0, 0.12)"}};t.light=y;var b={text:{primary:d["default"].white,secondary:"rgba(255, 255, 255, 0.7)",disabled:"rgba(255, 255, 255, 0.5)",hint:"rgba(255, 255, 255, 0.5)",icon:"rgba(255, 255, 255, 0.5)"},divider:"rgba(255, 255, 255, 0.12)",background:{paper:c["default"][800],"default":"#303030"},action:{active:d["default"].white,hover:"rgba(255, 255, 255, 0.1)",hoverOpacity:.1,selected:"rgba(255, 255, 255, 0.2)",disabled:"rgba(255, 255, 255, 0.3)",disabledBackground:"rgba(255, 255, 255, 0.12)"}};t.dark=b},function(e,t,n){"use strict";function r(e){return Math.round(1e5*e)/1e5}function o(e,t){function n(e){return"".concat(e/m*w,"rem")}var o="function"==typeof t?t(e):t,i=o.fontFamily,l=void 0===i?'"Roboto", "Helvetica", "Arial", sans-serif':i,f=o.fontSize,c=void 0===f?14:f,p=o.fontWeightLight,d=void 0===p?300:p,h=o.fontWeightRegular,y=void 0===h?400:h,b=o.fontWeightMedium,v=void 0===b?500:b,g=o.htmlFontSize,m=void 0===g?16:g,_=o.allVariants,O=(0,u["default"])(o,["fontFamily","fontSize","fontWeightLight","fontWeightRegular","fontWeightMedium","htmlFontSize","allVariants"]),w=c/14;return(0,s["default"])({pxToRem:n,round:r,fontFamily:l,fontSize:c,fontWeightLight:d,fontWeightRegular:y,fontWeightMedium:v,display4:(0,a["default"])({fontSize:n(112),fontWeight:d,fontFamily:l,letterSpacing:"-.04em",lineHeight:"".concat(r(128/112),"em"),marginLeft:"-.04em",color:e.text.secondary},_),display3:(0,a["default"])({fontSize:n(56),fontWeight:y,fontFamily:l,letterSpacing:"-.02em",lineHeight:"".concat(r(73/56),"em"),marginLeft:"-.02em",color:e.text.secondary},_),display2:(0,a["default"])({fontSize:n(45),fontWeight:y,fontFamily:l,lineHeight:"".concat(r(48/45),"em"),marginLeft:"-.02em",color:e.text.secondary},_),display1:(0,a["default"])({fontSize:n(34),fontWeight:y,fontFamily:l,lineHeight:"".concat(r(41/34),"em"),color:e.text.secondary},_),headline:(0,a["default"])({fontSize:n(24),fontWeight:y,fontFamily:l,lineHeight:"".concat(r(32.5/24),"em"),color:e.text.primary},_),title:(0,a["default"])({fontSize:n(21),fontWeight:v,fontFamily:l,lineHeight:"".concat(r(24.5/21),"em"),color:e.text.primary},_),subheading:(0,a["default"])({fontSize:n(16),fontWeight:y,fontFamily:l,lineHeight:"".concat(r(1.5),"em"),color:e.text.primary},_),body2:(0,a["default"])({fontSize:n(14),fontWeight:v,fontFamily:l,lineHeight:"".concat(r(24/14),"em"),color:e.text.primary},_),body1:(0,a["default"])({fontSize:n(14),fontWeight:y,fontFamily:l,lineHeight:"".concat(r(20.5/14),"em"),color:e.text.primary},_),caption:(0,a["default"])({fontSize:n(12),fontWeight:y,fontFamily:l,lineHeight:"".concat(r(1.375),"em"),color:e.text.secondary},_),button:(0,a["default"])({fontSize:n(14),textTransform:"uppercase",fontWeight:v,fontFamily:l,color:e.text.primary},_)},O,{clone:!1})}var i=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o;var a=i(n(20)),u=i(n(24)),s=i(n(43))},function(e,t,n){"use strict";function r(e,t){return t}function o(e){function t(t,o){var i=n?e(t):e;if(!o||!t.overrides||!t.overrides[o])return i;var s=t.overrides[o],l=(0,a["default"])({},i);return Object.keys(s).forEach(function(e){l[e]=(0,u["default"])(l[e],s[e],{arrayMerge:r})}),l}var n="function"==typeof e;return{create:t,options:{},themingEnabled:n}}var i=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var a=i(n(20)),u=(i(n(60)),i(n(14)),i(n(43))),s=o;t["default"]=s},function(e,t){"use strict";function n(e){var t=e.theme,n=e.name;return n&&t.props&&t.props[n]?t.props[n]:{}}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var r=n;t["default"]=r},function(e,t,n){"use strict";function r(){return{plugins:[(0,i["default"])(),(0,a["default"])(),(0,u["default"])(),(0,s["default"])(),(0,l["default"])(),(0,f["default"])()]}}var o=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var i=o(n(231)),a=o(n(232)),u=o(n(228)),s=o(n(230)),l=o(n(235)),f=o(n(234)),c=r;t["default"]=c},function(e,t,n){"use strict";function r(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.baseClasses,n=e.newClasses;e.Component,e.noBase;return n?(0,i["default"])({},t,Object.keys(n).reduce(function(e,r){return n[r]&&(e[r]="".concat(t[r]," ").concat(n[r])),e},{})):t}var o=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var i=o(n(20)),a=(o(n(14)),o(n(58)),r);t["default"]=a},function(e,t){"use strict";function n(){return["".concat(arguments.length<=0?void 0:arguments[0],"px ").concat(arguments.length<=1?void 0:arguments[1],"px ").concat(arguments.length<=2?void 0:arguments[2],"px ").concat(arguments.length<=3?void 0:arguments[3],"px rgba(0, 0, 0, ").concat(r,")"),"".concat(arguments.length<=4?void 0:arguments[4],"px ").concat(arguments.length<=5?void 0:arguments[5],"px ").concat(arguments.length<=6?void 0:arguments[6],"px ").concat(arguments.length<=7?void 0:arguments[7],"px rgba(0, 0, 0, ").concat(o,")"),"".concat(arguments.length<=8?void 0:arguments[8],"px ").concat(arguments.length<=9?void 0:arguments[9],"px ").concat(arguments.length<=10?void 0:arguments[10],"px ").concat(arguments.length<=11?void 0:arguments[11],"px rgba(0, 0, 0, ").concat(i,")")].join(",")}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var r=.2,o=.14,i=.12,a=["none",n(0,1,3,0,0,1,1,0,0,2,1,-1),n(0,1,5,0,0,2,2,0,0,3,1,-2),n(0,1,8,0,0,3,4,0,0,3,3,-2),n(0,2,4,-1,0,4,5,0,0,1,10,0),n(0,3,5,-1,0,5,8,0,0,1,14,0),n(0,3,5,-1,0,6,10,0,0,1,18,0),n(0,4,5,-2,0,7,10,1,0,2,16,1),n(0,5,5,-3,0,8,10,1,0,3,14,2),n(0,5,6,-3,0,9,12,1,0,3,16,2),n(0,6,6,-3,0,10,14,1,0,4,18,3),n(0,6,7,-4,0,11,15,1,0,4,20,3),n(0,7,8,-4,0,12,17,2,0,5,22,4),n(0,7,8,-4,0,13,19,2,0,5,24,4),n(0,7,9,-4,0,14,21,2,0,5,26,4),n(0,8,9,-5,0,15,22,2,0,6,28,5),n(0,8,10,-5,0,16,24,2,0,6,30,5),n(0,8,11,-5,0,17,26,2,0,6,32,5),n(0,9,11,-5,0,18,28,2,0,7,34,6),n(0,9,12,-6,0,19,29,2,0,7,36,6),n(0,10,13,-6,0,20,31,3,0,8,38,7),n(0,10,13,-6,0,21,33,3,0,8,40,7),n(0,10,14,-6,0,22,35,3,0,8,42,7),n(0,11,14,-7,0,23,36,3,0,9,44,8),n(0,11,15,-7,0,24,38,3,0,9,46,8)],u=a;t["default"]=u},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={borderRadius:4},r=n;t["default"]=r},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={unit:8},r=n;t["default"]=r},function(e,t,n){"use strict";var r=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=t.CHANNEL=void 0;var o=r(n(34)),i=r(n(32)),a="__THEMING__";t.CHANNEL=a;var u={contextTypes:(0,o["default"])({},a,i["default"].object),initial:function(e){return e[a]?e[a].getState():null},subscribe:function(e,t){return e[a]?e[a].subscribe(t):null},unsubscribe:function(e,t){e[a]&&e[a].unsubscribe(t)}},s=u;t["default"]=s},function(e,t,n){"use strict";var r=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=t.isNumber=t.isString=t.formatMs=t.duration=t.easing=void 0;var o=r(n(24)),i=(r(n(14)),{easeInOut:"cubic-bezier(0.4, 0, 0.2, 1)",easeOut:"cubic-bezier(0.0, 0, 0.2, 1)",easeIn:"cubic-bezier(0.4, 0, 1, 1)",sharp:"cubic-bezier(0.4, 0, 0.6, 1)"});t.easing=i;var a={shortest:150,shorter:200,"short":250,standard:300,complex:375,enteringScreen:225,leavingScreen:195};t.duration=a;var u=function(e){return"".concat(Math.round(e),"ms")};t.formatMs=u;var s=function(e){return"string"==typeof e};t.isString=s;var l=function(e){return!isNaN(parseFloat(e))};t.isNumber=l;var f={easing:i,duration:a,create:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:["all"],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return function(){var n=t.duration,r=void 0===n?a.standard:n,s=t.easing,l=void 0===s?i.easeInOut:s,f=t.delay,c=void 0===f?0:f;(0,o["default"])(t,["duration","easing","delay"]);return(Array.isArray(e)?e:[e]).map(function(e){return"".concat(e," ").concat("string"==typeof r?r:u(r)," ").concat(l," ").concat("string"==typeof c?c:u(c))}).join(",")}()},getAutoHeightDuration:function(e){if(!e)return 0;var t=e/36;return Math.round(10*(4+15*Math.pow(t,.25)+t/5))}};t["default"]=f},function(e,t,n){"use strict";function r(){return C?C:C=(0,O["default"])()}var o=n(83),i=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=t.sheetsManager=void 0;var a=i(n(59)),u=i(n(20)),s=i(n(80)),l=i(n(81)),f=i(n(84)),c=i(n(82)),p=i(n(24)),d=i(n(1)),h=i(n(32)),y=(i(n(14)),i(n(226))),b=(i(n(58)),i(n(259)),i(n(257))),v=n(73),g=o(n(77)),m=i(n(112)),_=i(n(113)),O=i(n(107)),w=i(n(117)),P=i(n(105)),j=i(n(110)),E=i(n(111)),x=(0,v.create)((0,m["default"])()),S=(0,P["default"])(),k=-1e11,M=new Map;t.sheetsManager=M;var C,A={},R=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return function(n){var o=t.withTheme,i=void 0!==o&&o,v=t.flip,m=void 0===v?null:v,O=t.name,P=(0,p["default"])(t,["withTheme","flip","name"]),C=(0,j["default"])(e),R=C.themingEnabled||i||"string"==typeof O;k+=1,C.options.index=k;var I=function(e){function t(e,n){var o;(0,s["default"])(this,t),o=(0,f["default"])(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e,n)),o.disableStylesGeneration=!1,o.jss=null,o.sheetOptions=null,o.sheetsManager=M,o.stylesCreatorSaved=null,o.theme=null,o.unsubscribeId=null,o.state={},o.jss=o.context[g.jss]||x;var i=o.context.muiThemeProviderOptions;return i&&(i.sheetsManager&&(o.sheetsManager=i.sheetsManager),o.disableStylesGeneration=i.disableStylesGeneration),o.stylesCreatorSaved=C,o.sheetOptions=(0,u["default"])({generateClassName:S},o.context[g.sheetOptions]),o.theme=R?w["default"].initial(n)||r():A,o.attach(o.theme),o.cacheClasses={value:null,lastProp:null,lastJSS:{}},o}return(0,c["default"])(t,e),(0,l["default"])(t,[{key:"componentDidMount",value:function(){var e=this;R&&(this.unsubscribeId=w["default"].subscribe(this.context,function(t){var n=e.theme;e.theme=t,e.attach(e.theme),e.setState({},function(){e.detach(n)})}))}},{key:"componentDidUpdate",value:function(){this.stylesCreatorSaved===C,0}},{key:"componentWillUnmount",value:function(){this.detach(this.theme),null!==this.unsubscribeId&&w["default"].unsubscribe(this.context,this.unsubscribeId)}},{key:"getClasses",value:function(){var e=!1;if(!this.disableStylesGeneration){var t=this.sheetsManager.get(this.stylesCreatorSaved),r=t.get(this.theme);r.sheet.classes!==this.cacheClasses.lastJSS&&(this.cacheClasses.lastJSS=r.sheet.classes,e=!0)}return this.props.classes!==this.cacheClasses.lastProp&&(this.cacheClasses.lastProp=this.props.classes,e=!0),e&&(this.cacheClasses.value=(0,_["default"])({baseClasses:this.cacheClasses.lastJSS,newClasses:this.props.classes,Component:n,noBase:this.disableStylesGeneration})),this.cacheClasses.value}},{key:"attach",value:function(e){if(!this.disableStylesGeneration){var t=this.stylesCreatorSaved,n=this.sheetsManager.get(t);n||(n=new Map,this.sheetsManager.set(t,n));var r=n.get(e);if(r||(r={refs:0,sheet:null},n.set(e,r)),0===r.refs){var o=t.create(e,O),i=O,a=this.jss.createStyleSheet(o,(0,u["default"])({meta:i,classNamePrefix:i,flip:"boolean"==typeof m?m:"rtl"===e.direction,link:!1},this.sheetOptions,t.options,{name:O},P));r.sheet=a,a.attach();var s=this.context[g.sheetsRegistry];s&&s.add(a)}r.refs+=1}}},{key:"detach",value:function(e){if(!this.disableStylesGeneration){var t=this.stylesCreatorSaved,n=this.sheetsManager.get(t),r=n.get(e);if(r.refs-=1,0===r.refs){n["delete"](e),this.jss.removeStyleSheet(r.sheet);var o=this.context[g.sheetsRegistry];o&&o.remove(r.sheet)}}}},{key:"render",value:function(){var e=this.props,t=(e.classes,e.innerRef),r=(0,p["default"])(e,["classes","innerRef"]),o=(0,E["default"])({theme:this.theme,name:O});return i&&(o.theme=this.theme),d["default"].createElement(n,(0,a["default"])({},o,{classes:this.getClasses(),ref:t},r))}}]),t}(d["default"].Component);return I.propTypes={},I.contextTypes=(0,u["default"])({muiThemeProviderOptions:h["default"].object},b["default"],R?w["default"].contextTypes:{}),(0,y["default"])(I,n),I}},I=R;t["default"]=I},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=void 0;var n={mobileStepper:1e3,appBar:1100,drawer:1200,modal:1300,snackbar:1400,tooltip:1500},r=n;t["default"]=r},function(e,t,n){"use strict";function r(e){return e.charAt(0).toUpperCase()+e.slice(1)}function o(e,t){return Object.keys(t).every(function(n){return e.hasOwnProperty(n)&&e[n]===t[n]})}function i(e,t){for(var n=(0,l["default"])(t),r=0;r<e.length;r+=1){if("function"===n&&!!t(e[r],r,e)==!0)return r;if("object"===n&&o(e[r],t))return r;if(["string","number","boolean"].indexOf(n)!==-1)return e.indexOf(t)}return-1}function a(e,t){var n=i(e,t);return n>-1?e[n]:void 0}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];return t.reduce(function(e,t){return null==t?e:function(){for(var n=arguments.length,r=new Array(n),o=0;o<n;o++)r[o]=arguments[o];e.apply(this,r),t.apply(this,r)}},function(){})}var s=n(5);Object.defineProperty(t,"__esModule",{value:!0}),t.capitalize=r,t.contains=o,t.findIndex=i,t.find=a,t.createChainedFunction=u;var l=s(n(60));s(n(14))},function(e,t){function n(e,t){e.prototype=Object.create(t.prototype),e.prototype.constructor=e,e.__proto__=t}e.exports=n},function(e,t){"use strict";t.__esModule=!0,t["default"]=void 0;var n=function(e){if("string"==typeof e)return e;if(e)return e.displayName||e.name||"Component"},r=n;t["default"]=r},function(e,t,n){"use strict";var r=n(21);t.__esModule=!0,t["default"]=void 0;var o=r(n(127)),i=r(n(126)),a=(r(n(66)),r(n(67)),function(e){var t=(0,o["default"])(function(e,t){return!(0,i["default"])(e,t)});return t(e)}),u=a;t["default"]=u},function(e,t){"use strict";t.__esModule=!0,t["default"]=void 0;var n=function(e,t){return function(n){return n[e]=t,n}},r=n;t["default"]=r},function(e,t,n){"use strict";var r=n(21);t.__esModule=!0,t["default"]=void 0;var o=r(n(225)),i=o["default"];t["default"]=i},function(e,t,n){"use strict";var r=n(21);t.__esModule=!0,t["default"]=void 0;var o=r(n(122)),i=n(1),a=(r(n(66)),r(n(67)),function(e){return function(t){var n=(0,i.createFactory)(t),r=function(t){function r(){return t.apply(this,arguments)||this}(0,o["default"])(r,t);var i=r.prototype;return i.shouldComponentUpdate=function(t){return e(this.props,t)},i.render=function(){return n(this.props)},r}(i.Component);return r}}),u=a;t["default"]=u},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(e,t,n){
-"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(1),l=r(s),f=n(207),c=r(f),p=n(206),d=r(p),h=n(213),y=r(h),b=n(212),v=r(b),g=n(209),m=r(g),_=n(208),O=r(_),w=n(218),P=r(w),j=n(217),E=r(j),x=n(211),S=r(x),k=n(210),M=r(k),C=n(215),A=r(C),R=n(216),I=r(R),T=n(219),N=r(T),U=n(220),L=r(U),z=n(204),q=r(z),F=n(205),V=r(F),B=n(214),D=r(B),W=n(23),K=r(W),G=n(3),H=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),u(t,[{key:"render",value:function(){var e=this.props.emailSignInSuccessEnabled&&this.props.auth.getIn(["ui","emailSignInSuccessModalVisible"]),t=this.props.emailSignInErrorEnabled&&this.props.auth.getIn(["ui","emailSignInErrorModalVisible"]),n=this.props.emailSignUpSuccessEnabled&&this.props.auth.getIn(["ui","emailSignUpSuccessModalVisible"]),r=this.props.emailSignUpErrorEnabled&&this.props.auth.getIn(["ui","emailSignUpErrorModalVisible"]),o=this.props.signOutSuccessEnabled&&this.props.auth.getIn(["ui","signOutSuccessModalVisible"]),i=this.props.signOutErrorEnabled&&this.props.auth.getIn(["ui","signOutErrorModalVisible"]),a=this.props.firstTimeLoginSuccessEnabled&&this.props.auth.getIn(["ui","firstTimeLoginSuccessModalVisible"]),u=this.props.firstTimeLoginErrorEnabled&&this.props.auth.getIn(["ui","firstTimeLoginErrorModalVisible"]),s=this.props.requestPasswordResetErrorEnabled&&this.props.auth.getIn(["ui","requestPasswordResetErrorModalVisible"]),f=this.props.requestPasswordResetSuccessEnabled&&this.props.auth.getIn(["ui","requestPasswordResetSuccessModalVisible"]),p=this.props.oAuthSignInSuccessEnabled&&this.props.auth.getIn(["ui","oAuthSignInSuccessModalVisible"]),h=this.props.oAuthSignInErrorEnabled&&this.props.auth.getIn(["ui","oAuthSignInErrorModalVisible"]),b=this.props.updatePasswordSuccessEnabled&&this.props.auth.getIn(["ui","updatePasswordSuccessModalVisible"]),g=this.props.updatePasswordErrorEnabled&&this.props.auth.getIn(["ui","updatePasswordErrorModalVisible"]),_=this.props.destroyAccountSuccessEnabled&&this.props.auth.getIn(["ui","destroyAccountSuccessModalVisible"]),w=this.props.destroyAccountErrorEnabled&&this.props.auth.getIn(["ui","destroyAccountErrorModalVisible"]),j=this.props.passwordResetSuccessEnabled&&this.props.auth.getIn(["ui","passwordResetSuccessModalVisible"]);return l["default"].createElement("div",{id:"auth-modals"},l["default"].createElement(c["default"],{show:e}),l["default"].createElement(d["default"],{show:t}),l["default"].createElement(y["default"],{show:p}),l["default"].createElement(v["default"],{show:h}),l["default"].createElement(m["default"],{show:n}),l["default"].createElement(O["default"],{show:r}),l["default"].createElement(P["default"],{show:o}),l["default"].createElement(E["default"],{show:i}),l["default"].createElement(S["default"],{show:a}),l["default"].createElement(M["default"],{show:u}),l["default"].createElement(A["default"],{show:s}),l["default"].createElement(I["default"],{show:f}),l["default"].createElement(N["default"],{show:g}),l["default"].createElement(L["default"],{show:b}),l["default"].createElement(q["default"],{show:w}),l["default"].createElement(V["default"],{show:_}),l["default"].createElement(D["default"],{show:j}),l["default"].createElement(K["default"],null))}}]),t}(l["default"].Component);H.defaultProps={signOutSuccessEnabled:!0,signOutErrorEnabled:!0,emailSignInSuccessEnabled:!0,emailSignInErrorEnabled:!0,oAuthSignInSuccessEnabled:!0,oAuthSignInErrorEnabled:!0,emailSignUpSuccessEnabled:!0,emailSignUpErrorEnabled:!0,firstTimeLoginSuccessEnabled:!0,firstTimeLoginErrorEnabled:!0,requestPasswordResetErrorEnabled:!0,requestPasswordResetSuccessEnabled:!0,updatePasswordErrorEnabled:!0,updatePasswordSuccessEnabled:!0,destroyAccountErrorEnabled:!0,destroyAccountSuccessEnabled:!0,passwordResetSuccessEnabled:!0,passwordResetErrorEnabled:!0},t["default"]=(0,G.connect)(function(e){return{auth:e.get("auth")}})(H)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(17),p=r(c),d=n(2),h=n(18),y=n(3),b=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleClick",value:function(){this.props.dispatch((0,d.destroyAccount)(this.getEndpoint()))}},{key:"render",value:function(){var e=!this.props.auth.getIn(["user","isSignedIn"]);return f["default"].createElement(p["default"],u({loading:this.props.auth.getIn(["destroyAccount",this.getEndpoint(),"loading"]),icon:this.props.icon,disabled:e,primary:!0,className:"destroy-account-submit",onClick:this.handleClick.bind(this)},this.props))}}]),t}(f["default"].Component);b.defaultProps={children:f["default"].createElement("span",null,"Destroy Account"),icon:h.ActionDelete},t["default"]=(0,y.connect)(function(e){return{auth:e.get("auth")}})(b)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(17),p=r(c),d=n(30),h=r(d),y=n(2),b=n(18),v=n(3),g=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,y.emailSignInFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){e.preventDefault();var t=this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,y.emailSignIn)(t,this.getEndpoint())).then(this.props.next)["catch"](function(){})}},{key:"render",value:function(){var e=this.props.auth.getIn(["user","isSignedIn"])||this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"loading"]);return f["default"].createElement("form",{className:"redux-auth email-sign-in-form",style:{clear:"both",overflow:"hidden"},onSubmit:this.handleSubmit.bind(this)},f["default"].createElement(h["default"],u({type:"text",className:"email-sign-in-email",ref:"emailSignInEmail",floatingLabelText:"Email",disabled:e,value:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"form","email"]),errors:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"errors","email"]),onChange:this.handleInput.bind(this,"email")},this.props.inputProps.email)),f["default"].createElement(h["default"],u({type:"password",floatingLabelText:"Password",className:"email-sign-in-password",disabled:e,value:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"form","password"]),errors:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),f["default"].createElement(p["default"],u({loading:this.props.auth.getIn(["emailSignIn","loading"]),type:"submit",style:{"float":"right"},icon:b.ActionExitToApp,className:"email-sign-in-submit",disabled:e,onClick:this.handleSubmit.bind(this),primary:!0},this.props.inputProps.submit),"Sign In"))}}]),t}(f["default"].Component);g.defaultProps={next:function(){},inputProps:{email:{},password:{},submit:{}}},t["default"]=(0,v.connect)(function(e){return{auth:e.get("auth")}})(g)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(30),p=r(c),d=n(17),h=r(d),y=n(2),b=n(3),v=n(18),g=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,y.emailSignUpFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){console.log("@-->handling submit"),e.preventDefault();var t=this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,y.emailSignUp)(t,this.getEndpoint())).then(this.props.next)["catch"](function(){})}},{key:"render",value:function(){var e=this.props.auth.getIn(["user","isSignedIn"])||this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"loading"]);return f["default"].createElement("form",{className:"redux-auth email-sign-up-form clearfix",style:{clear:"both",overflow:"hidden"},onSubmit:this.handleSubmit.bind(this)},f["default"].createElement(p["default"],u({type:"text",floatingLabelText:"Email",className:"email-sign-up-email",disabled:e,value:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form","email"]),errors:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"errors","email"]),onChange:this.handleInput.bind(this,"email")},this.props.inputProps.email)),f["default"].createElement(p["default"],u({type:"password",floatingLabelText:"Password",className:"email-sign-up-password",disabled:e,value:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form","password"]),errors:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),f["default"].createElement(p["default"],u({type:"password",floatingLabelText:"Password Confirmation",className:"email-sign-up-password-confirmation",disabled:e,value:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form","password_confirmation"]),errors:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"errors","password_confirmation"]),onChange:this.handleInput.bind(this,"password_confirmation")},this.props.inputProps.passwordConfirmation)),f["default"].createElement(h["default"],u({loading:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"loading"]),type:"submit",className:"email-sign-up-submit",primary:!0,style:{"float":"right"},icon:v.ContentSend,disabled:e,onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit),"Sign Up"))}}]),t}(f["default"].Component);g.defaultProps={next:function(){},inputProps:{email:{},password:{},submit:{}}},t["default"]=(0,b.connect)(function(e){return{auth:e.get("auth")}})(g)},function(e,t,n){"use strict";function r(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t["default"]=e,t}function o(e){return e&&e.__esModule?e:{"default":e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function u(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=o(l),c=n(35),p=r(c),d=n(48),h=o(d),y=n(4),b=o(y),v=function(e){function t(){return i(this,t),a(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return u(t,e),s(t,[{key:"renderErrorList",value:function(){var e=(this.props.errors||b["default"].fromJS([])).size;if(e>0){var t="error";return t+=1===e?"":"s",f["default"].createElement("div",{className:"has-error"},f["default"].createElement("p",null,"Please correct the following ",t,":"),this.props.errors.map(function(e,t){return f["default"].createElement("p",{key:t,className:"control-label modal-error-item",style:{paddingLeft:"20px",position:"relative"}},f["default"].createElement(h["default"],{viewBox:"0 0 50 50",color:p.red500,style:{position:"absolute",left:0,top:3}})," ",e)}))}return f["default"].createElement("p",{style:{paddingLeft:"20px",position:"relative"}},f["default"].createElement(h["default"],{viewBox:"0 0 50 50",style:{position:"absolute",left:0,top:3},color:p.red500})," There was an error processing this form. Please check each field and try again.")}},{key:"render",value:function(){return f["default"].createElement("div",{className:"auth-error-message"},this.renderErrorList())}}]),t}(f["default"].Component);v.defaultProps={errors:b["default"].fromJS([])},t["default"]=v},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(3),p=n(17),d=r(p),h=n(18),y=n(2),b=y.oAuthSignIn,v=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleClick",value:function(){this.props.dispatch(b({provider:this.props.provider,params:this.props.signInParams,endpointKey:this.getEndpoint()})).then(this.props.next)["catch"](function(){})}},{key:"render",value:function(){var e=this.props.auth.getIn(["user","isSignedIn"]),t=this.props.auth.getIn(["ui","oAuthSignInLoadingProvider"])===this.props.provider&&this.props.auth.getIn(["oAuthSignIn",this.getEndpoint(),"loading"]);return f["default"].createElement(d["default"],u({loading:t,icon:this.props.icon,className:this.props.className+" oauth-sign-in-submit",disabled:e,onClick:this.handleClick.bind(this)},this.props))}}]),t}(f["default"].Component);v.defaultProps={signInParams:{},children:f["default"].createElement("span",null,"OAuth Sign In"),icon:h.ActionExitToApp},t["default"]=(0,c.connect)(function(e){return{auth:e.get("auth")}})(v)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(30),p=r(c),d=n(17),h=r(d),y=n(3),b=n(18),v=n(2),g=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,v.requestPasswordResetFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){e.preventDefault();var t=this.props.auth.getIn(["requestPasswordReset",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,v.requestPasswordReset)(t,this.getEndpoint()))}},{key:"render",value:function(){var e=this.getEndpoint(),t=this.props.auth.getIn(["requestPasswordReset",e,"loading"]),n=this.props.auth.getIn(["user","isSignedIn"]),r=!this.props.auth.getIn(["requestPasswordReset",e,"form","email"]);return f["default"].createElement("form",{className:"redux-auth request-password-reset-form clearfix",style:{clear:"both",overflow:"hidden"},onSubmit:this.handleSubmit.bind(this)},f["default"].createElement(p["default"],u({type:"text",floatingLabelText:"Email Address",className:"request-password-reset-email",disabled:t||n,value:this.props.auth.getIn(["requestPasswordReset",e,"form","email"]),errors:this.props.auth.getIn(["requestPasswordReset",e,"errors","email"]),onChange:this.handleInput.bind(this,"email")},this.props.inputProps.email)),f["default"].createElement(h["default"],u({loading:t,type:"submit",primary:!0,icon:b.ContentSend,style:{"float":"right"},className:"request-password-reset-submit",disabled:n||r,onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit),"Request Password Reset"))}}]),t}(f["default"].Component);g.defaultProps={inputProps:{email:{},submit:{}}},t["default"]=(0,y.connect)(function(e){return{auth:e.get("auth")}})(g)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(17),p=r(c),d=n(49),h=r(d),y=n(3),b=n(2),v=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleClick",value:function(){this.props.dispatch((0,b.signOut)(this.getEndpoint())).then(this.props.next)["catch"](function(){})}},{key:"render",value:function(){var e=!this.props.auth.getIn(["user","isSignedIn"]);return f["default"].createElement(p["default"],u({loading:this.props.auth.getIn(["signOut",this.getEndpoint(),"loading"]),icon:this.props.icon,disabled:e,primary:!0,className:"sign-out-submit",onClick:this.handleClick.bind(this)},this.props))}}]),t}(f["default"].Component);v.defaultProps={next:function(){},children:f["default"].createElement("span",null,"Sign Out"),icon:h["default"]},t["default"]=(0,y.connect)(function(e){return{auth:e.get("auth")}})(v)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(30),p=r(c),d=n(17),h=r(d),y=n(49),b=r(y),v=n(2),g=n(3),m=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,v.updatePasswordFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){e.preventDefault();var t=this.props.auth.getIn(["updatePassword",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,v.updatePassword)(t,this.getEndpoint()))}},{key:"render",value:function(){var e=this.getEndpoint(),t=this.props.auth.getIn(["updatePassword",e,"loading"]),n=!this.props.auth.getIn(["user","isSignedIn"])||t||"email"!==this.props.auth.getIn(["user","attributes","provider"]);return f["default"].createElement("form",{className:"redux-auth update-password-form clearfix",onSubmit:this.handleSubmit.bind(this)},f["default"].createElement(p["default"],u({type:"password",floatingLabelText:"Password",disabled:n,className:"update-password-password",value:this.props.auth.getIn(["updatePassword",e,"form","password"]),errors:this.props.auth.getIn(["updatePassword",e,"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),f["default"].createElement(p["default"],u({type:"password",floatingLabelText:"Password Confirmation",className:"update-password-password-confirmation",disabled:n,value:this.props.auth.getIn(["updatePassword",e,"form","password_confirmation"]),errors:this.props.auth.getIn(["updatePassword",e,"errors","password_confirmation"]),onChange:this.handleInput.bind(this,"password_confirmation")},this.props.inputProps.passwordConfirmation)),f["default"].createElement(h["default"],u({loading:t,type:"submit",className:"update-password-submit",icon:b["default"],primary:!0,disabled:n,style:{"float":"right"},onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit),"Update Password"))}}]),t}(f["default"].Component);m.defaultProps={inputProps:{password:{},passwordConfirmation:{},submit:{}}},t["default"]=(0,g.connect)(function(e){return{auth:e.get("auth")}})(m)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(9),p=r(c),d=n(2),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(p["default"],u({},this.props,{containerClass:"destroy-account-error-modal",closeAction:d.hideDestroyAccountErrorModal,errorAddr:["destroyAccount","errors"],title:"Error"}))}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(9),p=r(c),d=n(3),h=n(2),y=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(p["default"],u({},this.props,{title:"Destroy Account Success",containerClass:"destroy-account-success-modal",closeAction:h.hideDestroyAccountSuccessModal}),f["default"].createElement("p",null,this.props.auth.getIn(["ui","destroyAccountMessage"])))}}]),t}(f["default"].Component);t["default"]=(0,d.connect)(function(e){return{auth:e.get("auth")}})(y)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),
-t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{closeAction:c.hideEmailSignInErrorModal,containerClass:"email-sign-in-error-modal",title:"Sign In Error",errorAddr:["emailSignIn","errors"]}))}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(9),p=r(c),d=n(3),h=n(2),y=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(p["default"],u({},this.props,{title:"Welcome Back",closeAction:h.hideEmailSignInSuccessModal,containerClass:"email-sign-in-success-modal"}),f["default"].createElement("p",null,"You are now signed in as ",this.props.auth.getIn(["user","attributes","email"]),"."))}}]),t}(f["default"].Component);t["default"]=(0,d.connect)(function(e){return{auth:e.get("auth")}})(y)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{title:"Sign Up Error",containerClass:"email-sign-up-form-error-modal",closeAction:c.hideEmailSignUpErrorModal,errorAddr:["emailSignUp","errors","full_messages"]}))}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(3),d=n(9),h=r(d),y=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(h["default"],u({},this.props,{containerClass:"email-sign-up-success-modal",closeAction:c.hideEmailSignUpSuccessModal,title:"Sign Up Success"}),f["default"].createElement("p",null,"A confirmation email was sent to your account at ",this.props.auth.getIn(["ui","emailSignUpAddress"]),". Follow the instructions in the email to complete registration."))}}]),t}(f["default"].Component);t["default"]=(0,p.connect)(function(e){return{auth:e.get("auth")}})(y)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{containerClass:"first-time-login-error-modal",closeAction:c.hideFirstTimeLoginErrorModal,title:"Confirmation Error"}),f["default"].createElement("p",null,"There was a problem confirming your account. Please try again."))}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(3),p=n(2),d=n(9),h=r(d),y=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(h["default"],u({},this.props,{containerClass:"first-time-login-success-modal",closeAction:p.hideFirstTimeLoginSuccessModal,title:"Welcome "+this.props.auth.getIn(["user","attributes","email"])+"!"}),f["default"].createElement("p",null,"Your account has been confirmed."))}}]),t}(f["default"].Component);t["default"]=(0,c.connect)(function(e){return{auth:e.get("auth")}})(y)},function(e,t,n){"use strict";function r(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t["default"]=e,t}function o(e){return e&&e.__esModule?e:{"default":e}}function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function a(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function u(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),f=n(1),c=o(f),p=n(35),d=r(p),h=n(2),y=n(48),b=o(y),v=n(9),g=o(v),m=function(e){function t(){return i(this,t),a(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return u(t,e),l(t,[{key:"render",value:function(){return c["default"].createElement(g["default"],s({},this.props,{containerClass:"oauth-sign-in-error-modal",closeAction:h.hideOAuthSignInErrorModal,title:"OAuth Sign In Error"}),c["default"].createElement("p",{className:"inline-error-item",style:{paddingLeft:"20px",position:"relative",marginBottom:"28px"}},c["default"].createElement(b["default"],{viewBox:"0 0 50 50",color:d.red500,style:{position:"absolute",left:0,top:3}}),"There was an error authenticating your account. Please try again."))}}]),t}(c["default"].Component);t["default"]=m},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(3),p=n(2),d=n(9),h=r(d),y=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(h["default"],u({},this.props,{containerClass:"oauth-sign-in-success-modal",title:"Welcome",closeAction:p.hideOAuthSignInSuccessModal}),f["default"].createElement("p",null,"You are now signed in via ",this.props.auth.getIn(["user","attributes","provider"]),"."))}}]),t}(f["default"].Component);t["default"]=(0,c.connect)(function(e){return{auth:e.get("auth")}})(y)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(18),p=n(49),d=r(p),h=n(47),y=n(17),b=r(y),v=n(30),g=r(v),m=n(3),_=n(2),O=n(2),w=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,O.updatePasswordModalFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(){var e=this.props.auth.getIn(["updatePasswordModal",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,O.updatePasswordModal)(e,this.getEndpoint()))}},{key:"close",value:function(){this.props.dispatch((0,_.hidePasswordResetSuccessModal)())}},{key:"render",value:function(){var e=this.getEndpoint(),t=this.props.auth.getIn(["updatePasswordModal",e,"loading"]);return f["default"].createElement(h.MuiThemeProvider,null,f["default"].createElement(c.Dialog,{open:this.props.show,contentClassName:"redux-auth-modal password-reset-success-modal",actions:[f["default"].createElement(c.Button,u({key:"cancel",className:"password-reset-success-modal-close",onClick:this.close.bind(this),secondary:!0},this.props.inputProps.cancel),"Cancel"),f["default"].createElement(b["default"],u({key:"submit"},this.props,{loading:t,type:"submit",primary:!0,className:"password-reset-success-modal-submit",icon:d["default"],onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit))],title:"Reset Your Password"},f["default"].createElement("form",null,f["default"].createElement(g["default"],u({type:"password",label:"Password",placeholder:"Password",disabled:t,className:"password-reset-success-modal-password",value:this.props.auth.getIn(["updatePasswordModal",e,"form","password"]),errors:this.props.auth.getIn(["updatePasswordModal",e,"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),f["default"].createElement(g["default"],u({type:"password",label:"Password Confirmation",placeholder:"Password Confirmation",disabled:t,className:"password-reset-success-modal-password-confirmation",value:this.props.auth.getIn(["updatePasswordModal",e,"form","password_confirmation"]),errors:this.props.auth.getIn(["updatePasswordModal",e,"errors","password_confirmation"]),onChange:this.handleInput.bind(this,"password_confirmation")},this.props.inputProps.passwordConfirmation)))))}}]),t}(f["default"].Component);w.defaultProps={show:!1,inputProps:{}},t["default"]=(0,m.connect)(function(e){return{auth:e.get("auth")}})(w)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{containerClass:"request-password-reset-error-modal",closeAction:c.hidePasswordResetRequestErrorModal,title:"Error",errorAddr:["requestPassswordReset","errors"]}))}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(3),p=n(2),d=n(9),h=r(d),y=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(h["default"],u({},this.props,{containerClass:"request-password-reset-success-modal",closeAction:p.hidePasswordResetRequestSuccessModal,title:"Password Reset Request Success"}),f["default"].createElement("p",null,this.props.auth.getIn(["ui","requestPasswordResetSuccessMessage"])))}}]),t}(f["default"].Component);t["default"]=(0,c.connect)(function(e){return{auth:e.get("auth")}})(y)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{containerClass:"sign-out-error-modal",title:"Sign Out Error",closeAction:c.hideSignOutErrorModal}),f["default"].createElement("p",null,"The server encountered an error while trying to sign you out. Your account information has been wiped from this browser, but you may want to sign in and then sign back out again to resolve any issues."))}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{containerClass:"sign-out-success-modal",closeAction:c.hideSignOutSuccessModal,title:"Goodbye!"}),"You have been successfully signed out.")}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{containerClass:"update-password-error-modal",closeAction:c.hideUpdatePasswordErrorModal,title:"Error",errorAddr:["updatePassword","errors","full_messages"]}))}}]),t}(f["default"].Component);t["default"]=h},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function a(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},s=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),l=n(1),f=r(l),c=n(2),p=n(9),d=r(p),h=function(e){function t(){return o(this,t),i(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return a(t,e),s(t,[{key:"render",value:function(){return f["default"].createElement(d["default"],u({},this.props,{containerClass:"update-password-success-modal",closeAction:c.hideUpdatePasswordSuccessModal,title:"Success"}),f["default"].createElement("p",null,"Your password has been successfully changed."))}}]),t}(f["default"].Component);t["default"]=h},function(e,t){"use strict";function n(e){return e.replace(o,r)}function r(e,t){return t?t.toUpperCase():""}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n;var o=/[-\s]+(.)?/g},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0}),t.supportedValue=t.supportedProperty=t.prefix=void 0;var o=n(55),i=r(o),a=n(223),u=r(a),s=n(224),l=r(s);t["default"]={prefix:i["default"],supportedProperty:u["default"],supportedValue:l["default"]},/**
-	    * CSS Vendor prefix detection and property feature testing.
-	    *
-	    * @copyright Oleg Slobodskoi 2015
-	    * @website https://github.com/jsstyles/css-vendor
-	    * @license MIT
-	    */
-t.prefix=i["default"],t.supportedProperty=u["default"],t.supportedValue=l["default"]},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e){return c?null!=p[e]?p[e]:((0,f["default"])(e)in c.style?p[e]=e:s["default"].js+(0,f["default"])("-"+e)in c.style?p[e]=s["default"].css+e:p[e]=!1,p[e]):e}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o;var i=n(44),a=r(i),u=n(55),s=r(u),l=n(221),f=r(l),c=void 0,p={};if(a["default"]){c=document.createElement("p");var d=window.getComputedStyle(document.documentElement,"");for(var h in d)isNaN(h)||(p[d[h]]=d[h])}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!f)return t;if("string"!=typeof t||!isNaN(parseInt(t,10)))return t;var n=e+t;if(null!=l[n])return l[n];try{f.style[e]=t}catch(r){return l[n]=!1,!1}return""!==f.style[e]?l[n]=t:(t=s["default"].css+t,"-ms-flex"===t&&(t="-ms-flexbox"),f.style[e]=t,""!==f.style[e]&&(l[n]=t)),l[n]||(l[n]=!1),f.style[e]="",l[n]}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o;var i=n(44),a=r(i),u=n(55),s=r(u),l={},f=void 0;a["default"]&&(f=document.createElement("p"))},function(e,t){"use strict";function n(e,t){return e===t?0!==e||0!==t||1/e===1/t:e!==e&&t!==t}function r(e,t){if(n(e,t))return!0;if("object"!=typeof e||null===e||"object"!=typeof t||null===t)return!1;var r=Object.keys(e),i=Object.keys(t);if(r.length!==i.length)return!1;for(var a=0;a<r.length;a++)if(!o.call(t,r[a])||!n(e[r[a]],t[r[a]]))return!1;return!0}var o=Object.prototype.hasOwnProperty;e.exports=r},function(e,t){"use strict";function n(e,t,c){if("string"!=typeof t){if(f){var p=l(t);p&&p!==f&&n(e,p,c)}var d=a(t);u&&(d=d.concat(u(t)));for(var h=0;h<d.length;++h){var y=d[h];if(!(r[y]||o[y]||c&&c[y])){var b=s(t,y);try{i(e,y,b)}catch(v){}}}return e}return e}var r={childContextTypes:!0,contextTypes:!0,defaultProps:!0,displayName:!0,getDefaultProps:!0,getDerivedStateFromProps:!0,mixins:!0,propTypes:!0,type:!0},o={name:!0,length:!0,prototype:!0,caller:!0,callee:!0,arguments:!0,arity:!0},i=Object.defineProperty,a=Object.getOwnPropertyNames,u=Object.getOwnPropertySymbols,s=Object.getOwnPropertyDescriptor,l=Object.getPrototypeOf,f=l&&l(Object);e.exports=n},function(e,t){"use strict";function n(e){return e in i?i[e]:i[e]=e.replace(r,"-$&").toLowerCase().replace(o,"-ms-")}var r=/[A-Z]/g,o=/^ms-/,i={};e.exports=n},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e){var t={};for(var n in e)t[(0,u["default"])(n)]=e[n];return e.fallbacks&&(Array.isArray(e.fallbacks)?t.fallbacks=e.fallbacks.map(o):t.fallbacks=o(e.fallbacks)),t}function i(){function e(e){if(Array.isArray(e)){for(var t=0;t<e.length;t++)e[t]=o(e[t]);return e}return o(e)}function t(e,t,n){var r=(0,u["default"])(t);return t===r?e:(n.prop(r,e),null)}return{onProcessStyle:e,onChangeValue:t}}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=i;var a=n(227),u=r(a)},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t["default"]={"animation-delay":"ms","animation-duration":"ms","background-position":"px","background-position-x":"px","background-position-y":"px","background-size":"px",border:"px","border-bottom":"px","border-bottom-left-radius":"px","border-bottom-right-radius":"px","border-bottom-width":"px","border-left":"px","border-left-width":"px","border-radius":"px","border-right":"px","border-right-width":"px","border-spacing":"px","border-top":"px","border-top-left-radius":"px","border-top-right-radius":"px","border-top-width":"px","border-width":"px","border-after-width":"px","border-before-width":"px","border-end-width":"px","border-horizontal-spacing":"px","border-start-width":"px","border-vertical-spacing":"px",bottom:"px","box-shadow":"px","column-gap":"px","column-rule":"px","column-rule-width":"px","column-width":"px","flex-basis":"px","font-size":"px","font-size-delta":"px",height:"px",left:"px","letter-spacing":"px","logical-height":"px","logical-width":"px",margin:"px","margin-after":"px","margin-before":"px","margin-bottom":"px","margin-left":"px","margin-right":"px","margin-top":"px","max-height":"px","max-width":"px","margin-end":"px","margin-start":"px","mask-position-x":"px","mask-position-y":"px","mask-size":"px","max-logical-height":"px","max-logical-width":"px","min-height":"px","min-width":"px","min-logical-height":"px","min-logical-width":"px",motion:"px","motion-offset":"px",outline:"px","outline-offset":"px","outline-width":"px",padding:"px","padding-bottom":"px","padding-left":"px","padding-right":"px","padding-top":"px","padding-after":"px","padding-before":"px","padding-end":"px","padding-start":"px","perspective-origin-x":"%","perspective-origin-y":"%",perspective:"px",right:"px","shape-margin":"px",size:"px","text-indent":"px","text-stroke":"px","text-stroke-width":"px",top:"px","transform-origin":"%","transform-origin-x":"%","transform-origin-y":"%","transform-origin-z":"%","transition-delay":"ms","transition-duration":"ms","vertical-align":"px",width:"px","word-spacing":"px","box-shadow-x":"px","box-shadow-y":"px","box-shadow-blur":"px","box-shadow-spread":"px","font-line-height":"px","text-shadow-x":"px","text-shadow-y":"px","text-shadow-blur":"px"}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e){var t=/(-[a-z])/g,n=function(e){return e[1].toUpperCase()},r={};for(var o in e)r[o]=e[o],r[o.replace(t,n)]=e[o];return r}function i(e,t,n){if(!t)return t;var r=t,o="undefined"==typeof t?"undefined":u(t);switch("object"===o&&Array.isArray(t)&&(o="array"),o){case"object":if("fallbacks"===e){for(var a in t)t[a]=i(a,t[a],n);break}for(var s in t)t[s]=i(e+"-"+s,t[s],n);break;case"array":for(var l=0;l<t.length;l++)t[l]=i(e,t[l],n);break;case"number":0!==t&&(r=t+(n[e]||f[e]||""))}return r}function a(){function e(e,t){if("style"!==t.type)return e;for(var n in e)e[n]=i(n,e[n],r);return e}function t(e,t){return i(t,e,r)}var n=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r=o(n);return{onProcessStyle:e,onChangeValue:t}}Object.defineProperty(t,"__esModule",{value:!0});var u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t["default"]=a;var s=n(229),l=r(s),f=o(l["default"])},function(e,t,n){"use strict";function r(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function o(e,t){for(var n=e.split(y),r="",o=0;o<n.length;o++)r+=t+" "+n[o].trim(),n[o+1]&&(r+=", ");return r}function i(e){var t=e.options,n=e.style,r=n[c];if(r){for(var i in r)t.sheet.addRule(i,r[i],s({},t,{selector:o(i,e.selector)}));delete n[c]}}function a(e){var t=e.options,n=e.style;for(var r in n)if(r.substr(0,c.length)===c){var i=o(r.substr(c.length),e.selector);t.sheet.addRule(i,n[r],s({},t,{selector:i})),delete n[r]}}function u(){function e(e,t,n){if(e===c)return new d(e,t,n);if("@"===e[0]&&e.substr(0,p.length)===p)return new h(e,t,n);var r=n.parent;return r&&("global"!==r.type&&"global"!==r.options.parent.type||(n.global=!0)),n.global&&(n.selector=e),null}function t(e){"style"===e.type&&(i(e),a(e))}return{onCreateRule:e,onProcessRule:t}}Object.defineProperty(t,"__esModule",{value:!0});var s=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}();t["default"]=u;var f=n(73),c="@global",p="@global ",d=function(){function e(t,n,o){r(this,e),this.type="global",this.key=t,this.options=o,this.rules=new f.RuleList(s({},o,{parent:this}));for(var i in n)this.rules.add(i,n[i],{selector:i});this.rules.process()}return l(e,[{key:"getRule",value:function(e){return this.rules.get(e)}},{key:"addRule",value:function(e,t,n){var r=this.rules.add(e,t,n);return this.options.jss.plugins.onProcessRule(r),r}},{key:"indexOf",value:function(e){return this.rules.indexOf(e)}},{key:"toString",value:function(){return this.rules.toString()}}]),e}(),h=function(){function e(t,n,o){r(this,e),this.name=t,this.options=o;var i=t.substr(p.length);this.rule=o.jss.createRule(i,n,s({},o,{parent:this,selector:i}))}return l(e,[{key:"toString",value:function(e){return this.rule.toString(e)}}]),e}(),y=/\s*,\s*/g},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(){function e(e){return function(t,n){var r=e.getRule(n);return r?r.selector:((0,u["default"])(!1,"[JSS] Could not find the referenced rule %s in %s.",n,e.options.meta||e),n)}}function t(e,t){for(var n=t.split(s),r=e.split(s),i="",a=0;a<n.length;a++)for(var u=n[a],f=0;f<r.length;f++){var c=r[f];i&&(i+=", "),i+=o(c)?c.replace(l,u):u+" "+c}return i}function n(e,t,n){if(n)return i({},n,{index:n.index+1});var r=e.options.nestingLevel;return r=void 0===r?1:r+1,i({},e.options,{nestingLevel:r,index:t.indexOf(e)+1})}function r(r,a){if("style"!==a.type)return r;var u=a.options.parent,s=void 0,l=void 0;for(var c in r){var p=o(c),d="@"===c[0];if(p||d){if(s=n(a,u,s),p){var h=t(c,a.selector);l||(l=e(u)),h=h.replace(f,l),u.addRule(h,r[c],i({},s,{selector:h}))}else d&&u.addRule(c,null,s).addRule(a.key,r[c],{selector:a.selector});delete r[c]}}return r}var o=function(e){return e.indexOf("&")!==-1};return{onProcessStyle:r}}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};t["default"]=o;var a=n(233),u=r(a),s=/\s*,\s*/g,l=/&/g,f=/\$([\w-]+)/g},27,function(e,t){"use strict";function n(){function e(e,t){return e.length-t.length}function t(t,n){if("style"!==n.type)return t;var r={},o=Object.keys(t).sort(e);for(var i in o)r[o[i]]=t[o[i]];return r}return{onProcessStyle:t}}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n},function(e,t,n){"use strict";function r(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t["default"]=e,t}function o(){function e(e){"keyframes"===e.type&&(e.key="@"+a.prefix.css+e.key.substr(1))}function t(e,t){if("style"!==t.type)return e;for(var n in e){var r=e[n],o=!1,i=a.supportedProperty(n);i&&i!==n&&(o=!0);var u=!1,s=a.supportedValue(i,r);s&&s!==r&&(u=!0),(o||u)&&(o&&delete e[n],e[i||n]=s||r)}return e}function n(e,t){return a.supportedValue(t,e)}return{onProcessRule:e,onProcessStyle:t,onChangeValue:n}}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=o;var i=n(222),a=r(i)},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},u=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),s=n(44),l=r(s),f=n(72),c=r(f),p=n(237),d=r(p),h=n(241),y=r(h),b=n(240),v=r(b),g=n(239),m=r(g),_=n(56),O=r(_),w=n(26),P=r(w),j=n(74),E=r(j),x=n(45),S=r(x),k=n(242),M=r(k),C=n(243),A=r(C),R=y["default"].concat([v["default"],m["default"]]),I=0,T=function(){function e(t){o(this,e),this.id=I++,this.version="9.8.7",this.plugins=new d["default"],this.options={createGenerateClassName:E["default"],Renderer:l["default"]?M["default"]:A["default"],plugins:[]},this.generateClassName=(0,E["default"])(),this.use.apply(this,R),this.setup(t)}return u(e,[{key:"setup",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return e.createGenerateClassName&&(this.options.createGenerateClassName=e.createGenerateClassName,this.generateClassName=e.createGenerateClassName()),null!=e.insertionPoint&&(this.options.insertionPoint=e.insertionPoint),(e.virtual||e.Renderer)&&(this.options.Renderer=e.Renderer||(e.virtual?A["default"]:M["default"])),e.plugins&&this.use.apply(this,e.plugins),this}},{key:"createStyleSheet",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=t.index;"number"!=typeof n&&(n=0===O["default"].index?0:O["default"].index+1);var r=new c["default"](e,a({},t,{jss:this,generateClassName:t.generateClassName||this.generateClassName,insertionPoint:this.options.insertionPoint,Renderer:this.options.Renderer,index:n}));return this.plugins.onProcessSheet(r),r}},{key:"removeStyleSheet",value:function(e){return e.detach(),O["default"].remove(e),this}},{key:"createRule",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};"object"===("undefined"==typeof e?"undefined":i(e))&&(n=t,t=e,e=void 0);var r=n;r.jss=this,r.Renderer=this.options.Renderer,r.generateClassName||(r.generateClassName=this.generateClassName),r.classes||(r.classes={});var o=(0,S["default"])(e,t,r);return!r.selector&&o instanceof P["default"]&&(o.selector="."+r.generateClassName(o)),this.plugins.onProcessRule(o),o}},{key:"use",value:function(){for(var e=this,t=arguments.length,n=Array(t),r=0;r<t;r++)n[r]=arguments[r];return n.forEach(function(t){e.options.plugins.indexOf(t)===-1&&(e.options.plugins.push(t),e.plugins.use(t))}),this}}]),e}();t["default"]=T},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),a=n(27),u=r(a),s=function(){function e(){o(this,e),this.hooks={onCreateRule:[],onProcessRule:[],onProcessStyle:[],onProcessSheet:[],onChangeValue:[],onUpdate:[]}}return i(e,[{key:"onCreateRule",value:function(e,t,n){for(var r=0;r<this.hooks.onCreateRule.length;r++){var o=this.hooks.onCreateRule[r](e,t,n);if(o)return o}return null}},{key:"onProcessRule",value:function(e){if(!e.isProcessed){for(var t=e.options.sheet,n=0;n<this.hooks.onProcessRule.length;n++)this.hooks.onProcessRule[n](e,t);e.style&&this.onProcessStyle(e.style,e,t),e.isProcessed=!0}}},{key:"onProcessStyle",value:function(e,t,n){for(var r=e,o=0;o<this.hooks.onProcessStyle.length;o++)r=this.hooks.onProcessStyle[o](r,t,n),t.style=r}},{key:"onProcessSheet",value:function(e){for(var t=0;t<this.hooks.onProcessSheet.length;t++)this.hooks.onProcessSheet[t](e)}},{key:"onUpdate",value:function(e,t,n){for(var r=0;r<this.hooks.onUpdate.length;r++)this.hooks.onUpdate[r](e,t,n)}},{key:"onChangeValue",value:function(e,t,n){for(var r=e,o=0;o<this.hooks.onChangeValue.length;o++)r=this.hooks.onChangeValue[o](r,t,n);return r}},{key:"use",value:function(e){for(var t in e)this.hooks[t]?this.hooks[t].push(e[t]):(0,u["default"])(!1,'[JSS] Unknown hook "%s".',t)}}]),e}();t["default"]=s},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),a=n(27),u=r(a),s=function(){function e(){o(this,e),this.sheets=[],this.refs=[],this.keys=[]}return i(e,[{key:"get",value:function(e){var t=this.keys.indexOf(e);return this.sheets[t]}},{key:"add",value:function(e,t){var n=this.sheets,r=this.refs,o=this.keys,i=n.indexOf(t);return i!==-1?i:(n.push(t),r.push(0),o.push(e),n.length-1)}},{key:"manage",value:function(e){var t=this.keys.indexOf(e),n=this.sheets[t];return 0===this.refs[t]&&n.attach(),this.refs[t]++,this.keys[t]||this.keys.splice(t,0,e),n}},{key:"unmanage",value:function(e){var t=this.keys.indexOf(e);return t===-1?void(0,u["default"])(!1,"SheetsManager: can't find sheet to unmanage"):void(this.refs[t]>0&&(this.refs[t]--,0===this.refs[t]&&this.sheets[t].detach()))}},{key:"size",get:function(){return this.keys.length}}]),e}();t["default"]=s},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(31),i=r(o),a=n(26),u=r(a),s=n(45),l=r(s),f=Date.now(),c="fnValues"+f,p="fnStyle"+ ++f;t["default"]={onCreateRule:function(e,t,n){if("function"!=typeof t)return null;var r=(0,l["default"])(e,{},n);return r[p]=t,r},onProcessStyle:function(e,t){var n={};for(var r in e){var o=e[r];"function"==typeof o&&(delete e[r],n[r]=o)}return t=t,t[c]=n,e},onUpdate:function(e,t){if(t.rules instanceof i["default"])return void t.rules.update(e);if(t instanceof u["default"]){if(t=t,t[c])for(var n in t[c])t.prop(n,t[c][n](e));t=t;var r=t[p];if(r){var o=r(e);for(var a in o)t.prop(a,o[a])}}}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(26),i=r(o),a=n(45),u=r(a),s=n(75),l=r(s);t["default"]={onCreateRule:function(e,t,n){if(!(0,l["default"])(t))return null;var r=t,o=(0,u["default"])(e,{},n);return r.subscribe(function(e){for(var t in e)o.prop(t,e[t])}),o},onProcessRule:function(e){if(e instanceof i["default"]){var t=e,n=t.style,r=function(e){var r=n[e];return(0,l["default"])(r)?(delete n[e],void r.subscribe({next:function(n){t.prop(e,n)}})):"continue"};for(var o in n){r(o)}}}}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(247),i=r(o),a=n(246),u=r(a),s=n(244),l=r(s),f=n(245),c=r(f),p=n(248),d=r(p),h={"@charset":i["default"],"@import":i["default"],"@namespace":i["default"],"@keyframes":u["default"],"@media":l["default"],"@supports":l["default"],"@font-face":c["default"],"@viewport":d["default"],"@-ms-viewport":d["default"]},y=Object.keys(h).map(function(e){var t=new RegExp("^"+e),n=h[e],r=function(e,r,o){return t.test(e)?new n(e,r,o):null};return{onCreateRule:r}});t["default"]=y},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function i(e,t){try{return e.style.getPropertyValue(t)}catch(n){return""}}function a(e,t,n){try{var r=n;if(Array.isArray(n)&&(r=(0,w["default"])(n,!0),"!important"===n[n.length-1]))return e.style.setProperty(t,r,"important"),!0;e.style.setProperty(t,r)}catch(o){return!1}return!0}function u(e,t){try{e.style.removeProperty(t)}catch(n){(0,b["default"])(!1,'[JSS] DOMException "%s" was thrown. Tried to remove property "%s".',n.message,t)}}function s(e,t){return e.selectorText=t,e.selectorText===t}function l(e,t){for(var n=0;n<e.length;n++){var r=e[n];if(r.attached&&r.options.index>t.index&&r.options.insertionPoint===t.insertionPoint)return r}return null}function f(e,t){for(var n=e.length-1;n>=0;n--){var r=e[n];if(r.attached&&r.options.insertionPoint===t.insertionPoint)return r}return null}function c(e){for(var t=x(),n=0;n<t.childNodes.length;n++){var r=t.childNodes[n];if(8===r.nodeType&&r.nodeValue.trim()===e)return r}return null}function p(e){var t=g["default"].registry;if(t.length>0){var n=l(t,e);if(n)return n.renderer.element;if(n=f(t,e))return n.renderer.element.nextElementSibling}var r=e.insertionPoint;if(r&&"string"==typeof r){var o=c(r);if(o)return o.nextSibling;(0,b["default"])("jss"===r,'[JSS] Insertion point "%s" not found.',r)}return null}function d(e,t){var n=t.insertionPoint,r=p(t);if(r){var o=r.parentNode;return void(o&&o.insertBefore(e,r))}if(n&&"number"==typeof n.nodeType){var i=n,a=i.parentNode;return void(a?a.insertBefore(e,i.nextSibling):(0,b["default"])(!1,"[JSS] Insertion point is not in the DOM."))}x().insertBefore(e,r)}Object.defineProperty(t,"__esModule",{value:!0});var h=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),y=n(27),b=r(y),v=n(56),g=r(v),m=n(26),_=r(m),O=n(46),w=r(O),P=function(e){var t=void 0;return function(){return t||(t=e()),t}},j={STYLE_RULE:1,KEYFRAMES_RULE:7},E=function(){var e=function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:0;return e.substr(t,e.indexOf("{")-1)};return function(t){if(t.type===j.STYLE_RULE)return t.selectorText;if(t.type===j.KEYFRAMES_RULE){var n=t.name;if(n)return"@keyframes "+n;var r=t.cssText;return"@"+e(r,r.indexOf("keyframes"))}return e(t.cssText)}}(),x=P(function(){return document.head||document.getElementsByTagName("head")[0]}),S=function(){var e=void 0,t=!1;return function(n){var r={};e||(e=document.createElement("style"));for(var o=0;o<n.length;o++){var i=n[o];if(i instanceof _["default"]){var a=i.selector;if(a&&a.indexOf("\\")!==-1){t||(x().appendChild(e),t=!0),e.textContent=a+" {}";var u=e,s=u.sheet;if(s){var l=s.cssRules;l&&(r[l[0].selectorText]=i.key)}}}}return t&&(x().removeChild(e),t=!1),r}}(),k=P(function(){var e=document.querySelector('meta[property="csp-nonce"]');return e?e.getAttribute("content"):null}),M=function(){function e(t){o(this,e),this.getPropertyValue=i,this.setProperty=a,this.removeProperty=u,this.setSelector=s,this.getKey=E,this.getUnescapedKeysMap=S,this.hasInsertedRules=!1,t&&g["default"].add(t),this.sheet=t;var n=this.sheet?this.sheet.options:{},r=n.media,l=n.meta,f=n.element;this.element=f||document.createElement("style"),this.element.setAttribute("data-jss",""),r&&this.element.setAttribute("media",r),l&&this.element.setAttribute("data-meta",l);var c=k();c&&this.element.setAttribute("nonce",c)}return h(e,[{key:"attach",value:function(){!this.element.parentNode&&this.sheet&&(this.hasInsertedRules&&(this.deploy(),this.hasInsertedRules=!1),d(this.element,this.sheet.options))}},{key:"detach",value:function(){this.element.parentNode.removeChild(this.element)}},{key:"deploy",value:function(){this.sheet&&(this.element.textContent="\n"+this.sheet.toString()+"\n")}},{key:"insertRule",value:function(e,t){var n=this.element.sheet,r=n.cssRules,o=e.toString();if(t||(t=r.length),!o)return!1;try{n.insertRule(o,t)}catch(i){return(0,b["default"])(!1,"[JSS] Can not insert an unsupported rule \n\r%s",e),!1}return this.hasInsertedRules=!0,r[t]}},{key:"deleteRule",value:function(e){var t=this.element.sheet,n=this.indexOf(e);return n!==-1&&(t.deleteRule(n),!0)}},{key:"indexOf",value:function(e){for(var t=this.element.sheet.cssRules,n=0;n<t.length;n++)if(e===t[n])return n;return-1}},{key:"replaceRule",value:function(e,t){var n=this.indexOf(e),r=this.insertRule(t,n);return this.element.sheet.deleteRule(n),r}},{key:"getRules",value:function(){return this.element.sheet.cssRules}}]),e}();t["default"]=M},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=function(){function e(){n(this,e)}return r(e,[{key:"setProperty",value:function(){return!0}},{key:"getPropertyValue",value:function(){return""}},{key:"removeProperty",value:function(){}},{key:"setSelector",value:function(){return!0}},{key:"getKey",value:function(){return""}},{key:"attach",value:function(){}},{key:"detach",value:function(){}},{key:"deploy",value:function(){}},{key:"insertRule",value:function(){return!1}},{key:"deleteRule",value:function(){return!0}},{key:"replaceRule",value:function(){return!1}},{key:"getRules",value:function(){}},{key:"indexOf",value:function(){return-1}}]),e}();t["default"]=o},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),u=n(31),s=r(u),l=function(){function e(t,n,r){o(this,e),this.type="conditional",this.isProcessed=!1,this.key=t,this.options=r,this.rules=new s["default"](i({},r,{parent:this}));for(var a in n)this.rules.add(a,n[a]);this.rules.process()}return a(e,[{key:"getRule",value:function(e){return this.rules.get(e)}},{key:"indexOf",value:function(e){return this.rules.indexOf(e)}},{key:"addRule",value:function(e,t,n){var r=this.rules.add(e,t,n);return this.options.jss.plugins.onProcessRule(r),r}},{key:"toString",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{indent:1},t=this.rules.toString(e);return t?this.key+" {\n"+t+"\n}":""}}]),e}();t["default"]=l},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),a=n(57),u=r(a),s=function(){function e(t,n,r){o(this,e),this.type="font-face",this.isProcessed=!1,this.key=t,this.style=n,this.options=r}return i(e,[{key:"toString",value:function(e){if(Array.isArray(this.style)){for(var t="",n=0;n<this.style.length;n++)t+=(0,u["default"])(this.key,this.style[n]),this.style[n+1]&&(t+="\n");return t}return(0,u["default"])(this.key,this.style,e)}}]),e}();t["default"]=s},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),u=n(31),s=r(u),l=function(){function e(t,n,r){o(this,e),this.type="keyframes",this.isProcessed=!1,this.key=t,this.options=r,this.rules=new s["default"](i({},r,{parent:this}));for(var a in n)this.rules.add(a,n[a],i({},this.options,{parent:this,selector:a}));this.rules.process()}return a(e,[{key:"toString",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{indent:1},t=this.rules.toString(e);return t&&(t+="\n"),this.key+" {\n"+t+"}"}}]),e}();t["default"]=l},function(e,t){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=function(){function e(t,r,o){n(this,e),this.type="simple",this.isProcessed=!1,this.key=t,this.value=r,this.options=o}return r(e,[{key:"toString",value:function(e){if(Array.isArray(this.value)){for(var t="",n=0;n<this.value.length;n++)t+=this.key+" "+this.value[n]+";",this.value[n+1]&&(t+="\n");return t}return this.key+" "+this.value+";"}}]),e}();t["default"]=o},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}Object.defineProperty(t,"__esModule",{value:!0});var i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),a=n(57),u=r(a),s=function(){function e(t,n,r){o(this,e),this.type="viewport",this.isProcessed=!1,this.key=t,this.style=n,this.options=r}return i(e,[{key:"toString",value:function(e){return(0,u["default"])(this.key,this.style,e)}}]),e}();t["default"]=s},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e){if(null==e)return e;var t="undefined"==typeof e?"undefined":i(e);if("string"===t||"number"===t||"function"===t)return e;if(s(e))return e.map(o);if((0,u["default"])(e))return e;var n={};for(var r in e){var a=e[r];"object"!==("undefined"==typeof a?"undefined":i(a))?n[r]=a:n[r]=o(a)}return n}Object.defineProperty(t,"__esModule",{value:!0});var i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t["default"]=o;var a=n(75),u=r(a),s=Array.isArray},function(e,t,n){(function(e){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=e.CSS,r="production",o=/([[\].#*$><+~=|^:(),"'`])/g;t["default"]=function(e){return"production"===r?e:n&&n.escape?n.escape(e):e.replace(o,"\\$1")}}).call(t,function(){return this}())},function(e,t){"use strict";function n(e){var t=null;for(var o in e){var i=e[o],a="undefined"==typeof i?"undefined":r(i);if("function"===a)t||(t={}),t[o]=i;else if("object"===a&&null!==i&&!Array.isArray(i)){var u=n(i);u&&(t||(t={}),t[o]=u)}}return t}Object.defineProperty(t,"__esModule",{value:!0});var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t["default"]=n},function(e,t){(function(e){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n="2f1acc6c3a606b082e5eef5e54414ffb";null==e[n]&&(e[n]=0),t["default"]=e[n]++}).call(t,function(){return this}())},function(e,t,n){(function(e,r){"use strict";function o(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var i,a=n(254),u=o(a);i="undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof e?e:r;var s=(0,u["default"])(i);t["default"]=s}).call(t,function(){return this}(),n(2)(e))},function(e,t){"use strict";function n(e){var t,n=e.Symbol;return"function"==typeof n?n.observable?t=n.observable:(t=n("observable"),n.observable=t):t="@@observable",t}Object.defineProperty(t,"__esModule",{value:!0}),t["default"]=n},function(e,t,n){"use strict";function r(){}var o=n(256);e.exports=function(){function e(e,t,n,r,i,a){if(a!==o){var u=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");
-throw u.name="Invariant Violation",u}}function t(){return e}e.isRequired=e;var n={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t};return n.checkPropTypes=r,n.PropTypes=n,n}},function(e,t){"use strict";var n="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";e.exports=n},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t["default"]=e,t}function i(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(t,"__esModule",{value:!0});var a,u=n(32),s=n(77),l=o(s),f=n(258),c=r(f);t["default"]=(a={},i(a,l.jss,c["default"].jss),i(a,l.sheetOptions,u.object),i(a,l.sheetsRegistry,c["default"].registry),i(a,l.managers,u.object),a)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(32);t["default"]={jss:(0,r.shape)({options:(0,r.shape)({createGenerateClassName:r.func.isRequired}).isRequired,createStyleSheet:r.func.isRequired,removeStyleSheet:r.func.isRequired}),registry:(0,r.shape)({add:r.func.isRequired,toString:r.func.isRequired})}},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(58),i=r(o),a=function(e,t){return t+"("+(0,i["default"])(e)+")"};t["default"]=a},,function(e,t){e.exports=require("classnames")}])));
+(function(e, a) { for(var i in a) e[i] = a[i]; }(exports, /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.ButtonLoader = exports.TokenBridge = exports.DestroyAccountButton = exports.UpdatePasswordForm = exports.OAuthSignInButton = exports.RequestPasswordResetForm = exports.SignOutButton = exports.EmailSignUpForm = exports.EmailSignInForm = exports.AuthGlobals = undefined;
+
+	var _AuthGlobals2 = __webpack_require__(131);
+
+	var _AuthGlobals3 = _interopRequireDefault(_AuthGlobals2);
+
+	var _EmailSignInForm2 = __webpack_require__(133);
+
+	var _EmailSignInForm3 = _interopRequireDefault(_EmailSignInForm2);
+
+	var _EmailSignUpForm2 = __webpack_require__(134);
+
+	var _EmailSignUpForm3 = _interopRequireDefault(_EmailSignUpForm2);
+
+	var _SignOutButton2 = __webpack_require__(138);
+
+	var _SignOutButton3 = _interopRequireDefault(_SignOutButton2);
+
+	var _RequestPasswordResetForm2 = __webpack_require__(137);
+
+	var _RequestPasswordResetForm3 = _interopRequireDefault(_RequestPasswordResetForm2);
+
+	var _OAuthSignInButton2 = __webpack_require__(136);
+
+	var _OAuthSignInButton3 = _interopRequireDefault(_OAuthSignInButton2);
+
+	var _UpdatePasswordForm2 = __webpack_require__(139);
+
+	var _UpdatePasswordForm3 = _interopRequireDefault(_UpdatePasswordForm2);
+
+	var _DestroyAccountButton2 = __webpack_require__(132);
+
+	var _DestroyAccountButton3 = _interopRequireDefault(_DestroyAccountButton2);
+
+	var _TokenBridge2 = __webpack_require__(19);
+
+	var _TokenBridge3 = _interopRequireDefault(_TokenBridge2);
+
+	var _ButtonLoader2 = __webpack_require__(16);
+
+	var _ButtonLoader3 = _interopRequireDefault(_ButtonLoader2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.AuthGlobals = _AuthGlobals3.default;
+	exports.EmailSignInForm = _EmailSignInForm3.default;
+	exports.EmailSignUpForm = _EmailSignUpForm3.default;
+	exports.SignOutButton = _SignOutButton3.default;
+	exports.RequestPasswordResetForm = _RequestPasswordResetForm3.default;
+	exports.OAuthSignInButton = _OAuthSignInButton3.default;
+	exports.UpdatePasswordForm = _UpdatePasswordForm3.default;
+	exports.DestroyAccountButton = _DestroyAccountButton3.default;
+	exports.TokenBridge = _TokenBridge3.default;
+	exports.ButtonLoader = _ButtonLoader3.default;
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	module.exports = require("react");
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports = require("redux-auth");
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-redux");
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = require("immutable");
+
+/***/ },
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _core = __webpack_require__(33);
+
+	var _ErrorList = __webpack_require__(135);
+
+	var _ErrorList2 = _interopRequireDefault(_ErrorList);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _styles = __webpack_require__(34);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var BaseModal = function (_React$Component) {
+	  _inherits(BaseModal, _React$Component);
+
+	  function BaseModal() {
+	    _classCallCheck(this, BaseModal);
+
+	    return _possibleConstructorReturn(this, (BaseModal.__proto__ || Object.getPrototypeOf(BaseModal)).apply(this, arguments));
+	  }
+
+	  _createClass(BaseModal, [{
+	    key: "close",
+	    value: function close() {
+	      this.props.dispatch(this.props.closeAction());
+	    }
+	  }, {
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "getErrorList",
+	    value: function getErrorList() {
+	      var _props$errorAddr = _toArray(this.props.errorAddr),
+	          base = _props$errorAddr[0],
+	          rest = _props$errorAddr.slice(1);
+
+	      return _react2.default.createElement(_ErrorList2.default, { errors: this.props.auth.getIn([base, this.getEndpoint()].concat(_toConsumableArray(rest))) });
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var body = this.props.errorAddr ? this.getErrorList() : this.props.children;
+
+	      return _react2.default.createElement(
+	        _styles.MuiThemeProvider,
+	        null,
+	        _react2.default.createElement(
+	          _core.Dialog,
+	          {
+	            open: this.props.show,
+	            contentClassName: "redux-auth-modal " + this.props.containerClass,
+	            title: this.props.title,
+	            actions: [_react2.default.createElement(
+	              _core.Button,
+	              {
+	                key: "close",
+	                className: this.props.containerClass + "-close",
+	                onClick: this.close.bind(this) },
+	              this.props.closeBtnLabel
+	            )].concat(_toConsumableArray(this.props.actions)) },
+	          body
+	        )
+	      );
+	    }
+	  }]);
+
+	  return BaseModal;
+	}(_react2.default.Component);
+
+	BaseModal.defaultProps = {
+	  show: false,
+	  errorAddr: null,
+	  closeBtnLabel: "Ok",
+	  actions: []
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(BaseModal);
+
+/***/ },
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */
+/***/ function(module, exports) {
+
+	module.exports = require("@material-ui/icons");
+
+/***/ },
+/* 14 */,
+/* 15 */,
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _core = __webpack_require__(33);
+
+	var _colors = __webpack_require__(25);
+
+	var Colors = _interopRequireWildcard(_colors);
+
+	var _reactLoader = __webpack_require__(24);
+
+	var _reactLoader2 = _interopRequireDefault(_reactLoader);
+
+	var _styles = __webpack_require__(34);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ButtonLoader = function (_React$Component) {
+	  _inherits(ButtonLoader, _React$Component);
+
+	  function ButtonLoader() {
+	    _classCallCheck(this, ButtonLoader);
+
+	    return _possibleConstructorReturn(this, (ButtonLoader.__proto__ || Object.getPrototypeOf(ButtonLoader)).apply(this, arguments));
+	  }
+
+	  _createClass(ButtonLoader, [{
+	    key: 'handleClick',
+	    value: function handleClick(ev) {
+	      ev.preventDefault();
+	      this.props.onClick(ev);
+	    }
+	  }, {
+	    key: 'getColor',
+	    value: function getColor() {
+	      if (this.props.disabled) {
+	        return this.props.spinColorDisabled;
+	      } else if (this.props.primary || this.props.secondary) {
+	        return this.props.spinColorLight;
+	      } else {
+	        return this.props.spinColorDark;
+	      }
+	    }
+	  }, {
+	    key: 'renderIcon',
+	    value: function renderIcon() {
+	      var icon = void 0,
+	          color = this.getColor();
+
+	      if (this.props.loading) {
+	        icon = _react2.default.createElement(
+	          'div',
+	          { style: { position: "absolute", top: 15, left: 7 } },
+	          _react2.default.createElement(_reactLoader2.default, _extends({
+	            ref: 'spinner'
+	          }, this.props.spinConfig, {
+	            color: color,
+	            loaded: false }))
+	        );
+	      } else {
+	        if (_typeof(this.props.icon) === "object") {
+	          icon = this.props.icon;
+	        } else {
+	          icon = _react2.default.createElement(this.props.icon, { color: color, style: { width: 15, height: 15 } });
+	        }
+	      }
+
+	      return _react2.default.createElement(
+	        'span',
+	        { style: {
+	            width: 15,
+	            height: 15,
+	            position: "absolute",
+	            left: 10,
+	            top: 3
+	          } },
+	        icon
+	      );
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var color = this.getColor();
+
+	      var props = {
+	        backgroundColor: this.props.backgroundColor,
+	        children: this.props.children,
+	        className: this.props.className,
+	        disabled: this.props.disabled || this.props.loading,
+	        disabledBackgroundColor: this.props.disabledBackgroundColor,
+	        disabledLabelColor: this.props.disabledLabelColor,
+	        fullWidth: this.props.fullWidth,
+	        href: this.props.href,
+	        label: this.props.label || _react2.default.createElement(
+	          'span',
+	          { style: { paddingLeft: 15, color: color } },
+	          this.props.children
+	        ),
+	        labelColor: this.props.labelColor || color,
+	        labelPosition: this.props.labelPosition || "after",
+	        labelStyle: this.props.labelStyle,
+	        primary: this.props.primary,
+	        rippleStyle: this.props.rippleStyle,
+	        secondary: this.props.secondary,
+	        style: this.props.style,
+	        type: this.props.type
+	      };
+
+	      return _react2.default.createElement(
+	        _styles.MuiThemeProvider,
+	        null,
+	        _react2.default.createElement(
+	          _core.RaisedButton,
+	          _extends({}, props, {
+	            onClick: this.handleClick.bind(this) }),
+	          this.renderIcon()
+	        )
+	      );
+	    }
+	  }]);
+
+	  return ButtonLoader;
+	}(_react2.default.Component);
+
+	ButtonLoader.defaultProps = {
+	  icon: _core.ActionFavorite,
+	  loading: false,
+	  spinConfig: {
+	    lines: 10,
+	    length: 4,
+	    width: 2,
+	    radius: 3
+	  },
+	  spinColorDark: Colors.darkBlack,
+	  spinColorLight: Colors.darkWhite,
+	  spinColorDisabled: Colors.minBlack,
+	  children: _react2.default.createElement(
+	    'span',
+	    null,
+	    'Submit'
+	  ),
+	  style: {}
+	};
+	exports.default = ButtonLoader;
+
+/***/ },
+/* 17 */,
+/* 18 */,
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TokenBridge = function (_React$Component) {
+	  _inherits(TokenBridge, _React$Component);
+
+	  function TokenBridge() {
+	    _classCallCheck(this, TokenBridge);
+
+	    return _possibleConstructorReturn(this, (TokenBridge.__proto__ || Object.getPrototypeOf(TokenBridge)).apply(this, arguments));
+	  }
+
+	  _createClass(TokenBridge, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement("script", { id: "token-bridge",
+	        type: "application/json",
+	        dangerouslySetInnerHTML: { __html: this.props.initialCredentials } });
+	    }
+	  }]);
+
+	  return TokenBridge;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  var auth = state.get('auth');
+	  var headers = auth.getIn(["server", "headers"]);
+
+	  return {
+	    initialCredentials: headers && JSON.stringify({
+	      user: auth.getIn(["server", "user"]),
+	      mustResetPassword: auth.getIn(["server", "mustResetPassword"]),
+	      firstTimeLogin: auth.getIn(["server", "firstTimeLogin"]),
+	      currentEndpointKey: auth.getIn(["configure", "currentEndpointKey"]),
+	      defaultEndpointKey: auth.getIn(["configure", "defaultEndpointKey"]),
+	      headers: headers
+	    })
+	  };
+	})(TokenBridge);
+
+/***/ },
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _colors = __webpack_require__(25);
+
+	var Colors = _interopRequireWildcard(_colors);
+
+	var _core = __webpack_require__(33);
+
+	var _icons = __webpack_require__(13);
+
+	var _immutable = __webpack_require__(4);
+
+	var _immutable2 = _interopRequireDefault(_immutable);
+
+	var _styles = __webpack_require__(34);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AuthInput = function (_React$Component) {
+	  _inherits(AuthInput, _React$Component);
+
+	  function AuthInput() {
+	    _classCallCheck(this, AuthInput);
+
+	    return _possibleConstructorReturn(this, (AuthInput.__proto__ || Object.getPrototypeOf(AuthInput)).apply(this, arguments));
+	  }
+
+	  _createClass(AuthInput, [{
+	    key: "handleInput",
+	    value: function handleInput(ev) {
+	      ev.preventDefault();
+	      this.props.onChange(ev.target.value);
+	    }
+	  }, {
+	    key: "renderErrorList",
+	    value: function renderErrorList() {
+	      var _this2 = this;
+
+	      if (this.props.errors.size) {
+	        return _react2.default.createElement(
+	          "div",
+	          { className: "auth-error-message" },
+	          this.props.errors.map(function (err, i) {
+	            return _react2.default.createElement(
+	              "p",
+	              { className: "inline-error-item",
+	                style: { paddingLeft: "20px", position: "relative", marginBottom: "28px" },
+	                key: i },
+	              _react2.default.createElement(_icons.Error, {
+	                viewBox: "0 0 50 50",
+	                color: Colors.red500,
+	                style: {
+	                  position: "absolute",
+	                  left: 0,
+	                  top: 0
+	                } }),
+	              _this2.props.floatingLabelText,
+	              " ",
+	              err
+	            );
+	          })
+	        );
+	      } else {
+	        return null;
+	      }
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _styles.MuiThemeProvider,
+	        null,
+	        _react2.default.createElement(_core.TextField, _extends({
+	          fullWidth: true,
+	          id: this.props.className
+	        }, this.props, {
+	          errorText: this.renderErrorList(),
+	          onChange: this.handleInput.bind(this) }))
+	      );
+	    }
+	  }]);
+
+	  return AuthInput;
+	}(_react2.default.Component);
+
+	AuthInput.defaultProps = {
+	  label: "",
+	  value: null,
+	  errors: _immutable2.default.fromJS([])
+	};
+	exports.default = AuthInput;
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-loader");
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _interopRequireDefault = __webpack_require__(43);
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	Object.defineProperty(exports, "common", {
+	  enumerable: true,
+	  get: function get() {
+	    return _common.default;
+	  }
+	});
+	Object.defineProperty(exports, "red", {
+	  enumerable: true,
+	  get: function get() {
+	    return _red.default;
+	  }
+	});
+	Object.defineProperty(exports, "pink", {
+	  enumerable: true,
+	  get: function get() {
+	    return _pink.default;
+	  }
+	});
+	Object.defineProperty(exports, "purple", {
+	  enumerable: true,
+	  get: function get() {
+	    return _purple.default;
+	  }
+	});
+	Object.defineProperty(exports, "deepPurple", {
+	  enumerable: true,
+	  get: function get() {
+	    return _deepPurple.default;
+	  }
+	});
+	Object.defineProperty(exports, "indigo", {
+	  enumerable: true,
+	  get: function get() {
+	    return _indigo.default;
+	  }
+	});
+	Object.defineProperty(exports, "blue", {
+	  enumerable: true,
+	  get: function get() {
+	    return _blue.default;
+	  }
+	});
+	Object.defineProperty(exports, "lightBlue", {
+	  enumerable: true,
+	  get: function get() {
+	    return _lightBlue.default;
+	  }
+	});
+	Object.defineProperty(exports, "cyan", {
+	  enumerable: true,
+	  get: function get() {
+	    return _cyan.default;
+	  }
+	});
+	Object.defineProperty(exports, "teal", {
+	  enumerable: true,
+	  get: function get() {
+	    return _teal.default;
+	  }
+	});
+	Object.defineProperty(exports, "green", {
+	  enumerable: true,
+	  get: function get() {
+	    return _green.default;
+	  }
+	});
+	Object.defineProperty(exports, "lightGreen", {
+	  enumerable: true,
+	  get: function get() {
+	    return _lightGreen.default;
+	  }
+	});
+	Object.defineProperty(exports, "lime", {
+	  enumerable: true,
+	  get: function get() {
+	    return _lime.default;
+	  }
+	});
+	Object.defineProperty(exports, "yellow", {
+	  enumerable: true,
+	  get: function get() {
+	    return _yellow.default;
+	  }
+	});
+	Object.defineProperty(exports, "amber", {
+	  enumerable: true,
+	  get: function get() {
+	    return _amber.default;
+	  }
+	});
+	Object.defineProperty(exports, "orange", {
+	  enumerable: true,
+	  get: function get() {
+	    return _orange.default;
+	  }
+	});
+	Object.defineProperty(exports, "deepOrange", {
+	  enumerable: true,
+	  get: function get() {
+	    return _deepOrange.default;
+	  }
+	});
+	Object.defineProperty(exports, "brown", {
+	  enumerable: true,
+	  get: function get() {
+	    return _brown.default;
+	  }
+	});
+	Object.defineProperty(exports, "grey", {
+	  enumerable: true,
+	  get: function get() {
+	    return _grey.default;
+	  }
+	});
+	Object.defineProperty(exports, "blueGrey", {
+	  enumerable: true,
+	  get: function get() {
+	    return _blueGrey.default;
+	  }
+	});
+
+	var _common = _interopRequireDefault(__webpack_require__(48));
+
+	var _red = _interopRequireDefault(__webpack_require__(61));
+
+	var _pink = _interopRequireDefault(__webpack_require__(59));
+
+	var _purple = _interopRequireDefault(__webpack_require__(60));
+
+	var _deepPurple = _interopRequireDefault(__webpack_require__(51));
+
+	var _indigo = _interopRequireDefault(__webpack_require__(54));
+
+	var _blue = _interopRequireDefault(__webpack_require__(45));
+
+	var _lightBlue = _interopRequireDefault(__webpack_require__(55));
+
+	var _cyan = _interopRequireDefault(__webpack_require__(49));
+
+	var _teal = _interopRequireDefault(__webpack_require__(62));
+
+	var _green = _interopRequireDefault(__webpack_require__(52));
+
+	var _lightGreen = _interopRequireDefault(__webpack_require__(56));
+
+	var _lime = _interopRequireDefault(__webpack_require__(57));
+
+	var _yellow = _interopRequireDefault(__webpack_require__(63));
+
+	var _amber = _interopRequireDefault(__webpack_require__(44));
+
+	var _orange = _interopRequireDefault(__webpack_require__(58));
+
+	var _deepOrange = _interopRequireDefault(__webpack_require__(50));
+
+	var _brown = _interopRequireDefault(__webpack_require__(47));
+
+	var _grey = _interopRequireDefault(__webpack_require__(53));
+
+	var _blueGrey = _interopRequireDefault(__webpack_require__(46));
+
+/***/ },
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */,
+/* 33 */
+/***/ function(module, exports) {
+
+	module.exports = require("@material-ui/core");
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	module.exports = require("@material-ui/core/styles");
+
+/***/ },
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */
+/***/ function(module, exports) {
+
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : {
+	    default: obj
+	  };
+	}
+
+	module.exports = _interopRequireDefault;
+
+/***/ },
+/* 44 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var amber = {
+	  50: '#fff8e1',
+	  100: '#ffecb3',
+	  200: '#ffe082',
+	  300: '#ffd54f',
+	  400: '#ffca28',
+	  500: '#ffc107',
+	  600: '#ffb300',
+	  700: '#ffa000',
+	  800: '#ff8f00',
+	  900: '#ff6f00',
+	  A100: '#ffe57f',
+	  A200: '#ffd740',
+	  A400: '#ffc400',
+	  A700: '#ffab00'
+	};
+	var _default = amber;
+	exports.default = _default;
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var blue = {
+	  50: '#e3f2fd',
+	  100: '#bbdefb',
+	  200: '#90caf9',
+	  300: '#64b5f6',
+	  400: '#42a5f5',
+	  500: '#2196f3',
+	  600: '#1e88e5',
+	  700: '#1976d2',
+	  800: '#1565c0',
+	  900: '#0d47a1',
+	  A100: '#82b1ff',
+	  A200: '#448aff',
+	  A400: '#2979ff',
+	  A700: '#2962ff'
+	};
+	var _default = blue;
+	exports.default = _default;
+
+/***/ },
+/* 46 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var blueGrey = {
+	  50: '#eceff1',
+	  100: '#cfd8dc',
+	  200: '#b0bec5',
+	  300: '#90a4ae',
+	  400: '#78909c',
+	  500: '#607d8b',
+	  600: '#546e7a',
+	  700: '#455a64',
+	  800: '#37474f',
+	  900: '#263238',
+	  A100: '#cfd8dc',
+	  A200: '#b0bec5',
+	  A400: '#78909c',
+	  A700: '#455a64'
+	};
+	var _default = blueGrey;
+	exports.default = _default;
+
+/***/ },
+/* 47 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var brown = {
+	  50: '#efebe9',
+	  100: '#d7ccc8',
+	  200: '#bcaaa4',
+	  300: '#a1887f',
+	  400: '#8d6e63',
+	  500: '#795548',
+	  600: '#6d4c41',
+	  700: '#5d4037',
+	  800: '#4e342e',
+	  900: '#3e2723',
+	  A100: '#d7ccc8',
+	  A200: '#bcaaa4',
+	  A400: '#8d6e63',
+	  A700: '#5d4037'
+	};
+	var _default = brown;
+	exports.default = _default;
+
+/***/ },
+/* 48 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var common = {
+	  black: '#000',
+	  white: '#fff'
+	};
+	var _default = common;
+	exports.default = _default;
+
+/***/ },
+/* 49 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var cyan = {
+	  50: '#e0f7fa',
+	  100: '#b2ebf2',
+	  200: '#80deea',
+	  300: '#4dd0e1',
+	  400: '#26c6da',
+	  500: '#00bcd4',
+	  600: '#00acc1',
+	  700: '#0097a7',
+	  800: '#00838f',
+	  900: '#006064',
+	  A100: '#84ffff',
+	  A200: '#18ffff',
+	  A400: '#00e5ff',
+	  A700: '#00b8d4'
+	};
+	var _default = cyan;
+	exports.default = _default;
+
+/***/ },
+/* 50 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var deepOrange = {
+	  50: '#fbe9e7',
+	  100: '#ffccbc',
+	  200: '#ffab91',
+	  300: '#ff8a65',
+	  400: '#ff7043',
+	  500: '#ff5722',
+	  600: '#f4511e',
+	  700: '#e64a19',
+	  800: '#d84315',
+	  900: '#bf360c',
+	  A100: '#ff9e80',
+	  A200: '#ff6e40',
+	  A400: '#ff3d00',
+	  A700: '#dd2c00'
+	};
+	var _default = deepOrange;
+	exports.default = _default;
+
+/***/ },
+/* 51 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var deepPurple = {
+	  50: '#ede7f6',
+	  100: '#d1c4e9',
+	  200: '#b39ddb',
+	  300: '#9575cd',
+	  400: '#7e57c2',
+	  500: '#673ab7',
+	  600: '#5e35b1',
+	  700: '#512da8',
+	  800: '#4527a0',
+	  900: '#311b92',
+	  A100: '#b388ff',
+	  A200: '#7c4dff',
+	  A400: '#651fff',
+	  A700: '#6200ea'
+	};
+	var _default = deepPurple;
+	exports.default = _default;
+
+/***/ },
+/* 52 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var green = {
+	  50: '#e8f5e9',
+	  100: '#c8e6c9',
+	  200: '#a5d6a7',
+	  300: '#81c784',
+	  400: '#66bb6a',
+	  500: '#4caf50',
+	  600: '#43a047',
+	  700: '#388e3c',
+	  800: '#2e7d32',
+	  900: '#1b5e20',
+	  A100: '#b9f6ca',
+	  A200: '#69f0ae',
+	  A400: '#00e676',
+	  A700: '#00c853'
+	};
+	var _default = green;
+	exports.default = _default;
+
+/***/ },
+/* 53 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var grey = {
+	  50: '#fafafa',
+	  100: '#f5f5f5',
+	  200: '#eeeeee',
+	  300: '#e0e0e0',
+	  400: '#bdbdbd',
+	  500: '#9e9e9e',
+	  600: '#757575',
+	  700: '#616161',
+	  800: '#424242',
+	  900: '#212121',
+	  A100: '#d5d5d5',
+	  A200: '#aaaaaa',
+	  A400: '#303030',
+	  A700: '#616161'
+	};
+	var _default = grey;
+	exports.default = _default;
+
+/***/ },
+/* 54 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var indigo = {
+	  50: '#e8eaf6',
+	  100: '#c5cae9',
+	  200: '#9fa8da',
+	  300: '#7986cb',
+	  400: '#5c6bc0',
+	  500: '#3f51b5',
+	  600: '#3949ab',
+	  700: '#303f9f',
+	  800: '#283593',
+	  900: '#1a237e',
+	  A100: '#8c9eff',
+	  A200: '#536dfe',
+	  A400: '#3d5afe',
+	  A700: '#304ffe'
+	};
+	var _default = indigo;
+	exports.default = _default;
+
+/***/ },
+/* 55 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var lightBlue = {
+	  50: '#e1f5fe',
+	  100: '#b3e5fc',
+	  200: '#81d4fa',
+	  300: '#4fc3f7',
+	  400: '#29b6f6',
+	  500: '#03a9f4',
+	  600: '#039be5',
+	  700: '#0288d1',
+	  800: '#0277bd',
+	  900: '#01579b',
+	  A100: '#80d8ff',
+	  A200: '#40c4ff',
+	  A400: '#00b0ff',
+	  A700: '#0091ea'
+	};
+	var _default = lightBlue;
+	exports.default = _default;
+
+/***/ },
+/* 56 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var lightGreen = {
+	  50: '#f1f8e9',
+	  100: '#dcedc8',
+	  200: '#c5e1a5',
+	  300: '#aed581',
+	  400: '#9ccc65',
+	  500: '#8bc34a',
+	  600: '#7cb342',
+	  700: '#689f38',
+	  800: '#558b2f',
+	  900: '#33691e',
+	  A100: '#ccff90',
+	  A200: '#b2ff59',
+	  A400: '#76ff03',
+	  A700: '#64dd17'
+	};
+	var _default = lightGreen;
+	exports.default = _default;
+
+/***/ },
+/* 57 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var lime = {
+	  50: '#f9fbe7',
+	  100: '#f0f4c3',
+	  200: '#e6ee9c',
+	  300: '#dce775',
+	  400: '#d4e157',
+	  500: '#cddc39',
+	  600: '#c0ca33',
+	  700: '#afb42b',
+	  800: '#9e9d24',
+	  900: '#827717',
+	  A100: '#f4ff81',
+	  A200: '#eeff41',
+	  A400: '#c6ff00',
+	  A700: '#aeea00'
+	};
+	var _default = lime;
+	exports.default = _default;
+
+/***/ },
+/* 58 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var orange = {
+	  50: '#fff3e0',
+	  100: '#ffe0b2',
+	  200: '#ffcc80',
+	  300: '#ffb74d',
+	  400: '#ffa726',
+	  500: '#ff9800',
+	  600: '#fb8c00',
+	  700: '#f57c00',
+	  800: '#ef6c00',
+	  900: '#e65100',
+	  A100: '#ffd180',
+	  A200: '#ffab40',
+	  A400: '#ff9100',
+	  A700: '#ff6d00'
+	};
+	var _default = orange;
+	exports.default = _default;
+
+/***/ },
+/* 59 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var pink = {
+	  50: '#fce4ec',
+	  100: '#f8bbd0',
+	  200: '#f48fb1',
+	  300: '#f06292',
+	  400: '#ec407a',
+	  500: '#e91e63',
+	  600: '#d81b60',
+	  700: '#c2185b',
+	  800: '#ad1457',
+	  900: '#880e4f',
+	  A100: '#ff80ab',
+	  A200: '#ff4081',
+	  A400: '#f50057',
+	  A700: '#c51162'
+	};
+	var _default = pink;
+	exports.default = _default;
+
+/***/ },
+/* 60 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var purple = {
+	  50: '#f3e5f5',
+	  100: '#e1bee7',
+	  200: '#ce93d8',
+	  300: '#ba68c8',
+	  400: '#ab47bc',
+	  500: '#9c27b0',
+	  600: '#8e24aa',
+	  700: '#7b1fa2',
+	  800: '#6a1b9a',
+	  900: '#4a148c',
+	  A100: '#ea80fc',
+	  A200: '#e040fb',
+	  A400: '#d500f9',
+	  A700: '#aa00ff'
+	};
+	var _default = purple;
+	exports.default = _default;
+
+/***/ },
+/* 61 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var red = {
+	  50: '#ffebee',
+	  100: '#ffcdd2',
+	  200: '#ef9a9a',
+	  300: '#e57373',
+	  400: '#ef5350',
+	  500: '#f44336',
+	  600: '#e53935',
+	  700: '#d32f2f',
+	  800: '#c62828',
+	  900: '#b71c1c',
+	  A100: '#ff8a80',
+	  A200: '#ff5252',
+	  A400: '#ff1744',
+	  A700: '#d50000'
+	};
+	var _default = red;
+	exports.default = _default;
+
+/***/ },
+/* 62 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var teal = {
+	  50: '#e0f2f1',
+	  100: '#b2dfdb',
+	  200: '#80cbc4',
+	  300: '#4db6ac',
+	  400: '#26a69a',
+	  500: '#009688',
+	  600: '#00897b',
+	  700: '#00796b',
+	  800: '#00695c',
+	  900: '#004d40',
+	  A100: '#a7ffeb',
+	  A200: '#64ffda',
+	  A400: '#1de9b6',
+	  A700: '#00bfa5'
+	};
+	var _default = teal;
+	exports.default = _default;
+
+/***/ },
+/* 63 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = void 0;
+	var yellow = {
+	  50: '#fffde7',
+	  100: '#fff9c4',
+	  200: '#fff59d',
+	  300: '#fff176',
+	  400: '#ffee58',
+	  500: '#ffeb3b',
+	  600: '#fdd835',
+	  700: '#fbc02d',
+	  800: '#f9a825',
+	  900: '#f57f17',
+	  A100: '#ffff8d',
+	  A200: '#ffff00',
+	  A400: '#ffea00',
+	  A700: '#ffd600'
+	};
+	var _default = yellow;
+	exports.default = _default;
+
+/***/ },
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _EmailSignInSuccessModal = __webpack_require__(143);
+
+	var _EmailSignInSuccessModal2 = _interopRequireDefault(_EmailSignInSuccessModal);
+
+	var _EmailSignInErrorModal = __webpack_require__(142);
+
+	var _EmailSignInErrorModal2 = _interopRequireDefault(_EmailSignInErrorModal);
+
+	var _OAuthSignInSuccessModal = __webpack_require__(149);
+
+	var _OAuthSignInSuccessModal2 = _interopRequireDefault(_OAuthSignInSuccessModal);
+
+	var _OAuthSignInErrorModal = __webpack_require__(148);
+
+	var _OAuthSignInErrorModal2 = _interopRequireDefault(_OAuthSignInErrorModal);
+
+	var _EmailSignUpSuccessModal = __webpack_require__(145);
+
+	var _EmailSignUpSuccessModal2 = _interopRequireDefault(_EmailSignUpSuccessModal);
+
+	var _EmailSignUpErrorModal = __webpack_require__(144);
+
+	var _EmailSignUpErrorModal2 = _interopRequireDefault(_EmailSignUpErrorModal);
+
+	var _SignOutSuccessModal = __webpack_require__(154);
+
+	var _SignOutSuccessModal2 = _interopRequireDefault(_SignOutSuccessModal);
+
+	var _SignOutErrorModal = __webpack_require__(153);
+
+	var _SignOutErrorModal2 = _interopRequireDefault(_SignOutErrorModal);
+
+	var _FirstTimeLoginSuccessModal = __webpack_require__(147);
+
+	var _FirstTimeLoginSuccessModal2 = _interopRequireDefault(_FirstTimeLoginSuccessModal);
+
+	var _FirstTimeLoginErrorModal = __webpack_require__(146);
+
+	var _FirstTimeLoginErrorModal2 = _interopRequireDefault(_FirstTimeLoginErrorModal);
+
+	var _RequestPasswordResetErrorModal = __webpack_require__(151);
+
+	var _RequestPasswordResetErrorModal2 = _interopRequireDefault(_RequestPasswordResetErrorModal);
+
+	var _RequestPasswordResetSuccessModal = __webpack_require__(152);
+
+	var _RequestPasswordResetSuccessModal2 = _interopRequireDefault(_RequestPasswordResetSuccessModal);
+
+	var _UpdatePasswordErrorModal = __webpack_require__(155);
+
+	var _UpdatePasswordErrorModal2 = _interopRequireDefault(_UpdatePasswordErrorModal);
+
+	var _UpdatePasswordSuccessModal = __webpack_require__(156);
+
+	var _UpdatePasswordSuccessModal2 = _interopRequireDefault(_UpdatePasswordSuccessModal);
+
+	var _DestroyAccountErrorModal = __webpack_require__(140);
+
+	var _DestroyAccountErrorModal2 = _interopRequireDefault(_DestroyAccountErrorModal);
+
+	var _DestroyAccountSuccessModal = __webpack_require__(141);
+
+	var _DestroyAccountSuccessModal2 = _interopRequireDefault(_DestroyAccountSuccessModal);
+
+	var _PasswordResetSuccessModal = __webpack_require__(150);
+
+	var _PasswordResetSuccessModal2 = _interopRequireDefault(_PasswordResetSuccessModal);
+
+	var _TokenBridge = __webpack_require__(19);
+
+	var _TokenBridge2 = _interopRequireDefault(_TokenBridge);
+
+	var _reactRedux = __webpack_require__(3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AuthGlobals = function (_React$Component) {
+	  _inherits(AuthGlobals, _React$Component);
+
+	  function AuthGlobals() {
+	    _classCallCheck(this, AuthGlobals);
+
+	    return _possibleConstructorReturn(this, (AuthGlobals.__proto__ || Object.getPrototypeOf(AuthGlobals)).apply(this, arguments));
+	  }
+
+	  _createClass(AuthGlobals, [{
+	    key: "render",
+	    value: function render() {
+	      var showEmailSignInSuccess = this.props.emailSignInSuccessEnabled && this.props.auth.getIn(["ui", "emailSignInSuccessModalVisible"]);
+
+	      var showEmailSignInError = this.props.emailSignInErrorEnabled && this.props.auth.getIn(["ui", "emailSignInErrorModalVisible"]);
+
+	      var showEmailSignUpSuccess = this.props.emailSignUpSuccessEnabled && this.props.auth.getIn(["ui", "emailSignUpSuccessModalVisible"]);
+
+	      var showEmailSignUpError = this.props.emailSignUpErrorEnabled && this.props.auth.getIn(["ui", "emailSignUpErrorModalVisible"]);
+
+	      var showSignOutSuccess = this.props.signOutSuccessEnabled && this.props.auth.getIn(["ui", "signOutSuccessModalVisible"]);
+
+	      var showSignOutError = this.props.signOutErrorEnabled && this.props.auth.getIn(["ui", "signOutErrorModalVisible"]);
+
+	      var showFirstTimeLoginSuccess = this.props.firstTimeLoginSuccessEnabled && this.props.auth.getIn(["ui", "firstTimeLoginSuccessModalVisible"]);
+
+	      var showFirstTimeLoginError = this.props.firstTimeLoginErrorEnabled && this.props.auth.getIn(["ui", "firstTimeLoginErrorModalVisible"]);
+
+	      var showRequestPasswordResetError = this.props.requestPasswordResetErrorEnabled && this.props.auth.getIn(["ui", "requestPasswordResetErrorModalVisible"]);
+
+	      var showRequestPasswordResetSuccess = this.props.requestPasswordResetSuccessEnabled && this.props.auth.getIn(["ui", "requestPasswordResetSuccessModalVisible"]);
+
+	      var showOAuthSignInSuccess = this.props.oAuthSignInSuccessEnabled && this.props.auth.getIn(["ui", "oAuthSignInSuccessModalVisible"]);
+
+	      var showOAuthSignInError = this.props.oAuthSignInErrorEnabled && this.props.auth.getIn(["ui", "oAuthSignInErrorModalVisible"]);
+
+	      var updatePasswordSuccess = this.props.updatePasswordSuccessEnabled && this.props.auth.getIn(["ui", "updatePasswordSuccessModalVisible"]);
+
+	      var updatePasswordError = this.props.updatePasswordErrorEnabled && this.props.auth.getIn(["ui", "updatePasswordErrorModalVisible"]);
+
+	      var destroyAccountSuccess = this.props.destroyAccountSuccessEnabled && this.props.auth.getIn(["ui", "destroyAccountSuccessModalVisible"]);
+
+	      var destroyAccountError = this.props.destroyAccountErrorEnabled && this.props.auth.getIn(["ui", "destroyAccountErrorModalVisible"]);
+
+	      var passwordResetSuccess = this.props.passwordResetSuccessEnabled && this.props.auth.getIn(["ui", "passwordResetSuccessModalVisible"]);
+
+	      //let passwordResetError = (
+	      //this.props.passwordResetErrorEnabled &&
+	      //this.props.auth.getIn(["ui", "passwordResetErrorModalVisible"])
+	      //);
+
+	      return _react2.default.createElement(
+	        "div",
+	        { id: "auth-modals" },
+	        _react2.default.createElement(_EmailSignInSuccessModal2.default, { show: showEmailSignInSuccess }),
+	        _react2.default.createElement(_EmailSignInErrorModal2.default, { show: showEmailSignInError }),
+	        _react2.default.createElement(_OAuthSignInSuccessModal2.default, { show: showOAuthSignInSuccess }),
+	        _react2.default.createElement(_OAuthSignInErrorModal2.default, { show: showOAuthSignInError }),
+	        _react2.default.createElement(_EmailSignUpSuccessModal2.default, { show: showEmailSignUpSuccess }),
+	        _react2.default.createElement(_EmailSignUpErrorModal2.default, { show: showEmailSignUpError }),
+	        _react2.default.createElement(_SignOutSuccessModal2.default, { show: showSignOutSuccess }),
+	        _react2.default.createElement(_SignOutErrorModal2.default, { show: showSignOutError }),
+	        _react2.default.createElement(_FirstTimeLoginSuccessModal2.default, { show: showFirstTimeLoginSuccess }),
+	        _react2.default.createElement(_FirstTimeLoginErrorModal2.default, { show: showFirstTimeLoginError }),
+	        _react2.default.createElement(_RequestPasswordResetErrorModal2.default, { show: showRequestPasswordResetError }),
+	        _react2.default.createElement(_RequestPasswordResetSuccessModal2.default, { show: showRequestPasswordResetSuccess }),
+	        _react2.default.createElement(_UpdatePasswordErrorModal2.default, { show: updatePasswordError }),
+	        _react2.default.createElement(_UpdatePasswordSuccessModal2.default, { show: updatePasswordSuccess }),
+	        _react2.default.createElement(_DestroyAccountErrorModal2.default, { show: destroyAccountError }),
+	        _react2.default.createElement(_DestroyAccountSuccessModal2.default, { show: destroyAccountSuccess }),
+	        _react2.default.createElement(_PasswordResetSuccessModal2.default, { show: passwordResetSuccess }),
+	        _react2.default.createElement(_TokenBridge2.default, null)
+	      );
+	    }
+	  }]);
+
+	  return AuthGlobals;
+	}(_react2.default.Component);
+
+	AuthGlobals.defaultProps = {
+	  signOutSuccessEnabled: true,
+	  signOutErrorEnabled: true,
+	  emailSignInSuccessEnabled: true,
+	  emailSignInErrorEnabled: true,
+	  oAuthSignInSuccessEnabled: true,
+	  oAuthSignInErrorEnabled: true,
+	  emailSignUpSuccessEnabled: true,
+	  emailSignUpErrorEnabled: true,
+	  firstTimeLoginSuccessEnabled: true,
+	  firstTimeLoginErrorEnabled: true,
+	  requestPasswordResetErrorEnabled: true,
+	  requestPasswordResetSuccessEnabled: true,
+	  updatePasswordErrorEnabled: true,
+	  updatePasswordSuccessEnabled: true,
+	  destroyAccountErrorEnabled: true,
+	  destroyAccountSuccessEnabled: true,
+	  passwordResetSuccessEnabled: true,
+	  passwordResetErrorEnabled: true
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(AuthGlobals);
+
+/***/ },
+/* 132 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _destroyAccount = __webpack_require__(2);
+
+	var _icons = __webpack_require__(13);
+
+	var _reactRedux = __webpack_require__(3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var DestroyAccountButton = function (_React$Component) {
+	  _inherits(DestroyAccountButton, _React$Component);
+
+	  function DestroyAccountButton() {
+	    _classCallCheck(this, DestroyAccountButton);
+
+	    return _possibleConstructorReturn(this, (DestroyAccountButton.__proto__ || Object.getPrototypeOf(DestroyAccountButton)).apply(this, arguments));
+	  }
+
+	  _createClass(DestroyAccountButton, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleClick",
+	    value: function handleClick() {
+	      this.props.dispatch((0, _destroyAccount.destroyAccount)(this.getEndpoint()));
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
+	      return _react2.default.createElement(_ButtonLoader2.default, _extends({
+	        loading: this.props.auth.getIn(["destroyAccount", this.getEndpoint(), "loading"]),
+	        icon: this.props.icon,
+	        disabled: disabled,
+	        primary: true,
+	        className: "destroy-account-submit",
+	        onClick: this.handleClick.bind(this)
+	      }, this.props));
+	    }
+	  }]);
+
+	  return DestroyAccountButton;
+	}(_react2.default.Component);
+
+	DestroyAccountButton.defaultProps = {
+	  children: _react2.default.createElement(
+	    "span",
+	    null,
+	    "Destroy Account"
+	  ),
+	  icon: _icons.Delete
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(DestroyAccountButton);
+
+/***/ },
+/* 133 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _Input = __webpack_require__(23);
+
+	var _Input2 = _interopRequireDefault(_Input);
+
+	var _emailSignIn = __webpack_require__(2);
+
+	var _icons = __webpack_require__(13);
+
+	var _reactRedux = __webpack_require__(3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EmailSignInForm = function (_React$Component) {
+	  _inherits(EmailSignInForm, _React$Component);
+
+	  function EmailSignInForm() {
+	    _classCallCheck(this, EmailSignInForm);
+
+	    return _possibleConstructorReturn(this, (EmailSignInForm.__proto__ || Object.getPrototypeOf(EmailSignInForm)).apply(this, arguments));
+	  }
+
+	  _createClass(EmailSignInForm, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleInput",
+	    value: function handleInput(key, val) {
+	      this.props.dispatch((0, _emailSignIn.emailSignInFormUpdate)(this.getEndpoint(), key, val));
+	    }
+	  }, {
+	    key: "handleSubmit",
+	    value: function handleSubmit(event) {
+	      event.preventDefault();
+	      var formData = this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form"]).toJS();
+	      this.props.dispatch((0, _emailSignIn.emailSignIn)(formData, this.getEndpoint())).then(this.props.next).catch(function () {});
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var disabled = this.props.auth.getIn(["user", "isSignedIn"]) || this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "loading"]);
+
+	      return _react2.default.createElement(
+	        "form",
+	        { className: "redux-auth email-sign-in-form",
+	          style: { clear: "both", overflow: "hidden" },
+	          onSubmit: this.handleSubmit.bind(this) },
+	        _react2.default.createElement(_Input2.default, _extends({ type: "text",
+	          className: "email-sign-in-email",
+	          ref: "emailSignInEmail",
+	          floatingLabelText: "Email",
+	          disabled: disabled,
+	          value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"]),
+	          errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"]),
+	          onChange: this.handleInput.bind(this, "email")
+	        }, this.props.inputProps.email)),
+	        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+	          floatingLabelText: "Password",
+	          className: "email-sign-in-password",
+	          disabled: disabled,
+	          value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"]),
+	          errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"]),
+	          onChange: this.handleInput.bind(this, "password")
+	        }, this.props.inputProps.password)),
+	        _react2.default.createElement(
+	          _ButtonLoader2.default,
+	          _extends({ loading: this.props.auth.getIn(["emailSignIn", "loading"]),
+	            type: "submit",
+	            style: { float: "right" },
+	            icon: _icons.ExitToApp,
+	            className: "email-sign-in-submit",
+	            disabled: disabled,
+	            onClick: this.handleSubmit.bind(this),
+	            primary: true
+	          }, this.props.inputProps.submit),
+	          "Sign In"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return EmailSignInForm;
+	}(_react2.default.Component);
+
+	EmailSignInForm.defaultProps = {
+	  next: function next() {},
+	  inputProps: {
+	    email: {},
+	    password: {},
+	    submit: {}
+	  }
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(EmailSignInForm);
+
+/***/ },
+/* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Input = __webpack_require__(23);
+
+	var _Input2 = _interopRequireDefault(_Input);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _emailSignUp = __webpack_require__(2);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _icons = __webpack_require__(13);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EmailSignUpForm = function (_React$Component) {
+	  _inherits(EmailSignUpForm, _React$Component);
+
+	  function EmailSignUpForm() {
+	    _classCallCheck(this, EmailSignUpForm);
+
+	    return _possibleConstructorReturn(this, (EmailSignUpForm.__proto__ || Object.getPrototypeOf(EmailSignUpForm)).apply(this, arguments));
+	  }
+
+	  _createClass(EmailSignUpForm, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleInput",
+	    value: function handleInput(key, val) {
+	      this.props.dispatch((0, _emailSignUp.emailSignUpFormUpdate)(this.getEndpoint(), key, val));
+	    }
+	  }, {
+	    key: "handleSubmit",
+	    value: function handleSubmit(event) {
+	      console.log("@-->handling submit");
+	      event.preventDefault();
+	      var formData = this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form"]).toJS();
+	      this.props.dispatch((0, _emailSignUp.emailSignUp)(formData, this.getEndpoint())).then(this.props.next).catch(function () {});
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var disabled = this.props.auth.getIn(["user", "isSignedIn"]) || this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "loading"]);
+
+	      return _react2.default.createElement(
+	        "form",
+	        { className: "redux-auth email-sign-up-form clearfix",
+	          style: { clear: "both", overflow: "hidden" },
+	          onSubmit: this.handleSubmit.bind(this) },
+	        _react2.default.createElement(_Input2.default, _extends({ type: "text",
+	          floatingLabelText: "Email",
+	          className: "email-sign-up-email",
+	          disabled: disabled,
+	          value: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "email"]),
+	          errors: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "email"]),
+	          onChange: this.handleInput.bind(this, "email")
+	        }, this.props.inputProps.email)),
+	        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+	          floatingLabelText: "Password",
+	          className: "email-sign-up-password",
+	          disabled: disabled,
+	          value: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "password"]),
+	          errors: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "password"]),
+	          onChange: this.handleInput.bind(this, "password")
+	        }, this.props.inputProps.password)),
+	        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+	          floatingLabelText: "Password Confirmation",
+	          className: "email-sign-up-password-confirmation",
+	          disabled: disabled,
+	          value: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "password_confirmation"]),
+	          errors: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "password_confirmation"]),
+	          onChange: this.handleInput.bind(this, "password_confirmation")
+	        }, this.props.inputProps.passwordConfirmation)),
+	        _react2.default.createElement(
+	          _ButtonLoader2.default,
+	          _extends({ loading: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "loading"]),
+	            type: "submit",
+	            className: "email-sign-up-submit",
+	            primary: true,
+	            style: { float: "right" },
+	            icon: _icons.Send,
+	            disabled: disabled,
+	            onClick: this.handleSubmit.bind(this)
+	          }, this.props.inputProps.submit),
+	          "Sign Up"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return EmailSignUpForm;
+	}(_react2.default.Component);
+
+	EmailSignUpForm.defaultProps = {
+	  next: function next() {},
+	  inputProps: {
+	    email: {},
+	    password: {},
+	    submit: {}
+	  }
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(EmailSignUpForm);
+
+/***/ },
+/* 135 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _colors = __webpack_require__(25);
+
+	var Colors = _interopRequireWildcard(_colors);
+
+	var _icons = __webpack_require__(13);
+
+	var _immutable = __webpack_require__(4);
+
+	var _immutable2 = _interopRequireDefault(_immutable);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ErrorList = function (_React$Component) {
+	  _inherits(ErrorList, _React$Component);
+
+	  function ErrorList() {
+	    _classCallCheck(this, ErrorList);
+
+	    return _possibleConstructorReturn(this, (ErrorList.__proto__ || Object.getPrototypeOf(ErrorList)).apply(this, arguments));
+	  }
+
+	  _createClass(ErrorList, [{
+	    key: "renderErrorList",
+	    value: function renderErrorList() {
+	      var errorCount = (this.props.errors || _immutable2.default.fromJS([])).size;
+
+	      if (errorCount > 0) {
+	        // pluralize message
+	        var errorWord = "error";
+	        errorWord += errorCount === 1 ? "" : "s";
+
+	        return _react2.default.createElement(
+	          "div",
+	          { className: "has-error" },
+	          _react2.default.createElement(
+	            "p",
+	            null,
+	            "Please correct the following ",
+	            errorWord,
+	            ":"
+	          ),
+	          this.props.errors.map(function (err, i) {
+	            return _react2.default.createElement(
+	              "p",
+	              {
+	                key: i,
+	                className: "control-label modal-error-item",
+	                style: { paddingLeft: "20px", position: "relative" } },
+	              _react2.default.createElement(_icons.Error, {
+	                viewBox: "0 0 50 50",
+	                color: Colors.red500,
+	                style: {
+	                  position: "absolute",
+	                  left: 0,
+	                  top: 3
+	                } }),
+	              " ",
+	              err
+	            );
+	          })
+	        );
+	      } else {
+	        return _react2.default.createElement(
+	          "p",
+	          { style: { paddingLeft: "20px", position: "relative" } },
+	          _react2.default.createElement(_icons.Error, {
+	            viewBox: "0 0 50 50",
+	            style: {
+	              position: "absolute",
+	              left: 0,
+	              top: 3
+	            },
+	            color: Colors.red500 }),
+	          " There was an error processing this form. Please check each field and try again."
+	        );
+	      }
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "div",
+	        { className: "auth-error-message" },
+	        this.renderErrorList()
+	      );
+	    }
+	  }]);
+
+	  return ErrorList;
+	}(_react2.default.Component);
+
+	ErrorList.defaultProps = {
+	  errors: _immutable2.default.fromJS([])
+	};
+	exports.default = ErrorList;
+
+/***/ },
+/* 136 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _icons = __webpack_require__(13);
+
+	var _oauthSignIn = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// hook for rewire
+	var oAuthSignIn = _oauthSignIn.oAuthSignIn;
+
+	var OAuthSignInButton = function (_React$Component) {
+	  _inherits(OAuthSignInButton, _React$Component);
+
+	  function OAuthSignInButton() {
+	    _classCallCheck(this, OAuthSignInButton);
+
+	    return _possibleConstructorReturn(this, (OAuthSignInButton.__proto__ || Object.getPrototypeOf(OAuthSignInButton)).apply(this, arguments));
+	  }
+
+	  _createClass(OAuthSignInButton, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleClick",
+	    value: function handleClick() {
+	      this.props.dispatch(oAuthSignIn({
+	        provider: this.props.provider,
+	        params: this.props.signInParams,
+	        endpointKey: this.getEndpoint()
+	      })).then(this.props.next).catch(function () {});
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var disabled = this.props.auth.getIn(["user", "isSignedIn"]);
+	      var loading = this.props.auth.getIn(["ui", "oAuthSignInLoadingProvider"]) === this.props.provider && this.props.auth.getIn(["oAuthSignIn", this.getEndpoint(), "loading"]);
+
+	      return _react2.default.createElement(_ButtonLoader2.default, _extends({
+	        loading: loading,
+	        icon: this.props.icon,
+	        className: this.props.className + " oauth-sign-in-submit",
+	        disabled: disabled,
+	        onClick: this.handleClick.bind(this)
+	      }, this.props));
+	    }
+	  }]);
+
+	  return OAuthSignInButton;
+	}(_react2.default.Component);
+
+	OAuthSignInButton.defaultProps = {
+	  signInParams: {},
+	  children: _react2.default.createElement(
+	    "span",
+	    null,
+	    "OAuth Sign In"
+	  ),
+	  icon: _icons.ExitToApp
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(OAuthSignInButton);
+
+/***/ },
+/* 137 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Input = __webpack_require__(23);
+
+	var _Input2 = _interopRequireDefault(_Input);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _icons = __webpack_require__(13);
+
+	var _requestPasswordReset = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var RequestPasswordResetForm = function (_React$Component) {
+	  _inherits(RequestPasswordResetForm, _React$Component);
+
+	  function RequestPasswordResetForm() {
+	    _classCallCheck(this, RequestPasswordResetForm);
+
+	    return _possibleConstructorReturn(this, (RequestPasswordResetForm.__proto__ || Object.getPrototypeOf(RequestPasswordResetForm)).apply(this, arguments));
+	  }
+
+	  _createClass(RequestPasswordResetForm, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleInput",
+	    value: function handleInput(key, val) {
+	      this.props.dispatch((0, _requestPasswordReset.requestPasswordResetFormUpdate)(this.getEndpoint(), key, val));
+	    }
+	  }, {
+	    key: "handleSubmit",
+	    value: function handleSubmit(event) {
+	      event.preventDefault();
+	      var formData = this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "form"]).toJS();
+	      this.props.dispatch((0, _requestPasswordReset.requestPasswordReset)(formData, this.getEndpoint()));
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var endpoint = this.getEndpoint();
+	      var loading = this.props.auth.getIn(["requestPasswordReset", endpoint, "loading"]);
+	      var inputDisabled = this.props.auth.getIn(["user", "isSignedIn"]);
+	      var submitDisabled = !this.props.auth.getIn(["requestPasswordReset", endpoint, "form", "email"]);
+
+	      return _react2.default.createElement(
+	        "form",
+	        {
+	          className: "redux-auth request-password-reset-form clearfix",
+	          style: { clear: "both", overflow: "hidden" },
+	          onSubmit: this.handleSubmit.bind(this) },
+	        _react2.default.createElement(_Input2.default, _extends({
+	          type: "text",
+	          floatingLabelText: "Email Address",
+	          className: "request-password-reset-email",
+	          disabled: loading || inputDisabled,
+	          value: this.props.auth.getIn(["requestPasswordReset", endpoint, "form", "email"]),
+	          errors: this.props.auth.getIn(["requestPasswordReset", endpoint, "errors", "email"]),
+	          onChange: this.handleInput.bind(this, "email")
+	        }, this.props.inputProps.email)),
+	        _react2.default.createElement(
+	          _ButtonLoader2.default,
+	          _extends({
+	            loading: loading,
+	            type: "submit",
+	            primary: true,
+	            icon: _icons.Send,
+	            style: { float: "right" },
+	            className: "request-password-reset-submit",
+	            disabled: inputDisabled || submitDisabled,
+	            onClick: this.handleSubmit.bind(this)
+	          }, this.props.inputProps.submit),
+	          "Request Password Reset"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return RequestPasswordResetForm;
+	}(_react2.default.Component);
+
+	RequestPasswordResetForm.defaultProps = {
+	  inputProps: {
+	    email: {},
+	    submit: {}
+	  }
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(RequestPasswordResetForm);
+
+/***/ },
+/* 138 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _icons = __webpack_require__(13);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _signOut = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SignOutButton = function (_React$Component) {
+	  _inherits(SignOutButton, _React$Component);
+
+	  function SignOutButton() {
+	    _classCallCheck(this, SignOutButton);
+
+	    return _possibleConstructorReturn(this, (SignOutButton.__proto__ || Object.getPrototypeOf(SignOutButton)).apply(this, arguments));
+	  }
+
+	  _createClass(SignOutButton, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleClick",
+	    value: function handleClick() {
+	      this.props.dispatch((0, _signOut.signOut)(this.getEndpoint())).then(this.props.next).catch(function () {});
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
+	      return _react2.default.createElement(_ButtonLoader2.default, _extends({
+	        loading: this.props.auth.getIn(["signOut", this.getEndpoint(), "loading"]),
+	        icon: this.props.icon,
+	        disabled: disabled,
+	        primary: true,
+	        className: "sign-out-submit",
+	        onClick: this.handleClick.bind(this)
+	      }, this.props));
+	    }
+	  }]);
+
+	  return SignOutButton;
+	}(_react2.default.Component);
+
+	SignOutButton.defaultProps = {
+	  next: function next() {},
+	  children: _react2.default.createElement(
+	    "span",
+	    null,
+	    "Sign Out"
+	  ),
+	  icon: _icons.Lock
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(SignOutButton);
+
+/***/ },
+/* 139 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Input = __webpack_require__(23);
+
+	var _Input2 = _interopRequireDefault(_Input);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _icons = __webpack_require__(13);
+
+	var _updatePassword = __webpack_require__(2);
+
+	var _reactRedux = __webpack_require__(3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UpdatePasswordForm = function (_React$Component) {
+	  _inherits(UpdatePasswordForm, _React$Component);
+
+	  function UpdatePasswordForm() {
+	    _classCallCheck(this, UpdatePasswordForm);
+
+	    return _possibleConstructorReturn(this, (UpdatePasswordForm.__proto__ || Object.getPrototypeOf(UpdatePasswordForm)).apply(this, arguments));
+	  }
+
+	  _createClass(UpdatePasswordForm, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleInput",
+	    value: function handleInput(key, val) {
+	      this.props.dispatch((0, _updatePassword.updatePasswordFormUpdate)(this.getEndpoint(), key, val));
+	    }
+	  }, {
+	    key: "handleSubmit",
+	    value: function handleSubmit(ev) {
+	      ev.preventDefault();
+	      var formData = this.props.auth.getIn(["updatePassword", this.getEndpoint(), "form"]).toJS();
+	      this.props.dispatch((0, _updatePassword.updatePassword)(formData, this.getEndpoint()));
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var endpoint = this.getEndpoint();
+	      var loading = this.props.auth.getIn(["updatePassword", endpoint, "loading"]);
+	      var disabled = !this.props.auth.getIn(["user", "isSignedIn"]) || loading || this.props.auth.getIn(["user", "attributes", "provider"]) !== "email";
+
+	      return _react2.default.createElement(
+	        "form",
+	        {
+	          className: "redux-auth update-password-form clearfix",
+	          onSubmit: this.handleSubmit.bind(this) },
+	        _react2.default.createElement(_Input2.default, _extends({
+	          type: "password",
+	          floatingLabelText: "Password",
+	          disabled: disabled,
+	          className: "update-password-password",
+	          value: this.props.auth.getIn(["updatePassword", endpoint, "form", "password"]),
+	          errors: this.props.auth.getIn(["updatePassword", endpoint, "errors", "password"]),
+	          onChange: this.handleInput.bind(this, "password")
+	        }, this.props.inputProps.password)),
+	        _react2.default.createElement(_Input2.default, _extends({
+	          type: "password",
+	          floatingLabelText: "Password Confirmation",
+	          className: "update-password-password-confirmation",
+	          disabled: disabled,
+	          value: this.props.auth.getIn(["updatePassword", endpoint, "form", "password_confirmation"]),
+	          errors: this.props.auth.getIn(["updatePassword", endpoint, "errors", "password_confirmation"]),
+	          onChange: this.handleInput.bind(this, "password_confirmation")
+	        }, this.props.inputProps.passwordConfirmation)),
+	        _react2.default.createElement(
+	          _ButtonLoader2.default,
+	          _extends({
+	            loading: loading,
+	            type: "submit",
+	            className: "update-password-submit",
+	            icon: _icons.Lock,
+	            primary: true,
+	            disabled: disabled,
+	            style: { float: "right" },
+	            onClick: this.handleSubmit.bind(this)
+	          }, this.props.inputProps.submit),
+	          "Update Password"
+	        )
+	      );
+	    }
+	  }]);
+
+	  return UpdatePasswordForm;
+	}(_react2.default.Component);
+
+	UpdatePasswordForm.defaultProps = {
+	  inputProps: {
+	    password: {},
+	    passwordConfirmation: {},
+	    submit: {}
+	  }
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(UpdatePasswordForm);
+
+/***/ },
+/* 140 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	var _ui = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var DestroyAccountErrorModal = function (_React$Component) {
+	  _inherits(DestroyAccountErrorModal, _React$Component);
+
+	  function DestroyAccountErrorModal() {
+	    _classCallCheck(this, DestroyAccountErrorModal);
+
+	    return _possibleConstructorReturn(this, (DestroyAccountErrorModal.__proto__ || Object.getPrototypeOf(DestroyAccountErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(DestroyAccountErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(_Modal2.default, _extends({}, this.props, {
+	        containerClass: "destroy-account-error-modal",
+	        closeAction: _ui.hideDestroyAccountErrorModal,
+	        errorAddr: ["destroyAccount", "errors"],
+	        title: "Error" }));
+	    }
+	  }]);
+
+	  return DestroyAccountErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = DestroyAccountErrorModal;
+
+/***/ },
+/* 141 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _ui = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var DestroyAccountSuccessModal = function (_React$Component) {
+	  _inherits(DestroyAccountSuccessModal, _React$Component);
+
+	  function DestroyAccountSuccessModal() {
+	    _classCallCheck(this, DestroyAccountSuccessModal);
+
+	    return _possibleConstructorReturn(this, (DestroyAccountSuccessModal.__proto__ || Object.getPrototypeOf(DestroyAccountSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(DestroyAccountSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          title: "Destroy Account Success",
+	          containerClass: "destroy-account-success-modal",
+	          closeAction: _ui.hideDestroyAccountSuccessModal }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          this.props.auth.getIn(["ui", "destroyAccountMessage"])
+	        )
+	      );
+	    }
+	  }]);
+
+	  return DestroyAccountSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(DestroyAccountSuccessModal);
+
+/***/ },
+/* 142 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EmailSignInErrorModal = function (_React$Component) {
+	  _inherits(EmailSignInErrorModal, _React$Component);
+
+	  function EmailSignInErrorModal() {
+	    _classCallCheck(this, EmailSignInErrorModal);
+
+	    return _possibleConstructorReturn(this, (EmailSignInErrorModal.__proto__ || Object.getPrototypeOf(EmailSignInErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(EmailSignInErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(_Modal2.default, _extends({}, this.props, {
+	        closeAction: _ui.hideEmailSignInErrorModal,
+	        containerClass: "email-sign-in-error-modal",
+	        title: "Sign In Error",
+	        errorAddr: ["emailSignIn", "errors"] }));
+	    }
+	  }]);
+
+	  return EmailSignInErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = EmailSignInErrorModal;
+
+/***/ },
+/* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _ui = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EmailSignInSuccessModal = function (_React$Component) {
+	  _inherits(EmailSignInSuccessModal, _React$Component);
+
+	  function EmailSignInSuccessModal() {
+	    _classCallCheck(this, EmailSignInSuccessModal);
+
+	    return _possibleConstructorReturn(this, (EmailSignInSuccessModal.__proto__ || Object.getPrototypeOf(EmailSignInSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(EmailSignInSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          title: "Welcome Back",
+	          closeAction: _ui.hideEmailSignInSuccessModal,
+	          containerClass: "email-sign-in-success-modal" }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "You are now signed in as ",
+	          this.props.auth.getIn(["user", "attributes", "email"]),
+	          "."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return EmailSignInSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(EmailSignInSuccessModal);
+
+/***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EmailSignUpErrorModal = function (_React$Component) {
+	  _inherits(EmailSignUpErrorModal, _React$Component);
+
+	  function EmailSignUpErrorModal() {
+	    _classCallCheck(this, EmailSignUpErrorModal);
+
+	    return _possibleConstructorReturn(this, (EmailSignUpErrorModal.__proto__ || Object.getPrototypeOf(EmailSignUpErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(EmailSignUpErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(_Modal2.default, _extends({}, this.props, {
+	        title: "Sign Up Error",
+	        containerClass: "email-sign-up-form-error-modal",
+	        closeAction: _ui.hideEmailSignUpErrorModal,
+	        errorAddr: ["emailSignUp", "errors", "full_messages"] }));
+	    }
+	  }]);
+
+	  return EmailSignUpErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = EmailSignUpErrorModal;
+
+/***/ },
+/* 145 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var EmailSignUpSuccessModal = function (_React$Component) {
+	  _inherits(EmailSignUpSuccessModal, _React$Component);
+
+	  function EmailSignUpSuccessModal() {
+	    _classCallCheck(this, EmailSignUpSuccessModal);
+
+	    return _possibleConstructorReturn(this, (EmailSignUpSuccessModal.__proto__ || Object.getPrototypeOf(EmailSignUpSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(EmailSignUpSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "email-sign-up-success-modal",
+	          closeAction: _ui.hideEmailSignUpSuccessModal,
+	          title: "Sign Up Success" }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "A confirmation email was sent to your account at ",
+	          this.props.auth.getIn(["ui", "emailSignUpAddress"]),
+	          ". Follow the instructions in the email to complete registration."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return EmailSignUpSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(EmailSignUpSuccessModal);
+
+/***/ },
+/* 146 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FirstTimeLoginErrorModal = function (_React$Component) {
+	  _inherits(FirstTimeLoginErrorModal, _React$Component);
+
+	  function FirstTimeLoginErrorModal() {
+	    _classCallCheck(this, FirstTimeLoginErrorModal);
+
+	    return _possibleConstructorReturn(this, (FirstTimeLoginErrorModal.__proto__ || Object.getPrototypeOf(FirstTimeLoginErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(FirstTimeLoginErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "first-time-login-error-modal",
+	          closeAction: _ui.hideFirstTimeLoginErrorModal,
+	          title: "Confirmation Error" }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "There was a problem confirming your account. Please try again."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return FirstTimeLoginErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = FirstTimeLoginErrorModal;
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FirstTimeLoginSuccessModal = function (_React$Component) {
+	  _inherits(FirstTimeLoginSuccessModal, _React$Component);
+
+	  function FirstTimeLoginSuccessModal() {
+	    _classCallCheck(this, FirstTimeLoginSuccessModal);
+
+	    return _possibleConstructorReturn(this, (FirstTimeLoginSuccessModal.__proto__ || Object.getPrototypeOf(FirstTimeLoginSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(FirstTimeLoginSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "first-time-login-success-modal",
+	          closeAction: _ui.hideFirstTimeLoginSuccessModal,
+	          title: "Welcome " + this.props.auth.getIn(["user", "attributes", "email"]) + "!" }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Your account has been confirmed."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return FirstTimeLoginSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(FirstTimeLoginSuccessModal);
+
+/***/ },
+/* 148 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _colors = __webpack_require__(25);
+
+	var Colors = _interopRequireWildcard(_colors);
+
+	var _ui = __webpack_require__(2);
+
+	var _icons = __webpack_require__(13);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var OAuthSignInErrorModal = function (_React$Component) {
+	  _inherits(OAuthSignInErrorModal, _React$Component);
+
+	  function OAuthSignInErrorModal() {
+	    _classCallCheck(this, OAuthSignInErrorModal);
+
+	    return _possibleConstructorReturn(this, (OAuthSignInErrorModal.__proto__ || Object.getPrototypeOf(OAuthSignInErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(OAuthSignInErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "oauth-sign-in-error-modal",
+	          closeAction: _ui.hideOAuthSignInErrorModal,
+	          title: "OAuth Sign In Error" }),
+	        _react2.default.createElement(
+	          "p",
+	          {
+	            className: "inline-error-item",
+	            style: { paddingLeft: "20px", position: "relative", marginBottom: "28px" } },
+	          _react2.default.createElement(_icons.Error, {
+	            viewBox: "0 0 50 50",
+	            color: Colors.red500,
+	            style: {
+	              position: "absolute",
+	              left: 0,
+	              top: 3
+	            } }),
+	          "There was an error authenticating your account. Please try again."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return OAuthSignInErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = OAuthSignInErrorModal;
+
+/***/ },
+/* 149 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var OAuthSignInSuccessModal = function (_React$Component) {
+	  _inherits(OAuthSignInSuccessModal, _React$Component);
+
+	  function OAuthSignInSuccessModal() {
+	    _classCallCheck(this, OAuthSignInSuccessModal);
+
+	    return _possibleConstructorReturn(this, (OAuthSignInSuccessModal.__proto__ || Object.getPrototypeOf(OAuthSignInSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(OAuthSignInSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "oauth-sign-in-success-modal",
+	          title: "Welcome",
+	          closeAction: _ui.hideOAuthSignInSuccessModal }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "You are now signed in via ",
+	          this.props.auth.getIn(["user", "attributes", "provider"]),
+	          "."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return OAuthSignInSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(OAuthSignInSuccessModal);
+
+/***/ },
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _core = __webpack_require__(33);
+
+	var _icons = __webpack_require__(13);
+
+	var _styles = __webpack_require__(34);
+
+	var _ButtonLoader = __webpack_require__(16);
+
+	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+	var _Input = __webpack_require__(23);
+
+	var _Input2 = _interopRequireDefault(_Input);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _ui = __webpack_require__(2);
+
+	var _updatePasswordModal = __webpack_require__(2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var PasswordResetSuccessModal = function (_React$Component) {
+	  _inherits(PasswordResetSuccessModal, _React$Component);
+
+	  function PasswordResetSuccessModal() {
+	    _classCallCheck(this, PasswordResetSuccessModal);
+
+	    return _possibleConstructorReturn(this, (PasswordResetSuccessModal.__proto__ || Object.getPrototypeOf(PasswordResetSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(PasswordResetSuccessModal, [{
+	    key: "getEndpoint",
+	    value: function getEndpoint() {
+	      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+	    }
+	  }, {
+	    key: "handleInput",
+	    value: function handleInput(key, val) {
+	      this.props.dispatch((0, _updatePasswordModal.updatePasswordModalFormUpdate)(this.getEndpoint(), key, val));
+	    }
+	  }, {
+	    key: "handleSubmit",
+	    value: function handleSubmit() {
+	      var formData = this.props.auth.getIn(["updatePasswordModal", this.getEndpoint(), "form"]).toJS();
+	      this.props.dispatch((0, _updatePasswordModal.updatePasswordModal)(formData, this.getEndpoint()));
+	    }
+	  }, {
+	    key: "close",
+	    value: function close() {
+	      this.props.dispatch((0, _ui.hidePasswordResetSuccessModal)());
+	    }
+	  }, {
+	    key: "render",
+	    value: function render() {
+	      var endpoint = this.getEndpoint();
+	      var loading = this.props.auth.getIn(["updatePasswordModal", endpoint, "loading"]);
+
+	      return _react2.default.createElement(
+	        _styles.MuiThemeProvider,
+	        null,
+	        _react2.default.createElement(
+	          _core.Dialog,
+	          {
+	            open: this.props.show,
+	            contentClassName: "redux-auth-modal password-reset-success-modal",
+	            actions: [_react2.default.createElement(
+	              _core.Button,
+	              _extends({
+	                key: "cancel",
+	                className: "password-reset-success-modal-close",
+	                onClick: this.close.bind(this),
+	                secondary: true
+	              }, this.props.inputProps.cancel),
+	              "Cancel"
+	            ), _react2.default.createElement(_ButtonLoader2.default, _extends({
+	              key: "submit"
+	            }, this.props, {
+	              loading: loading,
+	              type: "submit",
+	              primary: true,
+	              className: "password-reset-success-modal-submit",
+	              icon: _icons.Lock,
+	              onClick: this.handleSubmit.bind(this)
+	            }, this.props.inputProps.submit))],
+	            title: "Reset Your Password" },
+	          _react2.default.createElement(
+	            "form",
+	            null,
+	            _react2.default.createElement(_Input2.default, _extends({
+	              type: "password",
+	              label: "Password",
+	              placeholder: "Password",
+	              disabled: loading,
+	              className: "password-reset-success-modal-password",
+	              value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password"]),
+	              errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password"]),
+	              onChange: this.handleInput.bind(this, "password")
+	            }, this.props.inputProps.password)),
+	            _react2.default.createElement(_Input2.default, _extends({
+	              type: "password",
+	              label: "Password Confirmation",
+	              placeholder: "Password Confirmation",
+	              disabled: loading,
+	              className: "password-reset-success-modal-password-confirmation",
+	              value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password_confirmation"]),
+	              errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password_confirmation"]),
+	              onChange: this.handleInput.bind(this, "password_confirmation")
+	            }, this.props.inputProps.passwordConfirmation))
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return PasswordResetSuccessModal;
+	}(_react2.default.Component);
+
+	PasswordResetSuccessModal.defaultProps = {
+	  show: false,
+	  inputProps: {}
+	};
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(PasswordResetSuccessModal);
+
+/***/ },
+/* 151 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var RequestPasswordResetErrorModal = function (_React$Component) {
+	  _inherits(RequestPasswordResetErrorModal, _React$Component);
+
+	  function RequestPasswordResetErrorModal() {
+	    _classCallCheck(this, RequestPasswordResetErrorModal);
+
+	    return _possibleConstructorReturn(this, (RequestPasswordResetErrorModal.__proto__ || Object.getPrototypeOf(RequestPasswordResetErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(RequestPasswordResetErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(_Modal2.default, _extends({}, this.props, {
+	        containerClass: "request-password-reset-error-modal",
+	        closeAction: _ui.hidePasswordResetRequestErrorModal,
+	        title: "Error",
+	        errorAddr: ["requestPassswordReset", "errors"] }));
+	    }
+	  }]);
+
+	  return RequestPasswordResetErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = RequestPasswordResetErrorModal;
+
+/***/ },
+/* 152 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(3);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var RequestPasswordResetSuccessModal = function (_React$Component) {
+	  _inherits(RequestPasswordResetSuccessModal, _React$Component);
+
+	  function RequestPasswordResetSuccessModal() {
+	    _classCallCheck(this, RequestPasswordResetSuccessModal);
+
+	    return _possibleConstructorReturn(this, (RequestPasswordResetSuccessModal.__proto__ || Object.getPrototypeOf(RequestPasswordResetSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(RequestPasswordResetSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "request-password-reset-success-modal",
+	          closeAction: _ui.hidePasswordResetRequestSuccessModal,
+	          title: "Password Reset Request Success" }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          this.props.auth.getIn(["ui", "requestPasswordResetSuccessMessage"])
+	        )
+	      );
+	    }
+	  }]);
+
+	  return RequestPasswordResetSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  return { auth: state.get('auth') };
+	})(RequestPasswordResetSuccessModal);
+
+/***/ },
+/* 153 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SignOutErrorModal = function (_React$Component) {
+	  _inherits(SignOutErrorModal, _React$Component);
+
+	  function SignOutErrorModal() {
+	    _classCallCheck(this, SignOutErrorModal);
+
+	    return _possibleConstructorReturn(this, (SignOutErrorModal.__proto__ || Object.getPrototypeOf(SignOutErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(SignOutErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "sign-out-error-modal",
+	          title: "Sign Out Error",
+	          closeAction: _ui.hideSignOutErrorModal }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "The server encountered an error while trying to sign you out. Your account information has been wiped from this browser, but you may want to sign in and then sign back out again to resolve any issues."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return SignOutErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = SignOutErrorModal;
+
+/***/ },
+/* 154 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var SignOutSuccessModal = function (_React$Component) {
+	  _inherits(SignOutSuccessModal, _React$Component);
+
+	  function SignOutSuccessModal() {
+	    _classCallCheck(this, SignOutSuccessModal);
+
+	    return _possibleConstructorReturn(this, (SignOutSuccessModal.__proto__ || Object.getPrototypeOf(SignOutSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(SignOutSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "sign-out-success-modal",
+	          closeAction: _ui.hideSignOutSuccessModal,
+	          title: "Goodbye!" }),
+	        "You have been successfully signed out."
+	      );
+	    }
+	  }]);
+
+	  return SignOutSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = SignOutSuccessModal;
+
+/***/ },
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UpdatePasswordErrorModal = function (_React$Component) {
+	  _inherits(UpdatePasswordErrorModal, _React$Component);
+
+	  function UpdatePasswordErrorModal() {
+	    _classCallCheck(this, UpdatePasswordErrorModal);
+
+	    return _possibleConstructorReturn(this, (UpdatePasswordErrorModal.__proto__ || Object.getPrototypeOf(UpdatePasswordErrorModal)).apply(this, arguments));
+	  }
+
+	  _createClass(UpdatePasswordErrorModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(_Modal2.default, _extends({}, this.props, {
+	        containerClass: "update-password-error-modal",
+	        closeAction: _ui.hideUpdatePasswordErrorModal,
+	        title: "Error",
+	        errorAddr: ["updatePassword", "errors", "full_messages"] }));
+	    }
+	  }]);
+
+	  return UpdatePasswordErrorModal;
+	}(_react2.default.Component);
+
+	exports.default = UpdatePasswordErrorModal;
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ui = __webpack_require__(2);
+
+	var _Modal = __webpack_require__(8);
+
+	var _Modal2 = _interopRequireDefault(_Modal);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UpdatePasswordSuccessModal = function (_React$Component) {
+	  _inherits(UpdatePasswordSuccessModal, _React$Component);
+
+	  function UpdatePasswordSuccessModal() {
+	    _classCallCheck(this, UpdatePasswordSuccessModal);
+
+	    return _possibleConstructorReturn(this, (UpdatePasswordSuccessModal.__proto__ || Object.getPrototypeOf(UpdatePasswordSuccessModal)).apply(this, arguments));
+	  }
+
+	  _createClass(UpdatePasswordSuccessModal, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _Modal2.default,
+	        _extends({}, this.props, {
+	          containerClass: "update-password-success-modal",
+	          closeAction: _ui.hideUpdatePasswordSuccessModal,
+	          title: "Success" }),
+	        _react2.default.createElement(
+	          "p",
+	          null,
+	          "Your password has been successfully changed."
+	        )
+	      );
+	    }
+	  }]);
+
+	  return UpdatePasswordSuccessModal;
+	}(_react2.default.Component);
+
+	exports.default = UpdatePasswordSuccessModal;
+
+/***/ }
+/******/ ])));

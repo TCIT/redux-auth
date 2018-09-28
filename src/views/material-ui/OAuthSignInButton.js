@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ButtonLoader from "./ButtonLoader";
-import { ActionExitToApp } from "@material-ui/core";
+import { ExitToApp } from "@material-ui/icons";
 import { oAuthSignIn as _oAuthSignIn } from "../../actions/oauth-sign-in";
 
 // hook for rewire
@@ -12,7 +12,7 @@ class OAuthSignInButton extends React.Component {
   static defaultProps = {
     signInParams: {},
     children: <span>OAuth Sign In</span>,
-    icon: ActionExitToApp
+    icon: ExitToApp
   };
 
   getEndpoint () {
