@@ -325,61 +325,61 @@
 	  }
 	});
 
-	var _authenticate2 = __webpack_require__(128);
+	var _authenticate2 = __webpack_require__(129);
 
 	var _authenticate3 = _interopRequireDefault(_authenticate2);
 
-	var _configure2 = __webpack_require__(129);
+	var _configure2 = __webpack_require__(130);
 
 	var _configure3 = _interopRequireDefault(_configure2);
 
-	var _user = __webpack_require__(140);
+	var _user = __webpack_require__(141);
 
 	var _user2 = _interopRequireDefault(_user);
 
-	var _ui2 = __webpack_require__(137);
+	var _ui2 = __webpack_require__(138);
 
 	var _ui3 = _interopRequireDefault(_ui2);
 
-	var _emailSignIn2 = __webpack_require__(131);
+	var _emailSignIn2 = __webpack_require__(132);
 
 	var _emailSignIn3 = _interopRequireDefault(_emailSignIn2);
 
-	var _emailSignUp2 = __webpack_require__(132);
+	var _emailSignUp2 = __webpack_require__(133);
 
 	var _emailSignUp3 = _interopRequireDefault(_emailSignUp2);
 
-	var _oauthSignIn2 = __webpack_require__(133);
+	var _oauthSignIn2 = __webpack_require__(134);
 
 	var _oauthSignIn3 = _interopRequireDefault(_oauthSignIn2);
 
-	var _requestPasswordReset2 = __webpack_require__(134);
+	var _requestPasswordReset2 = __webpack_require__(135);
 
 	var _requestPasswordReset3 = _interopRequireDefault(_requestPasswordReset2);
 
-	var _updatePassword2 = __webpack_require__(139);
+	var _updatePassword2 = __webpack_require__(140);
 
 	var _updatePassword3 = _interopRequireDefault(_updatePassword2);
 
-	var _updatePasswordModal2 = __webpack_require__(138);
+	var _updatePasswordModal2 = __webpack_require__(139);
 
 	var _updatePasswordModal3 = _interopRequireDefault(_updatePasswordModal2);
 
-	var _server = __webpack_require__(135);
+	var _server = __webpack_require__(136);
 
 	var _server2 = _interopRequireDefault(_server);
 
-	var _signOut2 = __webpack_require__(136);
+	var _signOut2 = __webpack_require__(137);
 
 	var _signOut3 = _interopRequireDefault(_signOut2);
 
-	var _destroyAccount2 = __webpack_require__(130);
+	var _destroyAccount2 = __webpack_require__(131);
 
 	var _destroyAccount3 = _interopRequireDefault(_destroyAccount2);
 
 	var _reduxImmutablejs = __webpack_require__(11);
 
-	var _verifyAuth2 = __webpack_require__(70);
+	var _verifyAuth2 = __webpack_require__(71);
 
 	var _verifyAuth3 = _interopRequireDefault(_verifyAuth2);
 
@@ -441,11 +441,11 @@
 
 	var _server = __webpack_require__(41);
 
-	var _clientSettings = __webpack_require__(141);
+	var _clientSettings = __webpack_require__(142);
 
 	var _sessionStorage = __webpack_require__(12);
 
-	var _verifyAuth = __webpack_require__(70);
+	var _verifyAuth = __webpack_require__(71);
 
 	var _verifyAuth2 = _interopRequireDefault(_verifyAuth);
 
@@ -453,7 +453,7 @@
 
 	var _parseUrl2 = _interopRequireDefault(_parseUrl);
 
-	var _reactRouterRedux = __webpack_require__(265);
+	var _reactRouterRedux = __webpack_require__(268);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -649,7 +649,7 @@
 	exports.persistData = persistData;
 	exports.retrieveData = retrieveData;
 
-	var _browserCookies = __webpack_require__(260);
+	var _browserCookies = __webpack_require__(263);
 
 	var _browserCookies2 = _interopRequireDefault(_browserCookies);
 
@@ -894,7 +894,7 @@
 	  });
 	};
 
-	var _isomorphicFetch = __webpack_require__(78);
+	var _isomorphicFetch = __webpack_require__(79);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
@@ -1295,7 +1295,7 @@
 
 	var _fetch2 = _interopRequireDefault(_fetch);
 
-	var _popup = __webpack_require__(142);
+	var _popup = __webpack_require__(143);
 
 	var _popup2 = _interopRequireDefault(_popup);
 
@@ -1816,7 +1816,7 @@
 	exports.getAllParams = getAllParams;
 	exports.default = getRedirectInfo;
 
-	var _querystring = __webpack_require__(263);
+	var _querystring = __webpack_require__(266);
 
 	var _querystring2 = _interopRequireDefault(_querystring);
 
@@ -1962,7 +1962,7 @@
 
 /***/ },
 
-/***/ 69:
+/***/ 70:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2046,7 +2046,7 @@
 
 /***/ },
 
-/***/ 70:
+/***/ 71:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2059,11 +2059,11 @@
 
 	exports.fetchToken = fetchToken;
 
-	var _isomorphicFetch = __webpack_require__(78);
+	var _isomorphicFetch = __webpack_require__(79);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
-	var _cookie = __webpack_require__(262);
+	var _cookie = __webpack_require__(265);
 
 	var _cookie2 = _interopRequireDefault(_cookie);
 
@@ -2077,11 +2077,11 @@
 
 	var _fetch = __webpack_require__(13);
 
-	var _parseEndpointConfig3 = __webpack_require__(69);
+	var _parseEndpointConfig3 = __webpack_require__(70);
 
 	var _parseEndpointConfig4 = _interopRequireDefault(_parseEndpointConfig3);
 
-	var _url = __webpack_require__(266);
+	var _url = __webpack_require__(269);
 
 	var _url2 = _interopRequireDefault(_url);
 
@@ -2239,14 +2239,14 @@
 
 /***/ },
 
-/***/ 78:
+/***/ 79:
 /***/ function(module, exports) {
 
 	module.exports = require("isomorphic-fetch");
 
 /***/ },
 
-/***/ 128:
+/***/ 129:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2297,7 +2297,7 @@
 
 /***/ },
 
-/***/ 129:
+/***/ 130:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2362,7 +2362,7 @@
 
 /***/ },
 
-/***/ 130:
+/***/ 131:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2419,7 +2419,7 @@
 
 /***/ },
 
-/***/ 131:
+/***/ 132:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2485,7 +2485,7 @@
 
 /***/ },
 
-/***/ 132:
+/***/ 133:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2551,7 +2551,7 @@
 
 /***/ },
 
-/***/ 133:
+/***/ 134:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2611,7 +2611,7 @@
 
 /***/ },
 
-/***/ 134:
+/***/ 135:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2677,7 +2677,7 @@
 
 /***/ },
 
-/***/ 135:
+/***/ 136:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2729,7 +2729,7 @@
 
 /***/ },
 
-/***/ 136:
+/***/ 137:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2790,7 +2790,7 @@
 
 /***/ },
 
-/***/ 137:
+/***/ 138:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3002,7 +3002,7 @@
 
 /***/ },
 
-/***/ 138:
+/***/ 139:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3068,7 +3068,7 @@
 
 /***/ },
 
-/***/ 139:
+/***/ 140:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3134,7 +3134,7 @@
 
 /***/ },
 
-/***/ 140:
+/***/ 141:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3263,7 +3263,7 @@
 
 /***/ },
 
-/***/ 141:
+/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3285,7 +3285,7 @@
 
 	var _fetch2 = _interopRequireDefault(_fetch);
 
-	var _parseEndpointConfig2 = __webpack_require__(69);
+	var _parseEndpointConfig2 = __webpack_require__(70);
 
 	var _parseEndpointConfig3 = _interopRequireDefault(_parseEndpointConfig2);
 
@@ -3412,7 +3412,7 @@
 
 /***/ },
 
-/***/ 142:
+/***/ 143:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3487,35 +3487,35 @@
 
 /***/ },
 
-/***/ 260:
+/***/ 263:
 /***/ function(module, exports) {
 
 	module.exports = require("browser-cookies");
 
 /***/ },
 
-/***/ 262:
+/***/ 265:
 /***/ function(module, exports) {
 
 	module.exports = require("cookie");
 
 /***/ },
 
-/***/ 263:
+/***/ 266:
 /***/ function(module, exports) {
 
 	module.exports = require("querystring");
 
 /***/ },
 
-/***/ 265:
+/***/ 268:
 /***/ function(module, exports) {
 
 	module.exports = require("react-router-redux");
 
 /***/ },
 
-/***/ 266:
+/***/ 269:
 /***/ function(module, exports) {
 
 	module.exports = require("url");

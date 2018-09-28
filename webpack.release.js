@@ -59,7 +59,7 @@ module.exports = {
       __CLIENT__: true,
       __SERVER__: false,
       "process.env": {
-        NODE_ENV: "\"production\""
+        NODE_ENV: 'production'
       }
       // "global": {
       //   [MUI_GENERATOR_COUNTER]: 0
