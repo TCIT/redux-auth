@@ -3886,7 +3886,7 @@
 /* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
 
 	var _interopRequireDefault = __webpack_require__(5);
 
@@ -3900,7 +3900,7 @@
 	/* eslint-disable no-underscore-dangle */
 	// People might bundle this classname generator twice.
 	// We need to use a global.
-	(0) = 0;
+	global.__MUI_GENERATOR_COUNTER__ = 0;
 	var escapeRegex = /([[\].#*$><+~=|^:(),"'`\s])/g;
 
 	function safePrefix(classNamePrefix) {
@@ -3928,9 +3928,9 @@
 	  // so the warning is only triggered client side.
 
 	  if (("production") === 'production' && typeof window !== 'undefined') {
-	    (0) += 1;
+	    global.__MUI_GENERATOR_COUNTER__ += 1;
 
-	    if ((0) > 2) {
+	    if (global.__MUI_GENERATOR_COUNTER__ > 2) {
 	      // eslint-disable-next-line no-console
 	      console.error(['Material-UI: we have detected more than needed creation of the class name generator.', 'You should only use one class name generator on the client side.', 'If you do otherwise, you take the risk to have conflicting class names in production.'].join('\n'));
 	    }
@@ -3973,6 +3973,7 @@
 	    return "".concat(rule.key, "-").concat(ruleCounter);
 	  };
 	}
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 106 */
@@ -10498,12 +10499,12 @@
 /* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var CSS = ({"__MUI_GENERATOR_COUNTER__":0}).CSS;
+	var CSS = global.CSS;
 
 	var env = ("production");
 
@@ -10520,6 +10521,7 @@
 
 	  return CSS.escape(str);
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 251 */
@@ -10561,27 +10563,28 @@
 
 /***/ },
 /* 252 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	var ns = '2f1acc6c3a606b082e5eef5e54414ffb';
-	if (({"__MUI_GENERATOR_COUNTER__":0})[ns] == null) ({"__MUI_GENERATOR_COUNTER__":0})[ns] = 0;
+	if (global[ns] == null) global[ns] = 0;
 
 	// Bundle may contain multiple JSS versions at the same time. In order to identify
 	// the current version with just one short number and use it for classes generation
 	// we use a counter. Also it is more accurate, because user can manually reevaluate
 	// the module.
-	exports['default'] = ({"__MUI_GENERATOR_COUNTER__":0})[ns]++;
+	exports['default'] = global[ns]++;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(global, module) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -10600,9 +10603,9 @@
 	  root = self;
 	} else if (typeof window !== 'undefined') {
 	  root = window;
+	} else if (typeof global !== 'undefined') {
+	  root = global;
 	} else if (true) {
-	  root = ({"__MUI_GENERATOR_COUNTER__":0});
-	} else if (typeof module !== 'undefined') {
 	  root = module;
 	} else {
 	  root = Function('return this')();
@@ -10610,6 +10613,7 @@
 
 	var result = (0, _ponyfill2['default'])(root);
 	exports['default'] = result;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(2)(module)))
 
 /***/ },
 /* 254 */

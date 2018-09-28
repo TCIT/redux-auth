@@ -58,10 +58,10 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: "\"production\""
-      },
-      "global": {
-        __MUI_GENERATOR_COUNTER__: 0
       }
+      // "global": {
+      //   __MUI_GENERATOR_COUNTER__: 0
+      // }
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin()
