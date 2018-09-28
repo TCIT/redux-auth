@@ -1,6 +1,7 @@
 import React from "react";
 import * as Colors from "@material-ui/core/colors";
-import { TextField, AlertError } from "@material-ui/core";
+import { TextField,  } from "@material-ui/core";
+import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 import {MuiThemeProvider} from '@material-ui/core/styles';
 
@@ -26,7 +27,7 @@ class AuthInput extends React.Component {
               <p className="inline-error-item"
                 style={{ paddingLeft: "20px", position: "relative", marginBottom: "28px" }}
                 key={i}>
-                <AlertError
+                <Error
                   viewBox="0 0 50 50"
                   color={Colors.red500}
                   style={{

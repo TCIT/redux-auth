@@ -1,6 +1,6 @@
 import React from "react";
 import ButtonLoader from "./ButtonLoader";
-import { ActionLock } from "@material-ui/core";
+import Lock from "@material-ui/icons/Lock";
 import { connect } from "react-redux";
 import { signOut } from "../../actions/sign-out";
 
@@ -9,7 +9,7 @@ class SignOutButton extends React.Component {
   static defaultProps = {
     next: () => { },
     children: <span>Sign Out</span>,
-    icon: ActionLock
+    icon: Lock
   };
 
   getEndpoint() {

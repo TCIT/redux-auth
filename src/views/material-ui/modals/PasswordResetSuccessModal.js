@@ -1,5 +1,6 @@
 import React from "react";
-import { Dialog, ActionLock, Button } from "@material-ui/core";
+import { Dialog, Button } from "@material-ui/core";
+import Lock from "@material-ui/icons/Lock";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import ButtonLoader from "../ButtonLoader";
 import Input from "../Input";
@@ -63,7 +64,7 @@ class PasswordResetSuccessModal extends React.Component {
               type="submit"
               primary={true}
               className="password-reset-success-modal-submit"
-              icon={ActionLock}
+              icon={Lock}
               onClick={this.handleSubmit.bind(this)}
               {...this.props.inputProps.submit} />
           ]}

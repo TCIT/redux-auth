@@ -1,7 +1,7 @@
 import React from "react";
 import * as Colors from "@material-ui/core/colors";
 import { hideOAuthSignInErrorModal } from "../../../actions/ui";
-import { AlertError } from "@material-ui/core";
+import Error from "@material-ui/icons/Error";
 import Modal from "./Modal";
 
 class OAuthSignInErrorModal extends React.Component {
@@ -15,7 +15,7 @@ class OAuthSignInErrorModal extends React.Component {
         <p
           className="inline-error-item"
           style={{ paddingLeft: "20px", position: "relative", marginBottom: "28px" }}>
-          <AlertError
+          <Error
             viewBox="0 0 50 50"
             color={Colors.red500}
             style={{

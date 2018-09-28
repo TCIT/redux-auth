@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
-import {ActionLock} from "@material-ui/core";
+import Lock from "@material-ui/icons/Lock";
 import { updatePassword, updatePasswordFormUpdate } from "../../actions/update-password";
 import { connect } from "react-redux";
 
@@ -15,7 +15,7 @@ class UpdatePasswordForm extends React.Component {
     }
   };
 
-  getEndpoint () {
+  getEndpoint() {
     return (
       this.props.endpoint ||
       this.props.auth.getIn(["configure", "currentEndpointKey"]) ||
@@ -23,17 +23,17 @@ class UpdatePasswordForm extends React.Component {
     );
   }
 
-  handleInput (key, val) {
+  handleInput(key, val) {
     this.props.dispatch(updatePasswordFormUpdate(this.getEndpoint(), key, val));
   }
 
-  handleSubmit (ev) {
+  handleSubmit(ev) {
     ev.preventDefault();
     let formData = this.props.auth.getIn(["updatePassword", this.getEndpoint(), "form"]).toJS();
     this.props.dispatch(updatePassword(formData, this.getEndpoint()));
   }
 
-  render () {
+  render() {
     let endpoint = this.getEndpoint();
     let loading = this.props.auth.getIn(["updatePassword", endpoint, "loading"]);
     let disabled = (
@@ -69,10 +69,10 @@ class UpdatePasswordForm extends React.Component {
           loading={loading}
           type="submit"
           className="update-password-submit"
-          icon={ActionLock}
+          icon={Lock}
           primary={true}
           disabled={disabled}
-          style={{float: "right"}}
+          style={{ float: "right" }}
           onClick={this.handleSubmit.bind(this)}
           {...this.props.inputProps.submit}>
           Update Password

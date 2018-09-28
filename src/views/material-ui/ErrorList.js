@@ -1,6 +1,6 @@
 import React from "react";
 import * as Colors from "@material-ui/core/colors";
-import { AlertError }from "@material-ui/core";
+import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {
@@ -9,7 +9,7 @@ class ErrorList extends React.Component {
     errors: Immutable.fromJS([])
   };
 
-  renderErrorList () {
+  renderErrorList() {
     let errorCount = (this.props.errors || Immutable.fromJS([])).size;
 
     if (errorCount > 0) {
@@ -25,15 +25,16 @@ class ErrorList extends React.Component {
               <p
                 key={i}
                 className="control-label modal-error-item"
-                style={{paddingLeft: "20px", position: "relative"}}>
+                style={{ paddingLeft: "20px", position: "relative" }}>
 
-                <AlertError
+                <Error
                   viewBox="0 0 50 50"
                   color={Colors.red500}
                   style={{
                     position: "absolute",
                     left: 0,
-                    top: 3}} /> {err}
+                    top: 3
+                  }} /> {err}
               </p>
             );
           })}
@@ -41,21 +42,22 @@ class ErrorList extends React.Component {
       );
     } else {
       return (
-        <p style={{paddingLeft: "20px", position: "relative"}}>
-          <AlertError
+        <p style={{ paddingLeft: "20px", position: "relative" }}>
+          <Error
             viewBox="0 0 50 50"
             style={{
               position: "absolute",
               left: 0,
-              top: 3}}
+              top: 3
+            }}
             color={Colors.red500} /> There was an error processing this form.
-          Please check each field and try again.
+        Please check each field and try again.
         </p>
       );
     }
   }
 
-  render () {
+  render() {
     return (
       <div className="auth-error-message">
         {this.renderErrorList()}
