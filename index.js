@@ -60,7 +60,7 @@
 	  }
 	});
 
-	var _authenticate = __webpack_require__(26);
+	var _authenticate = __webpack_require__(27);
 
 	Object.defineProperty(exports, "authenticate", {
 	  enumerable: true,
@@ -69,7 +69,7 @@
 	  }
 	});
 
-	var _emailSignIn = __webpack_require__(28);
+	var _emailSignIn = __webpack_require__(29);
 
 	Object.defineProperty(exports, "emailSignIn", {
 	  enumerable: true,
@@ -84,7 +84,7 @@
 	  }
 	});
 
-	var _signOut = __webpack_require__(32);
+	var _signOut = __webpack_require__(33);
 
 	Object.defineProperty(exports, "signOut", {
 	  enumerable: true,
@@ -93,7 +93,7 @@
 	  }
 	});
 
-	var _emailSignUp = __webpack_require__(29);
+	var _emailSignUp = __webpack_require__(30);
 
 	Object.defineProperty(exports, "emailSignUp", {
 	  enumerable: true,
@@ -108,7 +108,7 @@
 	  }
 	});
 
-	var _oauthSignIn = __webpack_require__(30);
+	var _oauthSignIn = __webpack_require__(31);
 
 	Object.defineProperty(exports, "oAuthSignIn", {
 	  enumerable: true,
@@ -162,7 +162,7 @@
 	  }
 	});
 
-	var _destroyAccount = __webpack_require__(27);
+	var _destroyAccount = __webpack_require__(28);
 
 	Object.defineProperty(exports, "destroyAccount", {
 	  enumerable: true,
@@ -427,7 +427,7 @@
 	exports.storeCurrentEndpointKey = storeCurrentEndpointKey;
 	exports.configure = configure;
 
-	var _extend = __webpack_require__(17);
+	var _extend = __webpack_require__(16);
 
 	var _extend2 = _interopRequireDefault(_extend);
 
@@ -435,11 +435,11 @@
 
 	var C = _interopRequireWildcard(_constants);
 
-	var _authenticate = __webpack_require__(26);
+	var _authenticate = __webpack_require__(27);
 
 	var _ui = __webpack_require__(36);
 
-	var _server = __webpack_require__(31);
+	var _server = __webpack_require__(32);
 
 	var _clientSettings = __webpack_require__(77);
 
@@ -903,7 +903,7 @@
 
 	var C = _interopRequireWildcard(_constants);
 
-	var _extend = __webpack_require__(17);
+	var _extend = __webpack_require__(16);
 
 	var _extend2 = _interopRequireDefault(_extend);
 
@@ -982,14 +982,13 @@
 /* 13 */,
 /* 14 */,
 /* 15 */,
-/* 16 */,
-/* 17 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = require("extend");
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1010,6 +1009,7 @@
 	}
 
 /***/ },
+/* 18 */,
 /* 19 */,
 /* 20 */
 /***/ function(module, exports) {
@@ -1030,7 +1030,8 @@
 /* 23 */,
 /* 24 */,
 /* 25 */,
-/* 26 */
+/* 26 */,
+/* 27 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1056,7 +1057,7 @@
 	}
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1072,7 +1073,7 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
 	var _configure = __webpack_require__(5);
 
@@ -1120,7 +1121,7 @@
 	}
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1139,7 +1140,7 @@
 
 	var _configure = __webpack_require__(5);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
 	var _fetch = __webpack_require__(12);
 
@@ -1196,7 +1197,7 @@
 	}
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1213,9 +1214,9 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
-	var _extend = __webpack_require__(17);
+	var _extend = __webpack_require__(16);
 
 	var _extend2 = _interopRequireDefault(_extend);
 
@@ -1268,7 +1269,7 @@
 	}
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1292,7 +1293,7 @@
 
 	var _configure = __webpack_require__(5);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
 	var _fetch = __webpack_require__(12);
 
@@ -1400,7 +1401,7 @@
 	}
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1422,7 +1423,7 @@
 	}
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1438,7 +1439,7 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
 	var _configure = __webpack_require__(5);
 
@@ -1481,7 +1482,6 @@
 	}
 
 /***/ },
-/* 33 */,
 /* 34 */,
 /* 35 */
 /***/ function(module, exports, __webpack_require__) {
@@ -1500,9 +1500,9 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
-	var _extend = __webpack_require__(17);
+	var _extend = __webpack_require__(16);
 
 	var _extend2 = _interopRequireDefault(_extend);
 
@@ -1691,7 +1691,7 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
 	var _fetch = __webpack_require__(12);
 
@@ -1755,7 +1755,7 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _handleFetchResponse = __webpack_require__(18);
+	var _handleFetchResponse = __webpack_require__(17);
 
 	var _fetch = __webpack_require__(12);
 
@@ -1818,7 +1818,7 @@
 
 	var _querystring2 = _interopRequireDefault(_querystring);
 
-	var _extend = __webpack_require__(17);
+	var _extend = __webpack_require__(16);
 
 	var _extend2 = _interopRequireDefault(_extend);
 
@@ -1973,7 +1973,7 @@
 
 	var C = _interopRequireWildcard(_constants);
 
-	var _extend = __webpack_require__(17);
+	var _extend = __webpack_require__(16);
 
 	var _extend2 = _interopRequireDefault(_extend);
 
@@ -2278,7 +2278,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _authenticate = __webpack_require__(26);
+	var _authenticate = __webpack_require__(27);
 
 	var A = _interopRequireWildcard(_authenticate);
 
@@ -2392,7 +2392,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _destroyAccount = __webpack_require__(27);
+	var _destroyAccount = __webpack_require__(28);
 
 	var A = _interopRequireWildcard(_destroyAccount);
 
@@ -2448,7 +2448,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _emailSignIn = __webpack_require__(28);
+	var _emailSignIn = __webpack_require__(29);
 
 	var A = _interopRequireWildcard(_emailSignIn);
 
@@ -2513,7 +2513,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _emailSignUp = __webpack_require__(29);
+	var _emailSignUp = __webpack_require__(30);
 
 	var A = _interopRequireWildcard(_emailSignUp);
 
@@ -2578,7 +2578,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _oauthSignIn = __webpack_require__(30);
+	var _oauthSignIn = __webpack_require__(31);
 
 	var A = _interopRequireWildcard(_oauthSignIn);
 
@@ -2700,7 +2700,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _server = __webpack_require__(31);
+	var _server = __webpack_require__(32);
 
 	var A = _interopRequireWildcard(_server);
 
@@ -2753,7 +2753,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _signOut = __webpack_require__(32);
+	var _signOut = __webpack_require__(33);
 
 	var A = _interopRequireWildcard(_signOut);
 
@@ -2817,15 +2817,15 @@
 
 	var uiActions = _interopRequireWildcard(_ui);
 
-	var _emailSignIn = __webpack_require__(28);
+	var _emailSignIn = __webpack_require__(29);
 
 	var emailSignInActions = _interopRequireWildcard(_emailSignIn);
 
-	var _emailSignUp = __webpack_require__(29);
+	var _emailSignUp = __webpack_require__(30);
 
 	var emailSignUpActions = _interopRequireWildcard(_emailSignUp);
 
-	var _signOut = __webpack_require__(32);
+	var _signOut = __webpack_require__(33);
 
 	var signOutActions = _interopRequireWildcard(_signOut);
 
@@ -2833,7 +2833,7 @@
 
 	var requestPasswordResetActions = _interopRequireWildcard(_requestPasswordReset);
 
-	var _oauthSignIn = __webpack_require__(30);
+	var _oauthSignIn = __webpack_require__(31);
 
 	var oAuthSignInActions = _interopRequireWildcard(_oauthSignIn);
 
@@ -2841,7 +2841,7 @@
 
 	var updatePasswordActions = _interopRequireWildcard(_updatePassword);
 
-	var _destroyAccount = __webpack_require__(27);
+	var _destroyAccount = __webpack_require__(28);
 
 	var destroyAccountActions = _interopRequireWildcard(_destroyAccount);
 
@@ -2849,7 +2849,7 @@
 
 	var updatePasswordModalActions = _interopRequireWildcard(_updatePasswordModal);
 
-	var _server = __webpack_require__(31);
+	var _server = __webpack_require__(32);
 
 	var serverActions = _interopRequireWildcard(_server);
 
@@ -3156,21 +3156,21 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _authenticate = __webpack_require__(26);
+	var _authenticate = __webpack_require__(27);
 
 	var authActions = _interopRequireWildcard(_authenticate);
 
-	var _emailSignIn = __webpack_require__(28);
+	var _emailSignIn = __webpack_require__(29);
 
-	var _emailSignUp = __webpack_require__(29);
+	var _emailSignUp = __webpack_require__(30);
 
-	var _signOut = __webpack_require__(32);
+	var _signOut = __webpack_require__(33);
 
-	var _oauthSignIn = __webpack_require__(30);
+	var _oauthSignIn = __webpack_require__(31);
 
-	var _destroyAccount = __webpack_require__(27);
+	var _destroyAccount = __webpack_require__(28);
 
-	var _server = __webpack_require__(31);
+	var _server = __webpack_require__(32);
 
 	var ssActions = _interopRequireWildcard(_server);
 
@@ -3279,7 +3279,7 @@
 
 	var C = _interopRequireWildcard(_constants);
 
-	var _extend = __webpack_require__(17);
+	var _extend = __webpack_require__(16);
 
 	var _extend2 = _interopRequireDefault(_extend);
 

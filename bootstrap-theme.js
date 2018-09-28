@@ -83,7 +83,7 @@
 
 	var _DestroyAccountButton3 = _interopRequireDefault(_DestroyAccountButton2);
 
-	var _TokenBridge2 = __webpack_require__(19);
+	var _TokenBridge2 = __webpack_require__(18);
 
 	var _TokenBridge3 = _interopRequireDefault(_TokenBridge2);
 
@@ -278,7 +278,7 @@
 
 	var _reactBootstrap = __webpack_require__(9);
 
-	var _reactLoader = __webpack_require__(24);
+	var _reactLoader = __webpack_require__(25);
 
 	var _reactLoader2 = _interopRequireDefault(_reactLoader);
 
@@ -376,8 +376,7 @@
 /* 15 */,
 /* 16 */,
 /* 17 */,
-/* 18 */,
-/* 19 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -440,6 +439,7 @@
 	})(TokenBridge);
 
 /***/ },
+/* 19 */,
 /* 20 */,
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
@@ -546,13 +546,13 @@
 /***/ },
 /* 22 */,
 /* 23 */,
-/* 24 */
+/* 24 */,
+/* 25 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-loader");
 
 /***/ },
-/* 25 */,
 /* 26 */,
 /* 27 */,
 /* 28 */,
@@ -689,7 +689,7 @@
 
 	var _PasswordResetSuccessModal2 = _interopRequireDefault(_PasswordResetSuccessModal);
 
-	var _TokenBridge = __webpack_require__(19);
+	var _TokenBridge = __webpack_require__(18);
 
 	var _TokenBridge2 = _interopRequireDefault(_TokenBridge);
 

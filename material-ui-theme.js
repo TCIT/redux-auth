@@ -83,11 +83,11 @@
 
 	var _DestroyAccountButton3 = _interopRequireDefault(_DestroyAccountButton2);
 
-	var _TokenBridge2 = __webpack_require__(19);
+	var _TokenBridge2 = __webpack_require__(18);
 
 	var _TokenBridge3 = _interopRequireDefault(_TokenBridge2);
 
-	var _ButtonLoader2 = __webpack_require__(16);
+	var _ButtonLoader2 = __webpack_require__(19);
 
 	var _ButtonLoader3 = _interopRequireDefault(_ButtonLoader2);
 
@@ -147,7 +147,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(33);
+	var _core = __webpack_require__(24);
 
 	var _ErrorList = __webpack_require__(135);
 
@@ -251,7 +251,72 @@
 /***/ },
 /* 14 */,
 /* 15 */,
-/* 16 */
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRedux = __webpack_require__(3);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var TokenBridge = function (_React$Component) {
+	  _inherits(TokenBridge, _React$Component);
+
+	  function TokenBridge() {
+	    _classCallCheck(this, TokenBridge);
+
+	    return _possibleConstructorReturn(this, (TokenBridge.__proto__ || Object.getPrototypeOf(TokenBridge)).apply(this, arguments));
+	  }
+
+	  _createClass(TokenBridge, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement("script", { id: "token-bridge",
+	        type: "application/json",
+	        dangerouslySetInnerHTML: { __html: this.props.initialCredentials } });
+	    }
+	  }]);
+
+	  return TokenBridge;
+	}(_react2.default.Component);
+
+	exports.default = (0, _reactRedux.connect)(function (state) {
+	  var auth = state.get('auth');
+	  var headers = auth.getIn(["server", "headers"]);
+
+	  return {
+	    initialCredentials: headers && JSON.stringify({
+	      user: auth.getIn(["server", "user"]),
+	      mustResetPassword: auth.getIn(["server", "mustResetPassword"]),
+	      firstTimeLogin: auth.getIn(["server", "firstTimeLogin"]),
+	      currentEndpointKey: auth.getIn(["configure", "currentEndpointKey"]),
+	      defaultEndpointKey: auth.getIn(["configure", "defaultEndpointKey"]),
+	      headers: headers
+	    })
+	  };
+	})(TokenBridge);
+
+/***/ },
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -270,13 +335,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(33);
+	var _core = __webpack_require__(24);
 
-	var _colors = __webpack_require__(25);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
-	var _reactLoader = __webpack_require__(24);
+	var _reactLoader = __webpack_require__(25);
 
 	var _reactLoader2 = _interopRequireDefault(_reactLoader);
 
@@ -421,71 +486,6 @@
 	exports.default = ButtonLoader;
 
 /***/ },
-/* 17 */,
-/* 18 */,
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRedux = __webpack_require__(3);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var TokenBridge = function (_React$Component) {
-	  _inherits(TokenBridge, _React$Component);
-
-	  function TokenBridge() {
-	    _classCallCheck(this, TokenBridge);
-
-	    return _possibleConstructorReturn(this, (TokenBridge.__proto__ || Object.getPrototypeOf(TokenBridge)).apply(this, arguments));
-	  }
-
-	  _createClass(TokenBridge, [{
-	    key: "render",
-	    value: function render() {
-	      return _react2.default.createElement("script", { id: "token-bridge",
-	        type: "application/json",
-	        dangerouslySetInnerHTML: { __html: this.props.initialCredentials } });
-	    }
-	  }]);
-
-	  return TokenBridge;
-	}(_react2.default.Component);
-
-	exports.default = (0, _reactRedux.connect)(function (state) {
-	  var auth = state.get('auth');
-	  var headers = auth.getIn(["server", "headers"]);
-
-	  return {
-	    initialCredentials: headers && JSON.stringify({
-	      user: auth.getIn(["server", "user"]),
-	      mustResetPassword: auth.getIn(["server", "mustResetPassword"]),
-	      firstTimeLogin: auth.getIn(["server", "firstTimeLogin"]),
-	      currentEndpointKey: auth.getIn(["configure", "currentEndpointKey"]),
-	      defaultEndpointKey: auth.getIn(["configure", "defaultEndpointKey"]),
-	      headers: headers
-	    })
-	  };
-	})(TokenBridge);
-
-/***/ },
 /* 20 */,
 /* 21 */,
 /* 22 */,
@@ -506,11 +506,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(25);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
-	var _core = __webpack_require__(33);
+	var _core = __webpack_require__(24);
 
 	var _icons = __webpack_require__(13);
 
@@ -608,10 +608,16 @@
 /* 24 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-loader");
+	module.exports = require("@material-ui/core");
 
 /***/ },
 /* 25 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-loader");
+
+/***/ },
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -783,19 +789,13 @@
 	var _blueGrey = _interopRequireDefault(__webpack_require__(46));
 
 /***/ },
-/* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
 /* 31 */,
 /* 32 */,
-/* 33 */
-/***/ function(module, exports) {
-
-	module.exports = require("@material-ui/core");
-
-/***/ },
+/* 33 */,
 /* 34 */
 /***/ function(module, exports) {
 
@@ -1540,7 +1540,7 @@
 
 	var _PasswordResetSuccessModal2 = _interopRequireDefault(_PasswordResetSuccessModal);
 
-	var _TokenBridge = __webpack_require__(19);
+	var _TokenBridge = __webpack_require__(18);
 
 	var _TokenBridge2 = _interopRequireDefault(_TokenBridge);
 
@@ -1675,7 +1675,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ButtonLoader = __webpack_require__(16);
+	var _ButtonLoader = __webpack_require__(19);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -1760,10 +1760,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ButtonLoader = __webpack_require__(16);
-
-	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
-
 	var _Input = __webpack_require__(23);
 
 	var _Input2 = _interopRequireDefault(_Input);
@@ -1773,6 +1769,8 @@
 	var _icons = __webpack_require__(13);
 
 	var _reactRedux = __webpack_require__(3);
+
+	var _core = __webpack_require__(24);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1813,6 +1811,7 @@
 	    value: function render() {
 	      var disabled = this.props.auth.getIn(["user", "isSignedIn"]) || this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "loading"]);
 
+	      var loading = this.props.auth.getIn(["emailSignIn", "loading"]);
 	      return _react2.default.createElement(
 	        "form",
 	        { className: "redux-auth email-sign-in-form",
@@ -1836,17 +1835,22 @@
 	          onChange: this.handleInput.bind(this, "password")
 	        }, this.props.inputProps.password)),
 	        _react2.default.createElement(
-	          _ButtonLoader2.default,
-	          _extends({ loading: this.props.auth.getIn(["emailSignIn", "loading"]),
-	            type: "submit",
-	            style: { float: "right" },
-	            icon: _icons.ExitToApp,
-	            className: "email-sign-in-submit",
-	            disabled: disabled,
-	            onClick: this.handleSubmit.bind(this),
-	            primary: true
-	          }, this.props.inputProps.submit),
-	          "Sign In"
+	          "div",
+	          null,
+	          _react2.default.createElement(
+	            _core.Button,
+	            _extends({
+	              type: "submit",
+	              style: { float: "right" },
+	              icon: _icons.ExitToApp,
+	              className: "email-sign-in-submit",
+	              disabled: disabled,
+	              onClick: this.handleSubmit.bind(this),
+	              primary: true
+	            }, this.props.inputProps.submit),
+	            "Sign In"
+	          ),
+	          loading && _react2.default.createElement(_core.CircularProgress, { size: 24, className: classes.buttonProgress })
 	        )
 	      );
 	    }
@@ -1889,7 +1893,7 @@
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _ButtonLoader = __webpack_require__(16);
+	var _ButtonLoader = __webpack_require__(19);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -2016,7 +2020,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(25);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -2140,7 +2144,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _ButtonLoader = __webpack_require__(16);
+	var _ButtonLoader = __webpack_require__(19);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -2236,7 +2240,7 @@
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _ButtonLoader = __webpack_require__(16);
+	var _ButtonLoader = __webpack_require__(19);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -2352,7 +2356,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ButtonLoader = __webpack_require__(16);
+	var _ButtonLoader = __webpack_require__(19);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -2442,7 +2446,7 @@
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _ButtonLoader = __webpack_require__(16);
+	var _ButtonLoader = __webpack_require__(19);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -3077,7 +3081,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(25);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -3229,13 +3233,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(33);
+	var _core = __webpack_require__(24);
 
 	var _icons = __webpack_require__(13);
 
 	var _styles = __webpack_require__(34);
 
-	var _ButtonLoader = __webpack_require__(16);
+	var _ButtonLoader = __webpack_require__(19);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
