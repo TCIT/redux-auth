@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
-import { RaisedButton } from '@material-ui/core';
-import { ActionFavorite } from '@material-ui/core';
+import { RaisedButton, ActionFavorite } from '@material-ui/core';
 import * as Colors from '@material-ui/core/colors';
 import Spinner from 'react-loader';
 import { MuiThemeProvider } from '@material-ui/core/styles';

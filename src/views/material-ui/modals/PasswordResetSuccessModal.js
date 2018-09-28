@@ -1,7 +1,5 @@
 import React, { PropTypes } from "react";
-import { ActionLock } from "@material-ui/core";
-import { Dialog } from "@material-ui/core";
-import { FlatButton } from "@material-ui/core";
+import { Dialog,ActionLock,FlatButton } from "@material-ui/core";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import ButtonLoader from "../ButtonLoader";
 import Input from "../Input";
