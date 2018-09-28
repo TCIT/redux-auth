@@ -1,5 +1,5 @@
 import React from "react";
-import { Dialog,ActionLock,FlatButton } from "@material-ui/core";
+import { Dialog, ActionLock, Button } from "@material-ui/core";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import ButtonLoader from "../ButtonLoader";
 import Input from "../Input";
@@ -48,14 +48,14 @@ class PasswordResetSuccessModal extends React.Component {
           open={this.props.show}
           contentClassName="redux-auth-modal password-reset-success-modal"
           actions={[
-            <FlatButton
+            <Button
               key="cancel"
               className="password-reset-success-modal-close"
               onClick={this.close.bind(this)}
               secondary={true}
               {...this.props.inputProps.cancel}>
               Cancel
-            </FlatButton>,
+            </Button>,
             <ButtonLoader
               key="submit"
               {...this.props}
