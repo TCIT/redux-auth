@@ -5,13 +5,13 @@ import { connect } from "react-redux";
 import {MuiThemeProvider} from '@material-ui/core/styles';
 
 class BaseModal extends React.Component {
-  static propTypes = {
-    show: PropTypes.bool,
-    errorAddr: PropTypes.array,
-    closeBtnLabel: PropTypes.string,
-    actions: PropTypes.array,
-    closeAction: PropTypes.func
-  };
+  // static propTypes = {
+  //   show: PropTypes.bool,
+  //   errorAddr: PropTypes.array,
+  //   closeBtnLabel: PropTypes.string,
+  //   actions: PropTypes.array,
+  //   closeAction: PropTypes.func
+  // };
 
   static defaultProps = {
     show: false,
