@@ -49,7 +49,7 @@ module.exports = {
       "url": "commonjs url",
       "react-bootstrap": "commonjs react-bootstrap",
       "@material-ui/core": "commonjs @material-ui/core",
-      "@material-ui/core/styles": "commonjs @material-ui/core/styles",
+      // "@material-ui/core/styles": "commonjs @material-ui/core/styles",
       "@material-ui/icons": "commonjs @material-ui/icons"
     }
   ],
