@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
 import {ActionLock} from "@material-ui/core";
@@ -6,14 +6,6 @@ import { updatePassword, updatePasswordFormUpdate } from "../../actions/update-p
 import { connect } from "react-redux";
 
 class UpdatePasswordForm extends React.Component {
-  static propTypes = {
-    endpoint: PropTypes.string,
-    inputProps: PropTypes.shape({
-      password: PropTypes.object,
-      passwordConfirmation: PropTypes.object,
-      submit: PropTypes.object
-    })
-  };
 
   static defaultProps = {
     inputProps: {

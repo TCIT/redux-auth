@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Grid, Navbar, NavItem, Nav, Brand } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
@@ -7,9 +7,6 @@ if (!global.__SERVER__ && !global.__TEST__) {
 }
 
 class Container extends React.Component {
-  static propTypes = {
-    children: PropTypes.node
-  };
 
   render () {
     return (

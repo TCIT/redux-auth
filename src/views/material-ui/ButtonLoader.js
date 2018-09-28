@@ -1,22 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { RaisedButton, ActionFavorite } from '@material-ui/core';
 import * as Colors from '@material-ui/core/colors';
 import Spinner from 'react-loader';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class ButtonLoader extends React.Component {
-  static propTypes = {
-    icon: PropTypes.any,
-    loading: PropTypes.bool,
-    spinConfig: PropTypes.object,
-    spinColorDark: PropTypes.string,
-    spinColorLight: PropTypes.string,
-    spinColorDisabled: PropTypes.string,
-    children: PropTypes.node,
-    onClick: PropTypes.func.isRequired,
-    style: PropTypes.object
-  };
-
+  
   static defaultProps = {
     icon: ActionFavorite,
     loading: false,

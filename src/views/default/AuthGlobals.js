@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import EmailSignInSuccessModal from "./modals/EmailSignInSuccessModal";
 import EmailSignInErrorModal from "./modals/EmailSignInErrorModal";
 import OAuthSignInSuccessModal from "./modals/OAuthSignInSuccessModal";
@@ -20,26 +20,6 @@ import TokenBridge from "../TokenBridge";
 import { connect } from "react-redux";
 
 class AuthGlobals extends React.Component {
-  static propTypes = {
-    signOutSuccessEnabled: PropTypes.bool,
-    signOutErrorEnabled: PropTypes.bool,
-    emailSignInSuccessEnabled: PropTypes.bool,
-    emailSignInErrorEnabled: PropTypes.bool,
-    oAuthSignInSuccessEnabled: PropTypes.bool,
-    oAuthSignInErrorEnabled: PropTypes.bool,
-    emailSignUpSuccessEnabled: PropTypes.bool,
-    emailSignUpErrorEnabled: PropTypes.bool,
-    firstTimeLoginSuccessEnabled: PropTypes.bool,
-    firstTimeLoginErrorEnabled: PropTypes.bool,
-    requestPasswordResetErrorEnabled: PropTypes.bool,
-    requestPasswordResetSuccessEnabled: PropTypes.bool,
-    updatePasswordErrorEnabled: PropTypes.bool,
-    updatePasswordSuccessEnabled: PropTypes.bool,
-    destroyAccountErrorEnabled: PropTypes.bool,
-    destroyAccountSuccessEnabled: PropTypes.bool,
-    passwordResetSuccessEnabled: PropTypes.bool,
-    passwordResetErrorEnabled: PropTypes.bool
-  };
 
   static defaultProps = {
     signOutSuccessEnabled: true,

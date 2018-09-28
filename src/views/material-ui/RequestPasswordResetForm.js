@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
 import { connect } from "react-redux";
@@ -9,14 +9,7 @@ import {
 } from "../../actions/request-password-reset";
 
 class RequestPasswordResetForm extends React.Component {
-  static propTypes = {
-    endpoint: PropTypes.string,
-    inputProps: PropTypes.shape({
-      email: PropTypes.object,
-      submit: PropTypes.object
-    })
-  };
-
+  
   static defaultProps = {
     inputProps: {
       email: {},

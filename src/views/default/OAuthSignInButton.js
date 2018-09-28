@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import ButtonLoader from "./ButtonLoader";
 import { oAuthSignIn as _oAuthSignIn } from "../../actions/oauth-sign-in";
@@ -7,13 +7,6 @@ import { oAuthSignIn as _oAuthSignIn } from "../../actions/oauth-sign-in";
 var oAuthSignIn = _oAuthSignIn;
 
 class OAuthSignInButton extends React.Component {
-  static propTypes = {
-    provider: PropTypes.string.isRequired,
-    label: PropTypes.string,
-    signInParams: PropTypes.object,
-    children: PropTypes.node,
-    icon: PropTypes.string
-  };
 
   static defaultProps = {
     signInParams: {},

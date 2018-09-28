@@ -1,15 +1,10 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import ButtonLoader from "./ButtonLoader";
 import { Glyphicon } from "react-bootstrap";
 import { connect } from "react-redux";
 import { signOut } from "../../actions/sign-out";
 
 class SignOutButton extends React.Component {
-  static propTypes = {
-    next: PropTypes.func,
-    children: PropTypes.node,
-    icon: PropTypes.node
-  };
 
   static defaultProps = {
     next: () => {},

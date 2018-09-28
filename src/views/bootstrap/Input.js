@@ -1,13 +1,8 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Input, Glyphicon } from "react-bootstrap";
 import Immutable from "immutable";
 
 class AuthInput extends React.Component {
-  static propTypes = {
-    label: PropTypes.string,
-    value: PropTypes.string,
-    errors: PropTypes.object
-  };
 
   static defaultProps = {
     label: "",

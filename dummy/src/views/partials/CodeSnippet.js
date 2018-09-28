@@ -1,13 +1,8 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import hljs from "highlight.js";
 import $ from "jquery";
 
 class CodeSnippet extends React.Component {
-  static propTypes = {
-    language: PropTypes.string,
-    children: PropTypes.node.isRequired
-  };
-
   static defaultProps = {
     language: "javascript"
   };

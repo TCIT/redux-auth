@@ -1,10 +1,7 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {
-  static propTypes = {
-    errors: PropTypes.object
-  };
 
   static defaultProps = {
     errors: Immutable.fromJS([])

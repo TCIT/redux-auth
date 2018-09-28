@@ -1,20 +1,9 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import Spinner from "react-loader";
 import extend from "extend";
 
 class ButtonLoader extends React.Component {
-  static propTypes = {
-    icon: PropTypes.any,
-    loading: PropTypes.bool,
-    spinConfig: PropTypes.object,
-    spinColorDark: PropTypes.string,
-    spinColorLight: PropTypes.string,
-    spinColorDisabled: PropTypes.string,
-    children: PropTypes.node,
-    onClick: PropTypes.func.isRequired,
-    style: PropTypes.object
-  };
-
+  
   static defaultProps = {
     icon: "▸",
     loading: false,

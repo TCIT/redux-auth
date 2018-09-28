@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
 import { Glyphicon } from "react-bootstrap";
@@ -6,13 +6,7 @@ import { updatePassword, updatePasswordFormUpdate } from "../../actions/update-p
 import { connect } from "react-redux";
 
 class UpdatePasswordForm extends React.Component {
-  static propTypes = {
-    endpoint: PropTypes.string,
-    inputProps: PropTypes.shape({
-      password: PropTypes.object,
-      passwordConfirmation: PropTypes.object
-    })
-  };
+
 
   static defaultProps = {
     inputProps: {

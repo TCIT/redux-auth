@@ -1,11 +1,8 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Glyphicon } from "react-bootstrap";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {
-  static propTypes = {
-    errors: PropTypes.object
-  };
 
   static defaultProps = {
     errors: Immutable.fromJS([])

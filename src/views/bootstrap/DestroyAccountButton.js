@@ -1,15 +1,10 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import ButtonLoader from "./ButtonLoader";
 import { destroyAccount } from "../../actions/destroy-account";
 import { connect } from "react-redux";
 import { Glyphicon } from "react-bootstrap";
 
 class DestroyAccountButton extends React.Component {
-  static propTypes = {
-    endpoint: PropTypes.string,
-    children: PropTypes.node,
-    icon: PropTypes.node
-  };
 
   static defaultProps = {
     children: <span>Destroy Account</span>,

@@ -1,19 +1,10 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import ButtonLoader from "./ButtonLoader";
 import Input from "./Input";
 import { emailSignInFormUpdate, emailSignIn } from "../../actions/email-sign-in";
 import { connect } from "react-redux";
 
 class EmailSignInForm extends React.Component {
-  static propTypes = {
-    endpoint: PropTypes.string,
-    next: PropTypes.func,
-    inputProps: PropTypes.shape({
-      email: PropTypes.object,
-      password: PropTypes.object,
-      submit: PropTypes.object
-    })
-  };
 
   static defaultProps = {
     next: () => {},

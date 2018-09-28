@@ -1,16 +1,10 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import Dialog from "rc-dialog";
 import ErrorList from "../ErrorList";
 import { connect } from "react-redux";
 
 class BaseModal extends React.Component {
-  static propTypes = {
-    show: PropTypes.bool,
-    errorAddr: PropTypes.array,
-    closeBtnLabel: PropTypes.string,
-    closeAction: PropTypes.func
-  };
-
+  
   static defaultProps = {
     show: false,
     errorAddr: null,

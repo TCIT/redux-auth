@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import {Glyphicon} from "react-bootstrap";
 import {ButtonLoader} from "../../../../src/views/bootstrap";
 import {connect} from "react-redux";
@@ -6,11 +6,6 @@ import {requestTest} from "../../actions/request-test-buttons";
 import {getApiUrl} from "../../../../src/utils/session-storage";
 
 class RequestTestButton extends React.Component {
-  static propTypes = {
-    path: PropTypes.string.isRequired,
-    endpointKey: PropTypes.string.isRequired
-  };
-
   static defaultProps = {
     endpointKey: "default"
   };

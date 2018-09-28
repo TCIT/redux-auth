@@ -1,14 +1,9 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { dismissRequestTestErrorModal } from "../../actions/request-test-buttons";
 
 class RequestTestErrorModal extends React.Component {
-  static propTypes = {
-    show: PropTypes.bool,
-    url: PropTypes.string
-  };
-
   static defaultProps = {
     show: false
   };

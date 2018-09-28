@@ -1,4 +1,4 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Dialog,ActionLock,FlatButton } from "@material-ui/core";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import ButtonLoader from "../ButtonLoader";
@@ -11,11 +11,6 @@ import {
 } from "../../../actions/update-password-modal";
 
 class PasswordResetSuccessModal extends React.Component {
-  static propTypes = {
-    endpoint: PropTypes.string,
-    show: PropTypes.bool,
-    inputProps: PropTypes.object
-  };
 
   static defaultProps = {
     show: false,

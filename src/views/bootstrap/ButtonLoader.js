@@ -1,19 +1,8 @@
-import React, { PropTypes } from "react";
+import React from "react";
 import { Button, Glyphicon } from "react-bootstrap";
 import Spinner from "react-loader";
 
 class ButtonLoader extends React.Component {
-  static propTypes = {
-    icon: PropTypes.any,
-    loading: PropTypes.bool,
-    spinConfig: PropTypes.object,
-    spinColorDark: PropTypes.string,
-    spinColorLight: PropTypes.string,
-    children: PropTypes.node,
-    onClick: PropTypes.func.isRequired,
-    style: PropTypes.object
-  };
-
   static defaultProps = {
     icon: <Glyphicon glyph="heart" />,
     loading: false,
