@@ -210,7 +210,7 @@
 
 	      return _react2.default.createElement(
 	        _styles.MuiThemeProvider,
-	        { theme: customTheme },
+	        { theme: this.props.customTheme },
 	        _react2.default.createElement(
 	          _core.Dialog,
 	          {

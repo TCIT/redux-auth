@@ -53,7 +53,7 @@ class BaseModal extends React.Component {
     // {body}
 
     return (
-      <MuiThemeProvider theme={customTheme}>
+      <MuiThemeProvider theme={this.props.customTheme}>
         <Dialog
           onClose={this.close.bind(this)}
           open={this.props.show}
