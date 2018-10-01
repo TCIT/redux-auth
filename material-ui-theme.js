@@ -155,7 +155,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _styles = __webpack_require__(34);
+	var _styles = __webpack_require__(25);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -337,15 +337,15 @@
 
 	var _core = __webpack_require__(24);
 
-	var _colors = __webpack_require__(26);
+	var _colors = __webpack_require__(27);
 
 	var Colors = _interopRequireWildcard(_colors);
 
-	var _reactLoader = __webpack_require__(25);
+	var _reactLoader = __webpack_require__(26);
 
 	var _reactLoader2 = _interopRequireDefault(_reactLoader);
 
-	var _styles = __webpack_require__(34);
+	var _styles = __webpack_require__(25);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -506,7 +506,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(26);
+	var _colors = __webpack_require__(27);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -518,7 +518,7 @@
 
 	var _immutable2 = _interopRequireDefault(_immutable);
 
-	var _styles = __webpack_require__(34);
+	var _styles = __webpack_require__(25);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -610,10 +610,16 @@
 /* 25 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-loader");
+	module.exports = require("@material-ui/core/styles");
 
 /***/ },
 /* 26 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-loader");
+
+/***/ },
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -785,19 +791,13 @@
 	var _blueGrey = _interopRequireDefault(__webpack_require__(46));
 
 /***/ },
-/* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
 /* 31 */,
 /* 32 */,
 /* 33 */,
-/* 34 */
-/***/ function(module, exports) {
-
-	module.exports = require("@material-ui/core/styles");
-
-/***/ },
+/* 34 */,
 /* 35 */,
 /* 36 */,
 /* 37 */,
@@ -1768,6 +1768,8 @@
 
 	var _core = __webpack_require__(24);
 
+	var _styles = __webpack_require__(25);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1809,7 +1811,7 @@
 
 	      var loading = this.props.auth.getIn(["emailSignIn", "loading"]);
 	      return _react2.default.createElement(
-	        MuiThemeProvider,
+	        _styles.MuiThemeProvider,
 	        { theme: customTheme },
 	        _react2.default.createElement(
 	          "form",
@@ -2020,7 +2022,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(26);
+	var _colors = __webpack_require__(27);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -3081,7 +3083,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(26);
+	var _colors = __webpack_require__(27);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -3237,7 +3239,7 @@
 
 	var _icons = __webpack_require__(13);
 
-	var _styles = __webpack_require__(34);
+	var _styles = __webpack_require__(25);
 
 	var _ButtonLoader = __webpack_require__(19);
 

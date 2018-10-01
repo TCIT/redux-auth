@@ -278,7 +278,7 @@
 
 	var _reactBootstrap = __webpack_require__(9);
 
-	var _reactLoader = __webpack_require__(25);
+	var _reactLoader = __webpack_require__(26);
 
 	var _reactLoader2 = _interopRequireDefault(_reactLoader);
 
@@ -547,13 +547,13 @@
 /* 22 */,
 /* 23 */,
 /* 24 */,
-/* 25 */
+/* 25 */,
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-loader");
 
 /***/ },
-/* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,
