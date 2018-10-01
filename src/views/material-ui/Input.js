@@ -28,7 +28,7 @@ class AuthInput extends React.Component {
 
     if (this.props.errors.size) {
       erros = this.props.errors.map(error => (
-        <FormHelperText id="email-sign-error">{errors}</FormHelperText>
+        <FormHelperText id="email-sign-error">{error}</FormHelperText>
       ));
     }
 

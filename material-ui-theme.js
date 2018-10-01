@@ -553,7 +553,7 @@
 	          return _react2.default.createElement(
 	            _core.FormHelperText,
 	            { id: "email-sign-error" },
-	            errors
+	            error
 	          );
 	        });
 	      }
