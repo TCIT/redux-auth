@@ -1812,7 +1812,7 @@
 	  }, {
 	    key: "render",
 	    value: function render() {
-	      var _props2 = props,
+	      var _props2 = this.props,
 	          customTheme = _props2.customTheme,
 	          onClose = _props2.onClose,
 	          title = _props2.title,

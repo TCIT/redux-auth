@@ -57,7 +57,7 @@ class EmailSignInForm extends React.Component {
       title,
       open,
       auth
-    } = props;
+    } = this.props;
 
     const disabled = (
       auth.getIn(["user", "isSignedIn"]) ||
