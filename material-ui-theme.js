@@ -195,31 +195,51 @@
 	          base = _props$errorAddr[0],
 	          rest = _props$errorAddr.slice(1);
 
-	      return _react2.default.createElement(_ErrorList2.default, { errors: this.props.auth.getIn([base, this.getEndpoint()].concat(_toConsumableArray(rest))) });
+	      return _react2.default.createElement(_ErrorList2.default, {
+	        errors: this.props.auth.getIn([base, this.getEndpoint()].concat(_toConsumableArray(rest)))
+	      });
 	    }
 	  }, {
 	    key: "render",
 	    value: function render() {
 	      var body = this.props.errorAddr ? this.getErrorList() : this.props.children;
 
+	      //   ...this.props.actions
+	      // ]}>
+	      // {body}
+
 	      return _react2.default.createElement(
 	        _styles.MuiThemeProvider,
-	        null,
+	        { theme: customTheme },
 	        _react2.default.createElement(
 	          _core.Dialog,
 	          {
-	            open: this.props.show,
-	            contentClassName: "redux-auth-modal " + this.props.containerClass,
-	            title: this.props.title,
-	            actions: [_react2.default.createElement(
+	            onClose: this.close.bind(this),
+	            open: this.props.show
+	          },
+	          _react2.default.createElement(
+	            _core.DialogTitle,
+	            null,
+	            this.props.title
+	          ),
+	          _react2.default.createElement(
+	            _core.DialogContent,
+	            null,
+	            body
+	          ),
+	          _react2.default.createElement(
+	            _core.DialogActions,
+	            null,
+	            _react2.default.createElement(
 	              _core.Button,
 	              {
 	                key: "close",
 	                className: this.props.containerClass + "-close",
-	                onClick: this.close.bind(this) },
+	                onClick: this.close.bind(this)
+	              },
 	              this.props.closeBtnLabel
-	            )].concat(_toConsumableArray(this.props.actions)) },
-	          body
+	            )
+	          )
 	        )
 	      );
 	    }
@@ -595,14 +615,18 @@
 
 	      return _react2.default.createElement(
 	        _core.FormControl,
-	        errorConfig.error,
+	        _extends({ fullWidth: true }, errorConfig.error),
+	        _react2.default.createElement(
+	          _core.InputLabel,
+	          { htmlFor: "email-sign" },
+	          floatingLabelText
+	        ),
 	        _react2.default.createElement(_core.Input, _extends({
 	          id: "email-sign"
 	        }, errorConfig.icon, {
 	          onChange: onChange,
 	          disabled: disabled,
-	          fullWidth: true,
-	          value: value,
+	          value: value || '',
 	          type: type
 	        })),
 	        this.renderErrorList()

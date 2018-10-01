@@ -1,5 +1,11 @@
 import React from "react";
-import { Dialog, Button } from '@material-ui/core';
+import {
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Dialog,
+  Button
+} from '@material-ui/core';
 import ErrorList from "../ErrorList";
 import { connect } from "react-redux";
 import { MuiThemeProvider } from '@material-ui/core/styles';
@@ -27,9 +33,14 @@ class BaseModal extends React.Component {
 
   getErrorList() {
     let [base, ...rest] = this.props.errorAddr;
-    return <ErrorList errors={this.props.auth.getIn([
-      base, this.getEndpoint(), ...rest
-    ])} />
+
+    return (
+      <ErrorList
+        errors={this.props.auth.getIn([
+          base, this.getEndpoint(), ...rest
+        ])}
+      />
+    );
   }
 
   render() {
@@ -37,22 +48,27 @@ class BaseModal extends React.Component {
       ? this.getErrorList()
       : this.props.children;
 
+    //   ...this.props.actions
+    // ]}>
+    // {body}
+
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider theme={customTheme}>
         <Dialog
+          onClose={this.close.bind(this)}
           open={this.props.show}
-          contentClassName={`redux-auth-modal ${this.props.containerClass}`}
-          title={this.props.title}
-          actions={[
+        >
+          <DialogTitle>{this.props.title}</DialogTitle>
+          <DialogContent>{body}</DialogContent>
+          <DialogActions>
             <Button
               key="close"
               className={`${this.props.containerClass}-close`}
-              onClick={this.close.bind(this)}>
+              onClick={this.close.bind(this)}
+            >
               {this.props.closeBtnLabel}
-            </Button>,
-            ...this.props.actions
-          ]}>
-          {body}
+            </Button>
+          </DialogActions>
         </Dialog>
       </MuiThemeProvider>
     );
