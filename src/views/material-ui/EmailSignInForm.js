@@ -4,6 +4,7 @@ import { emailSignInFormUpdate, emailSignIn } from "../../actions/email-sign-in"
 import { ExitToApp } from '@material-ui/icons';
 import { connect } from "react-redux";
 import { Button, CircularProgress } from "@material-ui/core";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
 class EmailSignInForm extends React.Component {
 
