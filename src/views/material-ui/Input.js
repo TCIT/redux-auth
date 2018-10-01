@@ -72,7 +72,7 @@ class AuthInput extends React.Component {
         <Input
           id={`${floatingLabelText}-sign`}
           {...errorConfig.icon}
-          onChange={onChange}
+          onChange={this.handleInput.bind(this)}
           disabled={disabled}
           value={value || ''}
           type={type}

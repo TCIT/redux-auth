@@ -624,7 +624,7 @@
 	        _react2.default.createElement(_core.Input, _extends({
 	          id: floatingLabelText + "-sign"
 	        }, errorConfig.icon, {
-	          onChange: onChange,
+	          onChange: this.handleInput.bind(this),
 	          disabled: disabled,
 	          value: value || '',
 	          type: type
