@@ -54,6 +54,7 @@ class EmailSignInForm extends React.Component {
     const {
       customTheme,
       onClose,
+      modal,
       title,
       open,
       auth
@@ -66,55 +67,64 @@ class EmailSignInForm extends React.Component {
 
     const loading = auth.getIn(["emailSignIn", "loading"]);
 
-    return (
-      <MuiThemeProvider theme={customTheme}>
+    let content = (
+      <form className='redux-auth email-sign-in-form'
+        style={{ clear: "both", overflow: "hidden" }}
+        onSubmit={this.handleSubmit.bind(this)}>
+        <Input
+          type="text"
+          className="email-sign-in-email"
+          ref="emailSignInEmail"
+          floatingLabelText="Email"
+          disabled={disabled}
+          value={auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"])}
+          errors={auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"])}
+          onChange={this.handleInput.bind(this, "email")}
+          {...this.props.inputProps.email}
+        />
+
+        <Input
+          type="password"
+          floatingLabelText="Password"
+          className="email-sign-in-password"
+          disabled={disabled}
+          value={auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"])}
+          errors={auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"])}
+          onChange={this.handleInput.bind(this, "password")}
+          {...this.props.inputProps.password}
+        />
+
+        <div>
+          <Button
+            type="submit"
+            style={{ float: "right" }}
+            className='email-sign-in-submit'
+            disabled={disabled}
+            onClick={this.handleSubmit.bind(this)}
+            {...this.props.inputProps.submit}
+          >
+            <ExitToApp />
+            Sign In
+        </Button>
+          {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
+        </div>
+      </form>
+    )
+
+    if (modal) {
+      content = (
         <Dialog onClose={onClose} open={open}>
           <DialogTitle>{title}</DialogTitle>
           <DialogContent>
-            <form className='redux-auth email-sign-in-form'
-              style={{ clear: "both", overflow: "hidden" }}
-              onSubmit={this.handleSubmit.bind(this)}>
-              <Input
-                type="text"
-                className="email-sign-in-email"
-                ref="emailSignInEmail"
-                floatingLabelText="Email"
-                disabled={disabled}
-                value={auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"])}
-                errors={auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"])}
-                onChange={this.handleInput.bind(this, "email")}
-                {...this.props.inputProps.email}
-              />
-
-              <Input
-                type="password"
-                floatingLabelText="Password"
-                className="email-sign-in-password"
-                disabled={disabled}
-                value={auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"])}
-                errors={auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"])}
-                onChange={this.handleInput.bind(this, "password")}
-                {...this.props.inputProps.password}
-              />
-
-              <div>
-                <Button
-                  type="submit"
-                  style={{ float: "right" }}
-                  className='email-sign-in-submit'
-                  disabled={disabled}
-                  onClick={this.handleSubmit.bind(this)}
-                  {...this.props.inputProps.submit}
-                >
-                  <ExitToApp />
-                  Sign In
-                </Button>
-                {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
-              </div>
-
-            </form>
+            {content}
           </DialogContent>
         </Dialog>
+      );
+    }
+
+    return (
+      <MuiThemeProvider theme={customTheme}>
+        {content}
       </MuiThemeProvider>
     );
   }
