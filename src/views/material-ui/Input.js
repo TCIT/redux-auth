@@ -64,6 +64,8 @@ class AuthInput extends React.Component {
       };
     }
 
+    console.log(this.props.value)
+
     return (
       <FormControl {...errorConfig.error}>
         {/* <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel> */}
@@ -72,6 +74,7 @@ class AuthInput extends React.Component {
           {...errorConfig.icon}
           onChange={onChange}
           disabled={disabled}
+          fullWidth
           value={value}
           type={type}
         />

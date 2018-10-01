@@ -591,6 +591,8 @@
 	        };
 	      }
 
+	      console.log(this.props.value);
+
 	      return _react2.default.createElement(
 	        _core.FormControl,
 	        errorConfig.error,
@@ -599,6 +601,7 @@
 	        }, errorConfig.icon, {
 	          onChange: onChange,
 	          disabled: disabled,
+	          fullWidth: true,
 	          value: value,
 	          type: type
 	        })),
