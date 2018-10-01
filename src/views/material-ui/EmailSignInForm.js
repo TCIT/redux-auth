@@ -1,12 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import CircularProgress from "@material-ui/core/CircularProgress";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import { ExitToApp } from '@material-ui/icons/ExitToApp';
-import Button from "@material-ui/core/Button";
-import Dialog from '@material-ui/core/Dialog';
+import {
+  CircularProgress,
+  DialogContent,
+  DialogTitle,
+  Button,
+  Dialog
+} from "@material-ui/core";
+
+import ExitToApp from '@material-ui/icons/ExitToApp';
 import { MuiThemeProvider } from "@material-ui/core/styles";
 
 import Input from "./Input";
@@ -95,13 +98,12 @@ class EmailSignInForm extends React.Component {
                 <Button
                   type="submit"
                   style={{ float: "right" }}
-                  icon={ExitToApp}
                   className='email-sign-in-submit'
                   disabled={disabled}
                   onClick={this.handleSubmit.bind(this)}
-                  primary={true}
                   {...this.props.inputProps.submit}
                 >
+                  <ExitToApp />
                   Sign In
                 </Button>
                 {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
