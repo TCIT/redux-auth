@@ -74,7 +74,8 @@ class EmailSignInForm extends React.Component {
             <form className='redux-auth email-sign-in-form'
               style={{ clear: "both", overflow: "hidden" }}
               onSubmit={this.handleSubmit.bind(this)}>
-              <Input type="text"
+              <Input
+                type="text"
                 className="email-sign-in-email"
                 ref="emailSignInEmail"
                 floatingLabelText="Email"
@@ -82,16 +83,19 @@ class EmailSignInForm extends React.Component {
                 value={auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"])}
                 errors={auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"])}
                 onChange={this.handleInput.bind(this, "email")}
-                {...this.props.inputProps.email} />
+                {...this.props.inputProps.email}
+              />
 
-              <Input type="password"
+              <Input
+                type="password"
                 floatingLabelText="Password"
                 className="email-sign-in-password"
                 disabled={disabled}
                 value={auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"])}
                 errors={auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"])}
                 onChange={this.handleInput.bind(this, "password")}
-                {...this.props.inputProps.password} />
+                {...this.props.inputProps.password}
+              />
 
               <div>
                 <Button

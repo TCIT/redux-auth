@@ -1,9 +1,14 @@
 import React from "react";
 import * as Colors from "@material-ui/core/colors";
-import { TextField } from "@material-ui/core";
+import {
+  InputAdornment,
+  FormHelperText,
+  FormControl,
+  InputLabel,
+  Input
+} from "@material-ui/core";
 import { Error } from "@material-ui/icons";
 import Immutable from "immutable";
-import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class AuthInput extends React.Component {
 
@@ -19,41 +24,36 @@ class AuthInput extends React.Component {
   }
 
   renderErrorList() {
-    if (this.props.errors.size) {
-      return (
-        <div className='auth-error-message'>
-          {this.props.errors.map((err, i) => {
-            return (
-              <p className="inline-error-item"
-                style={{ paddingLeft: "20px", position: "relative", marginBottom: "28px" }}
-                key={i}>
-                <Error
-                  viewBox="0 0 50 50"
-                  color={Colors.red500}
-                  style={{
-                    position: "absolute",
-                    left: 0,
-                    top: 0
-                  }} />
-                {this.props.floatingLabelText} {err}
-              </p>
-            );
-          })}
-        </div>
-      );
-    } else {
-      return null;
-    }
+    return Boolea(this.props.errors.size);
   }
 
   render() {
+    const {
+      disabled,
+      onChange,
+      errors,
+      value,
+      type
+    } = this.props;
+
+    console.log(this.props)
     return (
-      <TextField
-        fullWidth
-        id={this.props.className}
-        {...this.props}
-        // errorText={this.renderErrorList()}
-        onChange={this.handleInput.bind(this)} />
+      <FormControl className={classes.formControl} error aria-describedby="component-error-text">
+        <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel>
+        <Input
+          id="email-sign"
+          startAdornment={
+            <InputAdornment>
+              <Error />
+            </InputAdornment>
+          }
+          onChange={onChange}
+          disabled={disabled}
+          value={value}
+          type={type}
+        />
+        <FormHelperText id="email-sign-error">{errors}</FormHelperText>
+      </FormControl>
     );
   }
 }

@@ -155,7 +155,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _styles = __webpack_require__(25);
+	var _styles = __webpack_require__(34);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -337,15 +337,15 @@
 
 	var _core = __webpack_require__(24);
 
-	var _colors = __webpack_require__(27);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
-	var _reactLoader = __webpack_require__(26);
+	var _reactLoader = __webpack_require__(25);
 
 	var _reactLoader2 = _interopRequireDefault(_reactLoader);
 
-	var _styles = __webpack_require__(25);
+	var _styles = __webpack_require__(34);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -498,15 +498,13 @@
 	  value: true
 	});
 
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(27);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -517,8 +515,6 @@
 	var _immutable = __webpack_require__(4);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
-
-	var _styles = __webpack_require__(25);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -548,45 +544,46 @@
 	  }, {
 	    key: "renderErrorList",
 	    value: function renderErrorList() {
-	      var _this2 = this;
-
-	      if (this.props.errors.size) {
-	        return _react2.default.createElement(
-	          "div",
-	          { className: "auth-error-message" },
-	          this.props.errors.map(function (err, i) {
-	            return _react2.default.createElement(
-	              "p",
-	              { className: "inline-error-item",
-	                style: { paddingLeft: "20px", position: "relative", marginBottom: "28px" },
-	                key: i },
-	              _react2.default.createElement(_icons.Error, {
-	                viewBox: "0 0 50 50",
-	                color: Colors.red500,
-	                style: {
-	                  position: "absolute",
-	                  left: 0,
-	                  top: 0
-	                } }),
-	              _this2.props.floatingLabelText,
-	              " ",
-	              err
-	            );
-	          })
-	        );
-	      } else {
-	        return null;
-	      }
+	      return Boolea(this.props.errors.size);
 	    }
 	  }, {
 	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement(_core.TextField, _extends({
-	        fullWidth: true,
-	        id: this.props.className
-	      }, this.props, {
-	        // errorText={this.renderErrorList()}
-	        onChange: this.handleInput.bind(this) }));
+	      var _props = this.props,
+	          disabled = _props.disabled,
+	          onChange = _props.onChange,
+	          errors = _props.errors,
+	          value = _props.value,
+	          type = _props.type;
+
+
+	      console.log(this.props);
+	      return _react2.default.createElement(
+	        _core.FormControl,
+	        { className: classes.formControl, error: true, "aria-describedby": "component-error-text" },
+	        _react2.default.createElement(
+	          _core.InputLabel,
+	          { htmlFor: "email-sign" },
+	          floatingLabelText
+	        ),
+	        _react2.default.createElement(_core.Input, {
+	          id: "email-sign",
+	          startAdornment: _react2.default.createElement(
+	            _core.InputAdornment,
+	            null,
+	            _react2.default.createElement(_icons.Error, null)
+	          ),
+	          onChange: onChange,
+	          disabled: disabled,
+	          value: value,
+	          type: type
+	        }),
+	        _react2.default.createElement(
+	          _core.FormHelperText,
+	          { id: "email-sign-error" },
+	          errors
+	        )
+	      );
 	    }
 	  }]);
 
@@ -610,16 +607,10 @@
 /* 25 */
 /***/ function(module, exports) {
 
-	module.exports = require("@material-ui/core/styles");
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
 	module.exports = require("react-loader");
 
 /***/ },
-/* 27 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -791,13 +782,19 @@
 	var _blueGrey = _interopRequireDefault(__webpack_require__(46));
 
 /***/ },
+/* 27 */,
 /* 28 */,
 /* 29 */,
 /* 30 */,
 /* 31 */,
 /* 32 */,
 /* 33 */,
-/* 34 */,
+/* 34 */
+/***/ function(module, exports) {
+
+	module.exports = require("@material-ui/core/styles");
+
+/***/ },
 /* 35 */,
 /* 36 */,
 /* 37 */,
@@ -1762,7 +1759,7 @@
 
 	var _icons = __webpack_require__(13);
 
-	var _styles = __webpack_require__(25);
+	var _styles = __webpack_require__(34);
 
 	var _Input = __webpack_require__(23);
 
@@ -1843,7 +1840,8 @@
 	              { className: "redux-auth email-sign-in-form",
 	                style: { clear: "both", overflow: "hidden" },
 	                onSubmit: this.handleSubmit.bind(this) },
-	              _react2.default.createElement(_Input2.default, _extends({ type: "text",
+	              _react2.default.createElement(_Input2.default, _extends({
+	                type: "text",
 	                className: "email-sign-in-email",
 	                ref: "emailSignInEmail",
 	                floatingLabelText: "Email",
@@ -1852,7 +1850,8 @@
 	                errors: auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"]),
 	                onChange: this.handleInput.bind(this, "email")
 	              }, this.props.inputProps.email)),
-	              _react2.default.createElement(_Input2.default, _extends({ type: "password",
+	              _react2.default.createElement(_Input2.default, _extends({
+	                type: "password",
 	                floatingLabelText: "Password",
 	                className: "email-sign-in-password",
 	                disabled: disabled,
@@ -2048,7 +2047,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(27);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -3109,7 +3108,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(27);
+	var _colors = __webpack_require__(26);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -3265,7 +3264,7 @@
 
 	var _icons = __webpack_require__(13);
 
-	var _styles = __webpack_require__(25);
+	var _styles = __webpack_require__(34);
 
 	var _ButtonLoader = __webpack_require__(19);
 
