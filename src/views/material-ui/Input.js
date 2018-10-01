@@ -24,36 +24,59 @@ class AuthInput extends React.Component {
   }
 
   renderErrorList() {
-    return Boolea(this.props.errors.size);
+    let erros = null;
+
+    if (this.props.errors.size) {
+      erros = this.props.errors.map(error => (
+        <FormHelperText id="email-sign-error">{errors}</FormHelperText>
+      ));
+    }
+
+    return errors;
   }
 
   render() {
     const {
+      floatingLabelText,
       disabled,
       onChange,
-      errors,
       value,
       type
     } = this.props;
 
-    console.log(this.props)
-    return (
-      <FormControl error aria-describedby="component-error-text">
-        <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel>
-        <Input
-          id="email-sign"
-          startAdornment={
+    let errorConfig = {
+      startAdornment: {},
+      error: {}
+    }
+
+    if (this.props.erros.size) {
+      errorConfig = {
+        icon: {
+          startAdornment: (
             <InputAdornment position="start">
               <Error />
             </InputAdornment>
-          }
+          )
+        },
+        error: {
+          error: true
+        }
+      };
+    }
+
+    return (
+      <FormControl {...errorConfig.error}>
+        <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel>
+        <Input
+          id="email-sign"
+          {...errorConfig.icon}
           onChange={onChange}
           disabled={disabled}
           value={value}
           type={type}
         />
-        <FormHelperText id="email-sign-error">{errors}</FormHelperText>
-      </FormControl>
+        {this.renderErrorList()}
+      </FormControl >
     );
   }
 }

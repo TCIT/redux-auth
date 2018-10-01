@@ -498,6 +498,8 @@
 	  value: true
 	});
 
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
@@ -544,12 +546,25 @@
 	  }, {
 	    key: "renderErrorList",
 	    value: function renderErrorList() {
-	      return Boolea(this.props.errors.size);
+	      var erros = null;
+
+	      if (this.props.errors.size) {
+	        erros = this.props.errors.map(function (error) {
+	          return _react2.default.createElement(
+	            _core.FormHelperText,
+	            { id: "email-sign-error" },
+	            errors
+	          );
+	        });
+	      }
+
+	      return errors;
 	    }
 	  }, {
 	    key: "render",
 	    value: function render() {
 	      var _props = this.props,
+	          floatingLabelText = _props.floatingLabelText,
 	          disabled = _props.disabled,
 	          onChange = _props.onChange,
 	          errors = _props.errors,
@@ -557,32 +572,43 @@
 	          type = _props.type;
 
 
-	      console.log(this.props);
+	      var errorConfig = {
+	        startAdornment: {},
+	        error: {}
+	      };
+
+	      if (this.props.erros.size) {
+	        errorConfig = {
+	          icon: {
+	            startAdornment: _react2.default.createElement(
+	              _core.InputAdornment,
+	              { position: "start" },
+	              _react2.default.createElement(_icons.Error, null)
+	            )
+	          },
+	          error: {
+	            error: true
+	          }
+	        };
+	      }
+
 	      return _react2.default.createElement(
 	        _core.FormControl,
-	        { error: true, "aria-describedby": "component-error-text" },
+	        errorConfig.error,
 	        _react2.default.createElement(
 	          _core.InputLabel,
 	          { htmlFor: "email-sign" },
 	          floatingLabelText
 	        ),
-	        _react2.default.createElement(_core.Input, {
-	          id: "email-sign",
-	          startAdornment: _react2.default.createElement(
-	            _core.InputAdornment,
-	            { position: "start" },
-	            _react2.default.createElement(_icons.Error, null)
-	          ),
+	        _react2.default.createElement(_core.Input, _extends({
+	          id: "email-sign"
+	        }, errorConfig.icon, {
 	          onChange: onChange,
 	          disabled: disabled,
 	          value: value,
 	          type: type
-	        }),
-	        _react2.default.createElement(
-	          _core.FormHelperText,
-	          { id: "email-sign-error" },
-	          errors
-	        )
+	        })),
+	        this.renderErrorList()
 	      );
 	    }
 	  }]);
