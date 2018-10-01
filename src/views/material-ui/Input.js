@@ -38,12 +38,12 @@ class AuthInput extends React.Component {
 
     console.log(this.props)
     return (
-      <FormControl className={classes.formControl} error aria-describedby="component-error-text">
+      <FormControl error aria-describedby="component-error-text">
         <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel>
         <Input
           id="email-sign"
           startAdornment={
-            <InputAdornment>
+            <InputAdornment position="start">
               <Error />
             </InputAdornment>
           }

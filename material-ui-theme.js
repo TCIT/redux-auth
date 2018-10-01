@@ -560,7 +560,7 @@
 	      console.log(this.props);
 	      return _react2.default.createElement(
 	        _core.FormControl,
-	        { className: classes.formControl, error: true, "aria-describedby": "component-error-text" },
+	        { error: true, "aria-describedby": "component-error-text" },
 	        _react2.default.createElement(
 	          _core.InputLabel,
 	          { htmlFor: "email-sign" },
@@ -570,7 +570,7 @@
 	          id: "email-sign",
 	          startAdornment: _react2.default.createElement(
 	            _core.InputAdornment,
-	            null,
+	            { position: "start" },
 	            _react2.default.createElement(_icons.Error, null)
 	          ),
 	          onChange: onChange,
