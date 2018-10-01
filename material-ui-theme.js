@@ -546,10 +546,10 @@
 	  }, {
 	    key: "renderErrorList",
 	    value: function renderErrorList() {
-	      var erros = null;
+	      var errors = null;
 
 	      if (this.props.errors.size) {
-	        erros = this.props.errors.map(function (error) {
+	        errors = this.props.errors.map(function (error) {
 	          return _react2.default.createElement(
 	            _core.FormHelperText,
 	            { id: "email-sign-error" },
@@ -576,7 +576,7 @@
 	        error: {}
 	      };
 
-	      if (this.props.erros.size) {
+	      if (this.props.errors.size) {
 	        errorConfig = {
 	          icon: {
 	            startAdornment: _react2.default.createElement(

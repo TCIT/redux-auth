@@ -24,10 +24,10 @@ class AuthInput extends React.Component {
   }
 
   renderErrorList() {
-    let erros = null;
+    let errors = null;
 
     if (this.props.errors.size) {
-      erros = this.props.errors.map(error => (
+      errors = this.props.errors.map(error => (
         <FormHelperText id="email-sign-error">{error}</FormHelperText>
       ));
     }
@@ -49,7 +49,7 @@ class AuthInput extends React.Component {
       error: {}
     }
 
-    if (this.props.erros.size) {
+    if (this.props.errors.size) {
       errorConfig = {
         icon: {
           startAdornment: (
