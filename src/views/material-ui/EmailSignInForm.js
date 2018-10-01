@@ -45,43 +45,45 @@ class EmailSignInForm extends React.Component {
 
     const loading = this.props.auth.getIn(["emailSignIn", "loading"]);
     return (
-      <form className='redux-auth email-sign-in-form'
-        style={{ clear: "both", overflow: "hidden" }}
-        onSubmit={this.handleSubmit.bind(this)}>
-        <Input type="text"
-          className="email-sign-in-email"
-          ref="emailSignInEmail"
-          floatingLabelText="Email"
-          disabled={disabled}
-          value={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"])}
-          errors={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"])}
-          onChange={this.handleInput.bind(this, "email")}
-          {...this.props.inputProps.email} />
-
-        <Input type="password"
-          floatingLabelText="Password"
-          className="email-sign-in-password"
-          disabled={disabled}
-          value={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"])}
-          errors={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"])}
-          onChange={this.handleInput.bind(this, "password")}
-          {...this.props.inputProps.password} />
-
-        <div>
-          <Button
-            type="submit"
-            style={{ float: "right" }}
-            icon={ExitToApp}
-            className='email-sign-in-submit'
+      <MuiThemeProvider theme={customTheme}>
+        <form className='redux-auth email-sign-in-form'
+          style={{ clear: "both", overflow: "hidden" }}
+          onSubmit={this.handleSubmit.bind(this)}>
+          <Input type="text"
+            className="email-sign-in-email"
+            ref="emailSignInEmail"
+            floatingLabelText="Email"
             disabled={disabled}
-            onClick={this.handleSubmit.bind(this)}
-            primary={true}
-            {...this.props.inputProps.submit}>
+            value={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"])}
+            errors={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"])}
+            onChange={this.handleInput.bind(this, "email")}
+            {...this.props.inputProps.email} />
+
+          <Input type="password"
+            floatingLabelText="Password"
+            className="email-sign-in-password"
+            disabled={disabled}
+            value={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"])}
+            errors={this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"])}
+            onChange={this.handleInput.bind(this, "password")}
+            {...this.props.inputProps.password} />
+
+          <div>
+            <Button
+              type="submit"
+              style={{ float: "right" }}
+              icon={ExitToApp}
+              className='email-sign-in-submit'
+              disabled={disabled}
+              onClick={this.handleSubmit.bind(this)}
+              primary={true}
+              {...this.props.inputProps.submit}>
               Sign In
             </Button>
-          {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
-        </div>
-      </form>
+            {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
+          </div>
+        </form>
+      </MuiThemeProvider>
     );
   }
 }

@@ -581,16 +581,12 @@
 	  }, {
 	    key: "render",
 	    value: function render() {
-	      return _react2.default.createElement(
-	        _styles.MuiThemeProvider,
-	        null,
-	        _react2.default.createElement(_core.TextField, _extends({
-	          fullWidth: true,
-	          id: this.props.className
-	        }, this.props, {
-	          errorText: this.renderErrorList(),
-	          onChange: this.handleInput.bind(this) }))
-	      );
+	      return _react2.default.createElement(_core.TextField, _extends({
+	        fullWidth: true,
+	        id: this.props.className
+	      }, this.props, {
+	        // errorText={this.renderErrorList()}
+	        onChange: this.handleInput.bind(this) }));
 	    }
 	  }]);
 
@@ -1813,44 +1809,48 @@
 
 	      var loading = this.props.auth.getIn(["emailSignIn", "loading"]);
 	      return _react2.default.createElement(
-	        "form",
-	        { className: "redux-auth email-sign-in-form",
-	          style: { clear: "both", overflow: "hidden" },
-	          onSubmit: this.handleSubmit.bind(this) },
-	        _react2.default.createElement(_Input2.default, _extends({ type: "text",
-	          className: "email-sign-in-email",
-	          ref: "emailSignInEmail",
-	          floatingLabelText: "Email",
-	          disabled: disabled,
-	          value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"]),
-	          errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"]),
-	          onChange: this.handleInput.bind(this, "email")
-	        }, this.props.inputProps.email)),
-	        _react2.default.createElement(_Input2.default, _extends({ type: "password",
-	          floatingLabelText: "Password",
-	          className: "email-sign-in-password",
-	          disabled: disabled,
-	          value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"]),
-	          errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"]),
-	          onChange: this.handleInput.bind(this, "password")
-	        }, this.props.inputProps.password)),
+	        MuiThemeProvider,
+	        { theme: customTheme },
 	        _react2.default.createElement(
-	          "div",
-	          null,
+	          "form",
+	          { className: "redux-auth email-sign-in-form",
+	            style: { clear: "both", overflow: "hidden" },
+	            onSubmit: this.handleSubmit.bind(this) },
+	          _react2.default.createElement(_Input2.default, _extends({ type: "text",
+	            className: "email-sign-in-email",
+	            ref: "emailSignInEmail",
+	            floatingLabelText: "Email",
+	            disabled: disabled,
+	            value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"]),
+	            errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"]),
+	            onChange: this.handleInput.bind(this, "email")
+	          }, this.props.inputProps.email)),
+	          _react2.default.createElement(_Input2.default, _extends({ type: "password",
+	            floatingLabelText: "Password",
+	            className: "email-sign-in-password",
+	            disabled: disabled,
+	            value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"]),
+	            errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"]),
+	            onChange: this.handleInput.bind(this, "password")
+	          }, this.props.inputProps.password)),
 	          _react2.default.createElement(
-	            _core.Button,
-	            _extends({
-	              type: "submit",
-	              style: { float: "right" },
-	              icon: _icons.ExitToApp,
-	              className: "email-sign-in-submit",
-	              disabled: disabled,
-	              onClick: this.handleSubmit.bind(this),
-	              primary: true
-	            }, this.props.inputProps.submit),
-	            "Sign In"
-	          ),
-	          loading && _react2.default.createElement(_core.CircularProgress, { size: 24, className: classes.buttonProgress })
+	            "div",
+	            null,
+	            _react2.default.createElement(
+	              _core.Button,
+	              _extends({
+	                type: "submit",
+	                style: { float: "right" },
+	                icon: _icons.ExitToApp,
+	                className: "email-sign-in-submit",
+	                disabled: disabled,
+	                onClick: this.handleSubmit.bind(this),
+	                primary: true
+	              }, this.props.inputProps.submit),
+	              "Sign In"
+	            ),
+	            loading && _react2.default.createElement(_core.CircularProgress, { size: 24, className: classes.buttonProgress })
+	          )
 	        )
 	      );
 	    }
