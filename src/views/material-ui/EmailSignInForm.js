@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import ExitToApp from '@material-ui/icons/ExitToApp';
+import { ExitToApp } from '@material-ui/icons/ExitToApp';
 import Button from "@material-ui/core/Button";
 import Dialog from '@material-ui/core/Dialog';
 import { MuiThemeProvider } from "@material-ui/core/styles";
@@ -22,8 +22,6 @@ class EmailSignInForm extends React.Component {
       submit: {}
     }
   };
-
-  handleSubmit = this.handleSubmit.bind(this);
 
   getEndpoint() {
     const {
@@ -73,7 +71,7 @@ class EmailSignInForm extends React.Component {
           <DialogContent>
             <form className='redux-auth email-sign-in-form'
               style={{ clear: "both", overflow: "hidden" }}
-              onSubmit={this.handleSubmit}>
+              onSubmit={this.handleSubmit.bind(this)}>
               <Input type="text"
                 className="email-sign-in-email"
                 ref="emailSignInEmail"
@@ -100,7 +98,7 @@ class EmailSignInForm extends React.Component {
                   icon={ExitToApp}
                   className='email-sign-in-submit'
                   disabled={disabled}
-                  onClick={this.handleSubmit}
+                  onClick={this.handleSubmit.bind(this)}
                   primary={true}
                   {...this.props.inputProps.submit}
                 >

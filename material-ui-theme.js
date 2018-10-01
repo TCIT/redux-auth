@@ -11633,8 +11633,6 @@
 
 	var _ExitToApp = __webpack_require__(173);
 
-	var _ExitToApp2 = _interopRequireDefault(_ExitToApp);
-
 	var _Button = __webpack_require__(112);
 
 	var _Button2 = _interopRequireDefault(_Button);
@@ -11663,17 +11661,9 @@
 	  _inherits(EmailSignInForm, _React$Component);
 
 	  function EmailSignInForm() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
 	    _classCallCheck(this, EmailSignInForm);
 
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = EmailSignInForm.__proto__ || Object.getPrototypeOf(EmailSignInForm)).call.apply(_ref, [this].concat(args))), _this), _this.handleSubmit = _this.handleSubmit.bind(_this), _temp), _possibleConstructorReturn(_this, _ret);
+	    return _possibleConstructorReturn(this, (EmailSignInForm.__proto__ || Object.getPrototypeOf(EmailSignInForm)).apply(this, arguments));
 	  }
 
 	  _createClass(EmailSignInForm, [{
@@ -11731,7 +11721,7 @@
 	              "form",
 	              { className: "redux-auth email-sign-in-form",
 	                style: { clear: "both", overflow: "hidden" },
-	                onSubmit: this.handleSubmit },
+	                onSubmit: this.handleSubmit.bind(this) },
 	              _react2.default.createElement(_Input2.default, _extends({ type: "text",
 	                className: "email-sign-in-email",
 	                ref: "emailSignInEmail",
@@ -11757,10 +11747,10 @@
 	                  _extends({
 	                    type: "submit",
 	                    style: { float: "right" },
-	                    icon: _ExitToApp2.default,
+	                    icon: _ExitToApp.ExitToApp,
 	                    className: "email-sign-in-submit",
 	                    disabled: disabled,
-	                    onClick: this.handleSubmit,
+	                    onClick: this.handleSubmit.bind(this),
 	                    primary: true
 	                  }, this.props.inputProps.submit),
 	                  "Sign In"
