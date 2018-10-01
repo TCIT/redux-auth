@@ -64,13 +64,13 @@ class AuthInput extends React.Component {
       };
     }
 
-    console.log(this.props.value)
+    console.log('props redux-auth', this.props)
 
     return (
       <FormControl fullWidth {...errorConfig.error}>
         <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel>
         <Input
-          id="email-sign"
+          id={`${floatingLabelText}-sign`}
           {...errorConfig.icon}
           onChange={onChange}
           disabled={disabled}

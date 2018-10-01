@@ -611,7 +611,7 @@
 	        };
 	      }
 
-	      console.log(this.props.value);
+	      console.log('props redux-auth', this.props);
 
 	      return _react2.default.createElement(
 	        _core.FormControl,
@@ -622,7 +622,7 @@
 	          floatingLabelText
 	        ),
 	        _react2.default.createElement(_core.Input, _extends({
-	          id: "email-sign"
+	          id: floatingLabelText + "-sign"
 	        }, errorConfig.icon, {
 	          onChange: onChange,
 	          disabled: disabled,
