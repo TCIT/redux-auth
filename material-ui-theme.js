@@ -567,7 +567,6 @@
 	          floatingLabelText = _props.floatingLabelText,
 	          disabled = _props.disabled,
 	          onChange = _props.onChange,
-	          errors = _props.errors,
 	          value = _props.value,
 	          type = _props.type;
 
@@ -595,11 +594,6 @@
 	      return _react2.default.createElement(
 	        _core.FormControl,
 	        errorConfig.error,
-	        _react2.default.createElement(
-	          _core.InputLabel,
-	          { htmlFor: "email-sign" },
-	          floatingLabelText
-	        ),
 	        _react2.default.createElement(_core.Input, _extends({
 	          id: "email-sign"
 	        }, errorConfig.icon, {

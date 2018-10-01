@@ -66,7 +66,7 @@ class AuthInput extends React.Component {
 
     return (
       <FormControl {...errorConfig.error}>
-        <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel>
+        {/* <InputLabel htmlFor="email-sign">{floatingLabelText}</InputLabel> */}
         <Input
           id="email-sign"
           {...errorConfig.icon}
