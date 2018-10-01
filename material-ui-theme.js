@@ -1812,7 +1812,7 @@
 	      var loading = this.props.auth.getIn(["emailSignIn", "loading"]);
 	      return _react2.default.createElement(
 	        _styles.MuiThemeProvider,
-	        { theme: customTheme },
+	        { theme: this.props.customTheme },
 	        _react2.default.createElement(
 	          "form",
 	          { className: "redux-auth email-sign-in-form",

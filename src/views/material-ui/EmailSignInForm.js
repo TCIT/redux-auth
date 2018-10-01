@@ -46,7 +46,7 @@ class EmailSignInForm extends React.Component {
 
     const loading = this.props.auth.getIn(["emailSignIn", "loading"]);
     return (
-      <MuiThemeProvider theme={customTheme}>
+      <MuiThemeProvider theme={this.props.customTheme}>
         <form className='redux-auth email-sign-in-form'
           style={{ clear: "both", overflow: "hidden" }}
           onSubmit={this.handleSubmit.bind(this)}>
