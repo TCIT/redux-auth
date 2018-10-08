@@ -445,14 +445,19 @@
 	      var color = this.getColor();
 
 	      var props = {
+	        // backgroundColor: this.props.backgroundColor,
 	        children: this.props.children,
 	        className: this.props.className,
 	        disabled: this.props.disabled || this.props.loading,
+	        // disabledBackgroundColor: this.props.disabledBackgroundColor,
+	        // disabledLabelColor: this.props.disabledLabelColor,
 	        fullWidth: this.props.fullWidth,
-	        // href: this.props.href,
-	        // label: this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>,
-	        textPrimary: this.props.primary,
-	        textSecondary: this.props.secondary,
+	        href: this.props.href,
+	        // labelColor: this.props.labelColor || color,
+	        // labelPosition: this.props.labelPosition || "after",
+	        // labelStyle: this.props.labelStyle,
+	        color: this.props.primary || this.props.secondary,
+	        // rippleStyle: this.props.rippleStyle,
 	        style: this.props.style,
 	        type: this.props.type
 	      };
@@ -461,7 +466,12 @@
 	        _core.Button,
 	        _extends({}, props, {
 	          onClick: this.handleClick.bind(this) }),
-	        this.renderIcon()
+	        this.renderIcon(),
+	        this.props.label || _react2.default.createElement(
+	          'span',
+	          { style: { paddingLeft: 15, color: color } },
+	          this.props.children
+	        )
 	      );
 	    }
 	  }]);

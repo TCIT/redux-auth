@@ -76,23 +76,29 @@ class ButtonLoader extends React.Component {
     let color = this.getColor();
 
     const props = {
+      // backgroundColor: this.props.backgroundColor,
       children: this.props.children,
       className: this.props.className,
       disabled: this.props.disabled || this.props.loading,
+      // disabledBackgroundColor: this.props.disabledBackgroundColor,
+      // disabledLabelColor: this.props.disabledLabelColor,
       fullWidth: this.props.fullWidth,
-      // href: this.props.href,
-      // label: this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>,
-      textPrimary: this.props.primary,
-      textSecondary: this.props.secondary,
+      href: this.props.href,
+      // labelColor: this.props.labelColor || color,
+      // labelPosition: this.props.labelPosition || "after",
+      // labelStyle: this.props.labelStyle,
+      color: this.props.primary || this.props.secondary,
+      // rippleStyle: this.props.rippleStyle,
       style: this.props.style,
       type: this.props.type
     };
-
+    
     return (
-        <Button
-          {...props}
-          onClick={this.handleClick.bind(this)}>
+      <Button
+      {...props}
+      onClick={this.handleClick.bind(this)}>
           {this.renderIcon()}
+          {this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>}
         </Button>
     );
   }
