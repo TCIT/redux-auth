@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
 import { ActionFavorite } from '@material-ui/icons';
 import * as Colors from '@material-ui/core/colors';
 import Spinner from 'react-loader';
