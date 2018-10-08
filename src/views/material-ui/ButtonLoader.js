@@ -80,10 +80,10 @@ class ButtonLoader extends React.Component {
       className: this.props.className,
       disabled: this.props.disabled || this.props.loading,
       fullWidth: this.props.fullWidth,
-      href: this.props.href,
-      label: this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>,
-      labelPosition: this.props.labelPosition || "after",
-      secondary: this.props.secondary,
+      // href: this.props.href,
+      // label: this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>,
+      textPrimary: this.props.primary,
+      textSecondary: this.props.secondary,
       style: this.props.style,
       type: this.props.type
     };
