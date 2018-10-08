@@ -8,7 +8,6 @@ import {
 } from '@material-ui/core';
 import ErrorList from "../ErrorList";
 import { connect } from "react-redux";
-import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class BaseModal extends React.Component {
 
@@ -53,24 +52,22 @@ class BaseModal extends React.Component {
     // {body}
 
     return (
-      <MuiThemeProvider theme={this.props.customTheme}>
-        <Dialog
-          onClose={this.close.bind(this)}
-          open={this.props.show}
-        >
-          <DialogTitle>{this.props.title}</DialogTitle>
-          <DialogContent>{body}</DialogContent>
-          <DialogActions>
-            <Button
-              key="close"
-              className={`${this.props.containerClass}-close`}
-              onClick={this.close.bind(this)}
-            >
-              {this.props.closeBtnLabel}
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </MuiThemeProvider>
+      <Dialog
+        onClose={this.close.bind(this)}
+        open={this.props.show}
+      >
+        <DialogTitle>{this.props.title}</DialogTitle>
+        <DialogContent>{body}</DialogContent>
+        <DialogActions>
+          <Button
+            key="close"
+            className={`${this.props.containerClass}-close`}
+            onClick={this.close.bind(this)}
+          >
+            {this.props.closeBtnLabel}
+          </Button>
+        </DialogActions>
+      </Dialog>
     );
   }
 }

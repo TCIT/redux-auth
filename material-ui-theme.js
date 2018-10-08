@@ -51,35 +51,35 @@
 	});
 	exports.ButtonLoader = exports.TokenBridge = exports.DestroyAccountButton = exports.UpdatePasswordForm = exports.OAuthSignInButton = exports.RequestPasswordResetForm = exports.SignOutButton = exports.EmailSignUpForm = exports.EmailSignInForm = exports.AuthGlobals = undefined;
 
-	var _AuthGlobals2 = __webpack_require__(131);
+	var _AuthGlobals2 = __webpack_require__(130);
 
 	var _AuthGlobals3 = _interopRequireDefault(_AuthGlobals2);
 
-	var _EmailSignInForm2 = __webpack_require__(133);
+	var _EmailSignInForm2 = __webpack_require__(132);
 
 	var _EmailSignInForm3 = _interopRequireDefault(_EmailSignInForm2);
 
-	var _EmailSignUpForm2 = __webpack_require__(134);
+	var _EmailSignUpForm2 = __webpack_require__(133);
 
 	var _EmailSignUpForm3 = _interopRequireDefault(_EmailSignUpForm2);
 
-	var _SignOutButton2 = __webpack_require__(138);
+	var _SignOutButton2 = __webpack_require__(137);
 
 	var _SignOutButton3 = _interopRequireDefault(_SignOutButton2);
 
-	var _RequestPasswordResetForm2 = __webpack_require__(137);
+	var _RequestPasswordResetForm2 = __webpack_require__(136);
 
 	var _RequestPasswordResetForm3 = _interopRequireDefault(_RequestPasswordResetForm2);
 
-	var _OAuthSignInButton2 = __webpack_require__(136);
+	var _OAuthSignInButton2 = __webpack_require__(135);
 
 	var _OAuthSignInButton3 = _interopRequireDefault(_OAuthSignInButton2);
 
-	var _UpdatePasswordForm2 = __webpack_require__(139);
+	var _UpdatePasswordForm2 = __webpack_require__(138);
 
 	var _UpdatePasswordForm3 = _interopRequireDefault(_UpdatePasswordForm2);
 
-	var _DestroyAccountButton2 = __webpack_require__(132);
+	var _DestroyAccountButton2 = __webpack_require__(131);
 
 	var _DestroyAccountButton3 = _interopRequireDefault(_DestroyAccountButton2);
 
@@ -149,13 +149,11 @@
 
 	var _core = __webpack_require__(24);
 
-	var _ErrorList = __webpack_require__(135);
+	var _ErrorList = __webpack_require__(134);
 
 	var _ErrorList2 = _interopRequireDefault(_ErrorList);
 
 	var _reactRedux = __webpack_require__(3);
-
-	var _styles = __webpack_require__(39);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -209,36 +207,32 @@
 	      // {body}
 
 	      return _react2.default.createElement(
-	        _styles.MuiThemeProvider,
-	        { theme: this.props.customTheme },
+	        _core.Dialog,
+	        {
+	          onClose: this.close.bind(this),
+	          open: this.props.show
+	        },
 	        _react2.default.createElement(
-	          _core.Dialog,
-	          {
-	            onClose: this.close.bind(this),
-	            open: this.props.show
-	          },
+	          _core.DialogTitle,
+	          null,
+	          this.props.title
+	        ),
+	        _react2.default.createElement(
+	          _core.DialogContent,
+	          null,
+	          body
+	        ),
+	        _react2.default.createElement(
+	          _core.DialogActions,
+	          null,
 	          _react2.default.createElement(
-	            _core.DialogTitle,
-	            null,
-	            this.props.title
-	          ),
-	          _react2.default.createElement(
-	            _core.DialogContent,
-	            null,
-	            body
-	          ),
-	          _react2.default.createElement(
-	            _core.DialogActions,
-	            null,
-	            _react2.default.createElement(
-	              _core.Button,
-	              {
-	                key: "close",
-	                className: this.props.containerClass + "-close",
-	                onClick: this.close.bind(this)
-	              },
-	              this.props.closeBtnLabel
-	            )
+	            _core.Button,
+	            {
+	              key: "close",
+	              className: this.props.containerClass + "-close",
+	              onClick: this.close.bind(this)
+	            },
+	            this.props.closeBtnLabel
 	          )
 	        )
 	      );
@@ -658,7 +652,7 @@
 
 	"use strict";
 
-	var _interopRequireDefault = __webpack_require__(43);
+	var _interopRequireDefault = __webpack_require__(42);
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -784,45 +778,45 @@
 	  }
 	});
 
-	var _common = _interopRequireDefault(__webpack_require__(48));
+	var _common = _interopRequireDefault(__webpack_require__(47));
 
-	var _red = _interopRequireDefault(__webpack_require__(61));
+	var _red = _interopRequireDefault(__webpack_require__(60));
 
-	var _pink = _interopRequireDefault(__webpack_require__(59));
+	var _pink = _interopRequireDefault(__webpack_require__(58));
 
-	var _purple = _interopRequireDefault(__webpack_require__(60));
+	var _purple = _interopRequireDefault(__webpack_require__(59));
 
-	var _deepPurple = _interopRequireDefault(__webpack_require__(51));
+	var _deepPurple = _interopRequireDefault(__webpack_require__(50));
 
-	var _indigo = _interopRequireDefault(__webpack_require__(54));
+	var _indigo = _interopRequireDefault(__webpack_require__(53));
 
-	var _blue = _interopRequireDefault(__webpack_require__(45));
+	var _blue = _interopRequireDefault(__webpack_require__(44));
 
-	var _lightBlue = _interopRequireDefault(__webpack_require__(55));
+	var _lightBlue = _interopRequireDefault(__webpack_require__(54));
 
-	var _cyan = _interopRequireDefault(__webpack_require__(49));
+	var _cyan = _interopRequireDefault(__webpack_require__(48));
 
-	var _teal = _interopRequireDefault(__webpack_require__(62));
+	var _teal = _interopRequireDefault(__webpack_require__(61));
 
-	var _green = _interopRequireDefault(__webpack_require__(52));
+	var _green = _interopRequireDefault(__webpack_require__(51));
 
-	var _lightGreen = _interopRequireDefault(__webpack_require__(56));
+	var _lightGreen = _interopRequireDefault(__webpack_require__(55));
 
-	var _lime = _interopRequireDefault(__webpack_require__(57));
+	var _lime = _interopRequireDefault(__webpack_require__(56));
 
-	var _yellow = _interopRequireDefault(__webpack_require__(63));
+	var _yellow = _interopRequireDefault(__webpack_require__(62));
 
-	var _amber = _interopRequireDefault(__webpack_require__(44));
+	var _amber = _interopRequireDefault(__webpack_require__(43));
 
-	var _orange = _interopRequireDefault(__webpack_require__(58));
+	var _orange = _interopRequireDefault(__webpack_require__(57));
 
-	var _deepOrange = _interopRequireDefault(__webpack_require__(50));
+	var _deepOrange = _interopRequireDefault(__webpack_require__(49));
 
-	var _brown = _interopRequireDefault(__webpack_require__(47));
+	var _brown = _interopRequireDefault(__webpack_require__(46));
 
-	var _grey = _interopRequireDefault(__webpack_require__(53));
+	var _grey = _interopRequireDefault(__webpack_require__(52));
 
-	var _blueGrey = _interopRequireDefault(__webpack_require__(46));
+	var _blueGrey = _interopRequireDefault(__webpack_require__(45));
 
 /***/ },
 /* 27 */,
@@ -837,16 +831,10 @@
 /* 36 */,
 /* 37 */,
 /* 38 */,
-/* 39 */
-/***/ function(module, exports) {
-
-	module.exports = require("@material-ui/core/styles");
-
-/***/ },
+/* 39 */,
 /* 40 */,
 /* 41 */,
-/* 42 */,
-/* 43 */
+/* 42 */
 /***/ function(module, exports) {
 
 	function _interopRequireDefault(obj) {
@@ -858,7 +846,7 @@
 	module.exports = _interopRequireDefault;
 
 /***/ },
-/* 44 */
+/* 43 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -887,7 +875,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 45 */
+/* 44 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -916,7 +904,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 46 */
+/* 45 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -945,7 +933,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 47 */
+/* 46 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -974,7 +962,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 48 */
+/* 47 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -991,7 +979,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 49 */
+/* 48 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1020,7 +1008,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 50 */
+/* 49 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1049,7 +1037,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 51 */
+/* 50 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1078,7 +1066,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 52 */
+/* 51 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1107,7 +1095,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 53 */
+/* 52 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1136,7 +1124,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 54 */
+/* 53 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1165,7 +1153,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 55 */
+/* 54 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1194,7 +1182,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 56 */
+/* 55 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1223,7 +1211,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 57 */
+/* 56 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1252,7 +1240,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 58 */
+/* 57 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1281,7 +1269,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 59 */
+/* 58 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1310,7 +1298,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 60 */
+/* 59 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1339,7 +1327,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 61 */
+/* 60 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1368,7 +1356,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 62 */
+/* 61 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1397,7 +1385,7 @@
 	exports.default = _default;
 
 /***/ },
-/* 63 */
+/* 62 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1426,6 +1414,7 @@
 	exports.default = _default;
 
 /***/ },
+/* 63 */,
 /* 64 */,
 /* 65 */,
 /* 66 */,
@@ -1492,8 +1481,7 @@
 /* 127 */,
 /* 128 */,
 /* 129 */,
-/* 130 */,
-/* 131 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1508,71 +1496,71 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _EmailSignInSuccessModal = __webpack_require__(143);
+	var _EmailSignInSuccessModal = __webpack_require__(142);
 
 	var _EmailSignInSuccessModal2 = _interopRequireDefault(_EmailSignInSuccessModal);
 
-	var _EmailSignInErrorModal = __webpack_require__(142);
+	var _EmailSignInErrorModal = __webpack_require__(141);
 
 	var _EmailSignInErrorModal2 = _interopRequireDefault(_EmailSignInErrorModal);
 
-	var _OAuthSignInSuccessModal = __webpack_require__(149);
+	var _OAuthSignInSuccessModal = __webpack_require__(148);
 
 	var _OAuthSignInSuccessModal2 = _interopRequireDefault(_OAuthSignInSuccessModal);
 
-	var _OAuthSignInErrorModal = __webpack_require__(148);
+	var _OAuthSignInErrorModal = __webpack_require__(147);
 
 	var _OAuthSignInErrorModal2 = _interopRequireDefault(_OAuthSignInErrorModal);
 
-	var _EmailSignUpSuccessModal = __webpack_require__(145);
+	var _EmailSignUpSuccessModal = __webpack_require__(144);
 
 	var _EmailSignUpSuccessModal2 = _interopRequireDefault(_EmailSignUpSuccessModal);
 
-	var _EmailSignUpErrorModal = __webpack_require__(144);
+	var _EmailSignUpErrorModal = __webpack_require__(143);
 
 	var _EmailSignUpErrorModal2 = _interopRequireDefault(_EmailSignUpErrorModal);
 
-	var _SignOutSuccessModal = __webpack_require__(154);
+	var _SignOutSuccessModal = __webpack_require__(153);
 
 	var _SignOutSuccessModal2 = _interopRequireDefault(_SignOutSuccessModal);
 
-	var _SignOutErrorModal = __webpack_require__(153);
+	var _SignOutErrorModal = __webpack_require__(152);
 
 	var _SignOutErrorModal2 = _interopRequireDefault(_SignOutErrorModal);
 
-	var _FirstTimeLoginSuccessModal = __webpack_require__(147);
+	var _FirstTimeLoginSuccessModal = __webpack_require__(146);
 
 	var _FirstTimeLoginSuccessModal2 = _interopRequireDefault(_FirstTimeLoginSuccessModal);
 
-	var _FirstTimeLoginErrorModal = __webpack_require__(146);
+	var _FirstTimeLoginErrorModal = __webpack_require__(145);
 
 	var _FirstTimeLoginErrorModal2 = _interopRequireDefault(_FirstTimeLoginErrorModal);
 
-	var _RequestPasswordResetErrorModal = __webpack_require__(151);
+	var _RequestPasswordResetErrorModal = __webpack_require__(150);
 
 	var _RequestPasswordResetErrorModal2 = _interopRequireDefault(_RequestPasswordResetErrorModal);
 
-	var _RequestPasswordResetSuccessModal = __webpack_require__(152);
+	var _RequestPasswordResetSuccessModal = __webpack_require__(151);
 
 	var _RequestPasswordResetSuccessModal2 = _interopRequireDefault(_RequestPasswordResetSuccessModal);
 
-	var _UpdatePasswordErrorModal = __webpack_require__(155);
+	var _UpdatePasswordErrorModal = __webpack_require__(154);
 
 	var _UpdatePasswordErrorModal2 = _interopRequireDefault(_UpdatePasswordErrorModal);
 
-	var _UpdatePasswordSuccessModal = __webpack_require__(156);
+	var _UpdatePasswordSuccessModal = __webpack_require__(155);
 
 	var _UpdatePasswordSuccessModal2 = _interopRequireDefault(_UpdatePasswordSuccessModal);
 
-	var _DestroyAccountErrorModal = __webpack_require__(140);
+	var _DestroyAccountErrorModal = __webpack_require__(139);
 
 	var _DestroyAccountErrorModal2 = _interopRequireDefault(_DestroyAccountErrorModal);
 
-	var _DestroyAccountSuccessModal = __webpack_require__(141);
+	var _DestroyAccountSuccessModal = __webpack_require__(140);
 
 	var _DestroyAccountSuccessModal2 = _interopRequireDefault(_DestroyAccountSuccessModal);
 
-	var _PasswordResetSuccessModal = __webpack_require__(150);
+	var _PasswordResetSuccessModal = __webpack_require__(149);
 
 	var _PasswordResetSuccessModal2 = _interopRequireDefault(_PasswordResetSuccessModal);
 
@@ -1694,7 +1682,7 @@
 	})(AuthGlobals);
 
 /***/ },
-/* 132 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1779,7 +1767,7 @@
 	})(DestroyAccountButton);
 
 /***/ },
-/* 133 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1801,8 +1789,6 @@
 	var _core = __webpack_require__(24);
 
 	var _icons = __webpack_require__(12);
-
-	var _styles = __webpack_require__(39);
 
 	var _Input = __webpack_require__(23);
 
@@ -1851,7 +1837,7 @@
 	    }
 	  }, {
 	    key: "getSignInButton",
-	    value: function getSignInButton() {
+	    value: function getSignInButton(disabled) {
 	      var clonedElement = _react2.default.cloneElement(this.props.signInButton, _extends({
 	        onClick: this.handleSubmit.bind(this)
 	      }, this.props.inputProps.submit, {
@@ -1913,7 +1899,7 @@
 	        _react2.default.createElement(
 	          "div",
 	          null,
-	          this.getSignInButton(),
+	          this.getSignInButton(disabled),
 	          loading && _react2.default.createElement(_core.CircularProgress, { size: 24, className: classes.buttonProgress })
 	        )
 	      );
@@ -1955,7 +1941,7 @@
 	})(EmailSignInForm);
 
 /***/ },
-/* 134 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2088,7 +2074,7 @@
 	})(EmailSignUpForm);
 
 /***/ },
-/* 135 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2208,7 +2194,7 @@
 	exports.default = ErrorList;
 
 /***/ },
-/* 136 */
+/* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2302,7 +2288,7 @@
 	})(OAuthSignInButton);
 
 /***/ },
-/* 137 */
+/* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2422,7 +2408,7 @@
 	})(RequestPasswordResetForm);
 
 /***/ },
-/* 138 */
+/* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2508,7 +2494,7 @@
 	})(SignOutButton);
 
 /***/ },
-/* 139 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2636,7 +2622,7 @@
 	})(UpdatePasswordForm);
 
 /***/ },
-/* 140 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2693,7 +2679,7 @@
 	exports.default = DestroyAccountErrorModal;
 
 /***/ },
-/* 141 */
+/* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2761,7 +2747,7 @@
 	})(DestroyAccountSuccessModal);
 
 /***/ },
-/* 142 */
+/* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2818,7 +2804,7 @@
 	exports.default = EmailSignInErrorModal;
 
 /***/ },
-/* 143 */
+/* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2888,7 +2874,7 @@
 	})(EmailSignInSuccessModal);
 
 /***/ },
-/* 144 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2945,7 +2931,7 @@
 	exports.default = EmailSignUpErrorModal;
 
 /***/ },
-/* 145 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3015,7 +3001,7 @@
 	})(EmailSignUpSuccessModal);
 
 /***/ },
-/* 146 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3079,7 +3065,7 @@
 	exports.default = FirstTimeLoginErrorModal;
 
 /***/ },
-/* 147 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3147,7 +3133,7 @@
 	})(FirstTimeLoginSuccessModal);
 
 /***/ },
-/* 148 */
+/* 147 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3229,7 +3215,7 @@
 	exports.default = OAuthSignInErrorModal;
 
 /***/ },
-/* 149 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3299,7 +3285,7 @@
 	})(OAuthSignInSuccessModal);
 
 /***/ },
-/* 150 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3319,8 +3305,6 @@
 	var _core = __webpack_require__(24);
 
 	var _icons = __webpack_require__(12);
-
-	var _styles = __webpack_require__(39);
 
 	var _ButtonLoader = __webpack_require__(19);
 
@@ -3381,57 +3365,53 @@
 	      var loading = this.props.auth.getIn(["updatePasswordModal", endpoint, "loading"]);
 
 	      return _react2.default.createElement(
-	        _styles.MuiThemeProvider,
-	        null,
+	        _core.Dialog,
+	        {
+	          open: this.props.show,
+	          contentClassName: "redux-auth-modal password-reset-success-modal",
+	          actions: [_react2.default.createElement(
+	            _core.Button,
+	            _extends({
+	              key: "cancel",
+	              className: "password-reset-success-modal-close",
+	              onClick: this.close.bind(this),
+	              secondary: true
+	            }, this.props.inputProps.cancel),
+	            "Cancel"
+	          ), _react2.default.createElement(_ButtonLoader2.default, _extends({
+	            key: "submit"
+	          }, this.props, {
+	            loading: loading,
+	            type: "submit",
+	            primary: true,
+	            className: "password-reset-success-modal-submit",
+	            icon: _icons.Lock,
+	            onClick: this.handleSubmit.bind(this)
+	          }, this.props.inputProps.submit))],
+	          title: "Reset Your Password" },
 	        _react2.default.createElement(
-	          _core.Dialog,
-	          {
-	            open: this.props.show,
-	            contentClassName: "redux-auth-modal password-reset-success-modal",
-	            actions: [_react2.default.createElement(
-	              _core.Button,
-	              _extends({
-	                key: "cancel",
-	                className: "password-reset-success-modal-close",
-	                onClick: this.close.bind(this),
-	                secondary: true
-	              }, this.props.inputProps.cancel),
-	              "Cancel"
-	            ), _react2.default.createElement(_ButtonLoader2.default, _extends({
-	              key: "submit"
-	            }, this.props, {
-	              loading: loading,
-	              type: "submit",
-	              primary: true,
-	              className: "password-reset-success-modal-submit",
-	              icon: _icons.Lock,
-	              onClick: this.handleSubmit.bind(this)
-	            }, this.props.inputProps.submit))],
-	            title: "Reset Your Password" },
-	          _react2.default.createElement(
-	            "form",
-	            null,
-	            _react2.default.createElement(_Input2.default, _extends({
-	              type: "password",
-	              label: "Password",
-	              placeholder: "Password",
-	              disabled: loading,
-	              className: "password-reset-success-modal-password",
-	              value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password"]),
-	              errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password"]),
-	              onChange: this.handleInput.bind(this, "password")
-	            }, this.props.inputProps.password)),
-	            _react2.default.createElement(_Input2.default, _extends({
-	              type: "password",
-	              label: "Password Confirmation",
-	              placeholder: "Password Confirmation",
-	              disabled: loading,
-	              className: "password-reset-success-modal-password-confirmation",
-	              value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password_confirmation"]),
-	              errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password_confirmation"]),
-	              onChange: this.handleInput.bind(this, "password_confirmation")
-	            }, this.props.inputProps.passwordConfirmation))
-	          )
+	          "form",
+	          null,
+	          _react2.default.createElement(_Input2.default, _extends({
+	            type: "password",
+	            label: "Password",
+	            placeholder: "Password",
+	            disabled: loading,
+	            className: "password-reset-success-modal-password",
+	            value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password"]),
+	            errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password"]),
+	            onChange: this.handleInput.bind(this, "password")
+	          }, this.props.inputProps.password)),
+	          _react2.default.createElement(_Input2.default, _extends({
+	            type: "password",
+	            label: "Password Confirmation",
+	            placeholder: "Password Confirmation",
+	            disabled: loading,
+	            className: "password-reset-success-modal-password-confirmation",
+	            value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password_confirmation"]),
+	            errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password_confirmation"]),
+	            onChange: this.handleInput.bind(this, "password_confirmation")
+	          }, this.props.inputProps.passwordConfirmation))
 	        )
 	      );
 	    }
@@ -3449,7 +3429,7 @@
 	})(PasswordResetSuccessModal);
 
 /***/ },
-/* 151 */
+/* 150 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3506,7 +3486,7 @@
 	exports.default = RequestPasswordResetErrorModal;
 
 /***/ },
-/* 152 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3574,7 +3554,7 @@
 	})(RequestPasswordResetSuccessModal);
 
 /***/ },
-/* 153 */
+/* 152 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3638,7 +3618,7 @@
 	exports.default = SignOutErrorModal;
 
 /***/ },
-/* 154 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3698,7 +3678,7 @@
 	exports.default = SignOutSuccessModal;
 
 /***/ },
-/* 155 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3755,7 +3735,7 @@
 	exports.default = UpdatePasswordErrorModal;
 
 /***/ },
-/* 156 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";

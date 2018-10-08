@@ -9,7 +9,6 @@ import {
   Dialog
 } from "@material-ui/core";
 import { ExitToApp } from '@material-ui/icons';
-import { MuiThemeProvider } from "@material-ui/core/styles";
 
 import Input from "./Input";
 import { emailSignInFormUpdate, emailSignIn } from "../../actions/email-sign-in";
@@ -50,7 +49,7 @@ class EmailSignInForm extends React.Component {
       .catch(() => { });
   }
 
-  getSignInButton() {
+  getSignInButton(disabled) {
     const clonedElement = React.cloneElement(this.props.signInButton, {
       onClick: this.handleSubmit.bind(this),
       ...this.props.inputProps.submit,
@@ -115,7 +114,7 @@ class EmailSignInForm extends React.Component {
         />
 
         <div>
-          {this.getSignInButton()}
+          {this.getSignInButton(disabled)}
           {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
         </div>
       </form>
