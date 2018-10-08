@@ -51,9 +51,9 @@ class EmailSignInForm extends React.Component {
 
   getSignInButton(disabled) {
     const clonedElement = React.cloneElement(this.props.signInButton, {
-      onClick: this.handleSubmit.bind(this),
       ...this.props.inputProps.submit,
-      disabled
+      disabled,
+      onClick: this.handleSubmit.bind(this)
     });
 
     return clonedElement ||
@@ -67,7 +67,7 @@ class EmailSignInForm extends React.Component {
       >
         <ExitToApp />
         Sign In
-    </Button>
+      </Button>
   }
 
   render() {

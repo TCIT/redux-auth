@@ -421,9 +421,20 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.cloneElement(this.props.signOutAction, _extends({}, props, {
+	      var props = {
+	        children: this.props.children,
+	        className: this.props.className,
+	        disabled: this.props.disabled || this.props.loading,
+	        fullWidth: this.props.fullWidth,
+	        href: this.props.href,
+	        color: this.props.color,
+	        style: this.props.style,
+	        type: this.props.type
+	      };
+
+	      return _react2.default.cloneElement(this.props.signOutAction, {
 	        onClick: this.handleClick.bind(this)
-	      })) || _react2.default.createElement(
+	      }) || _react2.default.createElement(
 	        _core.Button,
 	        _extends({}, props, {
 	          onClick: this.handleClick.bind(this)
@@ -1776,10 +1787,9 @@
 	  }, {
 	    key: "getSignInButton",
 	    value: function getSignInButton(disabled) {
-	      var clonedElement = _react2.default.cloneElement(this.props.signInButton, _extends({
+	      var clonedElement = _react2.default.cloneElement(this.props.signInButton, _extends({}, this.props.inputProps.submit, {
+	        disabled: disabled,
 	        onClick: this.handleSubmit.bind(this)
-	      }, this.props.inputProps.submit, {
-	        disabled: disabled
 	      }));
 
 	      return clonedElement || _react2.default.createElement(

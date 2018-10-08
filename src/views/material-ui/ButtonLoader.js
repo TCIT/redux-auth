@@ -53,9 +53,19 @@ class ButtonLoader extends React.Component {
   // }
 
   render() {
+    const props = {
+      children: this.props.children,
+      className: this.props.className,
+      disabled: this.props.disabled || this.props.loading,
+      fullWidth: this.props.fullWidth,
+      href: this.props.href,
+      color: this.props.color,
+      style: this.props.style,
+      type: this.props.type
+    };
+
     return (
       React.cloneElement(this.props.signOutAction, {
-        ...props,
         onClick: this.handleClick.bind(this)
       }) ||
       <Button
