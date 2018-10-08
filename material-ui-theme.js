@@ -1852,7 +1852,7 @@
 	  }, {
 	    key: "getSignInButton",
 	    value: function getSignInButton() {
-	      var clonedElement = _react2.default.cloneElement(signInButton, _extends({
+	      var clonedElement = _react2.default.cloneElement(this.props.signInButton, _extends({
 	        onClick: this.handleSubmit.bind(this)
 	      }, this.props.inputProps.submit, {
 	        disabled: disabled
@@ -1875,7 +1875,6 @@
 	    key: "render",
 	    value: function render() {
 	      var _props2 = this.props,
-	          signInButton = _props2.signInButton,
 	          onClose = _props2.onClose,
 	          modal = _props2.modal,
 	          title = _props2.title,
