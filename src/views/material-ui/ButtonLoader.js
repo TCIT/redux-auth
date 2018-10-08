@@ -5,7 +5,7 @@ import * as Colors from '@material-ui/core/colors';
 import Spinner from 'react-loader';
 
 class ButtonLoader extends React.Component {
-  
+
   static defaultProps = {
     icon: Favorite,
     loading: false,
@@ -19,7 +19,8 @@ class ButtonLoader extends React.Component {
     spinColorLight: Colors.darkWhite,
     spinColorDisabled: Colors.minBlack,
     children: <span>Submit</span>,
-    style: {}
+    style: {},
+    color: 'primary'
   };
 
   handleClick(ev) {
@@ -87,19 +88,19 @@ class ButtonLoader extends React.Component {
       // labelColor: this.props.labelColor || color,
       // labelPosition: this.props.labelPosition || "after",
       // labelStyle: this.props.labelStyle,
-      color: this.props.primary || this.props.secondary,
+      color: this.props.color,
       // rippleStyle: this.props.rippleStyle,
       style: this.props.style,
       type: this.props.type
     };
-    
+
     return (
       <Button
-      {...props}
-      onClick={this.handleClick.bind(this)}>
-          {this.renderIcon()}
-          {this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>}
-        </Button>
+        {...props}
+        onClick={this.handleClick.bind(this)}>
+        {this.renderIcon()}
+        {this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>}
+      </Button>
     );
   }
 }

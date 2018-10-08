@@ -456,7 +456,7 @@
 	        // labelColor: this.props.labelColor || color,
 	        // labelPosition: this.props.labelPosition || "after",
 	        // labelStyle: this.props.labelStyle,
-	        color: this.props.primary || this.props.secondary,
+	        color: this.props.color,
 	        // rippleStyle: this.props.rippleStyle,
 	        style: this.props.style,
 	        type: this.props.type
@@ -496,7 +496,8 @@
 	    null,
 	    'Submit'
 	  ),
-	  style: {}
+	  style: {},
+	  color: 'primary'
 	};
 	exports.default = ButtonLoader;
 
