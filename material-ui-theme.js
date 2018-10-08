@@ -1858,7 +1858,7 @@
 	        disabled: disabled
 	      }));
 
-	      return cloneElement || _react2.default.createElement(
+	      return clonedElement || _react2.default.createElement(
 	        _core.Button,
 	        _extends({
 	          type: "submit",

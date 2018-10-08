@@ -57,7 +57,7 @@ class EmailSignInForm extends React.Component {
       disabled
     });
 
-    return cloneElement ||
+    return clonedElement ||
       <Button
         type="submit"
         style={{ float: "right" }}
