@@ -256,13 +256,13 @@
 /* 9 */,
 /* 10 */,
 /* 11 */,
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ function(module, exports) {
 
 	module.exports = require("@material-ui/icons");
 
 /***/ },
-/* 13 */,
 /* 14 */,
 /* 15 */,
 /* 16 */,
@@ -339,8 +339,6 @@
 	  value: true
 	});
 
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -350,18 +348,6 @@
 	var _react2 = _interopRequireDefault(_react);
 
 	var _core = __webpack_require__(24);
-
-	var _icons = __webpack_require__(12);
-
-	var _colors = __webpack_require__(26);
-
-	var Colors = _interopRequireWildcard(_colors);
-
-	var _reactLoader = __webpack_require__(25);
-
-	var _reactLoader2 = _interopRequireDefault(_reactLoader);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -386,86 +372,63 @@
 	      ev.preventDefault();
 	      this.props.onClick(ev);
 	    }
-	  }, {
-	    key: 'getColor',
-	    value: function getColor() {
-	      if (this.props.disabled) {
-	        return this.props.spinColorDisabled;
-	      } else if (this.props.primary || this.props.secondary) {
-	        return this.props.spinColorLight;
-	      } else {
-	        return this.props.spinColorDark;
-	      }
-	    }
-	  }, {
-	    key: 'renderIcon',
-	    value: function renderIcon() {
-	      var icon = void 0,
-	          color = this.getColor();
 
-	      if (this.props.loading) {
-	        icon = _react2.default.createElement(
-	          'div',
-	          { style: { position: "absolute", top: 15, left: 7 } },
-	          _react2.default.createElement(_reactLoader2.default, _extends({
-	            ref: 'spinner'
-	          }, this.props.spinConfig, {
-	            color: color,
-	            loaded: false }))
-	        );
-	      } else {
-	        if (_typeof(this.props.icon) === "object") {
-	          icon = this.props.icon;
-	        } else {
-	          icon = _react2.default.createElement(this.props.icon, { color: color, style: { width: 15, height: 15 } });
-	        }
-	      }
+	    // getColor() {
+	    //   if (this.props.disabled) {
+	    //     return this.props.spinColorDisabled;
+	    //   } else if (this.props.primary || this.props.secondary) {
+	    //     return this.props.spinColorLight;
+	    //   } else {
+	    //     return this.props.spinColorDark;
+	    //   }
+	    // }
 
-	      return _react2.default.createElement(
-	        'span',
-	        { style: {
-	            width: 15,
-	            height: 15,
-	            position: "absolute",
-	            left: 10,
-	            top: 3
-	          } },
-	        icon
-	      );
-	    }
+	    // renderIcon() {
+	    //   let icon,
+	    //     color = this.getColor();
+
+	    //   if (this.props.loading) {
+	    //     icon = (
+	    //       <div style={{ position: "absolute", top: 15, left: 7 }}>
+	    //         <Spinner
+	    //           ref="spinner"
+	    //           {...this.props.spinConfig}
+	    //           color={color}
+	    //           loaded={false} />
+	    //       </div>
+	    //     );
+	    //   } else {
+	    //     if (typeof (this.props.icon) === "object") {
+	    //       icon = this.props.icon;
+	    //     } else {
+	    //       icon = <this.props.icon color={color} style={{ width: 15, height: 15 }} />;
+	    //     }
+	    //   }
+
+	    //   return (
+	    //     <span style={{
+	    //       width: 15,
+	    //       height: 15,
+	    //       position: "absolute",
+	    //       left: 10,
+	    //       top: 3
+	    //     }}>
+	    //       {icon}
+	    //     </span>
+	    //   );
+	    // }
+
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var color = this.getColor();
-
-	      var props = {
-	        // backgroundColor: this.props.backgroundColor,
-	        children: this.props.children,
-	        className: this.props.className,
-	        disabled: this.props.disabled || this.props.loading,
-	        // disabledBackgroundColor: this.props.disabledBackgroundColor,
-	        // disabledLabelColor: this.props.disabledLabelColor,
-	        fullWidth: this.props.fullWidth,
-	        href: this.props.href,
-	        // labelColor: this.props.labelColor || color,
-	        // labelPosition: this.props.labelPosition || "after",
-	        // labelStyle: this.props.labelStyle,
-	        color: this.props.color,
-	        // rippleStyle: this.props.rippleStyle,
-	        style: this.props.style,
-	        type: this.props.type
-	      };
-
-	      return _react2.default.createElement(
+	      return _react2.default.cloneElement(this.props.signOutAction, _extends({}, props, {
+	        onClick: this.handleClick.bind(this)
+	      })) || _react2.default.createElement(
 	        _core.Button,
 	        _extends({}, props, {
-	          onClick: this.handleClick.bind(this) }),
-	        this.renderIcon(),
-	        this.props.label || _react2.default.createElement(
-	          'span',
-	          { style: { paddingLeft: 15, color: color } },
-	          this.props.children
-	        )
+	          onClick: this.handleClick.bind(this)
+	        }),
+	        'Sing Out'
 	      );
 	    }
 	  }]);
@@ -473,26 +436,6 @@
 	  return ButtonLoader;
 	}(_react2.default.Component);
 
-	ButtonLoader.defaultProps = {
-	  icon: _icons.Favorite,
-	  loading: false,
-	  spinConfig: {
-	    lines: 10,
-	    length: 4,
-	    width: 2,
-	    radius: 3
-	  },
-	  spinColorDark: Colors.darkBlack,
-	  spinColorLight: Colors.darkWhite,
-	  spinColorDisabled: Colors.minBlack,
-	  children: _react2.default.createElement(
-	    'span',
-	    null,
-	    'Submit'
-	  ),
-	  style: {},
-	  color: 'primary'
-	};
 	exports.default = ButtonLoader;
 
 /***/ },
@@ -516,13 +459,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(26);
+	var _colors = __webpack_require__(32);
 
 	var Colors = _interopRequireWildcard(_colors);
 
 	var _core = __webpack_require__(24);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _immutable = __webpack_require__(4);
 
@@ -641,13 +584,14 @@
 	module.exports = require("@material-ui/core");
 
 /***/ },
-/* 25 */
-/***/ function(module, exports) {
-
-	module.exports = require("react-loader");
-
-/***/ },
-/* 26 */
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -819,12 +763,6 @@
 	var _blueGrey = _interopRequireDefault(__webpack_require__(45));
 
 /***/ },
-/* 27 */,
-/* 28 */,
-/* 29 */,
-/* 30 */,
-/* 31 */,
-/* 32 */,
 /* 33 */,
 /* 34 */,
 /* 35 */,
@@ -1632,23 +1570,23 @@
 	      return _react2.default.createElement(
 	        "div",
 	        { id: "auth-modals" },
-	        _react2.default.createElement(_EmailSignInSuccessModal2.default, { customTheme: this.props.customTheme, show: showEmailSignInSuccess }),
-	        _react2.default.createElement(_EmailSignInErrorModal2.default, { customTheme: this.props.customTheme, show: showEmailSignInError }),
-	        _react2.default.createElement(_OAuthSignInSuccessModal2.default, { customTheme: this.props.customTheme, show: showOAuthSignInSuccess }),
-	        _react2.default.createElement(_OAuthSignInErrorModal2.default, { customTheme: this.props.customTheme, show: showOAuthSignInError }),
-	        _react2.default.createElement(_EmailSignUpSuccessModal2.default, { customTheme: this.props.customTheme, show: showEmailSignUpSuccess }),
-	        _react2.default.createElement(_EmailSignUpErrorModal2.default, { customTheme: this.props.customTheme, show: showEmailSignUpError }),
-	        _react2.default.createElement(_SignOutSuccessModal2.default, { customTheme: this.props.customTheme, show: showSignOutSuccess }),
-	        _react2.default.createElement(_SignOutErrorModal2.default, { customTheme: this.props.customTheme, show: showSignOutError }),
-	        _react2.default.createElement(_FirstTimeLoginSuccessModal2.default, { customTheme: this.props.customTheme, show: showFirstTimeLoginSuccess }),
-	        _react2.default.createElement(_FirstTimeLoginErrorModal2.default, { customTheme: this.props.customTheme, show: showFirstTimeLoginError }),
-	        _react2.default.createElement(_RequestPasswordResetErrorModal2.default, { customTheme: this.props.customTheme, show: showRequestPasswordResetError }),
-	        _react2.default.createElement(_RequestPasswordResetSuccessModal2.default, { customTheme: this.props.customTheme, show: showRequestPasswordResetSuccess }),
-	        _react2.default.createElement(_UpdatePasswordErrorModal2.default, { customTheme: this.props.customTheme, show: updatePasswordError }),
-	        _react2.default.createElement(_UpdatePasswordSuccessModal2.default, { customTheme: this.props.customTheme, show: updatePasswordSuccess }),
-	        _react2.default.createElement(_DestroyAccountErrorModal2.default, { customTheme: this.props.customTheme, show: destroyAccountError }),
-	        _react2.default.createElement(_DestroyAccountSuccessModal2.default, { customTheme: this.props.customTheme, show: destroyAccountSuccess }),
-	        _react2.default.createElement(_PasswordResetSuccessModal2.default, { customTheme: this.props.customTheme, show: passwordResetSuccess }),
+	        _react2.default.createElement(_EmailSignInSuccessModal2.default, { show: showEmailSignInSuccess }),
+	        _react2.default.createElement(_EmailSignInErrorModal2.default, { show: showEmailSignInError }),
+	        _react2.default.createElement(_OAuthSignInSuccessModal2.default, { show: showOAuthSignInSuccess }),
+	        _react2.default.createElement(_OAuthSignInErrorModal2.default, { show: showOAuthSignInError }),
+	        _react2.default.createElement(_EmailSignUpSuccessModal2.default, { show: showEmailSignUpSuccess }),
+	        _react2.default.createElement(_EmailSignUpErrorModal2.default, { show: showEmailSignUpError }),
+	        _react2.default.createElement(_SignOutSuccessModal2.default, { show: showSignOutSuccess }),
+	        _react2.default.createElement(_SignOutErrorModal2.default, { show: showSignOutError }),
+	        _react2.default.createElement(_FirstTimeLoginSuccessModal2.default, { show: showFirstTimeLoginSuccess }),
+	        _react2.default.createElement(_FirstTimeLoginErrorModal2.default, { show: showFirstTimeLoginError }),
+	        _react2.default.createElement(_RequestPasswordResetErrorModal2.default, { show: showRequestPasswordResetError }),
+	        _react2.default.createElement(_RequestPasswordResetSuccessModal2.default, { show: showRequestPasswordResetSuccess }),
+	        _react2.default.createElement(_UpdatePasswordErrorModal2.default, { show: updatePasswordError }),
+	        _react2.default.createElement(_UpdatePasswordSuccessModal2.default, { show: updatePasswordSuccess }),
+	        _react2.default.createElement(_DestroyAccountErrorModal2.default, { show: destroyAccountError }),
+	        _react2.default.createElement(_DestroyAccountSuccessModal2.default, { show: destroyAccountSuccess }),
+	        _react2.default.createElement(_PasswordResetSuccessModal2.default, { show: passwordResetSuccess }),
 	        _react2.default.createElement(_TokenBridge2.default, null)
 	      );
 	    }
@@ -1705,7 +1643,7 @@
 
 	var _destroyAccount = __webpack_require__(2);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _reactRedux = __webpack_require__(3);
 
@@ -1788,7 +1726,7 @@
 
 	var _core = __webpack_require__(24);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _Input = __webpack_require__(23);
 
@@ -1970,7 +1908,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2089,11 +2027,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(26);
+	var _colors = __webpack_require__(32);
 
 	var Colors = _interopRequireWildcard(_colors);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _immutable = __webpack_require__(4);
 
@@ -2217,7 +2155,7 @@
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _oauthSignIn = __webpack_require__(2);
 
@@ -2315,7 +2253,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _requestPasswordReset = __webpack_require__(2);
 
@@ -2429,8 +2367,6 @@
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-	var _icons = __webpack_require__(12);
-
 	var _reactRedux = __webpack_require__(3);
 
 	var _signOut = __webpack_require__(2);
@@ -2466,12 +2402,10 @@
 	    key: "render",
 	    value: function render() {
 	      var disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
+
 	      return _react2.default.createElement(_ButtonLoader2.default, _extends({
 	        loading: this.props.auth.getIn(["signOut", this.getEndpoint(), "loading"]),
-	        icon: this.props.icon,
 	        disabled: disabled,
-	        primary: true,
-	        className: "sign-out-submit",
 	        onClick: this.handleClick.bind(this)
 	      }, this.props));
 	    }
@@ -2481,13 +2415,7 @@
 	}(_react2.default.Component);
 
 	SignOutButton.defaultProps = {
-	  next: function next() {},
-	  children: _react2.default.createElement(
-	    "span",
-	    null,
-	    "Sign Out"
-	  ),
-	  icon: _icons.Lock
+	  next: function next() {}
 	};
 	exports.default = (0, _reactRedux.connect)(function (state) {
 	  return { auth: state.get('auth') };
@@ -2519,7 +2447,7 @@
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _updatePassword = __webpack_require__(2);
 
@@ -3150,13 +3078,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(26);
+	var _colors = __webpack_require__(32);
 
 	var Colors = _interopRequireWildcard(_colors);
 
 	var _ui = __webpack_require__(2);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _Modal = __webpack_require__(8);
 
@@ -3304,7 +3232,7 @@
 
 	var _core = __webpack_require__(24);
 
-	var _icons = __webpack_require__(12);
+	var _icons = __webpack_require__(13);
 
 	var _ButtonLoader = __webpack_require__(19);
 

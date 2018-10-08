@@ -1,15 +1,12 @@
 import React from "react";
 import ButtonLoader from "./ButtonLoader";
-import { Lock } from "@material-ui/icons";
 import { connect } from "react-redux";
 import { signOut } from "../../actions/sign-out";
 
 class SignOutButton extends React.Component {
 
   static defaultProps = {
-    next: () => { },
-    children: <span>Sign Out</span>,
-    icon: Lock
+    next: () => { }
   };
 
   getEndpoint() {
@@ -28,15 +25,14 @@ class SignOutButton extends React.Component {
 
   render() {
     let disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
+
     return (
       <ButtonLoader
         loading={this.props.auth.getIn(["signOut", this.getEndpoint(), "loading"])}
-        icon={this.props.icon}
         disabled={disabled}
-        primary={true}
-        className="sign-out-submit"
         onClick={this.handleClick.bind(this)}
-        {...this.props} />
+        {...this.props}
+      />
     );
   }
 }

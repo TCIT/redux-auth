@@ -275,7 +275,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactLoader = __webpack_require__(25);
+	var _reactLoader = __webpack_require__(38);
 
 	var _reactLoader2 = _interopRequireDefault(_reactLoader);
 
@@ -581,12 +581,7 @@
 /***/ },
 /* 23 */,
 /* 24 */,
-/* 25 */
-/***/ function(module, exports) {
-
-	module.exports = require("react-loader");
-
-/***/ },
+/* 25 */,
 /* 26 */,
 /* 27 */,
 /* 28 */,
@@ -599,7 +594,12 @@
 /* 35 */,
 /* 36 */,
 /* 37 */,
-/* 38 */,
+/* 38 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-loader");
+
+/***/ },
 /* 39 */,
 /* 40 */,
 /* 41 */,
