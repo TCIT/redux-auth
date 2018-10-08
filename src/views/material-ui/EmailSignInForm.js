@@ -50,9 +50,30 @@ class EmailSignInForm extends React.Component {
       .catch(() => { });
   }
 
+  getSignInButton() {
+    const clonedElement = React.cloneElement(signInButton, {
+      onClick: this.handleSubmit.bind(this),
+      ...this.props.inputProps.submit,
+      disabled
+    });
+
+    return cloneElement ||
+      <Button
+        type="submit"
+        style={{ float: "right" }}
+        className='email-sign-in-submit'
+        disabled={disabled}
+        onClick={this.handleSubmit.bind(this)}
+        {...this.props.inputProps.submit}
+      >
+        <ExitToApp />
+        Sign In
+    </Button>
+  }
+
   render() {
     const {
-      customTheme,
+      signInButton,
       onClose,
       modal,
       title,
@@ -95,17 +116,7 @@ class EmailSignInForm extends React.Component {
         />
 
         <div>
-          <Button
-            type="submit"
-            style={{ float: "right" }}
-            className='email-sign-in-submit'
-            disabled={disabled}
-            onClick={this.handleSubmit.bind(this)}
-            {...this.props.inputProps.submit}
-          >
-            <ExitToApp />
-            Sign In
-        </Button>
+          {this.getSignInButton()}
           {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
         </div>
       </form>
@@ -122,11 +133,7 @@ class EmailSignInForm extends React.Component {
       );
     }
 
-    return (
-      <MuiThemeProvider theme={customTheme}>
-        {content}
-      </MuiThemeProvider>
-    );
+    return content;
   }
 }
 

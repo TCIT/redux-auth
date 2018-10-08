@@ -1644,23 +1644,23 @@
 	      return _react2.default.createElement(
 	        "div",
 	        { id: "auth-modals" },
-	        _react2.default.createElement(_EmailSignInSuccessModal2.default, { show: showEmailSignInSuccess }),
-	        _react2.default.createElement(_EmailSignInErrorModal2.default, { show: showEmailSignInError }),
-	        _react2.default.createElement(_OAuthSignInSuccessModal2.default, { show: showOAuthSignInSuccess }),
-	        _react2.default.createElement(_OAuthSignInErrorModal2.default, { show: showOAuthSignInError }),
-	        _react2.default.createElement(_EmailSignUpSuccessModal2.default, { show: showEmailSignUpSuccess }),
-	        _react2.default.createElement(_EmailSignUpErrorModal2.default, { show: showEmailSignUpError }),
-	        _react2.default.createElement(_SignOutSuccessModal2.default, { show: showSignOutSuccess }),
-	        _react2.default.createElement(_SignOutErrorModal2.default, { show: showSignOutError }),
-	        _react2.default.createElement(_FirstTimeLoginSuccessModal2.default, { show: showFirstTimeLoginSuccess }),
-	        _react2.default.createElement(_FirstTimeLoginErrorModal2.default, { show: showFirstTimeLoginError }),
-	        _react2.default.createElement(_RequestPasswordResetErrorModal2.default, { show: showRequestPasswordResetError }),
-	        _react2.default.createElement(_RequestPasswordResetSuccessModal2.default, { show: showRequestPasswordResetSuccess }),
-	        _react2.default.createElement(_UpdatePasswordErrorModal2.default, { show: updatePasswordError }),
-	        _react2.default.createElement(_UpdatePasswordSuccessModal2.default, { show: updatePasswordSuccess }),
-	        _react2.default.createElement(_DestroyAccountErrorModal2.default, { show: destroyAccountError }),
-	        _react2.default.createElement(_DestroyAccountSuccessModal2.default, { show: destroyAccountSuccess }),
-	        _react2.default.createElement(_PasswordResetSuccessModal2.default, { show: passwordResetSuccess }),
+	        _react2.default.createElement(_EmailSignInSuccessModal2.default, { customTheme: this.props.customTheme, show: showEmailSignInSuccess }),
+	        _react2.default.createElement(_EmailSignInErrorModal2.default, { customTheme: this.props.customTheme, show: showEmailSignInError }),
+	        _react2.default.createElement(_OAuthSignInSuccessModal2.default, { customTheme: this.props.customTheme, show: showOAuthSignInSuccess }),
+	        _react2.default.createElement(_OAuthSignInErrorModal2.default, { customTheme: this.props.customTheme, show: showOAuthSignInError }),
+	        _react2.default.createElement(_EmailSignUpSuccessModal2.default, { customTheme: this.props.customTheme, show: showEmailSignUpSuccess }),
+	        _react2.default.createElement(_EmailSignUpErrorModal2.default, { customTheme: this.props.customTheme, show: showEmailSignUpError }),
+	        _react2.default.createElement(_SignOutSuccessModal2.default, { customTheme: this.props.customTheme, show: showSignOutSuccess }),
+	        _react2.default.createElement(_SignOutErrorModal2.default, { customTheme: this.props.customTheme, show: showSignOutError }),
+	        _react2.default.createElement(_FirstTimeLoginSuccessModal2.default, { customTheme: this.props.customTheme, show: showFirstTimeLoginSuccess }),
+	        _react2.default.createElement(_FirstTimeLoginErrorModal2.default, { customTheme: this.props.customTheme, show: showFirstTimeLoginError }),
+	        _react2.default.createElement(_RequestPasswordResetErrorModal2.default, { customTheme: this.props.customTheme, show: showRequestPasswordResetError }),
+	        _react2.default.createElement(_RequestPasswordResetSuccessModal2.default, { customTheme: this.props.customTheme, show: showRequestPasswordResetSuccess }),
+	        _react2.default.createElement(_UpdatePasswordErrorModal2.default, { customTheme: this.props.customTheme, show: updatePasswordError }),
+	        _react2.default.createElement(_UpdatePasswordSuccessModal2.default, { customTheme: this.props.customTheme, show: updatePasswordSuccess }),
+	        _react2.default.createElement(_DestroyAccountErrorModal2.default, { customTheme: this.props.customTheme, show: destroyAccountError }),
+	        _react2.default.createElement(_DestroyAccountSuccessModal2.default, { customTheme: this.props.customTheme, show: destroyAccountSuccess }),
+	        _react2.default.createElement(_PasswordResetSuccessModal2.default, { customTheme: this.props.customTheme, show: passwordResetSuccess }),
 	        _react2.default.createElement(_TokenBridge2.default, null)
 	      );
 	    }
@@ -1850,10 +1850,32 @@
 	      this.props.dispatch((0, _emailSignIn.emailSignIn)(formData, this.getEndpoint())).then(this.props.next).catch(function () {});
 	    }
 	  }, {
+	    key: "getSignInButton",
+	    value: function getSignInButton() {
+	      var clonedElement = _react2.default.cloneElement(signInButton, _extends({
+	        onClick: this.handleSubmit.bind(this)
+	      }, this.props.inputProps.submit, {
+	        disabled: disabled
+	      }));
+
+	      return cloneElement || _react2.default.createElement(
+	        _core.Button,
+	        _extends({
+	          type: "submit",
+	          style: { float: "right" },
+	          className: "email-sign-in-submit",
+	          disabled: disabled,
+	          onClick: this.handleSubmit.bind(this)
+	        }, this.props.inputProps.submit),
+	        _react2.default.createElement(_icons.ExitToApp, null),
+	        "Sign In"
+	      );
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      var _props2 = this.props,
-	          customTheme = _props2.customTheme,
+	          signInButton = _props2.signInButton,
 	          onClose = _props2.onClose,
 	          modal = _props2.modal,
 	          title = _props2.title,
@@ -1892,18 +1914,7 @@
 	        _react2.default.createElement(
 	          "div",
 	          null,
-	          _react2.default.createElement(
-	            _core.Button,
-	            _extends({
-	              type: "submit",
-	              style: { float: "right" },
-	              className: "email-sign-in-submit",
-	              disabled: disabled,
-	              onClick: this.handleSubmit.bind(this)
-	            }, this.props.inputProps.submit),
-	            _react2.default.createElement(_icons.ExitToApp, null),
-	            "Sign In"
-	          ),
+	          this.getSignInButton(),
 	          loading && _react2.default.createElement(_core.CircularProgress, { size: 24, className: classes.buttonProgress })
 	        )
 	      );
@@ -1925,11 +1936,7 @@
 	        );
 	      }
 
-	      return _react2.default.createElement(
-	        _styles.MuiThemeProvider,
-	        { theme: customTheme },
-	        content
-	      );
+	      return content;
 	    }
 	  }]);
 

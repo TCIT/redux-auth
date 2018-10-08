@@ -20,7 +20,7 @@ import TokenBridge from "../TokenBridge";
 import { connect } from "react-redux";
 
 class AuthGlobals extends React.Component {
-  
+
 
   static defaultProps = {
     signOutSuccessEnabled: true,
@@ -43,7 +43,7 @@ class AuthGlobals extends React.Component {
     passwordResetErrorEnabled: true
   };
 
-  render () {
+  render() {
     let showEmailSignInSuccess = (
       this.props.emailSignInSuccessEnabled &&
       this.props.auth.getIn(["ui", "emailSignInSuccessModalVisible"])
@@ -130,29 +130,29 @@ class AuthGlobals extends React.Component {
     );
 
     //let passwordResetError = (
-      //this.props.passwordResetErrorEnabled &&
-      //this.props.auth.getIn(["ui", "passwordResetErrorModalVisible"])
+    //this.props.passwordResetErrorEnabled &&
+    //this.props.auth.getIn(["ui", "passwordResetErrorModalVisible"])
     //);
 
     return (
       <div id="auth-modals">
-        <EmailSignInSuccessModal show={showEmailSignInSuccess} />
-        <EmailSignInErrorModal show={showEmailSignInError} />
-        <OAuthSignInSuccessModal show={showOAuthSignInSuccess} />
-        <OAuthSignInErrorModal show={showOAuthSignInError} />
-        <EmailSignUpSuccessModal show={showEmailSignUpSuccess} />
-        <EmailSignUpErrorModal show={showEmailSignUpError} />
-        <SignOutSuccessModal show={showSignOutSuccess} />
-        <SignOutErrorModal show={showSignOutError} />
-        <FirstTimeLoginSuccessModal show={showFirstTimeLoginSuccess} />
-        <FirstTimeLoginErrorModal show={showFirstTimeLoginError} />
-        <RequestPasswordResetErrorModal show={showRequestPasswordResetError} />
-        <RequestPasswordResetSuccessModal show={showRequestPasswordResetSuccess} />
-        <UpdatePasswordErrorModal show={updatePasswordError} />
-        <UpdatePasswordSuccessModal show={updatePasswordSuccess} />
-        <DestroyAccountErrorModal show={destroyAccountError} />
-        <DestroyAccountSuccessModal show={destroyAccountSuccess} />
-        <PasswordResetSuccessModal show={passwordResetSuccess} />
+        <EmailSignInSuccessModal customTheme={this.props.customTheme} show={showEmailSignInSuccess} />
+        <EmailSignInErrorModal customTheme={this.props.customTheme} show={showEmailSignInError} />
+        <OAuthSignInSuccessModal customTheme={this.props.customTheme} show={showOAuthSignInSuccess} />
+        <OAuthSignInErrorModal customTheme={this.props.customTheme} show={showOAuthSignInError} />
+        <EmailSignUpSuccessModal customTheme={this.props.customTheme} show={showEmailSignUpSuccess} />
+        <EmailSignUpErrorModal customTheme={this.props.customTheme} show={showEmailSignUpError} />
+        <SignOutSuccessModal customTheme={this.props.customTheme} show={showSignOutSuccess} />
+        <SignOutErrorModal customTheme={this.props.customTheme} show={showSignOutError} />
+        <FirstTimeLoginSuccessModal customTheme={this.props.customTheme} show={showFirstTimeLoginSuccess} />
+        <FirstTimeLoginErrorModal customTheme={this.props.customTheme} show={showFirstTimeLoginError} />
+        <RequestPasswordResetErrorModal customTheme={this.props.customTheme} show={showRequestPasswordResetError} />
+        <RequestPasswordResetSuccessModal customTheme={this.props.customTheme} show={showRequestPasswordResetSuccess} />
+        <UpdatePasswordErrorModal customTheme={this.props.customTheme} show={updatePasswordError} />
+        <UpdatePasswordSuccessModal customTheme={this.props.customTheme} show={updatePasswordSuccess} />
+        <DestroyAccountErrorModal customTheme={this.props.customTheme} show={destroyAccountError} />
+        <DestroyAccountSuccessModal customTheme={this.props.customTheme} show={destroyAccountSuccess} />
+        <PasswordResetSuccessModal customTheme={this.props.customTheme} show={passwordResetSuccess} />
         <TokenBridge />
       </div>
     );
