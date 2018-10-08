@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { ActionFavorite } from '@material-ui/icons';
+import { Favorite } from '@material-ui/icons';
 import * as Colors from '@material-ui/core/colors';
 import Spinner from 'react-loader';
 
 class ButtonLoader extends React.Component {
 
   static defaultProps = {
-    icon: ActionFavorite,
+    icon: Favorite,
     loading: false,
     spinConfig: {
       lines: 10,
