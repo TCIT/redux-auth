@@ -1,11 +1,11 @@
 import React from 'react';
-import { RaisedButton, ActionFavorite } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import { ActionFavorite } from '@material-ui/icons';
 import * as Colors from '@material-ui/core/colors';
 import Spinner from 'react-loader';
-import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class ButtonLoader extends React.Component {
-  
+
   static defaultProps = {
     icon: ActionFavorite,
     loading: false,
@@ -96,13 +96,11 @@ class ButtonLoader extends React.Component {
     };
 
     return (
-      <MuiThemeProvider>
-        <RaisedButton
-          {...props}
-          onClick={this.handleClick.bind(this)}>
-          {this.renderIcon()}
-        </RaisedButton>
-      </MuiThemeProvider>
+      <Button
+        {...props}
+        onClick={this.handleClick.bind(this)}>
+        {this.renderIcon()}
+      </Button>
     );
   }
 }
