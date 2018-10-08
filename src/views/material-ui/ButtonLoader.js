@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
-import { Favorite } from '@material-ui/icons';
-// import * as Colors from '@material-ui/core/colors';
+import { RaisedButton, ActionFavorite } from '@material-ui/core';
+import * as Colors from '@material-ui/core/colors';
 import Spinner from 'react-loader';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class ButtonLoader extends React.Component {
-
+  
   static defaultProps = {
-    icon: Favorite,
+    icon: ActionFavorite,
     loading: false,
     spinConfig: {
       lines: 10,
@@ -75,32 +75,34 @@ class ButtonLoader extends React.Component {
   render() {
     let color = this.getColor();
 
-    // const props = {
-    //   backgroundColor: this.props.backgroundColor,
-    //   children: this.props.children,
-    //   className: this.props.className,
-    //   disabled: this.props.disabled || this.props.loading,
-    //   disabledBackgroundColor: this.props.disabledBackgroundColor,
-    //   disabledLabelColor: this.props.disabledLabelColor,
-    //   fullWidth: this.props.fullWidth,
-    //   href: this.props.href,
-    //   label: this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>,
-    //   labelColor: this.props.labelColor || color,
-    //   labelPosition: this.props.labelPosition || "after",
-    //   labelStyle: this.props.labelStyle,
-    //   primary: this.props.primary,
-    //   rippleStyle: this.props.rippleStyle,
-    //   secondary: this.props.secondary,
-    //   style: this.props.style,
-    //   type: this.props.type
-    // };
+    const props = {
+      backgroundColor: this.props.backgroundColor,
+      children: this.props.children,
+      className: this.props.className,
+      disabled: this.props.disabled || this.props.loading,
+      disabledBackgroundColor: this.props.disabledBackgroundColor,
+      disabledLabelColor: this.props.disabledLabelColor,
+      fullWidth: this.props.fullWidth,
+      href: this.props.href,
+      label: this.props.label || <span style={{ paddingLeft: 15, color }}>{this.props.children}</span>,
+      labelColor: this.props.labelColor || color,
+      labelPosition: this.props.labelPosition || "after",
+      labelStyle: this.props.labelStyle,
+      primary: this.props.primary,
+      rippleStyle: this.props.rippleStyle,
+      secondary: this.props.secondary,
+      style: this.props.style,
+      type: this.props.type
+    };
 
     return (
-      <Button
-        // {...props}
-        onClick={this.handleClick.bind(this)}>
-        {this.renderIcon()}
-      </Button>
+      <MuiThemeProvider>
+        <RaisedButton
+          {...props}
+          onClick={this.handleClick.bind(this)}>
+          {this.renderIcon()}
+        </RaisedButton>
+      </MuiThemeProvider>
     );
   }
 }
