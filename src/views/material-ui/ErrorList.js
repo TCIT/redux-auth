@@ -1,6 +1,6 @@
 import React from "react";
 import * as Colors from "@material-ui/core/colors";
-import { Error } from "@material-ui/icons";
+import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {

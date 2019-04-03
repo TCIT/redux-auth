@@ -1,13 +1,10 @@
 import React from "react";
-import * as Colors from "@material-ui/core/colors";
-import {
-  InputAdornment,
-  FormHelperText,
-  FormControl,
-  InputLabel,
-  Input
-} from "@material-ui/core";
-import { Error } from "@material-ui/icons";
+import  InputAdornment from "@material-ui/core";
+import  FormHelperText from "@material-ui/core";
+import  FormControl from "@material-ui/core";
+import  InputLabel from "@material-ui/core";
+import  Input from "@material-ui/core";
+import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 
 class AuthInput extends React.Component {

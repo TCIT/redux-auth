@@ -1,6 +1,7 @@
 import React from "react";
-import { Dialog, Button } from "@material-ui/core";
-import { Lock } from "@material-ui/icons";
+import Dialog from "@material-ui/core/Dialog";
+import Button from "@material-ui/core/Button";
+import Lock from "@material-ui/icons/Lock";
 import ButtonLoader from "../ButtonLoader";
 import Input from "../Input";
 import { connect } from "react-redux";

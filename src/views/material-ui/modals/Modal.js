@@ -1,11 +1,9 @@
 import React from "react";
-import {
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  Dialog,
-  Button
-} from '@material-ui/core';
+import DialogActions from "@material-ui/core";
+import DialogContent from "@material-ui/core";
+import DialogTitle from "@material-ui/core";
+import Dialog from "@material-ui/core";
+import Button from "@material-ui/core";
 import ErrorList from "../ErrorList";
 import { connect } from "react-redux";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import ButtonLoader from "./ButtonLoader";
-import { ExitToApp } from "@material-ui/icons";
+import ExitToApp from "@material-ui/icons/ExitToApp";
 import { oAuthSignIn as _oAuthSignIn } from "../../actions/oauth-sign-in";
 
 // hook for rewire

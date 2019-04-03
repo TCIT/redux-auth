@@ -1,14 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-
-import {
-  CircularProgress,
-  DialogContent,
-  DialogTitle,
-  Button,
-  Dialog
-} from "@material-ui/core";
-import { ExitToApp } from '@material-ui/icons';
+import CircularProgress from "@material-ui/core";
+import DialogContent from "@material-ui/core";
+import DialogTitle from "@material-ui/core";
+import Button from "@material-ui/core";
+import Dialog from "@material-ui/core";
+import ExitToApp from '@material-ui/icons/ExitToApp';
 
 import Input from "./Input";
 import { emailSignInFormUpdate, emailSignIn } from "../../actions/email-sign-in";
