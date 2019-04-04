@@ -324,61 +324,61 @@
 	  }
 	});
 
-	var _authenticate2 = __webpack_require__(41);
+	var _authenticate2 = __webpack_require__(42);
 
 	var _authenticate3 = _interopRequireDefault(_authenticate2);
 
-	var _configure2 = __webpack_require__(42);
+	var _configure2 = __webpack_require__(43);
 
 	var _configure3 = _interopRequireDefault(_configure2);
 
-	var _user = __webpack_require__(53);
+	var _user = __webpack_require__(54);
 
 	var _user2 = _interopRequireDefault(_user);
 
-	var _ui2 = __webpack_require__(50);
+	var _ui2 = __webpack_require__(51);
 
 	var _ui3 = _interopRequireDefault(_ui2);
 
-	var _emailSignIn2 = __webpack_require__(44);
+	var _emailSignIn2 = __webpack_require__(45);
 
 	var _emailSignIn3 = _interopRequireDefault(_emailSignIn2);
 
-	var _emailSignUp2 = __webpack_require__(45);
+	var _emailSignUp2 = __webpack_require__(46);
 
 	var _emailSignUp3 = _interopRequireDefault(_emailSignUp2);
 
-	var _oauthSignIn2 = __webpack_require__(46);
+	var _oauthSignIn2 = __webpack_require__(47);
 
 	var _oauthSignIn3 = _interopRequireDefault(_oauthSignIn2);
 
-	var _requestPasswordReset2 = __webpack_require__(47);
+	var _requestPasswordReset2 = __webpack_require__(48);
 
 	var _requestPasswordReset3 = _interopRequireDefault(_requestPasswordReset2);
 
-	var _updatePassword2 = __webpack_require__(52);
+	var _updatePassword2 = __webpack_require__(53);
 
 	var _updatePassword3 = _interopRequireDefault(_updatePassword2);
 
-	var _updatePasswordModal2 = __webpack_require__(51);
+	var _updatePasswordModal2 = __webpack_require__(52);
 
 	var _updatePasswordModal3 = _interopRequireDefault(_updatePasswordModal2);
 
-	var _server = __webpack_require__(48);
+	var _server = __webpack_require__(49);
 
 	var _server2 = _interopRequireDefault(_server);
 
-	var _signOut2 = __webpack_require__(49);
+	var _signOut2 = __webpack_require__(50);
 
 	var _signOut3 = _interopRequireDefault(_signOut2);
 
-	var _destroyAccount2 = __webpack_require__(43);
+	var _destroyAccount2 = __webpack_require__(44);
 
 	var _destroyAccount3 = _interopRequireDefault(_destroyAccount2);
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _verifyAuth2 = __webpack_require__(39);
+	var _verifyAuth2 = __webpack_require__(40);
 
 	var _verifyAuth3 = _interopRequireDefault(_verifyAuth2);
 
@@ -431,7 +431,7 @@
 
 	var _extend2 = _interopRequireDefault(_extend);
 
-	var _constants = __webpack_require__(21);
+	var _constants = __webpack_require__(20);
 
 	var C = _interopRequireWildcard(_constants);
 
@@ -441,11 +441,11 @@
 
 	var _server = __webpack_require__(30);
 
-	var _clientSettings = __webpack_require__(54);
+	var _clientSettings = __webpack_require__(55);
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _verifyAuth = __webpack_require__(39);
+	var _verifyAuth = __webpack_require__(40);
 
 	var _verifyAuth2 = _interopRequireDefault(_verifyAuth);
 
@@ -453,7 +453,7 @@
 
 	var _parseUrl2 = _interopRequireDefault(_parseUrl);
 
-	var _reactRouterRedux = __webpack_require__(138);
+	var _reactRouterRedux = __webpack_require__(139);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -651,11 +651,11 @@
 	exports.persistData = persistData;
 	exports.retrieveData = retrieveData;
 
-	var _browserCookies = __webpack_require__(134);
+	var _browserCookies = __webpack_require__(135);
 
 	var _browserCookies2 = _interopRequireDefault(_browserCookies);
 
-	var _constants = __webpack_require__(21);
+	var _constants = __webpack_require__(20);
 
 	var C = _interopRequireWildcard(_constants);
 
@@ -895,11 +895,11 @@
 	  });
 	};
 
-	var _isomorphicFetch = __webpack_require__(40);
+	var _isomorphicFetch = __webpack_require__(41);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
-	var _constants = __webpack_require__(21);
+	var _constants = __webpack_require__(20);
 
 	var C = _interopRequireWildcard(_constants);
 
@@ -1011,8 +1011,7 @@
 /***/ },
 /* 18 */,
 /* 19 */,
-/* 20 */,
-/* 21 */
+/* 20 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1026,6 +1025,7 @@
 	var SAVED_CREDS_KEY = exports.SAVED_CREDS_KEY = "authHeaders";
 
 /***/ },
+/* 21 */,
 /* 22 */,
 /* 23 */,
 /* 24 */,
@@ -1281,7 +1281,7 @@
 	exports.oAuthSignInError = oAuthSignInError;
 	exports.oAuthSignIn = oAuthSignIn;
 
-	var _constants = __webpack_require__(21);
+	var _constants = __webpack_require__(20);
 
 	var C = _interopRequireWildcard(_constants);
 
@@ -1297,7 +1297,7 @@
 
 	var _fetch2 = _interopRequireDefault(_fetch);
 
-	var _popup = __webpack_require__(55);
+	var _popup = __webpack_require__(56);
 
 	var _popup2 = _interopRequireDefault(_popup);
 
@@ -1811,7 +1811,7 @@
 	exports.getAllParams = getAllParams;
 	exports.default = getRedirectInfo;
 
-	var _querystring = __webpack_require__(136);
+	var _querystring = __webpack_require__(137);
 
 	var _querystring2 = _interopRequireDefault(_querystring);
 
@@ -1957,7 +1957,8 @@
 
 /***/ },
 /* 37 */,
-/* 38 */
+/* 38 */,
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1967,7 +1968,7 @@
 	});
 	exports.default = parseEndpointConfig;
 
-	var _constants = __webpack_require__(21);
+	var _constants = __webpack_require__(20);
 
 	var C = _interopRequireWildcard(_constants);
 
@@ -2040,7 +2041,7 @@
 	}
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2053,11 +2054,11 @@
 
 	exports.fetchToken = fetchToken;
 
-	var _isomorphicFetch = __webpack_require__(40);
+	var _isomorphicFetch = __webpack_require__(41);
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
-	var _cookie = __webpack_require__(135);
+	var _cookie = __webpack_require__(136);
 
 	var _cookie2 = _interopRequireDefault(_cookie);
 
@@ -2065,17 +2066,17 @@
 
 	var _parseUrl2 = _interopRequireDefault(_parseUrl);
 
-	var _constants = __webpack_require__(21);
+	var _constants = __webpack_require__(20);
 
 	var C = _interopRequireWildcard(_constants);
 
 	var _fetch = __webpack_require__(12);
 
-	var _parseEndpointConfig3 = __webpack_require__(38);
+	var _parseEndpointConfig3 = __webpack_require__(39);
 
 	var _parseEndpointConfig4 = _interopRequireDefault(_parseEndpointConfig3);
 
-	var _url = __webpack_require__(139);
+	var _url = __webpack_require__(140);
 
 	var _url2 = _interopRequireDefault(_url);
 
@@ -2232,13 +2233,13 @@
 	exports.default = verifyAuth;
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports) {
 
 	module.exports = require("isomorphic-fetch");
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2288,7 +2289,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2352,7 +2353,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2408,7 +2409,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2473,7 +2474,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2538,7 +2539,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 46 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2597,7 +2598,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 47 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2662,7 +2663,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 48 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2713,7 +2714,7 @@
 	}));
 
 /***/ },
-/* 49 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2773,7 +2774,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 50 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2984,7 +2985,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 51 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3049,7 +3050,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 52 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3114,7 +3115,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 53 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3242,7 +3243,7 @@
 	}), _createReducer));
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3252,7 +3253,7 @@
 	});
 	exports.applyConfig = applyConfig;
 
-	var _constants = __webpack_require__(21);
+	var _constants = __webpack_require__(20);
 
 	var C = _interopRequireWildcard(_constants);
 
@@ -3264,7 +3265,7 @@
 
 	var _fetch2 = _interopRequireDefault(_fetch);
 
-	var _parseEndpointConfig2 = __webpack_require__(38);
+	var _parseEndpointConfig2 = __webpack_require__(39);
 
 	var _parseEndpointConfig3 = _interopRequireDefault(_parseEndpointConfig2);
 
@@ -3390,7 +3391,7 @@
 	}
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -3464,7 +3465,6 @@
 	}
 
 /***/ },
-/* 56 */,
 /* 57 */,
 /* 58 */,
 /* 59 */,
@@ -3542,32 +3542,33 @@
 /* 131 */,
 /* 132 */,
 /* 133 */,
-/* 134 */
+/* 134 */,
+/* 135 */
 /***/ function(module, exports) {
 
 	module.exports = require("browser-cookies");
 
 /***/ },
-/* 135 */
+/* 136 */
 /***/ function(module, exports) {
 
 	module.exports = require("cookie");
 
 /***/ },
-/* 136 */
+/* 137 */
 /***/ function(module, exports) {
 
 	module.exports = require("querystring");
 
 /***/ },
-/* 137 */,
-/* 138 */
+/* 138 */,
+/* 139 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-router-redux");
 
 /***/ },
-/* 139 */
+/* 140 */
 /***/ function(module, exports) {
 
 	module.exports = require("url");

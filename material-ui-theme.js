@@ -51,35 +51,35 @@
 	});
 	exports.ButtonLoader = exports.TokenBridge = exports.DestroyAccountButton = exports.UpdatePasswordForm = exports.OAuthSignInButton = exports.RequestPasswordResetForm = exports.SignOutButton = exports.EmailSignUpForm = exports.EmailSignInForm = exports.AuthGlobals = undefined;
 
-	var _AuthGlobals2 = __webpack_require__(108);
+	var _AuthGlobals2 = __webpack_require__(109);
 
 	var _AuthGlobals3 = _interopRequireDefault(_AuthGlobals2);
 
-	var _EmailSignInForm2 = __webpack_require__(110);
+	var _EmailSignInForm2 = __webpack_require__(111);
 
 	var _EmailSignInForm3 = _interopRequireDefault(_EmailSignInForm2);
 
-	var _EmailSignUpForm2 = __webpack_require__(111);
+	var _EmailSignUpForm2 = __webpack_require__(112);
 
 	var _EmailSignUpForm3 = _interopRequireDefault(_EmailSignUpForm2);
 
-	var _SignOutButton2 = __webpack_require__(115);
+	var _SignOutButton2 = __webpack_require__(116);
 
 	var _SignOutButton3 = _interopRequireDefault(_SignOutButton2);
 
-	var _RequestPasswordResetForm2 = __webpack_require__(114);
+	var _RequestPasswordResetForm2 = __webpack_require__(115);
 
 	var _RequestPasswordResetForm3 = _interopRequireDefault(_RequestPasswordResetForm2);
 
-	var _OAuthSignInButton2 = __webpack_require__(113);
+	var _OAuthSignInButton2 = __webpack_require__(114);
 
 	var _OAuthSignInButton3 = _interopRequireDefault(_OAuthSignInButton2);
 
-	var _UpdatePasswordForm2 = __webpack_require__(116);
+	var _UpdatePasswordForm2 = __webpack_require__(117);
 
 	var _UpdatePasswordForm3 = _interopRequireDefault(_UpdatePasswordForm2);
 
-	var _DestroyAccountButton2 = __webpack_require__(109);
+	var _DestroyAccountButton2 = __webpack_require__(110);
 
 	var _DestroyAccountButton3 = _interopRequireDefault(_DestroyAccountButton2);
 
@@ -147,9 +147,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(20);
+	var _core = __webpack_require__(24);
 
-	var _ErrorList = __webpack_require__(112);
+	var _ErrorList = __webpack_require__(113);
 
 	var _ErrorList2 = _interopRequireDefault(_ErrorList);
 
@@ -260,7 +260,7 @@
 /* 13 */
 /***/ function(module, exports) {
 
-	module.exports = require("@material-ui/icons");
+	module.exports = require("commonjs@material-ui/icons");
 
 /***/ },
 /* 14 */,
@@ -347,7 +347,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(20);
+	var _core = __webpack_require__(24);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -450,16 +450,10 @@
 	exports.default = ButtonLoader;
 
 /***/ },
-/* 20 */
-/***/ function(module, exports) {
-
-	module.exports = require("@material-ui/core");
-
-/***/ },
+/* 20 */,
 /* 21 */,
 /* 22 */,
-/* 23 */,
-/* 24 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -476,11 +470,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(20);
+	var _colors = __webpack_require__(37);
 
 	var Colors = _interopRequireWildcard(_colors);
 
-	var _core = __webpack_require__(20);
+	var _core = __webpack_require__(24);
 
 	var _icons = __webpack_require__(13);
 
@@ -595,6 +589,12 @@
 	exports.default = AuthInput;
 
 /***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	module.exports = require("commonjs@material-ui/core");
+
+/***/ },
 /* 25 */,
 /* 26 */,
 /* 27 */,
@@ -607,7 +607,12 @@
 /* 34 */,
 /* 35 */,
 /* 36 */,
-/* 37 */,
+/* 37 */
+/***/ function(module, exports) {
+
+	module.exports = require("commonjs@material-ui/core/colors");
+
+/***/ },
 /* 38 */,
 /* 39 */,
 /* 40 */,
@@ -678,7 +683,8 @@
 /* 105 */,
 /* 106 */,
 /* 107 */,
-/* 108 */
+/* 108 */,
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -693,71 +699,71 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _EmailSignInSuccessModal = __webpack_require__(120);
+	var _EmailSignInSuccessModal = __webpack_require__(121);
 
 	var _EmailSignInSuccessModal2 = _interopRequireDefault(_EmailSignInSuccessModal);
 
-	var _EmailSignInErrorModal = __webpack_require__(119);
+	var _EmailSignInErrorModal = __webpack_require__(120);
 
 	var _EmailSignInErrorModal2 = _interopRequireDefault(_EmailSignInErrorModal);
 
-	var _OAuthSignInSuccessModal = __webpack_require__(126);
+	var _OAuthSignInSuccessModal = __webpack_require__(127);
 
 	var _OAuthSignInSuccessModal2 = _interopRequireDefault(_OAuthSignInSuccessModal);
 
-	var _OAuthSignInErrorModal = __webpack_require__(125);
+	var _OAuthSignInErrorModal = __webpack_require__(126);
 
 	var _OAuthSignInErrorModal2 = _interopRequireDefault(_OAuthSignInErrorModal);
 
-	var _EmailSignUpSuccessModal = __webpack_require__(122);
+	var _EmailSignUpSuccessModal = __webpack_require__(123);
 
 	var _EmailSignUpSuccessModal2 = _interopRequireDefault(_EmailSignUpSuccessModal);
 
-	var _EmailSignUpErrorModal = __webpack_require__(121);
+	var _EmailSignUpErrorModal = __webpack_require__(122);
 
 	var _EmailSignUpErrorModal2 = _interopRequireDefault(_EmailSignUpErrorModal);
 
-	var _SignOutSuccessModal = __webpack_require__(131);
+	var _SignOutSuccessModal = __webpack_require__(132);
 
 	var _SignOutSuccessModal2 = _interopRequireDefault(_SignOutSuccessModal);
 
-	var _SignOutErrorModal = __webpack_require__(130);
+	var _SignOutErrorModal = __webpack_require__(131);
 
 	var _SignOutErrorModal2 = _interopRequireDefault(_SignOutErrorModal);
 
-	var _FirstTimeLoginSuccessModal = __webpack_require__(124);
+	var _FirstTimeLoginSuccessModal = __webpack_require__(125);
 
 	var _FirstTimeLoginSuccessModal2 = _interopRequireDefault(_FirstTimeLoginSuccessModal);
 
-	var _FirstTimeLoginErrorModal = __webpack_require__(123);
+	var _FirstTimeLoginErrorModal = __webpack_require__(124);
 
 	var _FirstTimeLoginErrorModal2 = _interopRequireDefault(_FirstTimeLoginErrorModal);
 
-	var _RequestPasswordResetErrorModal = __webpack_require__(128);
+	var _RequestPasswordResetErrorModal = __webpack_require__(129);
 
 	var _RequestPasswordResetErrorModal2 = _interopRequireDefault(_RequestPasswordResetErrorModal);
 
-	var _RequestPasswordResetSuccessModal = __webpack_require__(129);
+	var _RequestPasswordResetSuccessModal = __webpack_require__(130);
 
 	var _RequestPasswordResetSuccessModal2 = _interopRequireDefault(_RequestPasswordResetSuccessModal);
 
-	var _UpdatePasswordErrorModal = __webpack_require__(132);
+	var _UpdatePasswordErrorModal = __webpack_require__(133);
 
 	var _UpdatePasswordErrorModal2 = _interopRequireDefault(_UpdatePasswordErrorModal);
 
-	var _UpdatePasswordSuccessModal = __webpack_require__(133);
+	var _UpdatePasswordSuccessModal = __webpack_require__(134);
 
 	var _UpdatePasswordSuccessModal2 = _interopRequireDefault(_UpdatePasswordSuccessModal);
 
-	var _DestroyAccountErrorModal = __webpack_require__(117);
+	var _DestroyAccountErrorModal = __webpack_require__(118);
 
 	var _DestroyAccountErrorModal2 = _interopRequireDefault(_DestroyAccountErrorModal);
 
-	var _DestroyAccountSuccessModal = __webpack_require__(118);
+	var _DestroyAccountSuccessModal = __webpack_require__(119);
 
 	var _DestroyAccountSuccessModal2 = _interopRequireDefault(_DestroyAccountSuccessModal);
 
-	var _PasswordResetSuccessModal = __webpack_require__(127);
+	var _PasswordResetSuccessModal = __webpack_require__(128);
 
 	var _PasswordResetSuccessModal2 = _interopRequireDefault(_PasswordResetSuccessModal);
 
@@ -879,7 +885,7 @@
 	})(AuthGlobals);
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -964,7 +970,7 @@
 	})(DestroyAccountButton);
 
 /***/ },
-/* 110 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -983,11 +989,11 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _core = __webpack_require__(20);
+	var _core = __webpack_require__(24);
 
 	var _icons = __webpack_require__(13);
 
-	var _Input = __webpack_require__(24);
+	var _Input = __webpack_require__(23);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -1137,7 +1143,7 @@
 	})(EmailSignInForm);
 
 /***/ },
-/* 111 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1154,7 +1160,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Input = __webpack_require__(24);
+	var _Input = __webpack_require__(23);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -1270,7 +1276,7 @@
 	})(EmailSignUpForm);
 
 /***/ },
-/* 112 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1285,7 +1291,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(20);
+	var _colors = __webpack_require__(37);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -1390,7 +1396,7 @@
 	exports.default = ErrorList;
 
 /***/ },
-/* 113 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1484,7 +1490,7 @@
 	})(OAuthSignInButton);
 
 /***/ },
-/* 114 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1501,7 +1507,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Input = __webpack_require__(24);
+	var _Input = __webpack_require__(23);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -1604,7 +1610,7 @@
 	})(RequestPasswordResetForm);
 
 /***/ },
-/* 115 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1680,7 +1686,7 @@
 	})(SignOutButton);
 
 /***/ },
-/* 116 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1697,7 +1703,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Input = __webpack_require__(24);
+	var _Input = __webpack_require__(23);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -1808,7 +1814,7 @@
 	})(UpdatePasswordForm);
 
 /***/ },
-/* 117 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1865,7 +1871,7 @@
 	exports.default = DestroyAccountErrorModal;
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1933,7 +1939,7 @@
 	})(DestroyAccountSuccessModal);
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1990,7 +1996,7 @@
 	exports.default = EmailSignInErrorModal;
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2060,7 +2066,7 @@
 	})(EmailSignInSuccessModal);
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2117,7 +2123,7 @@
 	exports.default = EmailSignUpErrorModal;
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2187,7 +2193,7 @@
 	})(EmailSignUpSuccessModal);
 
 /***/ },
-/* 123 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2251,7 +2257,7 @@
 	exports.default = FirstTimeLoginErrorModal;
 
 /***/ },
-/* 124 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2319,7 +2325,7 @@
 	})(FirstTimeLoginSuccessModal);
 
 /***/ },
-/* 125 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2336,7 +2342,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(20);
+	var _colors = __webpack_require__(37);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -2401,7 +2407,7 @@
 	exports.default = OAuthSignInErrorModal;
 
 /***/ },
-/* 126 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2471,7 +2477,7 @@
 	})(OAuthSignInSuccessModal);
 
 /***/ },
-/* 127 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2488,7 +2494,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(20);
+	var _core = __webpack_require__(24);
 
 	var _icons = __webpack_require__(13);
 
@@ -2496,7 +2502,7 @@
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-	var _Input = __webpack_require__(24);
+	var _Input = __webpack_require__(23);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2615,7 +2621,7 @@
 	})(PasswordResetSuccessModal);
 
 /***/ },
-/* 128 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2672,7 +2678,7 @@
 	exports.default = RequestPasswordResetErrorModal;
 
 /***/ },
-/* 129 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2740,7 +2746,7 @@
 	})(RequestPasswordResetSuccessModal);
 
 /***/ },
-/* 130 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2804,7 +2810,7 @@
 	exports.default = SignOutErrorModal;
 
 /***/ },
-/* 131 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2864,7 +2870,7 @@
 	exports.default = SignOutSuccessModal;
 
 /***/ },
-/* 132 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2921,7 +2927,7 @@
 	exports.default = UpdatePasswordErrorModal;
 
 /***/ },
-/* 133 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
