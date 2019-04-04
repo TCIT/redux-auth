@@ -6,6 +6,7 @@ module.exports = {
   cache: false,
   context: __dirname,
   devtool: false,
+  mode: 'production',
   entry: {
     "index": "./src/index",
     "bootstrap-theme": "./src/views/bootstrap/index",
@@ -67,7 +68,7 @@ module.exports = {
   ],
   module: {
     rules: [
-      { include: /\.json$/, loaders: ["json"] },
+      { include: /\.json$/, loaders: ["json-loder"] },
       { include: /\.js$/, loaders: ["babel-loader?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=stage-0"], exclude: /node_modules/ }
     ]
   },
