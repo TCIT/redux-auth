@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../../actions/sign-out":
+/***/ "../../actions/email-sign-in":
 /*!*****************************!*\
   !*** external "redux-auth" ***!
   \*****************************/
@@ -542,7 +542,7 @@ var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/defau
 
 var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-var _destroyAccount = __webpack_require__(/*! ../../actions/destroy-account */ "../../actions/sign-out");
+var _destroyAccount = __webpack_require__(/*! ../../actions/destroy-account */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -635,7 +635,7 @@ var _Input = __webpack_require__(/*! ./Input */ "./src/views/default/Input.js");
 
 var _Input2 = _interopRequireDefault(_Input);
 
-var _emailSignIn = __webpack_require__(/*! ../../actions/email-sign-in */ "../../actions/sign-out");
+var _emailSignIn = __webpack_require__(/*! ../../actions/email-sign-in */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -764,7 +764,7 @@ var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/defau
 
 var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-var _emailSignUp = __webpack_require__(/*! ../../actions/email-sign-up */ "../../actions/sign-out");
+var _emailSignUp = __webpack_require__(/*! ../../actions/email-sign-up */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -1136,7 +1136,7 @@ var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/defau
 
 var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-var _oauthSignIn = __webpack_require__(/*! ../../actions/oauth-sign-in */ "../../actions/sign-out");
+var _oauthSignIn = __webpack_require__(/*! ../../actions/oauth-sign-in */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1238,7 +1238,7 @@ var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _requestPasswordReset = __webpack_require__(/*! ../../actions/request-password-reset */ "../../actions/sign-out");
+var _requestPasswordReset = __webpack_require__(/*! ../../actions/request-password-reset */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1359,7 +1359,7 @@ var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _signOut = __webpack_require__(/*! ../../actions/sign-out */ "../../actions/sign-out");
+var _signOut = __webpack_require__(/*! ../../actions/sign-out */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1451,7 +1451,7 @@ var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/defau
 
 var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-var _updatePassword = __webpack_require__(/*! ../../actions/update-password */ "../../actions/sign-out");
+var _updatePassword = __webpack_require__(/*! ../../actions/update-password */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -1646,7 +1646,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -1710,7 +1710,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -1782,7 +1782,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -1846,7 +1846,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -1921,7 +1921,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -1983,7 +1983,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -2059,7 +2059,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -2128,7 +2128,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -2330,7 +2330,7 @@ var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Moda
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2396,7 +2396,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -2486,9 +2486,9 @@ var _Input2 = _interopRequireDefault(_Input);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
-var _updatePasswordModal = __webpack_require__(/*! ../../../actions/update-password-modal */ "../../actions/sign-out");
+var _updatePasswordModal = __webpack_require__(/*! ../../../actions/update-password-modal */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2634,7 +2634,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -2698,7 +2698,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -2770,7 +2770,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -2839,7 +2839,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -2908,7 +2908,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 
@@ -2970,7 +2970,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/default/modals/Modal.js");
 

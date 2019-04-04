@@ -86,7 +86,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../../actions/sign-out":
+/***/ "../../actions/email-sign-in":
 /*!*****************************!*\
   !*** external "redux-auth" ***!
   \*****************************/
@@ -527,7 +527,7 @@ var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/mater
 
 var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-var _destroyAccount = __webpack_require__(/*! ../../actions/destroy-account */ "../../actions/sign-out");
+var _destroyAccount = __webpack_require__(/*! ../../actions/destroy-account */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -646,7 +646,7 @@ var _Input = __webpack_require__(/*! ./Input */ "./src/views/material-ui/Input.j
 
 var _Input2 = _interopRequireDefault(_Input);
 
-var _emailSignIn = __webpack_require__(/*! ../../actions/email-sign-in */ "../../actions/sign-out");
+var _emailSignIn = __webpack_require__(/*! ../../actions/email-sign-in */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -823,7 +823,7 @@ var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/mater
 
 var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-var _emailSignUp = __webpack_require__(/*! ../../actions/email-sign-up */ "../../actions/sign-out");
+var _emailSignUp = __webpack_require__(/*! ../../actions/email-sign-up */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -1248,7 +1248,7 @@ var _ExitToApp = __webpack_require__(/*! @material-ui/icons/ExitToApp */ "@mater
 
 var _ExitToApp2 = _interopRequireDefault(_ExitToApp);
 
-var _oauthSignIn = __webpack_require__(/*! ../../actions/oauth-sign-in */ "../../actions/sign-out");
+var _oauthSignIn = __webpack_require__(/*! ../../actions/oauth-sign-in */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1354,7 +1354,7 @@ var _Send = __webpack_require__(/*! @material-ui/icons/Send */ "@material-ui/ico
 
 var _Send2 = _interopRequireDefault(_Send);
 
-var _requestPasswordReset = __webpack_require__(/*! ../../actions/request-password-reset */ "../../actions/sign-out");
+var _requestPasswordReset = __webpack_require__(/*! ../../actions/request-password-reset */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1474,7 +1474,7 @@ var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _signOut = __webpack_require__(/*! ../../actions/sign-out */ "../../actions/sign-out");
+var _signOut = __webpack_require__(/*! ../../actions/sign-out */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1562,7 +1562,7 @@ var _Lock = __webpack_require__(/*! @material-ui/icons/Lock */ "@material-ui/ico
 
 var _Lock2 = _interopRequireDefault(_Lock);
 
-var _updatePassword = __webpack_require__(/*! ../../actions/update-password */ "../../actions/sign-out");
+var _updatePassword = __webpack_require__(/*! ../../actions/update-password */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -1760,7 +1760,7 @@ var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1825,7 +1825,7 @@ var _Modal2 = _interopRequireDefault(_Modal);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1893,7 +1893,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -1962,7 +1962,7 @@ var _Modal2 = _interopRequireDefault(_Modal);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2032,7 +2032,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -2095,7 +2095,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
@@ -2171,7 +2171,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -2243,7 +2243,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -2464,7 +2464,7 @@ var _red = __webpack_require__(/*! @material-ui/core/colors/red */ "@material-ui
 
 var _red2 = _interopRequireDefault(_red);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Error = __webpack_require__(/*! @material-ui/icons/Error */ "@material-ui/icons/ExitToApp");
 
@@ -2550,7 +2550,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -2646,9 +2646,9 @@ var _Input2 = _interopRequireDefault(_Input);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
-var _updatePasswordModal = __webpack_require__(/*! ../../../actions/update-password-modal */ "../../actions/sign-out");
+var _updatePasswordModal = __webpack_require__(/*! ../../../actions/update-password-modal */ "../../actions/email-sign-in");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2782,7 +2782,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -2847,7 +2847,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -2919,7 +2919,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -2989,7 +2989,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -3055,7 +3055,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
@@ -3118,7 +3118,7 @@ var _react = __webpack_require__(/*! react */ "react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/email-sign-in");
 
 var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/material-ui/modals/Modal.js");
 
