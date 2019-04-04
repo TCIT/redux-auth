@@ -1,9 +1,9 @@
 import React from "react";
-import  InputAdornment from "@material-ui/core";
-import  FormHelperText from "@material-ui/core";
-import  FormControl from "@material-ui/core";
-import  InputLabel from "@material-ui/core";
-import  Input from "@material-ui/core";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
 import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 

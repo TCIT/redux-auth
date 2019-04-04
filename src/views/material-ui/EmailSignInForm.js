@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import CircularProgress from "@material-ui/core";
-import DialogContent from "@material-ui/core";
-import DialogTitle from "@material-ui/core";
-import Button from "@material-ui/core";
-import Dialog from "@material-ui/core";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
 import ExitToApp from '@material-ui/icons/ExitToApp';
 
 import Input from "./Input";

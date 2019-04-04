@@ -1,5 +1,5 @@
 import React from "react";
-import * as Colors from "@material-ui/core/colors";
+import red from "@material-ui/core/colors/red";
 import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 
@@ -29,7 +29,7 @@ class ErrorList extends React.Component {
 
                 <Error
                   viewBox="0 0 50 50"
-                  color={Colors.red500}
+                  color={red[500]}
                   style={{
                     position: "absolute",
                     left: 0,
@@ -50,7 +50,7 @@ class ErrorList extends React.Component {
               left: 0,
               top: 3
             }}
-            color={Colors.red500} /> There was an error processing this form.
+            color={red[500]} /> There was an error processing this form.
       Please check each field and try again.
         </p>
       );
