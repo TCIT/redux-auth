@@ -1079,13 +1079,13 @@
 
 	var _DialogTitle2 = _interopRequireDefault(_DialogTitle);
 
-	var _Dialog = __webpack_require__(36);
-
-	var _Dialog2 = _interopRequireDefault(_Dialog);
-
 	var _Button = __webpack_require__(30);
 
 	var _Button2 = _interopRequireDefault(_Button);
+
+	var _Dialog = __webpack_require__(36);
+
+	var _Dialog2 = _interopRequireDefault(_Dialog);
 
 	var _ExitToApp = __webpack_require__(45);
 
@@ -1145,7 +1145,7 @@
 	      }));
 
 	      return clonedElement || _react2.default.createElement(
-	        _Dialog2.default,
+	        _Button2.default,
 	        _extends({
 	          type: "submit",
 	          style: { float: "right" },
@@ -1206,7 +1206,7 @@
 
 	      if (modal) {
 	        content = _react2.default.createElement(
-	          _Button2.default,
+	          _Dialog2.default,
 	          { onClose: onClose, open: open },
 	          _react2.default.createElement(
 	            _DialogTitle2.default,
