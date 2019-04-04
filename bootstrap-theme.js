@@ -1,1 +1,3050 @@
-!function(e,t){for(var n in t)e[n]=t[n]}(exports,function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=61)}([function(e,t){e.exports=require("react")},function(e,t){e.exports=require("redux-auth")},function(e,t){e.exports=require("react-redux")},function(e,t){e.exports=require("immutable")},,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(7),a=s(n(64)),u=n(2);function s(e){return e&&e.__esModule?e:{default:e}}function l(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var c=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"close",value:function(){this.props.dispatch(this.props.closeAction())}},{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"getErrorList",value:function(){var e,t=(e=this.props.errorAddr,Array.isArray(e)?e:Array.from(e)),n=t[0],r=t.slice(1);return o.default.createElement(a.default,{errors:this.props.auth.getIn([n,this.getEndpoint()].concat(l(r)))})}},{key:"render",value:function(){var e=this.props.errorAddr?this.getErrorList():this.props.children;return o.default.createElement(i.Modal,{show:this.props.show,className:"redux-auth-modal "+this.props.containerClass,onHide:this.close.bind(this)},o.default.createElement(i.Modal.Header,{closeButton:!0},o.default.createElement(i.Modal.Title,null,this.props.title)),o.default.createElement(i.Modal.Body,null,e),o.default.createElement(i.Modal.Footer,null,o.default.createElement(i.Button,{onClick:this.close.bind(this),className:this.props.containerClass+"-close"},this.props.closeBtnLabel)))}}]),t}();c.defaultProps={show:!1,errorAddr:null,closeBtnLabel:"Ok"},t.default=(0,u.connect)(function(e){return{auth:e.auth}})(c)},function(e,t){e.exports=require("react-bootstrap")},,,,,,,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=s(n(0)),a=n(7),u=s(n(36));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"renderIcon",value:function(){var e=void 0;if(this.props.loading){var t=this.props.bsStyle&&"default"!==this.props.bsStyle?this.props.spinColorLight:this.props.spinColorDark;e=i.default.createElement("div",null,i.default.createElement(u.default,r({ref:"spinner"},this.props.spinConfig,{color:t,loaded:!1})))}else e=this.props.icon;return i.default.createElement("div",{style:{position:"relative",display:"inline-block",marginRight:"6px",width:"10px",height:"10px",top:"1px"}},e)}},{key:"render",value:function(){return i.default.createElement(a.Button,{onClick:this.props.onClick,disabled:this.props.disabled||this.props.loading,bsStyle:this.props.bsStyle,className:this.props.className,type:this.props.type,style:this.props.style,bsSize:this.props.bsSize},this.renderIcon()," ",this.props.children)}}]),t}();l.defaultProps={icon:i.default.createElement(a.Glyphicon,{glyph:"heart"}),loading:!1,spinConfig:{lines:10,length:4,width:2,radius:3},spinColorDark:"#444",spinColorLight:"#fff",children:i.default.createElement("span",null,"Submit"),style:{}},t.default=l},,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),a=(r=i)&&r.__esModule?r:{default:r},u=n(2);var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,a.default.Component),o(t,[{key:"render",value:function(){return a.default.createElement("script",{id:"token-bridge",type:"application/json",dangerouslySetInnerHTML:{__html:this.props.initialCredentials}})}}]),t}();t.default=(0,u.connect)(function(e){var t=e.get("auth"),n=t.getIn(["server","headers"]);return{initialCredentials:n&&JSON.stringify({user:t.getIn(["server","user"]),mustResetPassword:t.getIn(["server","mustResetPassword"]),firstTimeLogin:t.getIn(["server","firstTimeLogin"]),currentEndpointKey:t.getIn(["configure","currentEndpointKey"]),defaultEndpointKey:t.getIn(["configure","defaultEndpointKey"]),headers:n})}})(s)},,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=s(n(0)),a=n(7),u=s(n(3));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"handleInput",value:function(e){this.props.onChange(e.target.value)}},{key:"renderErrorList",value:function(){var e=this;return this.props.errors.size?i.default.createElement("div",{className:"auth-error-message has-error"},this.props.errors.map(function(t,n){return i.default.createElement("p",{className:"control-label inline-error-item",style:{paddingLeft:"20px",position:"relative",marginBottom:"28px"},key:n},i.default.createElement(a.Glyphicon,{glyph:"exclamation-sign",style:{position:"absolute",left:0,top:2}})," ",e.props.label," ",t)})):i.default.createElement("span",null)}},{key:"render",value:function(){return i.default.createElement("div",null,i.default.createElement(a.Input,r({},this.props,{bsStyle:this.props.errors.size?"error":null,onChange:this.handleInput.bind(this)})),this.renderErrorList())}}]),t}();l.defaultProps={label:"",value:null,errors:u.default.fromJS([])},t.default=l},,,,,,,,,,,,,,,function(e,t){e.exports=require("react-loader")},,,,,,,,,,,,,,,,,,,,,,,,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.ButtonLoader=t.TokenBridge=t.DestroyAccountButton=t.UpdatePasswordForm=t.OAuthSignInButton=t.RequestPasswordResetForm=t.SignOutButton=t.EmailSignUpForm=t.EmailSignInForm=t.AuthGlobals=void 0;var r=d(n(62)),o=d(n(81)),i=d(n(82)),a=d(n(83)),u=d(n(84)),s=d(n(85)),l=d(n(86)),c=d(n(87)),p=d(n(18)),f=d(n(15));function d(e){return e&&e.__esModule?e:{default:e}}t.AuthGlobals=r.default,t.EmailSignInForm=o.default,t.EmailSignUpForm=i.default,t.SignOutButton=a.default,t.RequestPasswordResetForm=u.default,t.OAuthSignInButton=s.default,t.UpdatePasswordForm=l.default,t.DestroyAccountButton=c.default,t.TokenBridge=p.default,t.ButtonLoader=f.default},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=P(n(0)),i=P(n(63)),a=P(n(65)),u=P(n(66)),s=P(n(67)),l=P(n(68)),c=P(n(69)),p=P(n(70)),f=P(n(71)),d=P(n(72)),h=P(n(73)),b=P(n(74)),y=P(n(75)),m=P(n(76)),g=P(n(77)),w=P(n(78)),_=P(n(79)),v=P(n(80)),E=P(n(18)),O=n(2);function P(e){return e&&e.__esModule?e:{default:e}}var j=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){var e=this.props.emailSignInSuccessEnabled&&this.props.auth.getIn(["ui","emailSignInSuccessModalVisible"]),t=this.props.emailSignInErrorEnabled&&this.props.auth.getIn(["ui","emailSignInErrorModalVisible"]),n=this.props.emailSignUpSuccessEnabled&&this.props.auth.getIn(["ui","emailSignUpSuccessModalVisible"]),r=this.props.emailSignUpErrorEnabled&&this.props.auth.getIn(["ui","emailSignUpErrorModalVisible"]),O=this.props.signOutSuccessEnabled&&this.props.auth.getIn(["ui","signOutSuccessModalVisible"]),P=this.props.signOutErrorEnabled&&this.props.auth.getIn(["ui","signOutErrorModalVisible"]),j=this.props.firstTimeLoginSuccessEnabled&&this.props.auth.getIn(["ui","firstTimeLoginSuccessModalVisible"]),S=this.props.firstTimeLoginErrorEnabled&&this.props.auth.getIn(["ui","firstTimeLoginErrorModalVisible"]),I=this.props.requestPasswordResetErrorEnabled&&this.props.auth.getIn(["ui","requestPasswordResetErrorModalVisible"]),C=this.props.requestPasswordResetSuccessEnabled&&this.props.auth.getIn(["ui","requestPasswordResetSuccessModalVisible"]),k=this.props.oAuthSignInSuccessEnabled&&this.props.auth.getIn(["ui","oAuthSignInSuccessModalVisible"]),M=this.props.oAuthSignInErrorEnabled&&this.props.auth.getIn(["ui","oAuthSignInErrorModalVisible"]),T=this.props.updatePasswordSuccessEnabled&&this.props.auth.getIn(["ui","updatePasswordSuccessModalVisible"]),x=this.props.updatePasswordErrorEnabled&&this.props.auth.getIn(["ui","updatePasswordErrorModalVisible"]),A=this.props.destroyAccountSuccessEnabled&&this.props.auth.getIn(["ui","destroyAccountSuccessModalVisible"]),R=this.props.destroyAccountErrorEnabled&&this.props.auth.getIn(["ui","destroyAccountErrorModalVisible"]),U=this.props.passwordResetSuccessEnabled&&this.props.auth.getIn(["ui","passwordResetSuccessModalVisible"]);return o.default.createElement("div",{id:"auth-modals"},o.default.createElement(i.default,{show:e}),o.default.createElement(a.default,{show:t}),o.default.createElement(u.default,{show:k}),o.default.createElement(s.default,{show:M}),o.default.createElement(l.default,{show:n}),o.default.createElement(c.default,{show:r}),o.default.createElement(p.default,{show:O}),o.default.createElement(f.default,{show:P}),o.default.createElement(d.default,{show:j}),o.default.createElement(h.default,{show:S}),o.default.createElement(b.default,{show:I}),o.default.createElement(y.default,{show:C}),o.default.createElement(m.default,{show:x}),o.default.createElement(g.default,{show:T}),o.default.createElement(w.default,{show:R}),o.default.createElement(_.default,{show:A}),o.default.createElement(v.default,{show:U}),o.default.createElement(E.default,null))}}]),t}();j.defaultProps={signOutSuccessEnabled:!0,signOutErrorEnabled:!0,emailSignInSuccessEnabled:!0,emailSignInErrorEnabled:!0,oAuthSignInSuccessEnabled:!0,oAuthSignInErrorEnabled:!0,emailSignUpSuccessEnabled:!0,emailSignUpErrorEnabled:!0,firstTimeLoginSuccessEnabled:!0,firstTimeLoginErrorEnabled:!0,requestPasswordResetErrorEnabled:!0,requestPasswordResetSuccessEnabled:!0,updatePasswordErrorEnabled:!0,updatePasswordSuccessEnabled:!0,destroyAccountErrorEnabled:!0,destroyAccountSuccessEnabled:!0,passwordResetSuccessEnabled:!0,passwordResetErrorEnabled:!0},t.default=(0,O.connect)(function(e){return{auth:e.auth}})(j)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(2),a=n(1),u=s(n(6));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(u.default,{show:this.props.show,containerClass:"email-sign-in-success-modal",closeAction:a.hideEmailSignInSuccessModal,closeBtnLabel:"Close",title:"Welcome Back"},o.default.createElement("p",null,"You are now signed in as ",this.props.auth.getIn(["user","attributes","email"]),"."))}}]),t}();t.default=(0,i.connect)(function(e){return{auth:e.auth}})(l)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(7),a=u(n(3));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"renderErrorList",value:function(){var e=(this.props.errors||a.default.fromJS([])).size;if(e>0){var t="error";return t+=1===e?"":"s",o.default.createElement("div",{className:"has-error"},o.default.createElement("p",null,"Please correct the following ",t,":"),this.props.errors.map(function(e,t){return o.default.createElement("p",{key:t,className:"control-label modal-error-item",style:{paddingLeft:"20px",position:"relative"}},o.default.createElement(i.Glyphicon,{glyph:"exclamation-sign",style:{position:"absolute",left:0,top:2}})," ",e)}))}return o.default.createElement("p",null,o.default.createElement(i.Glyphicon,{glyph:"exclamation-sign"})," There was an error processing this form. Please check each field and try again.")}},{key:"render",value:function(){return o.default.createElement("div",{className:"auth-error-message"},this.renderErrorList())}}]),t}();s.defaultProps={errors:a.default.fromJS([])},t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"email-sign-in-error-modal",closeAction:i.hideEmailSignInErrorModal,title:"Sign In Error",errorAddr:["emailSignIn","errors"]})}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(1),a=n(2),u=s(n(6));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(u.default,{show:this.props.show,containerClass:"oauth-sign-in-success-modal",closeAction:i.hideOAuthSignInSuccessModal,title:"Welcome"},o.default.createElement("p",null,"You are now signed in via ",this.props.auth.getIn(["user","attributes","provider"]),"."))}}]),t}();t.default=(0,a.connect)(function(e){return{auth:e.auth}})(l)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(7),a=s(n(6)),u=n(1);function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"oauth-sign-in-error-modal",closeAction:u.hideOAuthSignInErrorModal,title:"OAuth Sign In Error"},o.default.createElement("p",null,o.default.createElement(i.Glyphicon,{glyph:"exclamation-sign"})," There was an error authenticating your account. Please try again."))}}]),t}();t.default=l},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(1),a=n(2),u=s(n(6));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(u.default,{containerClass:"email-sign-up-success-modal",show:this.props.show,closeAction:i.hideEmailSignUpSuccessModal,title:"Sign Up Success"},o.default.createElement("p",null,"A confirmation email was sent to your account at ",this.props.auth.getIn(["ui","emailSignUpAddress"]),". Follow the instructions in the email to complete registration."))}}]),t}();t.default=(0,a.connect)(function(e){return{auth:e.auth}})(l)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"email-sign-up-error-modal",title:"Sign Up Error",errorAddr:["emailSignUp","errors","full_messages"],closeAction:i.hideEmailSignUpErrorModal})}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"sign-out-success-modal",title:"Goodbye!",closeAction:i.hideSignOutSuccessModal},o.default.createElement("p",null,"You have been successfully signed out."))}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"sign-out-error-modal",closeAction:i.hideSignOutErrorModal,title:"Sign Out Error"},o.default.createElement("p",null,"The server encountered an error while trying to sign you out. Your account information has been wiped from this browser, but you may want to sign in and then sign back out again to resolve any issues."))}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(1),a=s(n(6)),u=n(2);function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"first-time-login-success-modal",title:"Welcome "+this.props.auth.getIn(["user","attributes","email"])+"!",closeBtnLabel:"Close",closeAction:i.hideFirstTimeLoginSuccessModal},o.default.createElement("p",null,"Your account has been confirmed."))}}]),t}();t.default=(0,u.connect)(function(e){return{auth:e.auth}})(l)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"first-time-login-error-modal",closeAction:i.hideFirstTimeLoginErrorModal,title:"Confirmation Error"},o.default.createElement("p",null,"There was a problem confirming your account. Please try again."))}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"request-password-reset-error-modal",closeAction:i.hidePasswordResetRequestErrorModal,title:"Error",errorAddr:["requestPasswordReset","errors"]})}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(2),a=n(1),u=s(n(6));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(u.default,{show:this.props.show,containerClass:"request-password-reset-success-modal",title:"Password Reset Request Success",closeAction:a.hidePasswordResetRequestSuccessModal},o.default.createElement("p",null,this.props.auth.getIn(["ui","requestPasswordResetSuccessMessage"])))}}]),t}();t.default=(0,i.connect)(function(e){return{auth:e.auth}})(l)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"update-password-error-modal",title:"Error",closeAction:i.hideUpdatePasswordErrorModal,errorAddr:["updatePassword","errors","full_messages"]})}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{show:this.props.show,containerClass:"update-password-success-modal",closeAction:i.hideUpdatePasswordSuccessModal,title:"Success"},o.default.createElement("p",null,"Your password has been successfully changed."))}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),i=n(1),a=u(n(6));function u(e){return e&&e.__esModule?e:{default:e}}var s=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(a.default,{containerClass:"destroy-account-error-modal",show:this.props.show,closeAction:i.hideDestroyAccountErrorModal,title:"Error",errorAddr:["destroyAccount","errors"]})}}]),t}();t.default=s},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=s(n(0)),i=n(2),a=n(1),u=s(n(6));function s(e){return e&&e.__esModule?e:{default:e}}var l=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.Component),r(t,[{key:"render",value:function(){return o.default.createElement(u.default,{show:this.props.show,containerClass:"destroy-account-success-modal",closeAction:a.hideDestroyAccountSuccessModal,title:"Destroy Account Success"},o.default.createElement("p",null,this.props.auth.getIn(["ui","destroyAccountMessage"])))}}]),t}();t.default=(0,i.connect)(function(e){return{auth:e.auth}})(l)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=f(n(0)),a=n(7),u=f(n(15)),s=f(n(21)),l=n(2),c=n(1),p=n(1);function f(e){return e&&e.__esModule?e:{default:e}}var d=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,p.updatePasswordModalFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(){var e=this.props.auth.getIn(["updatePasswordModal",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,p.updatePasswordModal)(e,this.getEndpoint()))}},{key:"close",value:function(){this.props.dispatch((0,c.hidePasswordResetSuccessModal)(this.getEndpoint()))}},{key:"render",value:function(){var e=this.props.auth.getIn(["updatePasswordModal",this.getEndpoint(),"loading"]),t=this.getEndpoint();return i.default.createElement(a.Modal,{show:this.props.show,className:"password-reset-success-modal",onHide:this.close.bind(this)},i.default.createElement(a.Modal.Header,{closeButton:!0},i.default.createElement(a.Modal.Title,null,"Reset Your Password")),i.default.createElement("form",null,i.default.createElement(a.Modal.Body,null,i.default.createElement(s.default,r({type:"password",label:"Password",placeholder:"Password",disabled:e,groupClassName:"password-reset-success-modal-password",value:this.props.auth.getIn(["updatePasswordModal",t,"form","password"]),errors:this.props.auth.getIn(["updatePasswordModal",t,"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),i.default.createElement(s.default,r({type:"password",label:"Password Confirmation",placeholder:"Password Confirmation",disabled:e,groupClassName:"password-reset-success-modal-password-confirmation",value:this.props.auth.getIn(["updatePasswordModal",t,"form","password_confirmation"]),errors:this.props.auth.getIn(["updatePasswordModal",t,"errors","password_confirmation"]),onChange:this.handleInput.bind(this,"password_confirmation")},this.props.inputProps.passwordConfirmation))),i.default.createElement(a.Modal.Footer,null,i.default.createElement(a.Button,r({className:"password-reset-success-modal-close",onClick:this.close.bind(this)},this.props.inputProps.cancel),"Cancel"),i.default.createElement(u.default,r({},this.props,{loading:e,type:"submit",className:"password-reset-success-modal-submit",icon:i.default.createElement(a.Glyphicon,{glyph:"lock"}),onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit)))))}}]),t}();d.defaultProps={show:!1,inputProps:{}},t.default=(0,l.connect)(function(e){return{auth:e.auth}})(d)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),a=f(i),u=f(n(15)),s=f(n(21)),l=n(1),c=n(7),p=n(2);function f(e){return e&&e.__esModule?e:{default:e}}var d=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,a.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,l.emailSignInFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){e.preventDefault();var t=this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,l.emailSignIn)(t,this.getEndpoint())).then(this.props.next).catch(function(){})}},{key:"render",value:function(){var e=this.props.auth.getIn(["user","isSignedIn"])||this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"loading"]);return a.default.createElement("form",{className:"redux-auth email-sign-in-form clearfix",onSubmit:this.handleSubmit.bind(this)},a.default.createElement(s.default,r({type:"text",groupClassName:"email-sign-in-email",label:"Email",placeholder:"Email",disabled:e,value:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"form","email"]),errors:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"errors","email"]),onChange:this.handleInput.bind(this,"email")},this.props.inputProps.email)),a.default.createElement(s.default,r({type:"password",label:"Password",groupClassName:"email-sign-in-password",placeholder:"Password",disabled:e,value:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"form","password"]),errors:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),a.default.createElement(u.default,r({loading:this.props.auth.getIn(["emailSignIn",this.getEndpoint(),"loading"]),type:"submit",icon:a.default.createElement(c.Glyphicon,{glyph:"log-in"}),className:"email-sign-in-submit pull-right",disabled:e,onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit),"Sign In"))}}]),t}();d.propTypes={endpoint:i.PropTypes.string,next:i.PropTypes.func,inputProps:i.PropTypes.shape({email:i.PropTypes.object,password:i.PropTypes.object,submit:i.PropTypes.object})},d.defaultProps={next:function(){},inputProps:{email:{},password:{},submit:{}}},t.default=(0,p.connect)(function(e){return{auth:e.auth}})(d)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=p(n(0)),a=p(n(21)),u=p(n(15)),s=n(1),l=n(2),c=n(7);function p(e){return e&&e.__esModule?e:{default:e}}var f=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,s.emailSignUpFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){e.preventDefault();var t=this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,s.emailSignUp)(t,this.getEndpoint())).then(this.props.next).catch(function(){})}},{key:"render",value:function(){var e=this.props.auth.getIn(["user","isSignedIn"])||this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"loading"]);return i.default.createElement("form",{className:"redux-auth email-sign-up-form clearfix",onSubmit:this.handleSubmit.bind(this)},i.default.createElement(a.default,r({type:"text",label:"Email",placeholder:"Email",groupClassName:"email-sign-up-email",disabled:e,value:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form","email"]),errors:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"errors","email"]),onChange:this.handleInput.bind(this,"email")},this.props.inputProps.email)),i.default.createElement(a.default,r({type:"password",label:"Password",placeholder:"Password",groupClassName:"email-sign-up-password",disabled:e,value:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form","password"]),errors:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),i.default.createElement(a.default,r({type:"password",label:"Password Confirmation",placeholder:"Password Confirmation",groupClassName:"email-sign-up-password-confirmation",disabled:e,value:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"form","password_confirmation"]),errors:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"errors","password_confirmation"]),onChange:this.handleInput.bind(this,"password_confirmation")},this.props.inputProps.passwordConfirmation)),i.default.createElement(u.default,r({loading:this.props.auth.getIn(["emailSignUp",this.getEndpoint(),"loading"]),type:"submit",className:"email-sign-up-submit pull-right",icon:i.default.createElement(c.Glyphicon,{glyph:"send"}),disabled:e,onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit),"Sign Up"))}}]),t}();f.defaultProps={next:function(){},inputProps:{email:{},password:{},submit:{}}},t.default=(0,l.connect)(function(e){return{auth:e.auth}})(f)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=c(n(0)),a=c(n(15)),u=n(7),s=n(2),l=n(1);function c(e){return e&&e.__esModule?e:{default:e}}var p=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleClick",value:function(){this.props.dispatch((0,l.signOut)(this.getEndpoint())).then(this.props.next).catch(function(){})}},{key:"render",value:function(){var e=!this.props.auth.getIn(["user","isSignedIn"]);return i.default.createElement(a.default,r({loading:this.props.auth.getIn(["signOut",this.getEndpoint(),"loading"]),icon:this.props.icon,disabled:e,className:"sign-out-submit",onClick:this.handleClick.bind(this)},this.props))}}]),t}();p.defaultProps={next:function(){},children:i.default.createElement("span",null,"Sign Out"),icon:i.default.createElement(u.Glyphicon,{glyph:"log-out"})},t.default=(0,s.connect)(function(e){return{auth:e.auth}})(p)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=p(n(0)),a=p(n(21)),u=p(n(15)),s=n(7),l=n(2),c=n(1);function p(e){return e&&e.__esModule?e:{default:e}}var f=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,c.requestPasswordResetFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){e.preventDefault();var t=this.props.auth.getIn(["requestPasswordReset",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,c.requestPasswordReset)(t,this.getEndpoint()))}},{key:"render",value:function(){var e=this.props.auth.getIn(["requestPasswordReset",this.getEndpoint(),"loading"]),t=this.props.auth.getIn(["user","isSignedIn"]),n=!this.props.auth.getIn(["requestPasswordReset",this.getEndpoint(),"form","email"]);return i.default.createElement("form",{className:"redux-auth request-password-reset-form clearfix",onSubmit:this.handleSubmit.bind(this)},i.default.createElement(a.default,r({type:"text",label:"Email Address",groupClassName:"request-password-reset-email",placeholder:"Email Address",disabled:e||t,value:this.props.auth.getIn(["requestPasswordReset",this.getEndpoint(),"form","email"]),errors:this.props.auth.getIn(["requestPasswordReset",this.getEndpoint(),"errors","email"]),onChange:this.handleInput.bind(this,"email")},this.props.inputProps.email)),i.default.createElement(u.default,r({loading:e,type:"submit",icon:i.default.createElement(s.Glyphicon,{glyph:"send"}),className:"pull-right request-password-reset-submit",disabled:t||n,onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit),"Request Password Reset"))}}]),t}();f.defaultProps={inputProps:{email:{},submit:{}}},t.default=(0,l.connect)(function(e){return{auth:e.auth}})(f)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=l(n(0)),a=n(2),u=l(n(15)),s=n(7);function l(e){return e&&e.__esModule?e:{default:e}}var c=n(1).oAuthSignIn,p=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleClick",value:function(){this.props.dispatch(c({provider:this.props.provider,params:this.props.signInParams,endpointKey:this.getEndpoint()})).then(this.props.next).catch(function(){})}},{key:"render",value:function(){var e=this.props.auth.getIn(["user","isSignedIn"]),t=this.props.auth.getIn(["ui","oAuthSignInLoadingProvider"])===this.props.provider&&this.props.auth.getIn(["oAuthSignIn",this.getEndpoint(),"loading"]);return i.default.createElement(u.default,r({loading:t,icon:this.props.icon,className:this.props.className+" oauth-sign-in-submit",disabled:e,onClick:this.handleClick.bind(this)},this.props))}}]),t}();p.defaultProps={signInParams:{},children:i.default.createElement("span",null,"OAuth Sign In"),icon:i.default.createElement(s.Glyphicon,{glyph:"log-in"}),next:function(){}},t.default=(0,a.connect)(function(e){return{auth:e.auth}})(p)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=p(n(0)),a=p(n(21)),u=p(n(15)),s=n(7),l=n(1),c=n(2);function p(e){return e&&e.__esModule?e:{default:e}}var f=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleInput",value:function(e,t){this.props.dispatch((0,l.updatePasswordFormUpdate)(this.getEndpoint(),e,t))}},{key:"handleSubmit",value:function(e){e.preventDefault();var t=this.props.auth.getIn(["updatePassword",this.getEndpoint(),"form"]).toJS();this.props.dispatch((0,l.updatePassword)(t,this.getEndpoint()))}},{key:"render",value:function(){var e=this.getEndpoint(),t=this.props.auth.getIn(["updatePassword",e,"loading"]),n=!this.props.auth.getIn(["user","isSignedIn"])||t||"email"!==this.props.auth.getIn(["user","attributes","provider"]);return i.default.createElement("form",{className:"redux-auth update-password-form clearfix",onSubmit:this.handleSubmit.bind(this)},i.default.createElement(a.default,r({type:"password",label:"Password",placeholder:"Password",disabled:n,groupClassName:"update-password-password",value:this.props.auth.getIn(["updatePassword",e,"form","password"]),errors:this.props.auth.getIn(["updatePassword",e,"errors","password"]),onChange:this.handleInput.bind(this,"password")},this.props.inputProps.password)),i.default.createElement(a.default,r({type:"password",label:"Password Confirmation",placeholder:"Password Confirmation",disabled:n,groupClassName:"update-password-password-confirmation",value:this.props.auth.getIn(["updatePassword",e,"form","password_confirmation"]),errors:this.props.auth.getIn(["updatePassword",e,"errors","password_confirmation"]),onChange:this.handleInput.bind(this,"password_confirmation")},this.props.inputProps.passwordConfirmation)),i.default.createElement(u.default,r({loading:t,type:"submit",disabled:n,className:"pull-right update-password-submit",icon:this.props.icon||i.default.createElement(s.Glyphicon,{glyph:"lock"}),onClick:this.handleSubmit.bind(this)},this.props.inputProps.submit),"Update Password"))}}]),t}();f.defaultProps={inputProps:{password:{},passwordConfirmation:{}}},t.default=(0,c.connect)(function(e){return{auth:e.auth}})(f)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=c(n(0)),a=c(n(15)),u=n(1),s=n(2),l=n(7);function c(e){return e&&e.__esModule?e:{default:e}}var p=function(e){function t(){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).apply(this,arguments))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,i.default.Component),o(t,[{key:"getEndpoint",value:function(){return this.props.endpoint||this.props.auth.getIn(["configure","currentEndpointKey"])||this.props.auth.getIn(["configure","defaultEndpointKey"])}},{key:"handleClick",value:function(){this.props.dispatch((0,u.destroyAccount)(this.getEndpoint()))}},{key:"render",value:function(){var e=!this.props.auth.getIn(["user","isSignedIn"]);return i.default.createElement(a.default,r({loading:this.props.auth.getIn(["destroyAccount",this.getEndpoint(),"loading"]),icon:this.props.icon,disabled:e,className:"destroy-account-submit",onClick:this.handleClick.bind(this)},this.props))}}]),t}();p.defaultProps={children:i.default.createElement("span",null,"Destroy Account"),icon:i.default.createElement(l.Glyphicon,{glyph:"remove"})},t.default=(0,s.connect)(function(e){return{auth:e.auth}})(p)}]));
+(function(e, a) { for(var i in a) e[i] = a[i]; }(exports, /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/views/bootstrap/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "../../actions/sign-out":
+/*!*****************************!*\
+  !*** external "redux-auth" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("redux-auth");
+
+/***/ }),
+
+/***/ "./src/views/TokenBridge.js":
+/*!**********************************!*\
+  !*** ./src/views/TokenBridge.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TokenBridge = function (_React$Component) {
+  _inherits(TokenBridge, _React$Component);
+
+  function TokenBridge() {
+    _classCallCheck(this, TokenBridge);
+
+    return _possibleConstructorReturn(this, (TokenBridge.__proto__ || Object.getPrototypeOf(TokenBridge)).apply(this, arguments));
+  }
+
+  _createClass(TokenBridge, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement("script", { id: "token-bridge",
+        type: "application/json",
+        dangerouslySetInnerHTML: { __html: this.props.initialCredentials } });
+    }
+  }]);
+
+  return TokenBridge;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (state) {
+  var auth = state.get('auth');
+  var headers = auth.getIn(["server", "headers"]);
+
+  return {
+    initialCredentials: headers && JSON.stringify({
+      user: auth.getIn(["server", "user"]),
+      mustResetPassword: auth.getIn(["server", "mustResetPassword"]),
+      firstTimeLogin: auth.getIn(["server", "firstTimeLogin"]),
+      currentEndpointKey: auth.getIn(["configure", "currentEndpointKey"]),
+      defaultEndpointKey: auth.getIn(["configure", "defaultEndpointKey"]),
+      headers: headers
+    })
+  };
+})(TokenBridge);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/AuthGlobals.js":
+/*!********************************************!*\
+  !*** ./src/views/bootstrap/AuthGlobals.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _EmailSignInSuccessModal = __webpack_require__(/*! ./modals/EmailSignInSuccessModal */ "./src/views/bootstrap/modals/EmailSignInSuccessModal.js");
+
+var _EmailSignInSuccessModal2 = _interopRequireDefault(_EmailSignInSuccessModal);
+
+var _EmailSignInErrorModal = __webpack_require__(/*! ./modals/EmailSignInErrorModal */ "./src/views/bootstrap/modals/EmailSignInErrorModal.js");
+
+var _EmailSignInErrorModal2 = _interopRequireDefault(_EmailSignInErrorModal);
+
+var _OAuthSignInSuccessModal = __webpack_require__(/*! ./modals/OAuthSignInSuccessModal */ "./src/views/bootstrap/modals/OAuthSignInSuccessModal.js");
+
+var _OAuthSignInSuccessModal2 = _interopRequireDefault(_OAuthSignInSuccessModal);
+
+var _OAuthSignInErrorModal = __webpack_require__(/*! ./modals/OAuthSignInErrorModal */ "./src/views/bootstrap/modals/OAuthSignInErrorModal.js");
+
+var _OAuthSignInErrorModal2 = _interopRequireDefault(_OAuthSignInErrorModal);
+
+var _EmailSignUpSuccessModal = __webpack_require__(/*! ./modals/EmailSignUpSuccessModal */ "./src/views/bootstrap/modals/EmailSignUpSuccessModal.js");
+
+var _EmailSignUpSuccessModal2 = _interopRequireDefault(_EmailSignUpSuccessModal);
+
+var _EmailSignUpErrorModal = __webpack_require__(/*! ./modals/EmailSignUpErrorModal */ "./src/views/bootstrap/modals/EmailSignUpErrorModal.js");
+
+var _EmailSignUpErrorModal2 = _interopRequireDefault(_EmailSignUpErrorModal);
+
+var _SignOutSuccessModal = __webpack_require__(/*! ./modals/SignOutSuccessModal */ "./src/views/bootstrap/modals/SignOutSuccessModal.js");
+
+var _SignOutSuccessModal2 = _interopRequireDefault(_SignOutSuccessModal);
+
+var _SignOutErrorModal = __webpack_require__(/*! ./modals/SignOutErrorModal */ "./src/views/bootstrap/modals/SignOutErrorModal.js");
+
+var _SignOutErrorModal2 = _interopRequireDefault(_SignOutErrorModal);
+
+var _FirstTimeLoginSuccessModal = __webpack_require__(/*! ./modals/FirstTimeLoginSuccessModal */ "./src/views/bootstrap/modals/FirstTimeLoginSuccessModal.js");
+
+var _FirstTimeLoginSuccessModal2 = _interopRequireDefault(_FirstTimeLoginSuccessModal);
+
+var _FirstTimeLoginErrorModal = __webpack_require__(/*! ./modals/FirstTimeLoginErrorModal */ "./src/views/bootstrap/modals/FirstTimeLoginErrorModal.js");
+
+var _FirstTimeLoginErrorModal2 = _interopRequireDefault(_FirstTimeLoginErrorModal);
+
+var _RequestPasswordResetErrorModal = __webpack_require__(/*! ./modals/RequestPasswordResetErrorModal */ "./src/views/bootstrap/modals/RequestPasswordResetErrorModal.js");
+
+var _RequestPasswordResetErrorModal2 = _interopRequireDefault(_RequestPasswordResetErrorModal);
+
+var _RequestPasswordResetSuccessModal = __webpack_require__(/*! ./modals/RequestPasswordResetSuccessModal */ "./src/views/bootstrap/modals/RequestPasswordResetSuccessModal.js");
+
+var _RequestPasswordResetSuccessModal2 = _interopRequireDefault(_RequestPasswordResetSuccessModal);
+
+var _UpdatePasswordErrorModal = __webpack_require__(/*! ./modals/UpdatePasswordErrorModal */ "./src/views/bootstrap/modals/UpdatePasswordErrorModal.js");
+
+var _UpdatePasswordErrorModal2 = _interopRequireDefault(_UpdatePasswordErrorModal);
+
+var _UpdatePasswordSuccessModal = __webpack_require__(/*! ./modals/UpdatePasswordSuccessModal */ "./src/views/bootstrap/modals/UpdatePasswordSuccessModal.js");
+
+var _UpdatePasswordSuccessModal2 = _interopRequireDefault(_UpdatePasswordSuccessModal);
+
+var _DestroyAccountErrorModal = __webpack_require__(/*! ./modals/DestroyAccountErrorModal */ "./src/views/bootstrap/modals/DestroyAccountErrorModal.js");
+
+var _DestroyAccountErrorModal2 = _interopRequireDefault(_DestroyAccountErrorModal);
+
+var _DestroyAccountSuccessModal = __webpack_require__(/*! ./modals/DestroyAccountSuccessModal */ "./src/views/bootstrap/modals/DestroyAccountSuccessModal.js");
+
+var _DestroyAccountSuccessModal2 = _interopRequireDefault(_DestroyAccountSuccessModal);
+
+var _PasswordResetSuccessModal = __webpack_require__(/*! ./modals/PasswordResetSuccessModal */ "./src/views/bootstrap/modals/PasswordResetSuccessModal.js");
+
+var _PasswordResetSuccessModal2 = _interopRequireDefault(_PasswordResetSuccessModal);
+
+var _TokenBridge = __webpack_require__(/*! ../TokenBridge */ "./src/views/TokenBridge.js");
+
+var _TokenBridge2 = _interopRequireDefault(_TokenBridge);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AuthGlobals = function (_React$Component) {
+  _inherits(AuthGlobals, _React$Component);
+
+  function AuthGlobals() {
+    _classCallCheck(this, AuthGlobals);
+
+    return _possibleConstructorReturn(this, (AuthGlobals.__proto__ || Object.getPrototypeOf(AuthGlobals)).apply(this, arguments));
+  }
+
+  _createClass(AuthGlobals, [{
+    key: "render",
+    value: function render() {
+      var showEmailSignInSuccess = this.props.emailSignInSuccessEnabled && this.props.auth.getIn(["ui", "emailSignInSuccessModalVisible"]);
+
+      var showEmailSignInError = this.props.emailSignInErrorEnabled && this.props.auth.getIn(["ui", "emailSignInErrorModalVisible"]);
+
+      var showEmailSignUpSuccess = this.props.emailSignUpSuccessEnabled && this.props.auth.getIn(["ui", "emailSignUpSuccessModalVisible"]);
+
+      var showEmailSignUpError = this.props.emailSignUpErrorEnabled && this.props.auth.getIn(["ui", "emailSignUpErrorModalVisible"]);
+
+      var showSignOutSuccess = this.props.signOutSuccessEnabled && this.props.auth.getIn(["ui", "signOutSuccessModalVisible"]);
+
+      var showSignOutError = this.props.signOutErrorEnabled && this.props.auth.getIn(["ui", "signOutErrorModalVisible"]);
+
+      var showFirstTimeLoginSuccess = this.props.firstTimeLoginSuccessEnabled && this.props.auth.getIn(["ui", "firstTimeLoginSuccessModalVisible"]);
+
+      var showFirstTimeLoginError = this.props.firstTimeLoginErrorEnabled && this.props.auth.getIn(["ui", "firstTimeLoginErrorModalVisible"]);
+
+      var showRequestPasswordResetError = this.props.requestPasswordResetErrorEnabled && this.props.auth.getIn(["ui", "requestPasswordResetErrorModalVisible"]);
+
+      var showRequestPasswordResetSuccess = this.props.requestPasswordResetSuccessEnabled && this.props.auth.getIn(["ui", "requestPasswordResetSuccessModalVisible"]);
+
+      var showOAuthSignInSuccess = this.props.oAuthSignInSuccessEnabled && this.props.auth.getIn(["ui", "oAuthSignInSuccessModalVisible"]);
+
+      var showOAuthSignInError = this.props.oAuthSignInErrorEnabled && this.props.auth.getIn(["ui", "oAuthSignInErrorModalVisible"]);
+
+      var updatePasswordSuccess = this.props.updatePasswordSuccessEnabled && this.props.auth.getIn(["ui", "updatePasswordSuccessModalVisible"]);
+
+      var updatePasswordError = this.props.updatePasswordErrorEnabled && this.props.auth.getIn(["ui", "updatePasswordErrorModalVisible"]);
+
+      var destroyAccountSuccess = this.props.destroyAccountSuccessEnabled && this.props.auth.getIn(["ui", "destroyAccountSuccessModalVisible"]);
+
+      var destroyAccountError = this.props.destroyAccountErrorEnabled && this.props.auth.getIn(["ui", "destroyAccountErrorModalVisible"]);
+
+      var passwordResetSuccess = this.props.passwordResetSuccessEnabled && this.props.auth.getIn(["ui", "passwordResetSuccessModalVisible"]);
+
+      //let passwordResetError = (
+      //this.props.passwordResetErrorEnabled &&
+      //this.props.auth.getIn(["ui", "passwordResetErrorModalVisible"])
+      //);
+
+      return _react2.default.createElement(
+        "div",
+        { id: "auth-modals" },
+        _react2.default.createElement(_EmailSignInSuccessModal2.default, { show: showEmailSignInSuccess }),
+        _react2.default.createElement(_EmailSignInErrorModal2.default, { show: showEmailSignInError }),
+        _react2.default.createElement(_OAuthSignInSuccessModal2.default, { show: showOAuthSignInSuccess }),
+        _react2.default.createElement(_OAuthSignInErrorModal2.default, { show: showOAuthSignInError }),
+        _react2.default.createElement(_EmailSignUpSuccessModal2.default, { show: showEmailSignUpSuccess }),
+        _react2.default.createElement(_EmailSignUpErrorModal2.default, { show: showEmailSignUpError }),
+        _react2.default.createElement(_SignOutSuccessModal2.default, { show: showSignOutSuccess }),
+        _react2.default.createElement(_SignOutErrorModal2.default, { show: showSignOutError }),
+        _react2.default.createElement(_FirstTimeLoginSuccessModal2.default, { show: showFirstTimeLoginSuccess }),
+        _react2.default.createElement(_FirstTimeLoginErrorModal2.default, { show: showFirstTimeLoginError }),
+        _react2.default.createElement(_RequestPasswordResetErrorModal2.default, { show: showRequestPasswordResetError }),
+        _react2.default.createElement(_RequestPasswordResetSuccessModal2.default, { show: showRequestPasswordResetSuccess }),
+        _react2.default.createElement(_UpdatePasswordErrorModal2.default, { show: updatePasswordError }),
+        _react2.default.createElement(_UpdatePasswordSuccessModal2.default, { show: updatePasswordSuccess }),
+        _react2.default.createElement(_DestroyAccountErrorModal2.default, { show: destroyAccountError }),
+        _react2.default.createElement(_DestroyAccountSuccessModal2.default, { show: destroyAccountSuccess }),
+        _react2.default.createElement(_PasswordResetSuccessModal2.default, { show: passwordResetSuccess }),
+        _react2.default.createElement(_TokenBridge2.default, null)
+      );
+    }
+  }]);
+
+  return AuthGlobals;
+}(_react2.default.Component);
+
+AuthGlobals.defaultProps = {
+  signOutSuccessEnabled: true,
+  signOutErrorEnabled: true,
+  emailSignInSuccessEnabled: true,
+  emailSignInErrorEnabled: true,
+  oAuthSignInSuccessEnabled: true,
+  oAuthSignInErrorEnabled: true,
+  emailSignUpSuccessEnabled: true,
+  emailSignUpErrorEnabled: true,
+  firstTimeLoginSuccessEnabled: true,
+  firstTimeLoginErrorEnabled: true,
+  requestPasswordResetErrorEnabled: true,
+  requestPasswordResetSuccessEnabled: true,
+  updatePasswordErrorEnabled: true,
+  updatePasswordSuccessEnabled: true,
+  destroyAccountErrorEnabled: true,
+  destroyAccountSuccessEnabled: true,
+  passwordResetSuccessEnabled: true,
+  passwordResetErrorEnabled: true
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(AuthGlobals);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/ButtonLoader.js":
+/*!*********************************************!*\
+  !*** ./src/views/bootstrap/ButtonLoader.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _reactLoader = __webpack_require__(/*! react-loader */ "react-loader");
+
+var _reactLoader2 = _interopRequireDefault(_reactLoader);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ButtonLoader = function (_React$Component) {
+  _inherits(ButtonLoader, _React$Component);
+
+  function ButtonLoader() {
+    _classCallCheck(this, ButtonLoader);
+
+    return _possibleConstructorReturn(this, (ButtonLoader.__proto__ || Object.getPrototypeOf(ButtonLoader)).apply(this, arguments));
+  }
+
+  _createClass(ButtonLoader, [{
+    key: "renderIcon",
+    value: function renderIcon() {
+      var icon = void 0;
+
+      if (this.props.loading) {
+        var spinColor = !this.props.bsStyle || this.props.bsStyle === "default" ? this.props.spinColorDark : this.props.spinColorLight;
+
+        icon = _react2.default.createElement(
+          "div",
+          null,
+          _react2.default.createElement(_reactLoader2.default, _extends({ ref: "spinner" }, this.props.spinConfig, { color: spinColor, loaded: false }))
+        );
+      } else {
+        icon = this.props.icon;
+      }
+
+      return _react2.default.createElement(
+        "div",
+        { style: {
+            position: "relative",
+            display: "inline-block",
+            marginRight: "6px",
+            width: "10px",
+            height: "10px",
+            top: "1px"
+          } },
+        icon
+      );
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _reactBootstrap.Button,
+        {
+          onClick: this.props.onClick,
+          disabled: this.props.disabled || this.props.loading,
+          bsStyle: this.props.bsStyle,
+          className: this.props.className,
+          type: this.props.type,
+          style: this.props.style,
+          bsSize: this.props.bsSize },
+        this.renderIcon(),
+        " ",
+        this.props.children
+      );
+    }
+  }]);
+
+  return ButtonLoader;
+}(_react2.default.Component);
+
+ButtonLoader.defaultProps = {
+  icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "heart" }),
+  loading: false,
+  spinConfig: {
+    lines: 10,
+    length: 4,
+    width: 2,
+    radius: 3
+  },
+  spinColorDark: "#444",
+  spinColorLight: "#fff",
+  children: _react2.default.createElement(
+    "span",
+    null,
+    "Submit"
+  ),
+  style: {}
+};
+exports.default = ButtonLoader;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/DestroyAccountButton.js":
+/*!*****************************************************!*\
+  !*** ./src/views/bootstrap/DestroyAccountButton.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _destroyAccount = __webpack_require__(/*! ../../actions/destroy-account */ "../../actions/sign-out");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DestroyAccountButton = function (_React$Component) {
+  _inherits(DestroyAccountButton, _React$Component);
+
+  function DestroyAccountButton() {
+    _classCallCheck(this, DestroyAccountButton);
+
+    return _possibleConstructorReturn(this, (DestroyAccountButton.__proto__ || Object.getPrototypeOf(DestroyAccountButton)).apply(this, arguments));
+  }
+
+  _createClass(DestroyAccountButton, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      this.props.dispatch((0, _destroyAccount.destroyAccount)(this.getEndpoint()));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
+      return _react2.default.createElement(_ButtonLoader2.default, _extends({
+        loading: this.props.auth.getIn(["destroyAccount", this.getEndpoint(), "loading"]),
+        icon: this.props.icon,
+        disabled: disabled,
+        className: "destroy-account-submit",
+        onClick: this.handleClick.bind(this)
+      }, this.props));
+    }
+  }]);
+
+  return DestroyAccountButton;
+}(_react2.default.Component);
+
+DestroyAccountButton.defaultProps = {
+  children: _react2.default.createElement(
+    "span",
+    null,
+    "Destroy Account"
+  ),
+  icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "remove" })
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(DestroyAccountButton);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/EmailSignInForm.js":
+/*!************************************************!*\
+  !*** ./src/views/bootstrap/EmailSignInForm.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _Input = __webpack_require__(/*! ./Input */ "./src/views/bootstrap/Input.js");
+
+var _Input2 = _interopRequireDefault(_Input);
+
+var _emailSignIn = __webpack_require__(/*! ../../actions/email-sign-in */ "../../actions/sign-out");
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EmailSignInForm = function (_React$Component) {
+  _inherits(EmailSignInForm, _React$Component);
+
+  function EmailSignInForm() {
+    _classCallCheck(this, EmailSignInForm);
+
+    return _possibleConstructorReturn(this, (EmailSignInForm.__proto__ || Object.getPrototypeOf(EmailSignInForm)).apply(this, arguments));
+  }
+
+  _createClass(EmailSignInForm, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(key, val) {
+      this.props.dispatch((0, _emailSignIn.emailSignInFormUpdate)(this.getEndpoint(), key, val));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var formData = this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form"]).toJS();
+      this.props.dispatch((0, _emailSignIn.emailSignIn)(formData, this.getEndpoint())).then(this.props.next).catch(function () {});
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var disabled = this.props.auth.getIn(["user", "isSignedIn"]) || this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "loading"]);
+
+      return _react2.default.createElement(
+        "form",
+        { className: "redux-auth email-sign-in-form clearfix",
+          onSubmit: this.handleSubmit.bind(this) },
+        _react2.default.createElement(_Input2.default, _extends({ type: "text",
+          groupClassName: "email-sign-in-email",
+          label: "Email",
+          placeholder: "Email",
+          disabled: disabled,
+          value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "email"]),
+          errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "email"]),
+          onChange: this.handleInput.bind(this, "email")
+        }, this.props.inputProps.email)),
+        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+          label: "Password",
+          groupClassName: "email-sign-in-password",
+          placeholder: "Password",
+          disabled: disabled,
+          value: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "form", "password"]),
+          errors: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "errors", "password"]),
+          onChange: this.handleInput.bind(this, "password")
+        }, this.props.inputProps.password)),
+        _react2.default.createElement(
+          _ButtonLoader2.default,
+          _extends({ loading: this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "loading"]),
+            type: "submit",
+            icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "log-in" }),
+            className: "email-sign-in-submit pull-right",
+            disabled: disabled,
+            onClick: this.handleSubmit.bind(this)
+          }, this.props.inputProps.submit),
+          "Sign In"
+        )
+      );
+    }
+  }]);
+
+  return EmailSignInForm;
+}(_react2.default.Component);
+
+EmailSignInForm.propTypes = {
+  endpoint: _react.PropTypes.string,
+  next: _react.PropTypes.func,
+  inputProps: _react.PropTypes.shape({
+    email: _react.PropTypes.object,
+    password: _react.PropTypes.object,
+    submit: _react.PropTypes.object
+  })
+};
+EmailSignInForm.defaultProps = {
+  next: function next() {},
+  inputProps: {
+    email: {},
+    password: {},
+    submit: {}
+  }
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(EmailSignInForm);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/EmailSignUpForm.js":
+/*!************************************************!*\
+  !*** ./src/views/bootstrap/EmailSignUpForm.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Input = __webpack_require__(/*! ./Input */ "./src/views/bootstrap/Input.js");
+
+var _Input2 = _interopRequireDefault(_Input);
+
+var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _emailSignUp = __webpack_require__(/*! ../../actions/email-sign-up */ "../../actions/sign-out");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EmailSignUpForm = function (_React$Component) {
+  _inherits(EmailSignUpForm, _React$Component);
+
+  function EmailSignUpForm() {
+    _classCallCheck(this, EmailSignUpForm);
+
+    return _possibleConstructorReturn(this, (EmailSignUpForm.__proto__ || Object.getPrototypeOf(EmailSignUpForm)).apply(this, arguments));
+  }
+
+  _createClass(EmailSignUpForm, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(key, val) {
+      this.props.dispatch((0, _emailSignUp.emailSignUpFormUpdate)(this.getEndpoint(), key, val));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var formData = this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form"]).toJS();
+      this.props.dispatch((0, _emailSignUp.emailSignUp)(formData, this.getEndpoint())).then(this.props.next).catch(function () {});
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var disabled = this.props.auth.getIn(["user", "isSignedIn"]) || this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "loading"]);
+
+      return _react2.default.createElement(
+        "form",
+        { className: "redux-auth email-sign-up-form clearfix",
+          onSubmit: this.handleSubmit.bind(this) },
+        _react2.default.createElement(_Input2.default, _extends({ type: "text",
+          label: "Email",
+          placeholder: "Email",
+          groupClassName: "email-sign-up-email",
+          disabled: disabled,
+          value: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "email"]),
+          errors: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "email"]),
+          onChange: this.handleInput.bind(this, "email")
+        }, this.props.inputProps.email)),
+        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+          label: "Password",
+          placeholder: "Password",
+          groupClassName: "email-sign-up-password",
+          disabled: disabled,
+          value: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "password"]),
+          errors: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "password"]),
+          onChange: this.handleInput.bind(this, "password")
+        }, this.props.inputProps.password)),
+        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+          label: "Password Confirmation",
+          placeholder: "Password Confirmation",
+          groupClassName: "email-sign-up-password-confirmation",
+          disabled: disabled,
+          value: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "password_confirmation"]),
+          errors: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "password_confirmation"]),
+          onChange: this.handleInput.bind(this, "password_confirmation")
+        }, this.props.inputProps.passwordConfirmation)),
+        _react2.default.createElement(
+          _ButtonLoader2.default,
+          _extends({ loading: this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "loading"]),
+            type: "submit",
+            className: "email-sign-up-submit pull-right",
+            icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "send" }),
+            disabled: disabled,
+            onClick: this.handleSubmit.bind(this)
+          }, this.props.inputProps.submit),
+          "Sign Up"
+        )
+      );
+    }
+  }]);
+
+  return EmailSignUpForm;
+}(_react2.default.Component);
+
+EmailSignUpForm.defaultProps = {
+  next: function next() {},
+  inputProps: {
+    email: {},
+    password: {},
+    submit: {}
+  }
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(EmailSignUpForm);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/ErrorList.js":
+/*!******************************************!*\
+  !*** ./src/views/bootstrap/ErrorList.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _immutable = __webpack_require__(/*! immutable */ "immutable");
+
+var _immutable2 = _interopRequireDefault(_immutable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ErrorList = function (_React$Component) {
+  _inherits(ErrorList, _React$Component);
+
+  function ErrorList() {
+    _classCallCheck(this, ErrorList);
+
+    return _possibleConstructorReturn(this, (ErrorList.__proto__ || Object.getPrototypeOf(ErrorList)).apply(this, arguments));
+  }
+
+  _createClass(ErrorList, [{
+    key: "renderErrorList",
+    value: function renderErrorList() {
+      var errorCount = (this.props.errors || _immutable2.default.fromJS([])).size;
+
+      if (errorCount > 0) {
+        // pluralize message
+        var errorWord = "error";
+        errorWord += errorCount === 1 ? "" : "s";
+
+        return _react2.default.createElement(
+          "div",
+          { className: "has-error" },
+          _react2.default.createElement(
+            "p",
+            null,
+            "Please correct the following ",
+            errorWord,
+            ":"
+          ),
+          this.props.errors.map(function (err, i) {
+            return _react2.default.createElement(
+              "p",
+              {
+                key: i,
+                className: "control-label modal-error-item",
+                style: { paddingLeft: "20px", position: "relative" } },
+              _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "exclamation-sign",
+                style: { position: "absolute", left: 0, top: 2 } }),
+              " ",
+              err
+            );
+          })
+        );
+      } else {
+        return _react2.default.createElement(
+          "p",
+          null,
+          _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "exclamation-sign" }),
+          " There was an error processing this form. Please check each field and try again."
+        );
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "auth-error-message" },
+        this.renderErrorList()
+      );
+    }
+  }]);
+
+  return ErrorList;
+}(_react2.default.Component);
+
+ErrorList.defaultProps = {
+  errors: _immutable2.default.fromJS([])
+};
+exports.default = ErrorList;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/Input.js":
+/*!**************************************!*\
+  !*** ./src/views/bootstrap/Input.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _immutable = __webpack_require__(/*! immutable */ "immutable");
+
+var _immutable2 = _interopRequireDefault(_immutable);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AuthInput = function (_React$Component) {
+  _inherits(AuthInput, _React$Component);
+
+  function AuthInput() {
+    _classCallCheck(this, AuthInput);
+
+    return _possibleConstructorReturn(this, (AuthInput.__proto__ || Object.getPrototypeOf(AuthInput)).apply(this, arguments));
+  }
+
+  _createClass(AuthInput, [{
+    key: "handleInput",
+    value: function handleInput(ev) {
+      this.props.onChange(ev.target.value);
+    }
+  }, {
+    key: "renderErrorList",
+    value: function renderErrorList() {
+      var _this2 = this;
+
+      if (this.props.errors.size) {
+        return _react2.default.createElement(
+          "div",
+          { className: "auth-error-message has-error" },
+          this.props.errors.map(function (err, i) {
+            return _react2.default.createElement(
+              "p",
+              { className: "control-label inline-error-item",
+                style: { paddingLeft: "20px", position: "relative", marginBottom: "28px" },
+                key: i },
+              _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "exclamation-sign",
+                style: {
+                  position: "absolute",
+                  left: 0,
+                  top: 2
+                }
+              }),
+              " ",
+              _this2.props.label,
+              " ",
+              err
+            );
+          })
+        );
+      } else {
+        return _react2.default.createElement("span", null);
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(_reactBootstrap.Input, _extends({}, this.props, {
+          bsStyle: this.props.errors.size ? "error" : null,
+          onChange: this.handleInput.bind(this) })),
+        this.renderErrorList()
+      );
+    }
+  }]);
+
+  return AuthInput;
+}(_react2.default.Component);
+
+AuthInput.defaultProps = {
+  label: "",
+  value: null,
+  errors: _immutable2.default.fromJS([])
+};
+exports.default = AuthInput;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/OAuthSignInButton.js":
+/*!**************************************************!*\
+  !*** ./src/views/bootstrap/OAuthSignInButton.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _oauthSignIn = __webpack_require__(/*! ../../actions/oauth-sign-in */ "../../actions/sign-out");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// hook for rewire
+var oAuthSignIn = _oauthSignIn.oAuthSignIn;
+
+var OAuthSignInButton = function (_React$Component) {
+  _inherits(OAuthSignInButton, _React$Component);
+
+  function OAuthSignInButton() {
+    _classCallCheck(this, OAuthSignInButton);
+
+    return _possibleConstructorReturn(this, (OAuthSignInButton.__proto__ || Object.getPrototypeOf(OAuthSignInButton)).apply(this, arguments));
+  }
+
+  _createClass(OAuthSignInButton, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      this.props.dispatch(oAuthSignIn({
+        provider: this.props.provider,
+        params: this.props.signInParams,
+        endpointKey: this.getEndpoint()
+      })).then(this.props.next).catch(function () {});
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var disabled = this.props.auth.getIn(["user", "isSignedIn"]);
+      var loading = this.props.auth.getIn(["ui", "oAuthSignInLoadingProvider"]) === this.props.provider && this.props.auth.getIn(["oAuthSignIn", this.getEndpoint(), "loading"]);
+
+      return _react2.default.createElement(_ButtonLoader2.default, _extends({
+        loading: loading,
+        icon: this.props.icon,
+        className: this.props.className + ' oauth-sign-in-submit',
+        disabled: disabled,
+        onClick: this.handleClick.bind(this)
+      }, this.props));
+    }
+  }]);
+
+  return OAuthSignInButton;
+}(_react2.default.Component);
+
+OAuthSignInButton.defaultProps = {
+  signInParams: {},
+  children: _react2.default.createElement(
+    "span",
+    null,
+    "OAuth Sign In"
+  ),
+  icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "log-in" }),
+  next: function next() {}
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(OAuthSignInButton);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/RequestPasswordResetForm.js":
+/*!*********************************************************!*\
+  !*** ./src/views/bootstrap/RequestPasswordResetForm.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Input = __webpack_require__(/*! ./Input */ "./src/views/bootstrap/Input.js");
+
+var _Input2 = _interopRequireDefault(_Input);
+
+var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _requestPasswordReset = __webpack_require__(/*! ../../actions/request-password-reset */ "../../actions/sign-out");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RequestPasswordResetForm = function (_React$Component) {
+  _inherits(RequestPasswordResetForm, _React$Component);
+
+  function RequestPasswordResetForm() {
+    _classCallCheck(this, RequestPasswordResetForm);
+
+    return _possibleConstructorReturn(this, (RequestPasswordResetForm.__proto__ || Object.getPrototypeOf(RequestPasswordResetForm)).apply(this, arguments));
+  }
+
+  _createClass(RequestPasswordResetForm, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(key, val) {
+      this.props.dispatch((0, _requestPasswordReset.requestPasswordResetFormUpdate)(this.getEndpoint(), key, val));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var formData = this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "form"]).toJS();
+      this.props.dispatch((0, _requestPasswordReset.requestPasswordReset)(formData, this.getEndpoint()));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var loading = this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "loading"]);
+      var inputDisabled = this.props.auth.getIn(["user", "isSignedIn"]);
+      var submitDisabled = !this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "form", "email"]);
+
+      return _react2.default.createElement(
+        "form",
+        {
+          className: "redux-auth request-password-reset-form clearfix",
+          onSubmit: this.handleSubmit.bind(this) },
+        _react2.default.createElement(_Input2.default, _extends({
+          type: "text",
+          label: "Email Address",
+          groupClassName: "request-password-reset-email",
+          placeholder: "Email Address",
+          disabled: loading || inputDisabled,
+          value: this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "form", "email"]),
+          errors: this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "errors", "email"]),
+          onChange: this.handleInput.bind(this, "email")
+        }, this.props.inputProps.email)),
+        _react2.default.createElement(
+          _ButtonLoader2.default,
+          _extends({
+            loading: loading,
+            type: "submit",
+            icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "send" }),
+            className: "pull-right request-password-reset-submit",
+            disabled: inputDisabled || submitDisabled,
+            onClick: this.handleSubmit.bind(this)
+          }, this.props.inputProps.submit),
+          "Request Password Reset"
+        )
+      );
+    }
+  }]);
+
+  return RequestPasswordResetForm;
+}(_react2.default.Component);
+
+RequestPasswordResetForm.defaultProps = {
+  inputProps: {
+    email: {},
+    submit: {}
+  }
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(RequestPasswordResetForm);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/SignOutButton.js":
+/*!**********************************************!*\
+  !*** ./src/views/bootstrap/SignOutButton.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _signOut = __webpack_require__(/*! ../../actions/sign-out */ "../../actions/sign-out");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SignOutButton = function (_React$Component) {
+  _inherits(SignOutButton, _React$Component);
+
+  function SignOutButton() {
+    _classCallCheck(this, SignOutButton);
+
+    return _possibleConstructorReturn(this, (SignOutButton.__proto__ || Object.getPrototypeOf(SignOutButton)).apply(this, arguments));
+  }
+
+  _createClass(SignOutButton, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleClick",
+    value: function handleClick() {
+      this.props.dispatch((0, _signOut.signOut)(this.getEndpoint())).then(this.props.next).catch(function () {});
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
+      return _react2.default.createElement(_ButtonLoader2.default, _extends({
+        loading: this.props.auth.getIn(["signOut", this.getEndpoint(), "loading"]),
+        icon: this.props.icon,
+        disabled: disabled,
+        className: "sign-out-submit",
+        onClick: this.handleClick.bind(this)
+      }, this.props));
+    }
+  }]);
+
+  return SignOutButton;
+}(_react2.default.Component);
+
+SignOutButton.defaultProps = {
+  next: function next() {},
+  children: _react2.default.createElement(
+    "span",
+    null,
+    "Sign Out"
+  ),
+  icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "log-out" })
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(SignOutButton);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/UpdatePasswordForm.js":
+/*!***************************************************!*\
+  !*** ./src/views/bootstrap/UpdatePasswordForm.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Input = __webpack_require__(/*! ./Input */ "./src/views/bootstrap/Input.js");
+
+var _Input2 = _interopRequireDefault(_Input);
+
+var _ButtonLoader = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _updatePassword = __webpack_require__(/*! ../../actions/update-password */ "../../actions/sign-out");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UpdatePasswordForm = function (_React$Component) {
+  _inherits(UpdatePasswordForm, _React$Component);
+
+  function UpdatePasswordForm() {
+    _classCallCheck(this, UpdatePasswordForm);
+
+    return _possibleConstructorReturn(this, (UpdatePasswordForm.__proto__ || Object.getPrototypeOf(UpdatePasswordForm)).apply(this, arguments));
+  }
+
+  _createClass(UpdatePasswordForm, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(key, val) {
+      this.props.dispatch((0, _updatePassword.updatePasswordFormUpdate)(this.getEndpoint(), key, val));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      event.preventDefault();
+      var formData = this.props.auth.getIn(["updatePassword", this.getEndpoint(), "form"]).toJS();
+      this.props.dispatch((0, _updatePassword.updatePassword)(formData, this.getEndpoint()));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var endpoint = this.getEndpoint();
+      var loading = this.props.auth.getIn(["updatePassword", endpoint, "loading"]);
+      var disabled = !this.props.auth.getIn(["user", "isSignedIn"]) || loading || this.props.auth.getIn(["user", "attributes", "provider"]) !== "email";
+
+      return _react2.default.createElement(
+        "form",
+        { className: "redux-auth update-password-form clearfix",
+          onSubmit: this.handleSubmit.bind(this) },
+        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+          label: "Password",
+          placeholder: "Password",
+          disabled: disabled,
+          groupClassName: "update-password-password",
+          value: this.props.auth.getIn(["updatePassword", endpoint, "form", "password"]),
+          errors: this.props.auth.getIn(["updatePassword", endpoint, "errors", "password"]),
+          onChange: this.handleInput.bind(this, "password")
+        }, this.props.inputProps.password)),
+        _react2.default.createElement(_Input2.default, _extends({ type: "password",
+          label: "Password Confirmation",
+          placeholder: "Password Confirmation",
+          disabled: disabled,
+          groupClassName: "update-password-password-confirmation",
+          value: this.props.auth.getIn(["updatePassword", endpoint, "form", "password_confirmation"]),
+          errors: this.props.auth.getIn(["updatePassword", endpoint, "errors", "password_confirmation"]),
+          onChange: this.handleInput.bind(this, "password_confirmation")
+        }, this.props.inputProps.passwordConfirmation)),
+        _react2.default.createElement(
+          _ButtonLoader2.default,
+          _extends({ loading: loading,
+            type: "submit",
+            disabled: disabled,
+            className: "pull-right update-password-submit",
+            icon: this.props.icon || _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "lock" }),
+            onClick: this.handleSubmit.bind(this)
+          }, this.props.inputProps.submit),
+          "Update Password"
+        )
+      );
+    }
+  }]);
+
+  return UpdatePasswordForm;
+}(_react2.default.Component);
+
+UpdatePasswordForm.defaultProps = {
+  inputProps: {
+    password: {},
+    passwordConfirmation: {}
+  }
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(UpdatePasswordForm);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/index.js":
+/*!**************************************!*\
+  !*** ./src/views/bootstrap/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonLoader = exports.TokenBridge = exports.DestroyAccountButton = exports.UpdatePasswordForm = exports.OAuthSignInButton = exports.RequestPasswordResetForm = exports.SignOutButton = exports.EmailSignUpForm = exports.EmailSignInForm = exports.AuthGlobals = undefined;
+
+var _AuthGlobals2 = __webpack_require__(/*! ./AuthGlobals */ "./src/views/bootstrap/AuthGlobals.js");
+
+var _AuthGlobals3 = _interopRequireDefault(_AuthGlobals2);
+
+var _EmailSignInForm2 = __webpack_require__(/*! ./EmailSignInForm */ "./src/views/bootstrap/EmailSignInForm.js");
+
+var _EmailSignInForm3 = _interopRequireDefault(_EmailSignInForm2);
+
+var _EmailSignUpForm2 = __webpack_require__(/*! ./EmailSignUpForm */ "./src/views/bootstrap/EmailSignUpForm.js");
+
+var _EmailSignUpForm3 = _interopRequireDefault(_EmailSignUpForm2);
+
+var _SignOutButton2 = __webpack_require__(/*! ./SignOutButton */ "./src/views/bootstrap/SignOutButton.js");
+
+var _SignOutButton3 = _interopRequireDefault(_SignOutButton2);
+
+var _RequestPasswordResetForm2 = __webpack_require__(/*! ./RequestPasswordResetForm */ "./src/views/bootstrap/RequestPasswordResetForm.js");
+
+var _RequestPasswordResetForm3 = _interopRequireDefault(_RequestPasswordResetForm2);
+
+var _OAuthSignInButton2 = __webpack_require__(/*! ./OAuthSignInButton */ "./src/views/bootstrap/OAuthSignInButton.js");
+
+var _OAuthSignInButton3 = _interopRequireDefault(_OAuthSignInButton2);
+
+var _UpdatePasswordForm2 = __webpack_require__(/*! ./UpdatePasswordForm */ "./src/views/bootstrap/UpdatePasswordForm.js");
+
+var _UpdatePasswordForm3 = _interopRequireDefault(_UpdatePasswordForm2);
+
+var _DestroyAccountButton2 = __webpack_require__(/*! ./DestroyAccountButton */ "./src/views/bootstrap/DestroyAccountButton.js");
+
+var _DestroyAccountButton3 = _interopRequireDefault(_DestroyAccountButton2);
+
+var _TokenBridge2 = __webpack_require__(/*! ../TokenBridge */ "./src/views/TokenBridge.js");
+
+var _TokenBridge3 = _interopRequireDefault(_TokenBridge2);
+
+var _ButtonLoader2 = __webpack_require__(/*! ./ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader3 = _interopRequireDefault(_ButtonLoader2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.AuthGlobals = _AuthGlobals3.default;
+exports.EmailSignInForm = _EmailSignInForm3.default;
+exports.EmailSignUpForm = _EmailSignUpForm3.default;
+exports.SignOutButton = _SignOutButton3.default;
+exports.RequestPasswordResetForm = _RequestPasswordResetForm3.default;
+exports.OAuthSignInButton = _OAuthSignInButton3.default;
+exports.UpdatePasswordForm = _UpdatePasswordForm3.default;
+exports.DestroyAccountButton = _DestroyAccountButton3.default;
+exports.TokenBridge = _TokenBridge3.default;
+exports.ButtonLoader = _ButtonLoader3.default;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/DestroyAccountErrorModal.js":
+/*!****************************************************************!*\
+  !*** ./src/views/bootstrap/modals/DestroyAccountErrorModal.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DestroyAccountErrorModal = function (_React$Component) {
+  _inherits(DestroyAccountErrorModal, _React$Component);
+
+  function DestroyAccountErrorModal() {
+    _classCallCheck(this, DestroyAccountErrorModal);
+
+    return _possibleConstructorReturn(this, (DestroyAccountErrorModal.__proto__ || Object.getPrototypeOf(DestroyAccountErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(DestroyAccountErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(_Modal2.default, {
+        containerClass: "destroy-account-error-modal",
+        show: this.props.show,
+        closeAction: _ui.hideDestroyAccountErrorModal,
+        title: "Error",
+        errorAddr: ["destroyAccount", "errors"] });
+    }
+  }]);
+
+  return DestroyAccountErrorModal;
+}(_react2.default.Component);
+
+exports.default = DestroyAccountErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/DestroyAccountSuccessModal.js":
+/*!******************************************************************!*\
+  !*** ./src/views/bootstrap/modals/DestroyAccountSuccessModal.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DestroyAccountSuccessModal = function (_React$Component) {
+  _inherits(DestroyAccountSuccessModal, _React$Component);
+
+  function DestroyAccountSuccessModal() {
+    _classCallCheck(this, DestroyAccountSuccessModal);
+
+    return _possibleConstructorReturn(this, (DestroyAccountSuccessModal.__proto__ || Object.getPrototypeOf(DestroyAccountSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(DestroyAccountSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "destroy-account-success-modal",
+          closeAction: _ui.hideDestroyAccountSuccessModal,
+          title: "Destroy Account Success" },
+        _react2.default.createElement(
+          "p",
+          null,
+          this.props.auth.getIn(["ui", "destroyAccountMessage"])
+        )
+      );
+    }
+  }]);
+
+  return DestroyAccountSuccessModal;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(DestroyAccountSuccessModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/EmailSignInErrorModal.js":
+/*!*************************************************************!*\
+  !*** ./src/views/bootstrap/modals/EmailSignInErrorModal.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EmailSignInErrorModal = function (_React$Component) {
+  _inherits(EmailSignInErrorModal, _React$Component);
+
+  function EmailSignInErrorModal() {
+    _classCallCheck(this, EmailSignInErrorModal);
+
+    return _possibleConstructorReturn(this, (EmailSignInErrorModal.__proto__ || Object.getPrototypeOf(EmailSignInErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(EmailSignInErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(_Modal2.default, {
+        show: this.props.show,
+        containerClass: "email-sign-in-error-modal",
+        closeAction: _ui.hideEmailSignInErrorModal,
+        title: "Sign In Error",
+        errorAddr: ["emailSignIn", "errors"] });
+    }
+  }]);
+
+  return EmailSignInErrorModal;
+}(_react2.default.Component);
+
+exports.default = EmailSignInErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/EmailSignInSuccessModal.js":
+/*!***************************************************************!*\
+  !*** ./src/views/bootstrap/modals/EmailSignInSuccessModal.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EmailSignInSuccessModal = function (_React$Component) {
+  _inherits(EmailSignInSuccessModal, _React$Component);
+
+  function EmailSignInSuccessModal() {
+    _classCallCheck(this, EmailSignInSuccessModal);
+
+    return _possibleConstructorReturn(this, (EmailSignInSuccessModal.__proto__ || Object.getPrototypeOf(EmailSignInSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(EmailSignInSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "email-sign-in-success-modal",
+          closeAction: _ui.hideEmailSignInSuccessModal,
+          closeBtnLabel: "Close",
+          title: "Welcome Back" },
+        _react2.default.createElement(
+          "p",
+          null,
+          "You are now signed in as ",
+          this.props.auth.getIn(["user", "attributes", "email"]),
+          "."
+        )
+      );
+    }
+  }]);
+
+  return EmailSignInSuccessModal;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(EmailSignInSuccessModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/EmailSignUpErrorModal.js":
+/*!*************************************************************!*\
+  !*** ./src/views/bootstrap/modals/EmailSignUpErrorModal.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EmailSignUpErrorModal = function (_React$Component) {
+  _inherits(EmailSignUpErrorModal, _React$Component);
+
+  function EmailSignUpErrorModal() {
+    _classCallCheck(this, EmailSignUpErrorModal);
+
+    return _possibleConstructorReturn(this, (EmailSignUpErrorModal.__proto__ || Object.getPrototypeOf(EmailSignUpErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(EmailSignUpErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(_Modal2.default, {
+        show: this.props.show,
+        containerClass: "email-sign-up-error-modal",
+        title: "Sign Up Error",
+        errorAddr: ["emailSignUp", "errors", "full_messages"],
+        closeAction: _ui.hideEmailSignUpErrorModal });
+    }
+  }]);
+
+  return EmailSignUpErrorModal;
+}(_react2.default.Component);
+
+exports.default = EmailSignUpErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/EmailSignUpSuccessModal.js":
+/*!***************************************************************!*\
+  !*** ./src/views/bootstrap/modals/EmailSignUpSuccessModal.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EmailSignUpSuccessModal = function (_React$Component) {
+  _inherits(EmailSignUpSuccessModal, _React$Component);
+
+  function EmailSignUpSuccessModal() {
+    _classCallCheck(this, EmailSignUpSuccessModal);
+
+    return _possibleConstructorReturn(this, (EmailSignUpSuccessModal.__proto__ || Object.getPrototypeOf(EmailSignUpSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(EmailSignUpSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          containerClass: "email-sign-up-success-modal",
+          show: this.props.show,
+          closeAction: _ui.hideEmailSignUpSuccessModal,
+          title: "Sign Up Success" },
+        _react2.default.createElement(
+          "p",
+          null,
+          "A confirmation email was sent to your account at ",
+          this.props.auth.getIn(["ui", "emailSignUpAddress"]),
+          ". Follow the instructions in the email to complete registration."
+        )
+      );
+    }
+  }]);
+
+  return EmailSignUpSuccessModal;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(EmailSignUpSuccessModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/FirstTimeLoginErrorModal.js":
+/*!****************************************************************!*\
+  !*** ./src/views/bootstrap/modals/FirstTimeLoginErrorModal.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FirstTimeLoginErrorModal = function (_React$Component) {
+  _inherits(FirstTimeLoginErrorModal, _React$Component);
+
+  function FirstTimeLoginErrorModal() {
+    _classCallCheck(this, FirstTimeLoginErrorModal);
+
+    return _possibleConstructorReturn(this, (FirstTimeLoginErrorModal.__proto__ || Object.getPrototypeOf(FirstTimeLoginErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(FirstTimeLoginErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "first-time-login-error-modal",
+          closeAction: _ui.hideFirstTimeLoginErrorModal,
+          title: "Confirmation Error" },
+        _react2.default.createElement(
+          "p",
+          null,
+          "There was a problem confirming your account. Please try again."
+        )
+      );
+    }
+  }]);
+
+  return FirstTimeLoginErrorModal;
+}(_react2.default.Component);
+
+exports.default = FirstTimeLoginErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/FirstTimeLoginSuccessModal.js":
+/*!******************************************************************!*\
+  !*** ./src/views/bootstrap/modals/FirstTimeLoginSuccessModal.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FirstTimeLoginSuccessModal = function (_React$Component) {
+  _inherits(FirstTimeLoginSuccessModal, _React$Component);
+
+  function FirstTimeLoginSuccessModal() {
+    _classCallCheck(this, FirstTimeLoginSuccessModal);
+
+    return _possibleConstructorReturn(this, (FirstTimeLoginSuccessModal.__proto__ || Object.getPrototypeOf(FirstTimeLoginSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(FirstTimeLoginSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "first-time-login-success-modal",
+          title: "Welcome " + this.props.auth.getIn(["user", "attributes", "email"]) + "!",
+          closeBtnLabel: "Close",
+          closeAction: _ui.hideFirstTimeLoginSuccessModal },
+        _react2.default.createElement(
+          "p",
+          null,
+          "Your account has been confirmed."
+        )
+      );
+    }
+  }]);
+
+  return FirstTimeLoginSuccessModal;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(FirstTimeLoginSuccessModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/Modal.js":
+/*!*********************************************!*\
+  !*** ./src/views/bootstrap/modals/Modal.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _ErrorList = __webpack_require__(/*! ../ErrorList */ "./src/views/bootstrap/ErrorList.js");
+
+var _ErrorList2 = _interopRequireDefault(_ErrorList);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BaseModal = function (_React$Component) {
+  _inherits(BaseModal, _React$Component);
+
+  function BaseModal() {
+    _classCallCheck(this, BaseModal);
+
+    return _possibleConstructorReturn(this, (BaseModal.__proto__ || Object.getPrototypeOf(BaseModal)).apply(this, arguments));
+  }
+
+  _createClass(BaseModal, [{
+    key: "close",
+    value: function close() {
+      this.props.dispatch(this.props.closeAction());
+    }
+  }, {
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "getErrorList",
+    value: function getErrorList() {
+      var _props$errorAddr = _toArray(this.props.errorAddr),
+          base = _props$errorAddr[0],
+          rest = _props$errorAddr.slice(1);
+
+      return _react2.default.createElement(_ErrorList2.default, { errors: this.props.auth.getIn([base, this.getEndpoint()].concat(_toConsumableArray(rest))) });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var body = this.props.errorAddr ? this.getErrorList() : this.props.children;
+
+      return _react2.default.createElement(
+        _reactBootstrap.Modal,
+        {
+          show: this.props.show,
+          className: "redux-auth-modal " + this.props.containerClass,
+          onHide: this.close.bind(this) },
+        _react2.default.createElement(
+          _reactBootstrap.Modal.Header,
+          { closeButton: true },
+          _react2.default.createElement(
+            _reactBootstrap.Modal.Title,
+            null,
+            this.props.title
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Modal.Body,
+          null,
+          body
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Modal.Footer,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Button,
+            {
+              onClick: this.close.bind(this),
+              className: this.props.containerClass + "-close" },
+            this.props.closeBtnLabel
+          )
+        )
+      );
+    }
+  }]);
+
+  return BaseModal;
+}(_react2.default.Component);
+
+BaseModal.defaultProps = {
+  show: false,
+  errorAddr: null,
+  closeBtnLabel: "Ok"
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(BaseModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/OAuthSignInErrorModal.js":
+/*!*************************************************************!*\
+  !*** ./src/views/bootstrap/modals/OAuthSignInErrorModal.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OAuthSignInErrorModal = function (_React$Component) {
+  _inherits(OAuthSignInErrorModal, _React$Component);
+
+  function OAuthSignInErrorModal() {
+    _classCallCheck(this, OAuthSignInErrorModal);
+
+    return _possibleConstructorReturn(this, (OAuthSignInErrorModal.__proto__ || Object.getPrototypeOf(OAuthSignInErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(OAuthSignInErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "oauth-sign-in-error-modal",
+          closeAction: _ui.hideOAuthSignInErrorModal,
+          title: "OAuth Sign In Error" },
+        _react2.default.createElement(
+          "p",
+          null,
+          _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "exclamation-sign" }),
+          " There was an error authenticating your account. Please try again."
+        )
+      );
+    }
+  }]);
+
+  return OAuthSignInErrorModal;
+}(_react2.default.Component);
+
+exports.default = OAuthSignInErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/OAuthSignInSuccessModal.js":
+/*!***************************************************************!*\
+  !*** ./src/views/bootstrap/modals/OAuthSignInSuccessModal.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OAuthSignInSuccessModal = function (_React$Component) {
+  _inherits(OAuthSignInSuccessModal, _React$Component);
+
+  function OAuthSignInSuccessModal() {
+    _classCallCheck(this, OAuthSignInSuccessModal);
+
+    return _possibleConstructorReturn(this, (OAuthSignInSuccessModal.__proto__ || Object.getPrototypeOf(OAuthSignInSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(OAuthSignInSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "oauth-sign-in-success-modal",
+          closeAction: _ui.hideOAuthSignInSuccessModal,
+          title: "Welcome" },
+        _react2.default.createElement(
+          "p",
+          null,
+          "You are now signed in via ",
+          this.props.auth.getIn(["user", "attributes", "provider"]),
+          "."
+        )
+      );
+    }
+  }]);
+
+  return OAuthSignInSuccessModal;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(OAuthSignInSuccessModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/PasswordResetSuccessModal.js":
+/*!*****************************************************************!*\
+  !*** ./src/views/bootstrap/modals/PasswordResetSuccessModal.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+
+var _ButtonLoader = __webpack_require__(/*! ../ButtonLoader */ "./src/views/bootstrap/ButtonLoader.js");
+
+var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
+
+var _Input = __webpack_require__(/*! ../Input */ "./src/views/bootstrap/Input.js");
+
+var _Input2 = _interopRequireDefault(_Input);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _updatePasswordModal = __webpack_require__(/*! ../../../actions/update-password-modal */ "../../actions/sign-out");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PasswordResetSuccessModal = function (_React$Component) {
+  _inherits(PasswordResetSuccessModal, _React$Component);
+
+  function PasswordResetSuccessModal() {
+    _classCallCheck(this, PasswordResetSuccessModal);
+
+    return _possibleConstructorReturn(this, (PasswordResetSuccessModal.__proto__ || Object.getPrototypeOf(PasswordResetSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(PasswordResetSuccessModal, [{
+    key: "getEndpoint",
+    value: function getEndpoint() {
+      return this.props.endpoint || this.props.auth.getIn(["configure", "currentEndpointKey"]) || this.props.auth.getIn(["configure", "defaultEndpointKey"]);
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(key, val) {
+      this.props.dispatch((0, _updatePasswordModal.updatePasswordModalFormUpdate)(this.getEndpoint(), key, val));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit() {
+      var formData = this.props.auth.getIn(["updatePasswordModal", this.getEndpoint(), "form"]).toJS();
+      this.props.dispatch((0, _updatePasswordModal.updatePasswordModal)(formData, this.getEndpoint()));
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.props.dispatch((0, _ui.hidePasswordResetSuccessModal)(this.getEndpoint()));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var loading = this.props.auth.getIn(["updatePasswordModal", this.getEndpoint(), "loading"]),
+          endpoint = this.getEndpoint();
+
+      return _react2.default.createElement(
+        _reactBootstrap.Modal,
+        {
+          show: this.props.show,
+          className: "password-reset-success-modal",
+          onHide: this.close.bind(this) },
+        _react2.default.createElement(
+          _reactBootstrap.Modal.Header,
+          { closeButton: true },
+          _react2.default.createElement(
+            _reactBootstrap.Modal.Title,
+            null,
+            "Reset Your Password"
+          )
+        ),
+        _react2.default.createElement(
+          "form",
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Modal.Body,
+            null,
+            _react2.default.createElement(_Input2.default, _extends({
+              type: "password",
+              label: "Password",
+              placeholder: "Password",
+              disabled: loading,
+              groupClassName: "password-reset-success-modal-password",
+              value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password"]),
+              errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password"]),
+              onChange: this.handleInput.bind(this, "password")
+            }, this.props.inputProps.password)),
+            _react2.default.createElement(_Input2.default, _extends({
+              type: "password",
+              label: "Password Confirmation",
+              placeholder: "Password Confirmation",
+              disabled: loading,
+              groupClassName: "password-reset-success-modal-password-confirmation",
+              value: this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password_confirmation"]),
+              errors: this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password_confirmation"]),
+              onChange: this.handleInput.bind(this, "password_confirmation")
+            }, this.props.inputProps.passwordConfirmation))
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Modal.Footer,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              _extends({
+                className: "password-reset-success-modal-close",
+                onClick: this.close.bind(this)
+              }, this.props.inputProps.cancel),
+              "Cancel"
+            ),
+            _react2.default.createElement(_ButtonLoader2.default, _extends({}, this.props, {
+              loading: loading,
+              type: "submit",
+              className: "password-reset-success-modal-submit",
+              icon: _react2.default.createElement(_reactBootstrap.Glyphicon, { glyph: "lock" }),
+              onClick: this.handleSubmit.bind(this)
+            }, this.props.inputProps.submit))
+          )
+        )
+      );
+    }
+  }]);
+
+  return PasswordResetSuccessModal;
+}(_react2.default.Component);
+
+PasswordResetSuccessModal.defaultProps = {
+  show: false,
+  inputProps: {}
+};
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(PasswordResetSuccessModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/RequestPasswordResetErrorModal.js":
+/*!**********************************************************************!*\
+  !*** ./src/views/bootstrap/modals/RequestPasswordResetErrorModal.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RequestPasswordResetErrorModal = function (_React$Component) {
+  _inherits(RequestPasswordResetErrorModal, _React$Component);
+
+  function RequestPasswordResetErrorModal() {
+    _classCallCheck(this, RequestPasswordResetErrorModal);
+
+    return _possibleConstructorReturn(this, (RequestPasswordResetErrorModal.__proto__ || Object.getPrototypeOf(RequestPasswordResetErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(RequestPasswordResetErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(_Modal2.default, {
+        show: this.props.show,
+        containerClass: "request-password-reset-error-modal",
+        closeAction: _ui.hidePasswordResetRequestErrorModal,
+        title: "Error",
+        errorAddr: ["requestPasswordReset", "errors"] });
+    }
+  }]);
+
+  return RequestPasswordResetErrorModal;
+}(_react2.default.Component);
+
+exports.default = RequestPasswordResetErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/RequestPasswordResetSuccessModal.js":
+/*!************************************************************************!*\
+  !*** ./src/views/bootstrap/modals/RequestPasswordResetSuccessModal.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "react-redux");
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var RequestPasswordResetSuccessModal = function (_React$Component) {
+  _inherits(RequestPasswordResetSuccessModal, _React$Component);
+
+  function RequestPasswordResetSuccessModal() {
+    _classCallCheck(this, RequestPasswordResetSuccessModal);
+
+    return _possibleConstructorReturn(this, (RequestPasswordResetSuccessModal.__proto__ || Object.getPrototypeOf(RequestPasswordResetSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(RequestPasswordResetSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "request-password-reset-success-modal",
+          title: "Password Reset Request Success",
+          closeAction: _ui.hidePasswordResetRequestSuccessModal },
+        _react2.default.createElement(
+          "p",
+          null,
+          this.props.auth.getIn(["ui", "requestPasswordResetSuccessMessage"])
+        )
+      );
+    }
+  }]);
+
+  return RequestPasswordResetSuccessModal;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRedux.connect)(function (_ref) {
+  var auth = _ref.auth;
+  return { auth: auth };
+})(RequestPasswordResetSuccessModal);
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/SignOutErrorModal.js":
+/*!*********************************************************!*\
+  !*** ./src/views/bootstrap/modals/SignOutErrorModal.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SignOutErrorModal = function (_React$Component) {
+  _inherits(SignOutErrorModal, _React$Component);
+
+  function SignOutErrorModal() {
+    _classCallCheck(this, SignOutErrorModal);
+
+    return _possibleConstructorReturn(this, (SignOutErrorModal.__proto__ || Object.getPrototypeOf(SignOutErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(SignOutErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "sign-out-error-modal",
+          closeAction: _ui.hideSignOutErrorModal,
+          title: "Sign Out Error" },
+        _react2.default.createElement(
+          "p",
+          null,
+          "The server encountered an error while trying to sign you out. Your account information has been wiped from this browser, but you may want to sign in and then sign back out again to resolve any issues."
+        )
+      );
+    }
+  }]);
+
+  return SignOutErrorModal;
+}(_react2.default.Component);
+
+exports.default = SignOutErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/SignOutSuccessModal.js":
+/*!***********************************************************!*\
+  !*** ./src/views/bootstrap/modals/SignOutSuccessModal.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SignOutSuccessModal = function (_React$Component) {
+  _inherits(SignOutSuccessModal, _React$Component);
+
+  function SignOutSuccessModal() {
+    _classCallCheck(this, SignOutSuccessModal);
+
+    return _possibleConstructorReturn(this, (SignOutSuccessModal.__proto__ || Object.getPrototypeOf(SignOutSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(SignOutSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "sign-out-success-modal",
+          title: "Goodbye!",
+          closeAction: _ui.hideSignOutSuccessModal },
+        _react2.default.createElement(
+          "p",
+          null,
+          "You have been successfully signed out."
+        )
+      );
+    }
+  }]);
+
+  return SignOutSuccessModal;
+}(_react2.default.Component);
+
+exports.default = SignOutSuccessModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/UpdatePasswordErrorModal.js":
+/*!****************************************************************!*\
+  !*** ./src/views/bootstrap/modals/UpdatePasswordErrorModal.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UpdatePasswordErrorModal = function (_React$Component) {
+  _inherits(UpdatePasswordErrorModal, _React$Component);
+
+  function UpdatePasswordErrorModal() {
+    _classCallCheck(this, UpdatePasswordErrorModal);
+
+    return _possibleConstructorReturn(this, (UpdatePasswordErrorModal.__proto__ || Object.getPrototypeOf(UpdatePasswordErrorModal)).apply(this, arguments));
+  }
+
+  _createClass(UpdatePasswordErrorModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(_Modal2.default, {
+        show: this.props.show,
+        containerClass: "update-password-error-modal",
+        title: "Error",
+        closeAction: _ui.hideUpdatePasswordErrorModal,
+        errorAddr: ["updatePassword", "errors", "full_messages"] });
+    }
+  }]);
+
+  return UpdatePasswordErrorModal;
+}(_react2.default.Component);
+
+exports.default = UpdatePasswordErrorModal;
+
+/***/ }),
+
+/***/ "./src/views/bootstrap/modals/UpdatePasswordSuccessModal.js":
+/*!******************************************************************!*\
+  !*** ./src/views/bootstrap/modals/UpdatePasswordSuccessModal.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ui = __webpack_require__(/*! ../../../actions/ui */ "../../actions/sign-out");
+
+var _Modal = __webpack_require__(/*! ./Modal */ "./src/views/bootstrap/modals/Modal.js");
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UpdatePasswordSuccessModal = function (_React$Component) {
+  _inherits(UpdatePasswordSuccessModal, _React$Component);
+
+  function UpdatePasswordSuccessModal() {
+    _classCallCheck(this, UpdatePasswordSuccessModal);
+
+    return _possibleConstructorReturn(this, (UpdatePasswordSuccessModal.__proto__ || Object.getPrototypeOf(UpdatePasswordSuccessModal)).apply(this, arguments));
+  }
+
+  _createClass(UpdatePasswordSuccessModal, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        _Modal2.default,
+        {
+          show: this.props.show,
+          containerClass: "update-password-success-modal",
+          closeAction: _ui.hideUpdatePasswordSuccessModal,
+          title: "Success" },
+        _react2.default.createElement(
+          "p",
+          null,
+          "Your password has been successfully changed."
+        )
+      );
+    }
+  }]);
+
+  return UpdatePasswordSuccessModal;
+}(_react2.default.Component);
+
+exports.default = UpdatePasswordSuccessModal;
+
+/***/ }),
+
+/***/ "immutable":
+/*!****************************!*\
+  !*** external "immutable" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("immutable");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-bootstrap":
+/*!**********************************!*\
+  !*** external "react-bootstrap" ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap");
+
+/***/ }),
+
+/***/ "react-loader":
+/*!*******************************!*\
+  !*** external "react-loader" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-loader");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ })
+
+/******/ })));

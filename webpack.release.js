@@ -6,7 +6,7 @@ module.exports = {
   cache: false,
   context: __dirname,
   devtool: false,
-  mode: 'production',
+  mode: 'development',
   entry: {
     "index": "./src/index",
     "bootstrap-theme": "./src/views/bootstrap/index",
