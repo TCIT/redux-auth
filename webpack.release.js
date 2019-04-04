@@ -74,7 +74,7 @@ module.exports = {
   module: {
     loaders: [
       { include: /\.json$/, loaders: ["json"] },
-      { include: /\.js$/, loaders: ["babel?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=stage-0"], exclude: /node_modules/ }
+      { include: /\.js$/, loaders: ["babel-loader?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=stage-0"], exclude: /node_modules/ }
     ]
   },
   resolve: {
