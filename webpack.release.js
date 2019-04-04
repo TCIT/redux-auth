@@ -81,7 +81,7 @@ module.exports = {
     alias: {
       react: path.join(__dirname, "node_modules/react")
     },
-    modulesDirectories: [
+    modules: [
       "src",
       "node_modules",
       "web_modules"
