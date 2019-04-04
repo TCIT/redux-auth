@@ -2,7 +2,7 @@ import React from "react";
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
 import { connect } from "react-redux";
-import { Send } from "@material-ui/icons";
+import Send from "@material-ui/icons/Send";
 import {
   requestPasswordResetFormUpdate,
   requestPasswordReset

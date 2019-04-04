@@ -3,7 +3,7 @@ import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
 import { emailSignUpFormUpdate, emailSignUp } from "../../actions/email-sign-up";
 import { connect } from "react-redux";
-import { Send } from '@material-ui/icons';
+import Send from '@material-ui/icons/Send';
 
 class EmailSignUpForm extends React.Component {
   

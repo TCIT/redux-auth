@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonLoader from "./ButtonLoader";
 import { destroyAccount } from "../../actions/destroy-account";
-import { Delete } from '@material-ui/icons';
+import Delete from '@material-ui/icons/Delete';
 import { connect } from "react-redux";
 
 class DestroyAccountButton extends React.Component {

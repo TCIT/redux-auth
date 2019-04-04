@@ -50,7 +50,7 @@ class ErrorList extends React.Component {
               left: 0,
               top: 3
             }}
-            color={Colors.red500} /> There was an error processing this form.
+            color={red[500]} /> There was an error processing this form.
       Please check each field and try again.
         </p>
       );
