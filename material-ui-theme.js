@@ -51,35 +51,35 @@
 	});
 	exports.ButtonLoader = exports.TokenBridge = exports.DestroyAccountButton = exports.UpdatePasswordForm = exports.OAuthSignInButton = exports.RequestPasswordResetForm = exports.SignOutButton = exports.EmailSignUpForm = exports.EmailSignInForm = exports.AuthGlobals = undefined;
 
-	var _AuthGlobals2 = __webpack_require__(130);
+	var _AuthGlobals2 = __webpack_require__(108);
 
 	var _AuthGlobals3 = _interopRequireDefault(_AuthGlobals2);
 
-	var _EmailSignInForm2 = __webpack_require__(132);
+	var _EmailSignInForm2 = __webpack_require__(110);
 
 	var _EmailSignInForm3 = _interopRequireDefault(_EmailSignInForm2);
 
-	var _EmailSignUpForm2 = __webpack_require__(133);
+	var _EmailSignUpForm2 = __webpack_require__(111);
 
 	var _EmailSignUpForm3 = _interopRequireDefault(_EmailSignUpForm2);
 
-	var _SignOutButton2 = __webpack_require__(137);
+	var _SignOutButton2 = __webpack_require__(115);
 
 	var _SignOutButton3 = _interopRequireDefault(_SignOutButton2);
 
-	var _RequestPasswordResetForm2 = __webpack_require__(136);
+	var _RequestPasswordResetForm2 = __webpack_require__(114);
 
 	var _RequestPasswordResetForm3 = _interopRequireDefault(_RequestPasswordResetForm2);
 
-	var _OAuthSignInButton2 = __webpack_require__(135);
+	var _OAuthSignInButton2 = __webpack_require__(113);
 
 	var _OAuthSignInButton3 = _interopRequireDefault(_OAuthSignInButton2);
 
-	var _UpdatePasswordForm2 = __webpack_require__(138);
+	var _UpdatePasswordForm2 = __webpack_require__(116);
 
 	var _UpdatePasswordForm3 = _interopRequireDefault(_UpdatePasswordForm2);
 
-	var _DestroyAccountButton2 = __webpack_require__(131);
+	var _DestroyAccountButton2 = __webpack_require__(109);
 
 	var _DestroyAccountButton3 = _interopRequireDefault(_DestroyAccountButton2);
 
@@ -147,9 +147,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(24);
+	var _core = __webpack_require__(20);
 
-	var _ErrorList = __webpack_require__(134);
+	var _ErrorList = __webpack_require__(112);
 
 	var _ErrorList2 = _interopRequireDefault(_ErrorList);
 
@@ -347,7 +347,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(24);
+	var _core = __webpack_require__(20);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -450,10 +450,16 @@
 	exports.default = ButtonLoader;
 
 /***/ },
-/* 20 */,
+/* 20 */
+/***/ function(module, exports) {
+
+	module.exports = require("@material-ui/core");
+
+/***/ },
 /* 21 */,
 /* 22 */,
-/* 23 */
+/* 23 */,
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -470,11 +476,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(32);
+	var _colors = __webpack_require__(20);
 
 	var Colors = _interopRequireWildcard(_colors);
 
-	var _core = __webpack_require__(24);
+	var _core = __webpack_require__(20);
 
 	var _icons = __webpack_require__(13);
 
@@ -589,12 +595,6 @@
 	exports.default = AuthInput;
 
 /***/ },
-/* 24 */
-/***/ function(module, exports) {
-
-	module.exports = require("@material-ui/core");
-
-/***/ },
 /* 25 */,
 /* 26 */,
 /* 27 */,
@@ -602,178 +602,7 @@
 /* 29 */,
 /* 30 */,
 /* 31 */,
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _interopRequireDefault = __webpack_require__(42);
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	Object.defineProperty(exports, "common", {
-	  enumerable: true,
-	  get: function get() {
-	    return _common.default;
-	  }
-	});
-	Object.defineProperty(exports, "red", {
-	  enumerable: true,
-	  get: function get() {
-	    return _red.default;
-	  }
-	});
-	Object.defineProperty(exports, "pink", {
-	  enumerable: true,
-	  get: function get() {
-	    return _pink.default;
-	  }
-	});
-	Object.defineProperty(exports, "purple", {
-	  enumerable: true,
-	  get: function get() {
-	    return _purple.default;
-	  }
-	});
-	Object.defineProperty(exports, "deepPurple", {
-	  enumerable: true,
-	  get: function get() {
-	    return _deepPurple.default;
-	  }
-	});
-	Object.defineProperty(exports, "indigo", {
-	  enumerable: true,
-	  get: function get() {
-	    return _indigo.default;
-	  }
-	});
-	Object.defineProperty(exports, "blue", {
-	  enumerable: true,
-	  get: function get() {
-	    return _blue.default;
-	  }
-	});
-	Object.defineProperty(exports, "lightBlue", {
-	  enumerable: true,
-	  get: function get() {
-	    return _lightBlue.default;
-	  }
-	});
-	Object.defineProperty(exports, "cyan", {
-	  enumerable: true,
-	  get: function get() {
-	    return _cyan.default;
-	  }
-	});
-	Object.defineProperty(exports, "teal", {
-	  enumerable: true,
-	  get: function get() {
-	    return _teal.default;
-	  }
-	});
-	Object.defineProperty(exports, "green", {
-	  enumerable: true,
-	  get: function get() {
-	    return _green.default;
-	  }
-	});
-	Object.defineProperty(exports, "lightGreen", {
-	  enumerable: true,
-	  get: function get() {
-	    return _lightGreen.default;
-	  }
-	});
-	Object.defineProperty(exports, "lime", {
-	  enumerable: true,
-	  get: function get() {
-	    return _lime.default;
-	  }
-	});
-	Object.defineProperty(exports, "yellow", {
-	  enumerable: true,
-	  get: function get() {
-	    return _yellow.default;
-	  }
-	});
-	Object.defineProperty(exports, "amber", {
-	  enumerable: true,
-	  get: function get() {
-	    return _amber.default;
-	  }
-	});
-	Object.defineProperty(exports, "orange", {
-	  enumerable: true,
-	  get: function get() {
-	    return _orange.default;
-	  }
-	});
-	Object.defineProperty(exports, "deepOrange", {
-	  enumerable: true,
-	  get: function get() {
-	    return _deepOrange.default;
-	  }
-	});
-	Object.defineProperty(exports, "brown", {
-	  enumerable: true,
-	  get: function get() {
-	    return _brown.default;
-	  }
-	});
-	Object.defineProperty(exports, "grey", {
-	  enumerable: true,
-	  get: function get() {
-	    return _grey.default;
-	  }
-	});
-	Object.defineProperty(exports, "blueGrey", {
-	  enumerable: true,
-	  get: function get() {
-	    return _blueGrey.default;
-	  }
-	});
-
-	var _common = _interopRequireDefault(__webpack_require__(47));
-
-	var _red = _interopRequireDefault(__webpack_require__(60));
-
-	var _pink = _interopRequireDefault(__webpack_require__(58));
-
-	var _purple = _interopRequireDefault(__webpack_require__(59));
-
-	var _deepPurple = _interopRequireDefault(__webpack_require__(50));
-
-	var _indigo = _interopRequireDefault(__webpack_require__(53));
-
-	var _blue = _interopRequireDefault(__webpack_require__(44));
-
-	var _lightBlue = _interopRequireDefault(__webpack_require__(54));
-
-	var _cyan = _interopRequireDefault(__webpack_require__(48));
-
-	var _teal = _interopRequireDefault(__webpack_require__(61));
-
-	var _green = _interopRequireDefault(__webpack_require__(51));
-
-	var _lightGreen = _interopRequireDefault(__webpack_require__(55));
-
-	var _lime = _interopRequireDefault(__webpack_require__(56));
-
-	var _yellow = _interopRequireDefault(__webpack_require__(62));
-
-	var _amber = _interopRequireDefault(__webpack_require__(43));
-
-	var _orange = _interopRequireDefault(__webpack_require__(57));
-
-	var _deepOrange = _interopRequireDefault(__webpack_require__(49));
-
-	var _brown = _interopRequireDefault(__webpack_require__(46));
-
-	var _grey = _interopRequireDefault(__webpack_require__(52));
-
-	var _blueGrey = _interopRequireDefault(__webpack_require__(45));
-
-/***/ },
+/* 32 */,
 /* 33 */,
 /* 34 */,
 /* 35 */,
@@ -783,586 +612,27 @@
 /* 39 */,
 /* 40 */,
 /* 41 */,
-/* 42 */
-/***/ function(module, exports) {
-
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : {
-	    default: obj
-	  };
-	}
-
-	module.exports = _interopRequireDefault;
-
-/***/ },
-/* 43 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var amber = {
-	  50: '#fff8e1',
-	  100: '#ffecb3',
-	  200: '#ffe082',
-	  300: '#ffd54f',
-	  400: '#ffca28',
-	  500: '#ffc107',
-	  600: '#ffb300',
-	  700: '#ffa000',
-	  800: '#ff8f00',
-	  900: '#ff6f00',
-	  A100: '#ffe57f',
-	  A200: '#ffd740',
-	  A400: '#ffc400',
-	  A700: '#ffab00'
-	};
-	var _default = amber;
-	exports.default = _default;
-
-/***/ },
-/* 44 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var blue = {
-	  50: '#e3f2fd',
-	  100: '#bbdefb',
-	  200: '#90caf9',
-	  300: '#64b5f6',
-	  400: '#42a5f5',
-	  500: '#2196f3',
-	  600: '#1e88e5',
-	  700: '#1976d2',
-	  800: '#1565c0',
-	  900: '#0d47a1',
-	  A100: '#82b1ff',
-	  A200: '#448aff',
-	  A400: '#2979ff',
-	  A700: '#2962ff'
-	};
-	var _default = blue;
-	exports.default = _default;
-
-/***/ },
-/* 45 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var blueGrey = {
-	  50: '#eceff1',
-	  100: '#cfd8dc',
-	  200: '#b0bec5',
-	  300: '#90a4ae',
-	  400: '#78909c',
-	  500: '#607d8b',
-	  600: '#546e7a',
-	  700: '#455a64',
-	  800: '#37474f',
-	  900: '#263238',
-	  A100: '#cfd8dc',
-	  A200: '#b0bec5',
-	  A400: '#78909c',
-	  A700: '#455a64'
-	};
-	var _default = blueGrey;
-	exports.default = _default;
-
-/***/ },
-/* 46 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var brown = {
-	  50: '#efebe9',
-	  100: '#d7ccc8',
-	  200: '#bcaaa4',
-	  300: '#a1887f',
-	  400: '#8d6e63',
-	  500: '#795548',
-	  600: '#6d4c41',
-	  700: '#5d4037',
-	  800: '#4e342e',
-	  900: '#3e2723',
-	  A100: '#d7ccc8',
-	  A200: '#bcaaa4',
-	  A400: '#8d6e63',
-	  A700: '#5d4037'
-	};
-	var _default = brown;
-	exports.default = _default;
-
-/***/ },
-/* 47 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var common = {
-	  black: '#000',
-	  white: '#fff'
-	};
-	var _default = common;
-	exports.default = _default;
-
-/***/ },
-/* 48 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var cyan = {
-	  50: '#e0f7fa',
-	  100: '#b2ebf2',
-	  200: '#80deea',
-	  300: '#4dd0e1',
-	  400: '#26c6da',
-	  500: '#00bcd4',
-	  600: '#00acc1',
-	  700: '#0097a7',
-	  800: '#00838f',
-	  900: '#006064',
-	  A100: '#84ffff',
-	  A200: '#18ffff',
-	  A400: '#00e5ff',
-	  A700: '#00b8d4'
-	};
-	var _default = cyan;
-	exports.default = _default;
-
-/***/ },
-/* 49 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var deepOrange = {
-	  50: '#fbe9e7',
-	  100: '#ffccbc',
-	  200: '#ffab91',
-	  300: '#ff8a65',
-	  400: '#ff7043',
-	  500: '#ff5722',
-	  600: '#f4511e',
-	  700: '#e64a19',
-	  800: '#d84315',
-	  900: '#bf360c',
-	  A100: '#ff9e80',
-	  A200: '#ff6e40',
-	  A400: '#ff3d00',
-	  A700: '#dd2c00'
-	};
-	var _default = deepOrange;
-	exports.default = _default;
-
-/***/ },
-/* 50 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var deepPurple = {
-	  50: '#ede7f6',
-	  100: '#d1c4e9',
-	  200: '#b39ddb',
-	  300: '#9575cd',
-	  400: '#7e57c2',
-	  500: '#673ab7',
-	  600: '#5e35b1',
-	  700: '#512da8',
-	  800: '#4527a0',
-	  900: '#311b92',
-	  A100: '#b388ff',
-	  A200: '#7c4dff',
-	  A400: '#651fff',
-	  A700: '#6200ea'
-	};
-	var _default = deepPurple;
-	exports.default = _default;
-
-/***/ },
-/* 51 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var green = {
-	  50: '#e8f5e9',
-	  100: '#c8e6c9',
-	  200: '#a5d6a7',
-	  300: '#81c784',
-	  400: '#66bb6a',
-	  500: '#4caf50',
-	  600: '#43a047',
-	  700: '#388e3c',
-	  800: '#2e7d32',
-	  900: '#1b5e20',
-	  A100: '#b9f6ca',
-	  A200: '#69f0ae',
-	  A400: '#00e676',
-	  A700: '#00c853'
-	};
-	var _default = green;
-	exports.default = _default;
-
-/***/ },
-/* 52 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var grey = {
-	  50: '#fafafa',
-	  100: '#f5f5f5',
-	  200: '#eeeeee',
-	  300: '#e0e0e0',
-	  400: '#bdbdbd',
-	  500: '#9e9e9e',
-	  600: '#757575',
-	  700: '#616161',
-	  800: '#424242',
-	  900: '#212121',
-	  A100: '#d5d5d5',
-	  A200: '#aaaaaa',
-	  A400: '#303030',
-	  A700: '#616161'
-	};
-	var _default = grey;
-	exports.default = _default;
-
-/***/ },
-/* 53 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var indigo = {
-	  50: '#e8eaf6',
-	  100: '#c5cae9',
-	  200: '#9fa8da',
-	  300: '#7986cb',
-	  400: '#5c6bc0',
-	  500: '#3f51b5',
-	  600: '#3949ab',
-	  700: '#303f9f',
-	  800: '#283593',
-	  900: '#1a237e',
-	  A100: '#8c9eff',
-	  A200: '#536dfe',
-	  A400: '#3d5afe',
-	  A700: '#304ffe'
-	};
-	var _default = indigo;
-	exports.default = _default;
-
-/***/ },
-/* 54 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var lightBlue = {
-	  50: '#e1f5fe',
-	  100: '#b3e5fc',
-	  200: '#81d4fa',
-	  300: '#4fc3f7',
-	  400: '#29b6f6',
-	  500: '#03a9f4',
-	  600: '#039be5',
-	  700: '#0288d1',
-	  800: '#0277bd',
-	  900: '#01579b',
-	  A100: '#80d8ff',
-	  A200: '#40c4ff',
-	  A400: '#00b0ff',
-	  A700: '#0091ea'
-	};
-	var _default = lightBlue;
-	exports.default = _default;
-
-/***/ },
-/* 55 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var lightGreen = {
-	  50: '#f1f8e9',
-	  100: '#dcedc8',
-	  200: '#c5e1a5',
-	  300: '#aed581',
-	  400: '#9ccc65',
-	  500: '#8bc34a',
-	  600: '#7cb342',
-	  700: '#689f38',
-	  800: '#558b2f',
-	  900: '#33691e',
-	  A100: '#ccff90',
-	  A200: '#b2ff59',
-	  A400: '#76ff03',
-	  A700: '#64dd17'
-	};
-	var _default = lightGreen;
-	exports.default = _default;
-
-/***/ },
-/* 56 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var lime = {
-	  50: '#f9fbe7',
-	  100: '#f0f4c3',
-	  200: '#e6ee9c',
-	  300: '#dce775',
-	  400: '#d4e157',
-	  500: '#cddc39',
-	  600: '#c0ca33',
-	  700: '#afb42b',
-	  800: '#9e9d24',
-	  900: '#827717',
-	  A100: '#f4ff81',
-	  A200: '#eeff41',
-	  A400: '#c6ff00',
-	  A700: '#aeea00'
-	};
-	var _default = lime;
-	exports.default = _default;
-
-/***/ },
-/* 57 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var orange = {
-	  50: '#fff3e0',
-	  100: '#ffe0b2',
-	  200: '#ffcc80',
-	  300: '#ffb74d',
-	  400: '#ffa726',
-	  500: '#ff9800',
-	  600: '#fb8c00',
-	  700: '#f57c00',
-	  800: '#ef6c00',
-	  900: '#e65100',
-	  A100: '#ffd180',
-	  A200: '#ffab40',
-	  A400: '#ff9100',
-	  A700: '#ff6d00'
-	};
-	var _default = orange;
-	exports.default = _default;
-
-/***/ },
-/* 58 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var pink = {
-	  50: '#fce4ec',
-	  100: '#f8bbd0',
-	  200: '#f48fb1',
-	  300: '#f06292',
-	  400: '#ec407a',
-	  500: '#e91e63',
-	  600: '#d81b60',
-	  700: '#c2185b',
-	  800: '#ad1457',
-	  900: '#880e4f',
-	  A100: '#ff80ab',
-	  A200: '#ff4081',
-	  A400: '#f50057',
-	  A700: '#c51162'
-	};
-	var _default = pink;
-	exports.default = _default;
-
-/***/ },
-/* 59 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var purple = {
-	  50: '#f3e5f5',
-	  100: '#e1bee7',
-	  200: '#ce93d8',
-	  300: '#ba68c8',
-	  400: '#ab47bc',
-	  500: '#9c27b0',
-	  600: '#8e24aa',
-	  700: '#7b1fa2',
-	  800: '#6a1b9a',
-	  900: '#4a148c',
-	  A100: '#ea80fc',
-	  A200: '#e040fb',
-	  A400: '#d500f9',
-	  A700: '#aa00ff'
-	};
-	var _default = purple;
-	exports.default = _default;
-
-/***/ },
-/* 60 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var red = {
-	  50: '#ffebee',
-	  100: '#ffcdd2',
-	  200: '#ef9a9a',
-	  300: '#e57373',
-	  400: '#ef5350',
-	  500: '#f44336',
-	  600: '#e53935',
-	  700: '#d32f2f',
-	  800: '#c62828',
-	  900: '#b71c1c',
-	  A100: '#ff8a80',
-	  A200: '#ff5252',
-	  A400: '#ff1744',
-	  A700: '#d50000'
-	};
-	var _default = red;
-	exports.default = _default;
-
-/***/ },
-/* 61 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var teal = {
-	  50: '#e0f2f1',
-	  100: '#b2dfdb',
-	  200: '#80cbc4',
-	  300: '#4db6ac',
-	  400: '#26a69a',
-	  500: '#009688',
-	  600: '#00897b',
-	  700: '#00796b',
-	  800: '#00695c',
-	  900: '#004d40',
-	  A100: '#a7ffeb',
-	  A200: '#64ffda',
-	  A400: '#1de9b6',
-	  A700: '#00bfa5'
-	};
-	var _default = teal;
-	exports.default = _default;
-
-/***/ },
-/* 62 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = void 0;
-	var yellow = {
-	  50: '#fffde7',
-	  100: '#fff9c4',
-	  200: '#fff59d',
-	  300: '#fff176',
-	  400: '#ffee58',
-	  500: '#ffeb3b',
-	  600: '#fdd835',
-	  700: '#fbc02d',
-	  800: '#f9a825',
-	  900: '#f57f17',
-	  A100: '#ffff8d',
-	  A200: '#ffff00',
-	  A400: '#ffea00',
-	  A700: '#ffd600'
-	};
-	var _default = yellow;
-	exports.default = _default;
-
-/***/ },
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
 /* 63 */,
 /* 64 */,
 /* 65 */,
@@ -1408,29 +678,7 @@
 /* 105 */,
 /* 106 */,
 /* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1445,71 +693,71 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _EmailSignInSuccessModal = __webpack_require__(142);
+	var _EmailSignInSuccessModal = __webpack_require__(120);
 
 	var _EmailSignInSuccessModal2 = _interopRequireDefault(_EmailSignInSuccessModal);
 
-	var _EmailSignInErrorModal = __webpack_require__(141);
+	var _EmailSignInErrorModal = __webpack_require__(119);
 
 	var _EmailSignInErrorModal2 = _interopRequireDefault(_EmailSignInErrorModal);
 
-	var _OAuthSignInSuccessModal = __webpack_require__(148);
+	var _OAuthSignInSuccessModal = __webpack_require__(126);
 
 	var _OAuthSignInSuccessModal2 = _interopRequireDefault(_OAuthSignInSuccessModal);
 
-	var _OAuthSignInErrorModal = __webpack_require__(147);
+	var _OAuthSignInErrorModal = __webpack_require__(125);
 
 	var _OAuthSignInErrorModal2 = _interopRequireDefault(_OAuthSignInErrorModal);
 
-	var _EmailSignUpSuccessModal = __webpack_require__(144);
+	var _EmailSignUpSuccessModal = __webpack_require__(122);
 
 	var _EmailSignUpSuccessModal2 = _interopRequireDefault(_EmailSignUpSuccessModal);
 
-	var _EmailSignUpErrorModal = __webpack_require__(143);
+	var _EmailSignUpErrorModal = __webpack_require__(121);
 
 	var _EmailSignUpErrorModal2 = _interopRequireDefault(_EmailSignUpErrorModal);
 
-	var _SignOutSuccessModal = __webpack_require__(153);
+	var _SignOutSuccessModal = __webpack_require__(131);
 
 	var _SignOutSuccessModal2 = _interopRequireDefault(_SignOutSuccessModal);
 
-	var _SignOutErrorModal = __webpack_require__(152);
+	var _SignOutErrorModal = __webpack_require__(130);
 
 	var _SignOutErrorModal2 = _interopRequireDefault(_SignOutErrorModal);
 
-	var _FirstTimeLoginSuccessModal = __webpack_require__(146);
+	var _FirstTimeLoginSuccessModal = __webpack_require__(124);
 
 	var _FirstTimeLoginSuccessModal2 = _interopRequireDefault(_FirstTimeLoginSuccessModal);
 
-	var _FirstTimeLoginErrorModal = __webpack_require__(145);
+	var _FirstTimeLoginErrorModal = __webpack_require__(123);
 
 	var _FirstTimeLoginErrorModal2 = _interopRequireDefault(_FirstTimeLoginErrorModal);
 
-	var _RequestPasswordResetErrorModal = __webpack_require__(150);
+	var _RequestPasswordResetErrorModal = __webpack_require__(128);
 
 	var _RequestPasswordResetErrorModal2 = _interopRequireDefault(_RequestPasswordResetErrorModal);
 
-	var _RequestPasswordResetSuccessModal = __webpack_require__(151);
+	var _RequestPasswordResetSuccessModal = __webpack_require__(129);
 
 	var _RequestPasswordResetSuccessModal2 = _interopRequireDefault(_RequestPasswordResetSuccessModal);
 
-	var _UpdatePasswordErrorModal = __webpack_require__(154);
+	var _UpdatePasswordErrorModal = __webpack_require__(132);
 
 	var _UpdatePasswordErrorModal2 = _interopRequireDefault(_UpdatePasswordErrorModal);
 
-	var _UpdatePasswordSuccessModal = __webpack_require__(155);
+	var _UpdatePasswordSuccessModal = __webpack_require__(133);
 
 	var _UpdatePasswordSuccessModal2 = _interopRequireDefault(_UpdatePasswordSuccessModal);
 
-	var _DestroyAccountErrorModal = __webpack_require__(139);
+	var _DestroyAccountErrorModal = __webpack_require__(117);
 
 	var _DestroyAccountErrorModal2 = _interopRequireDefault(_DestroyAccountErrorModal);
 
-	var _DestroyAccountSuccessModal = __webpack_require__(140);
+	var _DestroyAccountSuccessModal = __webpack_require__(118);
 
 	var _DestroyAccountSuccessModal2 = _interopRequireDefault(_DestroyAccountSuccessModal);
 
-	var _PasswordResetSuccessModal = __webpack_require__(149);
+	var _PasswordResetSuccessModal = __webpack_require__(127);
 
 	var _PasswordResetSuccessModal2 = _interopRequireDefault(_PasswordResetSuccessModal);
 
@@ -1631,7 +879,7 @@
 	})(AuthGlobals);
 
 /***/ },
-/* 131 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1716,7 +964,7 @@
 	})(DestroyAccountButton);
 
 /***/ },
-/* 132 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1735,11 +983,11 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _core = __webpack_require__(24);
+	var _core = __webpack_require__(20);
 
 	var _icons = __webpack_require__(13);
 
-	var _Input = __webpack_require__(23);
+	var _Input = __webpack_require__(24);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -1889,7 +1137,7 @@
 	})(EmailSignInForm);
 
 /***/ },
-/* 133 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1906,7 +1154,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Input = __webpack_require__(23);
+	var _Input = __webpack_require__(24);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2022,7 +1270,7 @@
 	})(EmailSignUpForm);
 
 /***/ },
-/* 134 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2037,7 +1285,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(32);
+	var _colors = __webpack_require__(20);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -2142,7 +1390,7 @@
 	exports.default = ErrorList;
 
 /***/ },
-/* 135 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2236,7 +1484,7 @@
 	})(OAuthSignInButton);
 
 /***/ },
-/* 136 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2253,7 +1501,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Input = __webpack_require__(23);
+	var _Input = __webpack_require__(24);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2356,7 +1604,7 @@
 	})(RequestPasswordResetForm);
 
 /***/ },
-/* 137 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2432,7 +1680,7 @@
 	})(SignOutButton);
 
 /***/ },
-/* 138 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2449,7 +1697,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Input = __webpack_require__(23);
+	var _Input = __webpack_require__(24);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -2560,7 +1808,7 @@
 	})(UpdatePasswordForm);
 
 /***/ },
-/* 139 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2617,7 +1865,7 @@
 	exports.default = DestroyAccountErrorModal;
 
 /***/ },
-/* 140 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2685,7 +1933,7 @@
 	})(DestroyAccountSuccessModal);
 
 /***/ },
-/* 141 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2742,7 +1990,7 @@
 	exports.default = EmailSignInErrorModal;
 
 /***/ },
-/* 142 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2812,7 +2060,7 @@
 	})(EmailSignInSuccessModal);
 
 /***/ },
-/* 143 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2869,7 +2117,7 @@
 	exports.default = EmailSignUpErrorModal;
 
 /***/ },
-/* 144 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2939,7 +2187,7 @@
 	})(EmailSignUpSuccessModal);
 
 /***/ },
-/* 145 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3003,7 +2251,7 @@
 	exports.default = FirstTimeLoginErrorModal;
 
 /***/ },
-/* 146 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3071,7 +2319,7 @@
 	})(FirstTimeLoginSuccessModal);
 
 /***/ },
-/* 147 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3088,7 +2336,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(32);
+	var _colors = __webpack_require__(20);
 
 	var Colors = _interopRequireWildcard(_colors);
 
@@ -3153,7 +2401,7 @@
 	exports.default = OAuthSignInErrorModal;
 
 /***/ },
-/* 148 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3223,7 +2471,7 @@
 	})(OAuthSignInSuccessModal);
 
 /***/ },
-/* 149 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3240,7 +2488,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _core = __webpack_require__(24);
+	var _core = __webpack_require__(20);
 
 	var _icons = __webpack_require__(13);
 
@@ -3248,7 +2496,7 @@
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-	var _Input = __webpack_require__(23);
+	var _Input = __webpack_require__(24);
 
 	var _Input2 = _interopRequireDefault(_Input);
 
@@ -3367,7 +2615,7 @@
 	})(PasswordResetSuccessModal);
 
 /***/ },
-/* 150 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3424,7 +2672,7 @@
 	exports.default = RequestPasswordResetErrorModal;
 
 /***/ },
-/* 151 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3492,7 +2740,7 @@
 	})(RequestPasswordResetSuccessModal);
 
 /***/ },
-/* 152 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3556,7 +2804,7 @@
 	exports.default = SignOutErrorModal;
 
 /***/ },
-/* 153 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3616,7 +2864,7 @@
 	exports.default = SignOutSuccessModal;
 
 /***/ },
-/* 154 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -3673,7 +2921,7 @@
 	exports.default = UpdatePasswordErrorModal;
 
 /***/ },
-/* 155 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
