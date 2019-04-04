@@ -57,9 +57,6 @@ module.exports = {
       // "@material-ui/icons": "commonjs @material-ui/icons"
     }
   ],
-  "presets": [
-    ["es2015", { "modules": false }]
-  ],
   plugins: [
     new webpack.DefinePlugin({ __CLIENT__: true, __SERVER__: false }),
     new webpack.DefinePlugin({
@@ -75,7 +72,7 @@ module.exports = {
     // new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
-    rules: [
+    loaders: [
       { include: /\.json$/, loaders: ["json"] },
       { include: /\.js$/, loaders: ["babel-loader?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=stage-0"], exclude: /node_modules/ }
     ]
