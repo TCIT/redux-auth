@@ -21,6 +21,10 @@ module.exports = {
     function (rtx, req, cb) {
       if (/\.\.\/\.\.\//.test(req)) {
         return cb(null, "commonjs redux-auth");
+      } else if ((/^@material-ui\/icons.*$/.test(req))) {
+        return cb(null, "commonjs @material-ui/icons");
+      } else if ((/^@material-ui\/core.*$/.test(req))) {
+        return cb(null, "commonjs @material-ui/core");
       } else {
         cb();
       }
@@ -48,9 +52,9 @@ module.exports = {
       "react-loader": "commonjs react-loader",
       "url": "commonjs url",
       "react-bootstrap": "commonjs react-bootstrap",
-      "@material-ui/core": "commonjs @material-ui/core",
-      "@material-ui/core/styles": "commonjs @material-ui/core/styles",
-      "@material-ui/icons": "commonjs @material-ui/icons"
+      // "@material-ui/core": "commonjs @material-ui/core",
+      // "@material-ui/core/styles": "commonjs @material-ui/core/styles",
+      // "@material-ui/icons": "commonjs @material-ui/icons"
     }
   ],
   plugins: [
