@@ -21,6 +21,10 @@ module.exports = {
     function (rtx, req, cb) {
       if (/\.\.\/\.\.\//.test(req)) {
         return cb(null, "commonjs redux-auth");
+      } else if ((/^@material-ui\/icons.*$/.test(req))) {
+        return cb(null, "commonjs @material-ui/icons");
+      } else if ((/^@material-ui\/core.*$/.test(req))) {
+        return cb(null, "commonjs @material-ui/core");
       } else {
         cb();
       }
