@@ -257,14 +257,14 @@
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */
+/* 13 */,
+/* 14 */,
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = require("@material-ui/icons");
 
 /***/ },
-/* 14 */,
-/* 15 */,
 /* 16 */,
 /* 17 */,
 /* 18 */
@@ -470,13 +470,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(37);
+	var _colors = __webpack_require__(40);
 
 	var Colors = _interopRequireWildcard(_colors);
 
 	var _core = __webpack_require__(24);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _immutable = __webpack_require__(4);
 
@@ -607,15 +607,15 @@
 /* 34 */,
 /* 35 */,
 /* 36 */,
-/* 37 */
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */
 /***/ function(module, exports) {
 
 	module.exports = require("@material-ui/core/colors");
 
 /***/ },
-/* 38 */,
-/* 39 */,
-/* 40 */,
 /* 41 */,
 /* 42 */,
 /* 43 */,
@@ -908,7 +908,7 @@
 
 	var _destroyAccount = __webpack_require__(2);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _reactRedux = __webpack_require__(3);
 
@@ -991,7 +991,7 @@
 
 	var _core = __webpack_require__(24);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _Input = __webpack_require__(23);
 
@@ -1172,7 +1172,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1291,17 +1291,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(37);
+	var _red = __webpack_require__(135);
 
-	var Colors = _interopRequireWildcard(_colors);
+	var _red2 = _interopRequireDefault(_red);
 
-	var _icons = __webpack_require__(13);
+	var _Error = __webpack_require__(136);
+
+	var _Error2 = _interopRequireDefault(_Error);
 
 	var _immutable = __webpack_require__(4);
 
 	var _immutable2 = _interopRequireDefault(_immutable);
-
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1347,9 +1347,9 @@
 	                key: i,
 	                className: "control-label modal-error-item",
 	                style: { paddingLeft: "20px", position: "relative" } },
-	              _react2.default.createElement(_icons.Error, {
+	              _react2.default.createElement(_Error2.default, {
 	                viewBox: "0 0 50 50",
-	                color: Colors.red500,
+	                color: _red2.default[500],
 	                style: {
 	                  position: "absolute",
 	                  left: 0,
@@ -1364,7 +1364,7 @@
 	        return _react2.default.createElement(
 	          "p",
 	          { style: { paddingLeft: "20px", position: "relative" } },
-	          _react2.default.createElement(_icons.Error, {
+	          _react2.default.createElement(_Error2.default, {
 	            viewBox: "0 0 50 50",
 	            style: {
 	              position: "absolute",
@@ -1419,7 +1419,7 @@
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _oauthSignIn = __webpack_require__(2);
 
@@ -1517,7 +1517,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _requestPasswordReset = __webpack_require__(2);
 
@@ -1711,7 +1711,7 @@
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _updatePassword = __webpack_require__(2);
 
@@ -2342,13 +2342,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(37);
+	var _colors = __webpack_require__(40);
 
 	var Colors = _interopRequireWildcard(_colors);
 
 	var _ui = __webpack_require__(2);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _Modal = __webpack_require__(8);
 
@@ -2496,7 +2496,7 @@
 
 	var _core = __webpack_require__(24);
 
-	var _icons = __webpack_require__(13);
+	var _icons = __webpack_require__(15);
 
 	var _ButtonLoader = __webpack_require__(19);
 
@@ -2989,6 +2989,18 @@
 	}(_react2.default.Component);
 
 	exports.default = UpdatePasswordSuccessModal;
+
+/***/ },
+/* 135 */
+/***/ function(module, exports) {
+
+	module.exports = require("@material-ui/core/colors/red");
+
+/***/ },
+/* 136 */
+/***/ function(module, exports) {
+
+	module.exports = require("@material-ui/icons/Error");
 
 /***/ }
 /******/ ])));

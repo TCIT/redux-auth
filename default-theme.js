@@ -87,7 +87,7 @@
 
 	var _TokenBridge3 = _interopRequireDefault(_TokenBridge2);
 
-	var _ButtonLoader2 = __webpack_require__(15);
+	var _ButtonLoader2 = __webpack_require__(14);
 
 	var _ButtonLoader3 = _interopRequireDefault(_ButtonLoader2);
 
@@ -146,7 +146,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _rcDialog = __webpack_require__(138);
+	var _rcDialog = __webpack_require__(140);
 
 	var _rcDialog2 = _interopRequireDefault(_rcDialog);
 
@@ -257,8 +257,7 @@
 /* 11 */,
 /* 12 */,
 /* 13 */,
-/* 14 */,
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -275,7 +274,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactLoader = __webpack_require__(38);
+	var _reactLoader = __webpack_require__(37);
 
 	var _reactLoader2 = _interopRequireDefault(_reactLoader);
 
@@ -394,6 +393,7 @@
 	exports.default = ButtonLoader;
 
 /***/ },
+/* 15 */,
 /* 16 */
 /***/ function(module, exports) {
 
@@ -593,13 +593,13 @@
 /* 34 */,
 /* 35 */,
 /* 36 */,
-/* 37 */,
-/* 38 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-loader");
 
 /***/ },
+/* 38 */,
 /* 39 */,
 /* 40 */,
 /* 41 */,
@@ -863,7 +863,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -946,7 +946,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -1073,7 +1073,7 @@
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -1315,7 +1315,7 @@
 
 	var _reactRedux = __webpack_require__(3);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -1409,7 +1409,7 @@
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -1524,7 +1524,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -1612,7 +1612,7 @@
 
 	var _Input2 = _interopRequireDefault(_Input);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -2384,7 +2384,7 @@
 
 	var _reactBootstrap = __webpack_require__(9);
 
-	var _ButtonLoader = __webpack_require__(15);
+	var _ButtonLoader = __webpack_require__(14);
 
 	var _ButtonLoader2 = _interopRequireDefault(_ButtonLoader);
 
@@ -2919,7 +2919,9 @@
 /* 135 */,
 /* 136 */,
 /* 137 */,
-/* 138 */
+/* 138 */,
+/* 139 */,
+/* 140 */
 /***/ function(module, exports) {
 
 	module.exports = require("rc-dialog");

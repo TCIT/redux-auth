@@ -378,7 +378,7 @@
 
 	var _reduxImmutablejs = __webpack_require__(10);
 
-	var _verifyAuth2 = __webpack_require__(40);
+	var _verifyAuth2 = __webpack_require__(39);
 
 	var _verifyAuth3 = _interopRequireDefault(_verifyAuth2);
 
@@ -445,7 +445,7 @@
 
 	var _sessionStorage = __webpack_require__(11);
 
-	var _verifyAuth = __webpack_require__(40);
+	var _verifyAuth = __webpack_require__(39);
 
 	var _verifyAuth2 = _interopRequireDefault(_verifyAuth);
 
@@ -453,7 +453,7 @@
 
 	var _parseUrl2 = _interopRequireDefault(_parseUrl);
 
-	var _reactRouterRedux = __webpack_require__(139);
+	var _reactRouterRedux = __webpack_require__(141);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -651,7 +651,7 @@
 	exports.persistData = persistData;
 	exports.retrieveData = retrieveData;
 
-	var _browserCookies = __webpack_require__(135);
+	var _browserCookies = __webpack_require__(137);
 
 	var _browserCookies2 = _interopRequireDefault(_browserCookies);
 
@@ -1811,7 +1811,7 @@
 	exports.getAllParams = getAllParams;
 	exports.default = getRedirectInfo;
 
-	var _querystring = __webpack_require__(137);
+	var _querystring = __webpack_require__(139);
 
 	var _querystring2 = _interopRequireDefault(_querystring);
 
@@ -1957,8 +1957,7 @@
 
 /***/ },
 /* 37 */,
-/* 38 */,
-/* 39 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2041,7 +2040,7 @@
 	}
 
 /***/ },
-/* 40 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2058,7 +2057,7 @@
 
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 
-	var _cookie = __webpack_require__(136);
+	var _cookie = __webpack_require__(138);
 
 	var _cookie2 = _interopRequireDefault(_cookie);
 
@@ -2072,11 +2071,11 @@
 
 	var _fetch = __webpack_require__(12);
 
-	var _parseEndpointConfig3 = __webpack_require__(39);
+	var _parseEndpointConfig3 = __webpack_require__(38);
 
 	var _parseEndpointConfig4 = _interopRequireDefault(_parseEndpointConfig3);
 
-	var _url = __webpack_require__(140);
+	var _url = __webpack_require__(142);
 
 	var _url2 = _interopRequireDefault(_url);
 
@@ -2233,6 +2232,7 @@
 	exports.default = verifyAuth;
 
 /***/ },
+/* 40 */,
 /* 41 */
 /***/ function(module, exports) {
 
@@ -3265,7 +3265,7 @@
 
 	var _fetch2 = _interopRequireDefault(_fetch);
 
-	var _parseEndpointConfig2 = __webpack_require__(39);
+	var _parseEndpointConfig2 = __webpack_require__(38);
 
 	var _parseEndpointConfig3 = _interopRequireDefault(_parseEndpointConfig2);
 
@@ -3543,32 +3543,34 @@
 /* 132 */,
 /* 133 */,
 /* 134 */,
-/* 135 */
+/* 135 */,
+/* 136 */,
+/* 137 */
 /***/ function(module, exports) {
 
 	module.exports = require("browser-cookies");
 
 /***/ },
-/* 136 */
+/* 138 */
 /***/ function(module, exports) {
 
 	module.exports = require("cookie");
 
 /***/ },
-/* 137 */
+/* 139 */
 /***/ function(module, exports) {
 
 	module.exports = require("querystring");
 
 /***/ },
-/* 138 */,
-/* 139 */
+/* 140 */,
+/* 141 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-router-redux");
 
 /***/ },
-/* 140 */
+/* 142 */
 /***/ function(module, exports) {
 
 	module.exports = require("url");

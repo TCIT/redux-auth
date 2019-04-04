@@ -1,6 +1,6 @@
 import React from "react";
-import * as Colors from "@material-ui/core/colors";
-import { Error } from "@material-ui/icons";
+import red from "@material-ui/core/colors/red";
+import Error from "@material-ui/icons/Error";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {
@@ -29,7 +29,7 @@ class ErrorList extends React.Component {
 
                 <Error
                   viewBox="0 0 50 50"
-                  color={Colors.red500}
+                  color={red[500]}
                   style={{
                     position: "absolute",
                     left: 0,
