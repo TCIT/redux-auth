@@ -23,11 +23,13 @@ module.exports = {
         return cb(null, "commonjs redux-auth");
       } else if ((/^@material-ui.*$/.test(req))) {
         return cb(null, "commonjs " + req);
+      } else if ((/^r.*$/.test(req))) {
+        return cb(null, "commonjs " + req);
       } else {
         cb();
       }
     }, {
-      "react": "commonjs react",
+      // "react": "commonjs react",
       "classnames": "commonjs classnames",
       "browser-cookies": "commonjs browser-cookies",
       "cookie": "commonjs cookie",
@@ -37,17 +39,17 @@ module.exports = {
       "isomorphic-fetch": "commonjs isomorphic-fetch",
       "query-string": "commonjs query-string",
       "querystring": "commonjs querystring",
-      "react-dom": "commonjs react-dom",
-      "react-redux": "commonjs react-redux",
-      "redux": "commonjs redux",
+      // "react-dom": "commonjs react-dom",
+      // "react-redux": "commonjs react-redux",
+      // "redux": "commonjs redux",
       "lodash": "commonjs lodash",
-      "redux-immutablejs": "commonjs redux-immutablejs",
-      "react-router": "commonjs react-router",
-      "react-router-redux": "commonjs react-router-redux",
-      "redux-thunk": "commonjs redux-thunk",
+      // "redux-immutablejs": "commonjs redux-immutablejs",
+      // "react-router": "commonjs react-router",
+      // "react-router-redux": "commonjs react-router-redux",
+      // "redux-thunk": "commonjs redux-thunk",
       "thunk": "commonjs thunk",
-      "rc-dialog": "commonjs rc-dialog",
-      "react-loader": "commonjs react-loader",
+      // "rc-dialog": "commonjs rc-dialog",
+      // "react-loader": "commonjs react-loader",
       "url": "commonjs url",
       "react-bootstrap": "commonjs react-bootstrap",
       // "@material-ui/core": "commonjs @material-ui/core",
