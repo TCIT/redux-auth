@@ -22,7 +22,7 @@ module.exports = {
       if (/\.\.\/\.\.\//.test(req)) {
         return cb(null, "commonjs redux-auth");
       } else if ((/^@material-ui.*$/.test(req))) {
-        return cb(null, "commonjs" + req);
+        return cb(null, "commonjs " + req);
       } else {
         cb();
       }

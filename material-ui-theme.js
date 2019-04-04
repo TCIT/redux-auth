@@ -260,7 +260,7 @@
 /* 13 */
 /***/ function(module, exports) {
 
-	module.exports = require("commonjs@material-ui/icons");
+	module.exports = require("@material-ui/icons");
 
 /***/ },
 /* 14 */,
@@ -592,7 +592,7 @@
 /* 24 */
 /***/ function(module, exports) {
 
-	module.exports = require("commonjs@material-ui/core");
+	module.exports = require("@material-ui/core");
 
 /***/ },
 /* 25 */,
@@ -610,7 +610,7 @@
 /* 37 */
 /***/ function(module, exports) {
 
-	module.exports = require("commonjs@material-ui/core/colors");
+	module.exports = require("@material-ui/core/colors");
 
 /***/ },
 /* 38 */,
