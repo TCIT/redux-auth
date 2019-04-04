@@ -86,7 +86,7 @@ module.exports = {
       "node_modules",
       "web_modules"
     ],
-    extensions: ["", ".json", ".js"]
+    extensions: [".json", ".js"]
   },
   node: {
     __dirname: true,
