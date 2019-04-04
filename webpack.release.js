@@ -19,54 +19,40 @@ module.exports = {
     libraryTarget: "commonjs"
   },
   externals: [
-    function (context, request, callback) {
-      if (/\.\.\/\.\.\//.test(request)) {
-        return callback(null, "commonjs redux-auth");
-      } else if (/^.*$/.test(request)) {
-        return callback(null, 'commonjs ' + request);
+    function (rtx, req, cb) {
+      if (/\.\.\/\.\.\//.test(req)) {
+        return cb(null, "commonjs redux-auth");
+      } else if ((/^@material-ui\/icons.*$/.test(req))) {
+        return cb(null, "commonjs @material-ui/icons");
+      } else if ((/^@material-ui\/core.*$/.test(req))) {
+        return cb(null, "commonjs @material-ui/core");
       }
-      callback();
+      cb();
+    }, {
+      "react": "commonjs react",
+      "classnames": "commonjs classnames",
+      "browser-cookies": "commonjs browser-cookies",
+      "cookie": "commonjs cookie",
+      "extend": "commonjs extend",
+      "history": "commonjs history",
+      "immutable": "commonjs immutable",
+      "isomorphic-fetch": "commonjs isomorphic-fetch",
+      "query-string": "commonjs query-string",
+      "querystring": "commonjs querystring",
+      "react-dom": "commonjs react-dom",
+      "react-redux": "commonjs react-redux",
+      "redux": "commonjs redux",
+      "lodash": "commonjs lodash",
+      "redux-immutablejs": "commonjs redux-immutablejs",
+      "react-router": "commonjs react-router",
+      "react-router-redux": "commonjs react-router-redux",
+      "redux-thunk": "commonjs redux-thunk",
+      "thunk": "commonjs thunk",
+      "rc-dialog": "commonjs rc-dialog",
+      "react-loader": "commonjs react-loader",
+      "url": "commonjs url",
+      "react-bootstrap": "commonjs react-bootstrap"
     }
-    // function (rtx, req, cb) {
-    //   if (/\.\.\/\.\.\//.test(req)) {
-    //     return cb(null, "commonjs redux-auth");
-    //   } else {
-    //     cb();
-    //   }
-    // }, {
-    //   "react": "commonjs react",
-    //   "classnames": "commonjs classnames",
-    //   "browser-cookies": "commonjs browser-cookies",
-    //   "cookie": "commonjs cookie",
-    //   "extend": "commonjs extend",
-    //   "history": "commonjs history",
-    //   "immutable": "commonjs immutable",
-    //   "isomorphic-fetch": "commonjs isomorphic-fetch",
-    //   "query-string": "commonjs query-string",
-    //   "querystring": "commonjs querystring",
-    //   "react-dom": "commonjs react-dom",
-    //   "react-redux": "commonjs react-redux",
-    //   "redux": "commonjs redux",
-    //   "lodash": "commonjs lodash",
-    //   "redux-immutablejs": "commonjs redux-immutablejs",
-    //   "react-router": "commonjs react-router",
-    //   "react-router-redux": "commonjs react-router-redux",
-    //   "redux-thunk": "commonjs redux-thunk",
-    //   "thunk": "commonjs thunk",
-    //   "rc-dialog": "commonjs rc-dialog",
-    //   "react-loader": "commonjs react-loader",
-    //   "url": "commonjs url",
-    //   "react-bootstrap": "commonjs react-bootstrap",
-    //   "@material-ui/core/CircularProgress": "commonjs @material-ui/core/CircularProgress",
-    //   "@material-ui/core": "commonjs @material-ui/core",
-    //   "@material-ui/core/colors/red": "commonjs @material-ui/core/colors/red",
-    //   "@material-ui/icons/Error": "commonjs @material-ui/icons/Error",
-    //   "@material-ui/icons/Delete": "commonjs @material-ui/icons/Delete",
-    //   "@material-ui/icons/ExitToApp": "commonjs @material-ui/icons/ExitToApp",
-    //   "@material-ui/icons/Send": "commonjs @material-ui/icons/Send",
-    //   "@material-ui/icons/Lock": "commonjs @material-ui/icons/Lock",
-
-    // }
   ],
   plugins: [
     new webpack.DefinePlugin({ __CLIENT__: true, __SERVER__: false }),
