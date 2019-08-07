@@ -186,7 +186,9 @@ export function persistData (key, val) {
     default:
       Cookies.set(key, val, {
         expires: root.authState.currentSettings.cookieExpiry,
-        path:    root.authState.currentSettings.cookiePath
+        path:    root.authState.currentSettings.cookiePath,
+        httponly: true,
+        secure: true
       });
       break;
   }
