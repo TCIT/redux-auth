@@ -177,7 +177,7 @@ export function removeData(key) {
 
 export function persistData (key, val) {
   val = JSON.stringify(val);
-  window.console.log("Saving auth data");
+  console.log("Saving auth data");
 
   switch (root.authState.currentSettings.storage) {
     case "localStorage":
@@ -188,8 +188,7 @@ export function persistData (key, val) {
       Cookies.set(key, val, {
         expires: root.authState.currentSettings.cookieExpiry,
         path:    root.authState.currentSettings.cookiePath,
-        httponly: true,
-        secure: true
+        httponly: true
       });
       break;
   }
