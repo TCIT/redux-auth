@@ -50,7 +50,6 @@ class EmailSignInForm extends React.Component {
       this.props.auth.getIn(["user", "isSignedIn"]) ||
       this.props.auth.getIn(["emailSignIn", this.getEndpoint(), "loading"])
     );
-    console.log('EmailSignInForm');
 
     return (
       <form className='redux-auth email-sign-in-form'
