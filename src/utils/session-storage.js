@@ -67,6 +67,10 @@ export function destroySession () {
       root.localStorage.removeItem(key);
     }
 
+    if (root.sessionStorage) {
+      root.sessionStorage.removeItem(key);
+    }
+
     // remove from base path in case config is not specified
     Cookies.erase(key, {
       path: root.authState.currentSettings.cookiePath || "/"
@@ -82,7 +86,8 @@ function unescapeQuotes (val) {
 export function getInitialEndpointKey () {
   return unescapeQuotes(
     Cookies.get(C.SAVED_CONFIG_KEY) ||
-    (root.localStorage && root.localStorage.getItem(C.SAVED_CONFIG_KEY))
+    (root.localStorage && root.localStorage.getItem(C.SAVED_CONFIG_KEY)) ||
+    (root.sessionStorage && root.sessionStorage.getItem(C.SAVED_CONFIG_KEY))
   );
 }
 
@@ -170,6 +175,9 @@ export function removeData(key) {
     case "localStorage":
       root.localStorage.removeItem(key);
       break;
+    case "sessionStorage":
+      root.sessionStorage.removeItem(key);
+      break;
     default:
       Cookies.erase(key);
   }
@@ -182,6 +190,10 @@ export function persistData (key, val) {
     case "localStorage":
       root.localStorage.setItem(key, val);
       break;
+
+    case "sessionStorage":
+        root.sessionStorage.setItem(key, val);
+        break;
 
     default:
       Cookies.set(key, val, {
@@ -199,6 +211,10 @@ export function retrieveData (key, storage) {
   switch (storage || root.authState.currentSettings.storage) {
     case "localStorage":
       val = root.localStorage && root.localStorage.getItem(key);
+      break;
+
+    case "sessionStorage":
+      val = root.sessionStorage && root.sessionStorage.getItem(key);
       break;
 
     default:
