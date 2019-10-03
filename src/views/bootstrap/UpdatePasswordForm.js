@@ -57,7 +57,7 @@ class UpdatePasswordForm extends React.Component {
                disabled={disabled}
                groupClassName="update-password-password"
                value={this.props.auth.getIn(["updatePassword", endpoint, "form", "password"])}
-               errors={this.props.auth.getIn(["updatePassword", endpoint, "errors", "password"])}
+               
                onChange={this.handleInput.bind(this, "password")}
                {...this.props.inputProps.password} />
 
@@ -67,7 +67,7 @@ class UpdatePasswordForm extends React.Component {
                disabled={disabled}
                groupClassName="update-password-password-confirmation"
                value={this.props.auth.getIn(["updatePassword", endpoint, "form", "password_confirmation"])}
-               errors={this.props.auth.getIn(["updatePassword", endpoint, "errors", "password_confirmation"])}
+               
                onChange={this.handleInput.bind(this, "password_confirmation")}
                {...this.props.inputProps.passwordConfirmation} />
 

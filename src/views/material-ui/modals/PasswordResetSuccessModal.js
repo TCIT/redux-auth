@@ -83,7 +83,7 @@ class PasswordResetSuccessModal extends React.Component {
               disabled={loading}
               className="password-reset-success-modal-password"
               value={this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password"])}
-              errors={this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password"])}
+              
               onChange={this.handleInput.bind(this, "password")}
               {...this.props.inputProps.password} />
 
@@ -94,7 +94,7 @@ class PasswordResetSuccessModal extends React.Component {
               disabled={loading}
               className="password-reset-success-modal-password-confirmation"
               value={this.props.auth.getIn(["updatePasswordModal", endpoint, "form", "password_confirmation"])}
-              errors={this.props.auth.getIn(["updatePasswordModal", endpoint, "errors", "password_confirmation"])}
+              
               onChange={this.handleInput.bind(this, "password_confirmation")}
               {...this.props.inputProps.passwordConfirmation} />
           </form>

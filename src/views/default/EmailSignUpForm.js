@@ -62,7 +62,7 @@ class EmailSignUpForm extends React.Component {
                className="email-sign-up-email"
                disabled={disabled}
                value={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "email"])}
-               errors={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "email"])}
+               
                onChange={this.handleInput.bind(this, "email")}
                {...this.props.inputProps.email} />
 
@@ -71,7 +71,7 @@ class EmailSignUpForm extends React.Component {
                className="email-sign-up-password"
                disabled={disabled}
                value={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "password"])}
-               errors={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "password"])}
+               
                onChange={this.handleInput.bind(this, "password")}
                {...this.props.inputProps.password} />
 
@@ -80,7 +80,7 @@ class EmailSignUpForm extends React.Component {
                className="email-sign-up-password-confirmation"
                disabled={disabled}
                value={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "password_confirmation"])}
-               errors={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "password_confirmation"])}
+               
                onChange={this.handleInput.bind(this, "password_confirmation")}
                {...this.props.inputProps.passwordConfirmation} />
 

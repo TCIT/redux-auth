@@ -59,7 +59,7 @@ class RequestPasswordResetForm extends React.Component {
           placeholder="Email Address"
           disabled={loading || inputDisabled}
           value={this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "form", "email"])}
-          errors={this.props.auth.getIn(["requestPasswordReset", this.getEndpoint(), "errors", "email"])}
+          
           onChange={this.handleInput.bind(this, "email")}
           {...this.props.inputProps.email} />
 
