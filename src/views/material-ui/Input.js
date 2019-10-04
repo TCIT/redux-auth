@@ -1,4 +1,4 @@
-import React, {PropTypes} from "react";
+import React, { PropTypes } from "react";
 import * as Colors from "material-ui/styles/colors";
 import TextField from "material-ui/TextField";
 import AlertError from "material-ui/svg-icons/alert/error";
@@ -18,27 +18,28 @@ class AuthInput extends React.Component {
     errors: Immutable.fromJS([])
   };
 
-  handleInput (ev) {
+  handleInput(ev) {
     ev.preventDefault();
     this.props.onChange(ev.target.value);
   }
 
-  renderErrorList () {
+  renderErrorList() {
     if (this.props.errors.size) {
       return (
         <div className='auth-error-message'>
           {this.props.errors.map((err, i) => {
             return (
               <p className="inline-error-item"
-                 style={{paddingLeft: "20px", position: "relative", marginBottom: "28px"}}
-                 key={i}>
+                style={{ paddingLeft: "20px", position: "relative", marginBottom: "28px" }}
+                key={i}>
                 <AlertError
                   viewBox="0 0 50 50"
                   color={Colors.red500}
                   style={{
                     position: "absolute",
                     left: 0,
-                    top: 0}} />
+                    top: 0
+                  }} />
                 {this.props.floatingLabelText} {err}
               </p>
             );
@@ -50,15 +51,18 @@ class AuthInput extends React.Component {
     }
   }
 
-  render () {
+  render() {
+    const valueFix = { value: this.props.value ? this.props.value : '' }
+    const propsWhitoutErrors = Object.entries(this.props).reduce((acum, value) => value[0] === 'errors' ? { ...acum } : { ...acum, [value[0]]: value[1] }, {})
+    const newProps = {...propsWhitoutErrors, ...valueFix}
     return (
       <MuiThemeProvider>
         <TextField
           fullWidth={true}
           id={this.props.className}
-          {...this.props}
+          {...newProps}
           errorText={this.renderErrorList()}
-          onChange={this.handleInput.bind(this)} />
+        onChange={this.handleInput.bind(this)} />
       </MuiThemeProvider>
     );
   }

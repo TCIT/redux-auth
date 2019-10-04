@@ -558,6 +558,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -600,7 +602,8 @@
 	                style: {
 	                  position: "absolute",
 	                  left: 0,
-	                  top: 0 } }),
+	                  top: 0
+	                } }),
 	              _this2.props.floatingLabelText,
 	              " ",
 	              err
@@ -614,13 +617,18 @@
 	  }, {
 	    key: "render",
 	    value: function render() {
+	      var valueFix = { value: this.props.value ? this.props.value : '' };
+	      var propsWhitoutErrors = Object.entries(this.props).reduce(function (acum, value) {
+	        return value[0] === 'errors' ? _extends({}, acum) : _extends({}, acum, _defineProperty({}, value[0], value[1]));
+	      }, {});
+	      var newProps = _extends({}, propsWhitoutErrors, valueFix);
 	      return _react2.default.createElement(
 	        _MuiThemeProvider2.default,
 	        null,
 	        _react2.default.createElement(_TextField2.default, _extends({
 	          fullWidth: true,
 	          id: this.props.className
-	        }, this.props, {
+	        }, newProps, {
 	          errorText: this.renderErrorList(),
 	          onChange: this.handleInput.bind(this) }))
 	      );
