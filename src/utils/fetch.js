@@ -77,7 +77,7 @@ function updateAuthCredentials(resp) {
     // }
 
     // persist headers for next request
-    if (Object.values(newHeaders).length) {
+    if (Object.values(newHeaders).length && Boolean(newHeaders['access-token'])) {
       persistData(C.SAVED_CREDS_KEY, newHeaders);
     }
   }
