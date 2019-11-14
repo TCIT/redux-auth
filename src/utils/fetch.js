@@ -50,27 +50,34 @@ function updateAuthCredentials(resp) {
   // check config apiUrl matches the current response url
   if (isApiRequest(resp.url)) {
     // set header for each key in `tokenFormat` config
-    var newHeaders = {};
+    // var newHeaders = {};
 
     // set flag to ensure that we don't accidentally nuke the headers
     // if the response tokens aren't sent back from the API
-    var blankHeaders = true;
+    // var blankHeaders = true;
 
-    console.log('resp', resp)
-    console.log('resp.headers', resp.headers)
     // set header key + val for each key in `tokenFormat` config
-    for (var key in getTokenFormat()) {
-      console.log(key)
-      console.log('resp.headers.get(key)', key, resp.headers.get(key))
-      newHeaders[key] = resp.headers.get(key);
+    const entries = [...res.headers.entries()];
+    console.log('entries', entries)
 
-      if (newHeaders[key]) {
-        blankHeaders = false;
-      }
-    }
+    const newHeaders = entries.filter(entry => Boolean(getTokenFormat()[entry[0]])).reduce((acum, entry) =>
+      ({
+        ...acum,
+        [entry[0]]: entry[1]
+      })
+      , {});
+    // for (var key in getTokenFormat()) {
+    //   console.log(key)
+    //   console.log('resp.headers.get(key)', key, resp.headers.get(key))
+    //   newHeaders[key] = resp.headers.get(key);
+
+    //   if (newHeaders[key]) {
+    //     blankHeaders = false;
+    //   }
+    // }
 
     // persist headers for next request
-    if (!blankHeaders) {
+    if (newHeaders.length) {
       persistData(C.SAVED_CREDS_KEY, newHeaders);
     }
   }
