@@ -77,7 +77,7 @@ function updateAuthCredentials(resp) {
     // }
 
     // persist headers for next request
-    if (newHeaders.length) {
+    if (Object.values(newHeaders).length) {
       persistData(C.SAVED_CREDS_KEY, newHeaders);
     }
   }
