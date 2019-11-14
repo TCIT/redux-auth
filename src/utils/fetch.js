@@ -57,7 +57,7 @@ function updateAuthCredentials(resp) {
     // var blankHeaders = true;
 
     // set header key + val for each key in `tokenFormat` config
-    const entries = [...res.headers.entries()];
+    const entries = [...resp.headers.entries()];
     console.log('entries', entries)
 
     const newHeaders = entries.filter(entry => Boolean(getTokenFormat()[entry[0]])).reduce((acum, entry) =>
