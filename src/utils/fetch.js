@@ -9,7 +9,7 @@ import {
   getSessionEndpointKey
 } from "./session-storage";
 
-var isApiRequest = function(url) {
+var isApiRequest = function (url) {
   return (url.match(getApiUrl(getSessionEndpointKey())));
 };
 
@@ -30,7 +30,7 @@ function getAuthHeaders(url) {
   if (isApiRequest(url)) {
     // fetch current auth headers from storage
     var currentHeaders = retrieveData(C.SAVED_CREDS_KEY) || {},
-        nextHeaders = {};
+      nextHeaders = {};
 
     // bust IE cache
     nextHeaders["If-Modified-Since"] = "Mon, 26 Jul 1997 05:00:00 GMT";
@@ -56,8 +56,12 @@ function updateAuthCredentials(resp) {
     // if the response tokens aren't sent back from the API
     var blankHeaders = true;
 
+    console.log('resp', resp)
+    console.log('res.headers', res.headers)
     // set header key + val for each key in `tokenFormat` config
     for (var key in getTokenFormat()) {
+      console.log(key)
+      console.log('res.headers.get(key)', key, res.headers.get(key))
       newHeaders[key] = resp.headers.get(key);
 
       if (newHeaders[key]) {
@@ -74,7 +78,7 @@ function updateAuthCredentials(resp) {
   return resp;
 }
 
-export default function (url, options={}) {
+export default function (url, options = {}) {
   if (!options.headers) {
     options.headers = {}
   }
