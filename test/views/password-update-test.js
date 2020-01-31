@@ -4,13 +4,13 @@ import {expect} from "chai";
 import {retrieveData, persistData} from "../../src/utils/session-storage";
 import {storeCurrentEndpointKey} from "../../src/actions/configure";
 import * as C from "../../src/utils/constants";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {renderConnectedComponent} from "../helper";
 import nock from "nock";
 
 
-var findClass = TestUtils.findRenderedDOMComponentWithClass,
-    findTag = TestUtils.scryRenderedDOMComponentsWithTag;
+var findClass = ReactTestUtils.findRenderedDOMComponentWithClass,
+    findTag = ReactTestUtils.scryRenderedDOMComponentsWithTag;
 
 var requirePath,
     successRespSpy,
@@ -107,12 +107,12 @@ export default function() {
               passwordEl.value = "whatever";
               passwordConfirmationEl.value = "whatever";
 
-              TestUtils.Simulate.change(passwordEl);
-              TestUtils.Simulate.change(passwordConfirmationEl);
+              ReactTestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordConfirmationEl);
 
               // submit changed password
               let formEl = findClass(instance, "update-password-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // expect response to have been made to alt endpoint url
@@ -146,8 +146,8 @@ export default function() {
               passwordConfirmationEl.value = testPassword;
 
               // trigger dom change event
-              TestUtils.Simulate.change(passwordEl);
-              TestUtils.Simulate.change(passwordConfirmationEl);
+              ReactTestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordConfirmationEl);
 
               // ensure store is updated when inputs are changed
               expect(store.getState().auth.getIn(["updatePassword", "default", "form", "password"])).to.equal(testPassword);
@@ -155,7 +155,7 @@ export default function() {
 
               // submit the form
               let formEl = findClass(instance, "update-password-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // ensure auth headers were updated
@@ -189,13 +189,13 @@ export default function() {
               <UpdatePasswordForm />, {apiUrl}, initialState
             ).then(({instance, store}) => {
               // change input values
-              let passwordEl = TestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[0];
+              let passwordEl = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[0];
               passwordEl.value = testUid;
-              TestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordEl);
 
               // submit the form
-              let formEl =TestUtils.findRenderedDOMComponentWithClass(instance, "update-password-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              let formEl =ReactTestUtils.findRenderedDOMComponentWithClass(instance, "update-password-form");
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // ensure endpoint was hit
@@ -209,7 +209,7 @@ export default function() {
                 expect(modalVisible).to.equal(true);
 
                 // ensure errors show up in form
-                let errorItems = TestUtils.scryRenderedDOMComponentsWithClass(instance, "inline-error-item");
+                let errorItems = ReactTestUtils.scryRenderedDOMComponentsWithClass(instance, "inline-error-item");
                 expect(errorItems.length).to.equal(2);
 
                 done();

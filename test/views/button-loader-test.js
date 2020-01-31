@@ -1,12 +1,12 @@
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import sinon from "sinon";
 import {expect} from "chai";
 
 var ButtonLoader;
 
 function getButtonClass(container, klass) {
-  let btnEl = TestUtils.findRenderedDOMComponentWithClass(container, klass);
+  let btnEl = ReactTestUtils.findRenderedDOMComponentWithClass(container, klass);
   return btnEl.getAttribute("class");
 }
 
@@ -26,7 +26,7 @@ export default function() {
           let iconOverride = <span className="icon-override">icon override</span>;
           let clickFn = sinon.spy();
 
-          let buttonLoader = TestUtils.renderIntoDocument(
+          let buttonLoader = ReactTestUtils.renderIntoDocument(
             <ButtonLoader
               className="class-override"
               icon={iconOverride}
@@ -38,42 +38,42 @@ export default function() {
           );
 
           // was icon overridden?
-          expect(TestUtils.findRenderedDOMComponentWithClass(buttonLoader, "icon-override"));
+          expect(ReactTestUtils.findRenderedDOMComponentWithClass(buttonLoader, "icon-override"));
 
           // was content overridden?
-          expect(TestUtils.findRenderedDOMComponentWithClass(buttonLoader, "content-override"));
+          expect(ReactTestUtils.findRenderedDOMComponentWithClass(buttonLoader, "content-override"));
 
           let btnClass = getButtonClass(buttonLoader, "class-override");
 
           // were class and style overridden?
           expect(btnClass).to.match(/class-override/);
 
-          let btnEl = TestUtils.findRenderedDOMComponentWithTag(buttonLoader, "button");
+          let btnEl = ReactTestUtils.findRenderedDOMComponentWithTag(buttonLoader, "button");
 
           // was type overridden?
           expect(btnEl.getAttribute("type")).to.equal("submit");
 
           // was onClick defined?
-          TestUtils.Simulate.click(btnEl);
+          ReactTestUtils.Simulate.click(btnEl);
           expect(clickFn.calledOnce);
         });
 
         it("disables the button", () => {
           let clickFn = sinon.spy();
 
-          let buttonLoader = TestUtils.renderIntoDocument(
+          let buttonLoader = ReactTestUtils.renderIntoDocument(
             <ButtonLoader disabled={true} onClick={clickFn} />
           );
 
-          let btnEl = TestUtils.findRenderedDOMComponentWithTag(buttonLoader, "button");
+          let btnEl = ReactTestUtils.findRenderedDOMComponentWithTag(buttonLoader, "button");
 
           // was onClick defined?
-          TestUtils.Simulate.click(btnEl);
+          ReactTestUtils.Simulate.click(btnEl);
           expect(clickFn.notCalled);
         });
 
         it("shows spinner while loading", () => {
-          let buttonLoader = TestUtils.renderIntoDocument(
+          let buttonLoader = ReactTestUtils.renderIntoDocument(
             <ButtonLoader
               onClick={() => {}}
               loading={true}
@@ -86,7 +86,7 @@ export default function() {
         });
 
         it("changes spinner color according to bsStyle", () => {
-          let buttonLoader = TestUtils.renderIntoDocument(
+          let buttonLoader = ReactTestUtils.renderIntoDocument(
             <ButtonLoader
               onClick={() => {}}
               loading={true}

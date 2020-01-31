@@ -1,5 +1,5 @@
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {spy} from "sinon";
 import {expect} from "chai";
 import {retrieveData} from "../../src/utils/session-storage";
@@ -8,7 +8,7 @@ import * as C from "../../src/utils/constants";
 import {renderConnectedComponent} from "../helper";
 import nock from "nock";
 
-var findClass = TestUtils.findRenderedDOMComponentWithClass;
+var findClass = ReactTestUtils.findRenderedDOMComponentWithClass;
 
 var successRespSpy,
     errorRespSpy,
@@ -70,7 +70,7 @@ export default function() {
               <EmailSignInForm endpoint="alt" />
             ), endpointConfig).then(({instance, store}) => {
               let formEl = findClass(instance, "email-sign-in-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // ensure endpoint was hit
@@ -117,16 +117,16 @@ export default function() {
               <EmailSignInForm next={nextSpy} />
             ), {apiUrl}).then(({instance, store}) => {
               // find inputs
-              let emailEl = TestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[0];
-              let passwordEl = TestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[1];
+              let emailEl = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[0];
+              let passwordEl = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[1];
 
               // change input values
               emailEl.value = testEmail;
               passwordEl.value = testPassword;
 
               // trigger dom change event
-              TestUtils.Simulate.change(emailEl);
-              TestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(emailEl);
+              ReactTestUtils.Simulate.change(passwordEl);
 
               // ensure store is updated when inputs are changed
               expect(store.getState().auth.getIn(["emailSignIn", "default", "form", "email"])).to.equal(testEmail);
@@ -134,7 +134,7 @@ export default function() {
 
               // submit the form
               let formEl = findClass(instance, "email-sign-in-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // was endpoint hit?
@@ -181,8 +181,8 @@ export default function() {
               <EmailSignInForm next={nextSpy} />, {apiUrl}
             ).then(({instance, store}) => {
               // submit the form
-              let formEl = TestUtils.findRenderedDOMComponentWithClass(instance, "email-sign-in-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              let formEl = ReactTestUtils.findRenderedDOMComponentWithClass(instance, "email-sign-in-form");
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // was endpoint hit?

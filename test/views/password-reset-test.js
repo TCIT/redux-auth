@@ -1,5 +1,5 @@
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {spy} from "sinon";
 import {expect} from "chai";
 import {persistData} from "../../src/utils/session-storage";
@@ -8,8 +8,8 @@ import * as C from "../../src/utils/constants";
 import {renderConnectedComponent} from "../helper";
 import nock from "nock";
 
-var findClass = TestUtils.findRenderedDOMComponentWithClass,
-    findTag = TestUtils.scryRenderedDOMComponentsWithTag;
+var findClass = ReactTestUtils.findRenderedDOMComponentWithClass,
+    findTag = ReactTestUtils.scryRenderedDOMComponentsWithTag;
 
 var requirePath,
     successRespSpy,
@@ -76,10 +76,10 @@ export default function() {
               // change input values
               let emailEl = findTag(instance, "input")[0];
               emailEl.value = "whatever";
-              TestUtils.Simulate.change(emailEl);
+              ReactTestUtils.Simulate.change(emailEl);
 
               let formEl = findClass(instance, "request-password-reset-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // expect response to have been made to alt endpoint url
@@ -112,14 +112,14 @@ export default function() {
               emailEl.value = testEmail;
 
               // trigger dom change event
-              TestUtils.Simulate.change(emailEl);
+              ReactTestUtils.Simulate.change(emailEl);
 
               // ensure store is updated when inputs are changed
               expect(store.getState().auth.getIn(["requestPasswordReset", "default", "form", "email"])).to.equal(testEmail);
 
               // submit the form
               let formEl = findClass(instance, "request-password-reset-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // ensure default url was used
@@ -156,11 +156,11 @@ export default function() {
               let emailEl = findTag(instance, "input")[0];
 
               emailEl.value = testUid;
-              TestUtils.Simulate.change(emailEl);
+              ReactTestUtils.Simulate.change(emailEl);
 
               // submit the form
-              let formEl =TestUtils.findRenderedDOMComponentWithClass(instance, "request-password-reset-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: spy()});
+              let formEl =ReactTestUtils.findRenderedDOMComponentWithClass(instance, "request-password-reset-form");
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: spy()});
 
               setTimeout(() => {
                 // ensure endpoint was hit

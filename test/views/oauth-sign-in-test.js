@@ -1,6 +1,6 @@
 import React from "react";
 import jsdomify from "jsdomify";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {spy} from "sinon";
 import {expect} from "chai";
 import {retrieveData, getCurrentEndpointKey} from "../../src/utils/session-storage";
@@ -10,7 +10,7 @@ import {renderConnectedComponent} from "../helper";
 import rewire from "rewire";
 import nock from "nock";
 
-var findClass = TestUtils.findRenderedDOMComponentWithClass;
+var findClass = ReactTestUtils.findRenderedDOMComponentWithClass;
 
 var tokenValidationSpy,
     testUid = "test@test.com",
@@ -113,8 +113,8 @@ export default function () {
               <OAuthSignInButton.default provider="github" endpoint="alt" />
             , endpointConfig).then(({instance, store}) => {
               // click button
-              let submitEl = TestUtils.findRenderedDOMComponentWithTag(instance, "button");
-              TestUtils.Simulate.click(submitEl);
+              let submitEl = ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 // ensure popup was created to the correct API endpoint
@@ -168,8 +168,8 @@ export default function () {
             ), {apiUrl}).then(({instance, store}) => {
 
               // click button
-              let submitEl = TestUtils.findRenderedDOMComponentWithTag(instance, "button");
-              TestUtils.Simulate.click(submitEl);
+              let submitEl = ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 // ensure popup was created to the correct API endpoint
@@ -221,8 +221,8 @@ export default function () {
               <OAuthSignInButton.default provider="github" next={nextSpy} />
             , {apiUrl}).then(({instance, store}) => {
               // click button
-              let submitEl = TestUtils.findRenderedDOMComponentWithTag(instance, "button");
-              TestUtils.Simulate.click(submitEl);
+              let submitEl = ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 expect(popupSpy.called).to.be.ok;
@@ -263,9 +263,9 @@ export default function () {
             , {apiUrl}).then(({instance, store}) => {
 
               // click button
-              let submitEl = TestUtils.findRenderedDOMComponentWithTag(instance, "button");
+              let submitEl = ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
 
-              TestUtils.Simulate.click(submitEl);
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 // ensure token validation request was made

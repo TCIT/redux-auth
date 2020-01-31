@@ -1,5 +1,5 @@
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {spy} from "sinon";
 import {expect} from "chai";
 import {retrieveData, persistData} from "../../src/utils/session-storage";
@@ -132,12 +132,12 @@ export default function() {
               passwordEl.value = "whatever";
               passwordConfirmationEl.value = "whatever";
 
-              TestUtils.Simulate.change(passwordEl);
-              TestUtils.Simulate.change(passwordConfirmationEl);
+              ReactTestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordConfirmationEl);
 
               // submit changed password
               let submitEl = findButtonWithType("submit");
-              TestUtils.Simulate.click(submitEl);
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 // expect response to have been made to alt endpoint url
@@ -174,8 +174,8 @@ export default function() {
               passwordConfirmationEl.value = testPassword;
 
               // trigger dom change event
-              TestUtils.Simulate.change(passwordEl);
-              TestUtils.Simulate.change(passwordConfirmationEl);
+              ReactTestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordConfirmationEl);
 
               // ensure store is updated when inputs are changed
               expect(store.getState().auth.getIn(["updatePasswordModal", "default", "form", "password"])).to.equal(testPassword);
@@ -183,7 +183,7 @@ export default function() {
 
               // submit the form
               let submitEl = findButtonWithType("submit");
-              TestUtils.Simulate.click(submitEl);
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 // ensure default url was used
@@ -221,11 +221,11 @@ export default function() {
               // change input values
               let passwordEl = findTag("input", 0);
               passwordEl.value = testUid;
-              TestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordEl);
 
               // submit the form
               let submitEl = findButtonWithType("submit");
-              TestUtils.Simulate.click(submitEl);
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 // ensure endpoint was hit

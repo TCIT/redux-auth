@@ -1,6 +1,6 @@
 import React from "react";
 import jsdomify from "jsdomify";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {expect} from "chai";
 import {renderConnectedComponent} from "../helper";
 
@@ -74,7 +74,7 @@ export default function() {
                 let closeBtnEl = findClass(`${modalClass}-close`);
 
                 // ensure close button closes modal
-                TestUtils.Simulate.click(closeBtnEl);
+                ReactTestUtils.Simulate.click(closeBtnEl);
                 expect(store.getState().auth.getIn(["ui", vizProp])).to.equal(false);
 
                 done();

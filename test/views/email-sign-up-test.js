@@ -1,5 +1,5 @@
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import sinon from "sinon";
 import {expect} from "chai";
 import {retrieveData} from "../../src/utils/session-storage";
@@ -7,8 +7,8 @@ import * as C from "../../src/utils/constants";
 import {renderConnectedComponent} from "../helper";
 import nock from "nock";
 
-var findClass = TestUtils.findRenderedDOMComponentWithClass,
-    findTag = TestUtils.scryRenderedDOMComponentsWithTag;
+var findClass = ReactTestUtils.findRenderedDOMComponentWithClass,
+    findTag = ReactTestUtils.scryRenderedDOMComponentsWithTag;
 
 
 var requirePath,
@@ -95,7 +95,7 @@ export default function() {
               <EmailSignUpForm endpoint="alt" />
             ), endpointConfig).then(({instance}) => {
               let formEl = findClass(instance, "email-sign-up-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
 
               setTimeout(() => {
                 // expect response to have been made to alt endpoint url
@@ -133,7 +133,7 @@ export default function() {
             ), {apiUrl}).then(({instance, store}) => {
               let emailEl = findTag(instance, "input")[0];
               let passwordEl = findTag(instance, "input")[1];
-              let passwordConfirmEl = TestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[2];
+              let passwordConfirmEl = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[2];
 
               // change input values
               emailEl.value = testEmail;
@@ -141,9 +141,9 @@ export default function() {
               passwordConfirmEl.value = testPassword;
 
               // trigger dom change event
-              TestUtils.Simulate.change(emailEl);
-              TestUtils.Simulate.change(passwordEl);
-              TestUtils.Simulate.change(passwordConfirmEl);
+              ReactTestUtils.Simulate.change(emailEl);
+              ReactTestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordConfirmEl);
 
               // ensure store is updated when inputs are changed
               expect(store.getState().auth.getIn(["emailSignUp", "default", "form", "email"])).to.equal(testEmail);
@@ -152,7 +152,7 @@ export default function() {
 
               // submit the form
               let formEl = findClass(instance, "email-sign-up-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
 
               setTimeout(() => {
                 // ensure user was set
@@ -198,7 +198,7 @@ export default function() {
 
               let emailEl = findTag(instance, "input")[0];
               let passwordEl = findTag(instance, "input")[1];
-              let passwordConfirmEl = TestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[2];
+              let passwordConfirmEl = ReactTestUtils.scryRenderedDOMComponentsWithTag(instance, "input")[2];
 
               // change input values
               emailEl.value = testEmail;
@@ -206,13 +206,13 @@ export default function() {
               passwordConfirmEl.value = testPassword;
 
               // trigger dom change event
-              TestUtils.Simulate.change(emailEl);
-              TestUtils.Simulate.change(passwordEl);
-              TestUtils.Simulate.change(passwordConfirmEl);
+              ReactTestUtils.Simulate.change(emailEl);
+              ReactTestUtils.Simulate.change(passwordEl);
+              ReactTestUtils.Simulate.change(passwordConfirmEl);
 
               // submit the form
               let formEl = findClass(instance, "email-sign-up-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
 
               setTimeout(() => {
                 // ensure user was signed in
@@ -244,7 +244,7 @@ export default function() {
             ).then(({instance, store}) => {
               // submit the form
               let formEl = findClass(instance, "email-sign-up-form");
-              TestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
+              ReactTestUtils.Simulate.submit(formEl, {preventDefault: sinon.spy()});
 
               setTimeout(() => {
                 // ensure auth headers were updated
@@ -263,7 +263,7 @@ export default function() {
                 expect(modalVisible).to.equal(true);
 
                 // ensure errors show up in form
-                let errorItems = TestUtils.scryRenderedDOMComponentsWithClass(instance, "inline-error-item");
+                let errorItems = ReactTestUtils.scryRenderedDOMComponentsWithClass(instance, "inline-error-item");
                 expect(errorItems.length).to.equal(3);
 
                 // ensure `next` method was not called

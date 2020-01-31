@@ -1,5 +1,5 @@
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {spy} from "sinon";
 import {expect} from "chai";
 import {persistData} from "../../src/utils/session-storage";
@@ -9,7 +9,7 @@ import {renderConnectedComponent} from "../helper";
 import * as C from "../../src/utils/constants";
 import nock from "nock";
 
-var findClass = TestUtils.findRenderedDOMComponentWithClass;
+var findClass = ReactTestUtils.findRenderedDOMComponentWithClass;
 
 var requirePath,
     successRespSpy,
@@ -68,9 +68,9 @@ export default function() {
               persistData(C.SAVED_CONFIG_KEY, "alt");
               store.dispatch(storeCurrentEndpointKey("alt"));
 
-              let submitEl = TestUtils.findRenderedDOMComponentWithTag(instance, "button");
+              let submitEl = ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
 
-              TestUtils.Simulate.click(submitEl);
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 expect(successRespSpy.called).to.be.ok;
@@ -100,8 +100,8 @@ export default function() {
               <DestroyAccountButton />
             ), {apiUrl}, {user: {isSignedIn: true}}).then(({instance, store}) => {
               // submit the form
-              let submitEl = TestUtils.findRenderedDOMComponentWithTag(instance, "button");
-              TestUtils.Simulate.click(submitEl);
+              let submitEl = ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 // ensure default url was used
@@ -138,8 +138,8 @@ export default function() {
               <DestroyAccountButton />, {apiUrl}, {user: {isSignedIn: true}}
             ).then(({instance, store}) => {
               // submit the form
-              let submitEl = TestUtils.findRenderedDOMComponentWithTag(instance, "button");
-              TestUtils.Simulate.click(submitEl);
+              let submitEl = ReactTestUtils.findRenderedDOMComponentWithTag(instance, "button");
+              ReactTestUtils.Simulate.click(submitEl);
 
               setTimeout(() => {
                 expect(errorRespSpy.called).to.be.ok;

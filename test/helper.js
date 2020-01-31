@@ -1,5 +1,5 @@
 import React from "react";
-import TestUtils from "react-addons-test-utils";
+import ReactTestUtils from 'react-dom/test-utils';
 import {Provider} from "react-redux";
 import {Router, Route, IndexRoute} from "react-router";
 import {combineReducers, createStore, compose, applyMiddleware} from "redux";
@@ -123,7 +123,7 @@ export function renderConnectedComponent(markup, endpointConfig, initialState={}
   return store.dispatch(configure(endpointConfig)).then(() => {
     return {
       store,
-      instance: TestUtils.renderIntoDocument(
+      instance: ReactTestUtils.renderIntoDocument(
         <Provider store={store}>
           {markup}
         </Provider>
