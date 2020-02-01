@@ -48,7 +48,7 @@
     "react-bootstrap": "^0.29.5",
     "react-loader": "^2.4.0",
     "redux-immutablejs": "0.0.8",
-    "webpack": "^4.29.6"
+    "webpack": "^4.41.5"
   },
   "devDependencies": {
     "@material-ui/core": "^3.9.4",
@@ -115,8 +115,8 @@
     "thunk": "^0.0.1",
     "url-loader": "^0.5.6",
     "warning": "^2.1.0",
-    "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "1.14.0"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2"
   },
   "peerDependencies": {
     "react-router-bootstrap": "*"
