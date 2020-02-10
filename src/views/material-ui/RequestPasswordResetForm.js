@@ -35,6 +35,27 @@ class RequestPasswordResetForm extends React.Component {
     this.props.dispatch(requestPasswordReset(formData, this.getEndpoint()));
   }
 
+  getSignInButton(disabled) {
+    const clonedElement = React.cloneElement(this.props.passwordResetButton, {
+      ...this.props.inputProps.submit,
+      disabled,
+      onClick: this.handleSubmit.bind(this)
+    });
+
+    return clonedElement ||
+      <Button
+        type="submit"
+        style={{ float: "right" }}
+        className='email-sign-in-submit'
+        disabled={disabled}
+        onClick={this.handleSubmit.bind(this)}
+        {...this.props.inputProps.submit}
+      >
+        <Send />
+        Restablecer contraseña
+      </Button>
+  }
+
   render() {
     let endpoint = this.getEndpoint();
     let loading = this.props.auth.getIn(["requestPasswordReset", endpoint, "loading"]);
@@ -56,19 +77,9 @@ class RequestPasswordResetForm extends React.Component {
           errors={this.props.auth.getIn(["requestPasswordReset", endpoint, "errors", "email"])}
           onChange={this.handleInput.bind(this, "email")}
           {...this.props.inputProps.email} />
-
-        <ButtonLoader
-          loading={loading}
-          type="submit"
-          primary={true}
-          icon={Send}
-          style={{ float: "right" }}
-          className="request-password-reset-submit"
-          disabled={inputDisabled || submitDisabled}
-          onClick={this.handleSubmit.bind(this)}
-          {...this.props.inputProps.submit}>
-          Request Password Reset
-        </ButtonLoader>
+        <div>
+          {this.getSignInButton(submitDisabled)}
+        </div>
       </form>
     );
   }
