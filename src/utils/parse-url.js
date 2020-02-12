@@ -20,7 +20,7 @@ export function normalizeTokenKeys (params) {
     delete params.config;
   }
 
-  console.log('params_normalized', params_normalized);
+  console.log('params_normalized', params);
 
   return params;
 };
