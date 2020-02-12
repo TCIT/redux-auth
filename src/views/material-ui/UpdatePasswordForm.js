@@ -33,6 +33,27 @@ class UpdatePasswordForm extends React.Component {
     this.props.dispatch(updatePassword(formData, this.getEndpoint()));
   }
 
+  getSignInButton(disabled) {
+    const clonedElement = React.cloneElement(this.props.updatePasswordButton, {
+      ...this.props.inputProps.submit,
+      disabled,
+      onClick: this.handleSubmit.bind(this)
+    });
+
+    return clonedElement ||
+      <Button
+        type="submit"
+        style={{ float: "right" }}
+        className='email-sign-in-submit'
+        disabled={disabled}
+        onClick={this.handleSubmit.bind(this)}
+        {...this.props.inputProps.submit}
+      >
+        <ExitToApp />
+        Sign In
+      </Button>
+  }
+
   render() {
     let endpoint = this.getEndpoint();
     let loading = this.props.auth.getIn(["updatePassword", endpoint, "loading"]);
@@ -47,7 +68,7 @@ class UpdatePasswordForm extends React.Component {
         onSubmit={this.handleSubmit.bind(this)}>
         <Input
           type="password"
-          floatingLabelText="Password"
+          floatingLabelText="Contraseñ"
           disabled={disabled}
           className="update-password-password"
           value={this.props.auth.getIn(["updatePassword", endpoint, "form", "password"])}
@@ -57,7 +78,7 @@ class UpdatePasswordForm extends React.Component {
 
         <Input
           type="password"
-          floatingLabelText="Password Confirmation"
+          floatingLabelText="Confirmar contraseña"
           className="update-password-password-confirmation"
           disabled={disabled}
           value={this.props.auth.getIn(["updatePassword", endpoint, "form", "password_confirmation"])}
@@ -65,18 +86,7 @@ class UpdatePasswordForm extends React.Component {
           onChange={this.handleInput.bind(this, "password_confirmation")}
           {...this.props.inputProps.passwordConfirmation} />
 
-        <ButtonLoader
-          loading={loading}
-          type="submit"
-          className="update-password-submit"
-          icon={Lock}
-          primary={true}
-          disabled={disabled}
-          style={{ float: "right" }}
-          onClick={this.handleSubmit.bind(this)}
-          {...this.props.inputProps.submit}>
-          Update Password
-        </ButtonLoader>
+        {this.getSignInButton(disabled)}
       </form>
     );
   }
