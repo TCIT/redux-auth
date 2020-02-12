@@ -55,6 +55,7 @@ class UpdatePasswordForm extends React.Component {
   }
 
   render() {
+    console.log('this.props', this.props)
     let endpoint = this.getEndpoint();
     let loading = this.props.auth.getIn(["updatePassword", endpoint, "loading"]);
     let disabled = (
@@ -68,7 +69,7 @@ class UpdatePasswordForm extends React.Component {
         onSubmit={this.handleSubmit.bind(this)}>
         <Input
           type="password"
-          floatingLabelText="Contraseñ"
+          floatingLabelText="Contraseña"
           disabled={disabled}
           className="update-password-password"
           value={this.props.auth.getIn(["updatePassword", endpoint, "form", "password"])}
