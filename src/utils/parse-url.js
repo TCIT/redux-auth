@@ -35,6 +35,7 @@ const getSearchQs = function(location) {
   var rawQs = location.search || "",
       qs    = rawQs.replace("?", ""),
       qsObj = (qs) ? querystring.parse(qs) : {};
+      console.log('rawQs', rawQs)
 
   return qsObj;
 };
