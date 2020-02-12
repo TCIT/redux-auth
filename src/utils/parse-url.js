@@ -20,6 +20,8 @@ export function normalizeTokenKeys (params) {
     delete params.config;
   }
 
+  console.log('params_normalized', params_normalized);
+
   return params;
 };
 
@@ -35,8 +37,6 @@ const getSearchQs = function(location) {
   var rawQs = location.search || "",
       qs    = rawQs.replace("?", ""),
       qsObj = (qs) ? querystring.parse(qs) : {};
-      console.log('rawQs', rawQs)
-
   return qsObj;
 };
 
@@ -70,6 +70,7 @@ const buildCredentials = function(location, keys) {
     authHeaders[key] = params[key];
   }
 
+  console.log('authHeaders', authHeaders)
   return normalizeTokenKeys(authHeaders);
 };
 
@@ -123,9 +124,12 @@ export default function getRedirectInfo(currentLocation) {
     ];
 
     var authRedirectHeaders = buildCredentials(currentLocation, authKeys);
+    console.log('authRedirectHeaders', authRedirectHeaders);
     var authRedirectPath = getLocationWithoutParams(currentLocation, authKeys);
-
+    console.log('authRedirectHeaders', authRedirectHeaders, currentLocation);
+    
     if (authRedirectPath !== currentLocation) {
+      console.log('authRedirectHeadersInside', authRedirectHeaders, currentLocation);
       return {authRedirectHeaders, authRedirectPath};
     } else {
       return {};
