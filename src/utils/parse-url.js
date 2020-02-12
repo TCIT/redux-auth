@@ -63,6 +63,7 @@ export function getAllParams (location) {
 
 const buildCredentials = function(location, keys) {
   var params = getAllParams(location);
+  console.log('getAllParams',params)
   var authHeaders = {};
 
   for (var key of keys) {
