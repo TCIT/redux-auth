@@ -106,7 +106,7 @@ export function configure(endpoint={}, settings={}) {
 
       let {authRedirectPath, authRedirectHeaders} = getRedirectInfo(window.location);
 
-      console.log('redux auth credentials',authRedirectPath, authRedirectPath, window.location);
+      console.log('redux auth credentials',authRedirectPath, authRedirectHeaders, window.location);
       
 
       if (authRedirectPath) {
