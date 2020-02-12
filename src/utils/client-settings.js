@@ -80,8 +80,6 @@ export function applyConfig({dispatch, endpoint={}, settings={}, reset=false}={}
     endpoint, getInitialEndpointKey()
   );
 
-  console.log('defaultEndpointKey, currentEndpoint', defaultEndpointKey, currentEndpoint);
-
   if (!currentEndpointKey) {
     currentEndpointKey = defaultEndpointKey;
   }
@@ -95,14 +93,10 @@ export function applyConfig({dispatch, endpoint={}, settings={}, reset=false}={}
 
   let savedCreds = retrieveData(C.SAVED_CREDS_KEY);
 
-  console.log('savedCreds', savedCreds);
-
-  console.log('getCurrentSettings()', getCurrentSettings())
-
   if (getCurrentSettings().initialCredentials) {
     // skip initial headers check (i.e. check was already done server-side)
     let {user, headers} = getCurrentSettings().initialCredentials;
-    persistData(C.SAVED_CREDS_KEY, headers);
+    persistData(C.SAVED_CREDS_KEY, getCurrentSettings().initialCredentials);
     return Promise.resolve(user);
   } else if (savedCreds) {
     // verify session credentials with API

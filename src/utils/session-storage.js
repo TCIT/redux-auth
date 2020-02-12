@@ -176,7 +176,9 @@ export function removeData(key) {
 }
 
 export function persistData (key, val) {
+  console.log('JSON.stringify(val)', JSON.stringify(val))
   val = JSON.stringify(val);
+  console.log('val', val)
 
   switch (root.authState.currentSettings.storage) {
     case "localStorage":
