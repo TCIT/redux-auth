@@ -58,10 +58,7 @@ class UpdatePasswordForm extends React.Component {
     console.log('this.props', this.props, this.props.auth.toJS())
     let endpoint = this.getEndpoint();
     let loading = this.props.auth.getIn(["updatePassword", endpoint, "loading"]);
-    let disabled = (
-      !this.props.auth.getIn(["user", "isSignedIn"]) || loading ||
-      (this.props.auth.getIn(["user", "attributes", "provider"]) !== "email")
-    );
+    let disabled = (!this.props.auth.getIn(["user", "isSignedIn"]) || loading );
 
     return (
       <form
