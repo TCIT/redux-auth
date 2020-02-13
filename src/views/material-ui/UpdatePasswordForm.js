@@ -30,9 +30,8 @@ class UpdatePasswordForm extends React.Component {
   handleSubmit(ev) {
     ev.preventDefault();
     let formData = this.props.auth.getIn(["updatePassword", this.getEndpoint(), "form"]).toJS();
-    this.props.dispatch(updatePassword(formData, this.getEndpoint()))
-      .then(this.props.next)
-      .catch(() => { });;
+    this.props.dispatch(updatePassword(formData, this.getEndpoint()));
+    this.props.next();
   }
 
   getSignInButton(disabled) {
