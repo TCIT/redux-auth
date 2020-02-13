@@ -106,7 +106,7 @@ export function configure(endpoint={}, settings={}) {
 
       let {authRedirectPath, authRedirectHeaders} = getRedirectInfo(window.location);
 
-      console.log('redux auth credentials',authRedirectPath, authRedirectHeaders, window.location);
+
       
 
       if (authRedirectPath) {
@@ -116,8 +116,6 @@ export function configure(endpoint={}, settings={}) {
       if (authRedirectHeaders && authRedirectHeaders.uid && authRedirectHeaders["access-token"]) {
         settings.initialCredentials = extend({}, settings.initialCredentials, authRedirectHeaders);
       }
-
-      console.log('settings.clientOnly, settings.initialCredentials, settings.cleanSession', settings.clientOnly, settings.initialCredentials, settings.cleanSession)
 
       // if tokens were invalidated by server or from the settings, make sure
       // to clear browser credentials

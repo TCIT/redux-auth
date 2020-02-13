@@ -20,8 +20,6 @@ export function normalizeTokenKeys (params) {
     delete params.config;
   }
 
-  console.log('params_normalized', params);
-
   return params;
 };
 
@@ -63,14 +61,13 @@ export function getAllParams (location) {
 
 const buildCredentials = function(location, keys) {
   var params = getAllParams(location);
-  console.log('getAllParams',params)
+
   var authHeaders = {};
 
   for (var key of keys) {
     authHeaders[key] = params[key];
   }
 
-  console.log('authHeaders', authHeaders)
   return normalizeTokenKeys(authHeaders);
 };
 
@@ -124,12 +121,9 @@ export default function getRedirectInfo(currentLocation) {
     ];
 
     var authRedirectHeaders = buildCredentials(currentLocation, authKeys);
-    console.log('authRedirectHeaders', authRedirectHeaders);
     var authRedirectPath = getLocationWithoutParams(currentLocation, authKeys);
-    console.log('authRedirectHeaders', authRedirectHeaders, currentLocation);
     
     if (authRedirectPath !== currentLocation) {
-      console.log('authRedirectHeadersInside', authRedirectHeaders, currentLocation);
       return {authRedirectHeaders, authRedirectPath};
     } else {
       return {};
