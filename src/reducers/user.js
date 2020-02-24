@@ -9,6 +9,7 @@ import { OAUTH_SIGN_IN_COMPLETE } from "../actions/oauth-sign-in";
 import { DESTROY_ACCOUNT_COMPLETE } from "../actions/destroy-account";
 import * as ssActions from "../actions/server";
 import { STORE_CURRENT_ENDPOINT_KEY, SET_ENDPOINT_KEYS } from "../actions/configure";
+import { UPDATE_PASSWORD_COMPLETE } from "../actions/update-password";
 
 const initialState = Immutable.fromJS({
   attributes: null,
@@ -20,6 +21,12 @@ const initialState = Immutable.fromJS({
 
 export default createReducer(initialState, {
   [authActions.AUTHENTICATE_COMPLETE]: (state, { user }) => state.merge({
+    attributes: user,
+    isSignedIn: true,
+    endpointKey: getCurrentEndpointKey()
+  }),
+
+  [UPDATE_PASSWORD_COMPLETE]: (state, { user }) => state.merge({
     attributes: user,
     isSignedIn: true,
     endpointKey: getCurrentEndpointKey()
