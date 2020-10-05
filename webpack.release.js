@@ -10,9 +10,7 @@ module.exports = {
     "index":             "./src/index",
     "bootstrap-theme":   "./src/views/bootstrap/index",
     "default-theme":     "./src/views/default/index",
-    vendor: [
-      "./src/views/material-ui/index"
-    ]
+    "material-ui-theme": "./src/views/material-ui/index"
   },
   output:  {
     path:          path.join(__dirname),
@@ -50,13 +48,18 @@ module.exports = {
       "react-loader": "commonjs react-loader",
       "url": "commonjs url",
       "react-bootstrap": "commonjs react-bootstrap",
-      "@material-ui/core": "commonjs @material-ui/core",
-      "@material-ui/core/styles": "commonjs @material-ui/core/styles",
+      // "@material-ui/core": "commonjs @material-ui/core",
+      // "@material-ui/core/styles": "commonjs @material-ui/core/styles",
     }
   ],
   plugins: [
     new webpack.DefinePlugin({__CLIENT__: true, __SERVER__: false}),
-    new webpack.DefinePlugin({"process.env": {NODE_ENV: "\"production\""}}),
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: "\"production\""
+      },
+      'global.__MUI_GENERATOR_COUNTER__': 0
+    }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin()
