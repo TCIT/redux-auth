@@ -1,11 +1,13 @@
 import React from "react";
-import * as Colors from "material-ui/styles/colors";
+// import * as Colors from "material-ui/styles/colors";
+import * as Colors from "@material-ui/core/colors";
 import { hideOAuthSignInErrorModal } from "../../../actions/ui";
-import AlertError from "material-ui/svg-icons/alert/error";
+// import AlertError from "material-ui/svg-icons/alert/error";
+import { AlertError } from "@material-ui/core";
 import Modal from "./Modal";
 
 class OAuthSignInErrorModal extends React.Component {
-  render () {
+  render() {
     return (
       <Modal
         {...this.props}
@@ -14,14 +16,16 @@ class OAuthSignInErrorModal extends React.Component {
         title="OAuth Sign In Error">
         <p
           className="inline-error-item"
-          style={{paddingLeft: "20px", position: "relative", marginBottom: "28px"}}>
+          style={{ paddingLeft: "20px", position: "relative", marginBottom: "28px" }}>
           <AlertError
             viewBox="0 0 50 50"
             color={Colors.red500}
             style={{
               position: "absolute",
               left: 0,
-              top: 3}} />
+              top: 3
+            }}
+          />
           There was an error authenticating your account. Please try again.
         </p>
       </Modal>

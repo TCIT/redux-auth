@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
-import ActionLock from "material-ui/svg-icons/action/lock";
+// import ActionLock from "material-ui/svg-icons/action/lock";
+import { ActionLock } from "@material-ui/core";
 import { updatePassword, updatePasswordFormUpdate } from "../../actions/update-password";
 import { connect } from "react-redux";
 

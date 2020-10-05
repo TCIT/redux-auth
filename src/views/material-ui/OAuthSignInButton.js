@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import ButtonLoader from "./ButtonLoader";
-import ActionExitToApp from "material-ui/svg-icons/action/exit-to-app";
+// import ActionExitToApp from "material-ui/svg-icons/action/exit-to-app";
+import { ActionExitToApp } from "@material-ui/core";
 import { oAuthSignIn as _oAuthSignIn } from "../../actions/oauth-sign-in";
 
 // hook for rewire

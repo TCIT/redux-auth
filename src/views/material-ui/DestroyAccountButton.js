@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 import ButtonLoader from "./ButtonLoader";
 import { destroyAccount } from "../../actions/destroy-account";
-import ActionDelete from "material-ui/svg-icons/action/delete";
+// import ActionDelete from "material-ui/svg-icons/action/delete";
+import { ActionDelete } from '@material-ui/core/';
 import { connect } from "react-redux";
 
 class DestroyAccountButton extends React.Component {
@@ -16,7 +17,7 @@ class DestroyAccountButton extends React.Component {
     icon: ActionDelete
   };
 
-  getEndpoint () {
+  getEndpoint() {
     return (
       this.props.endpoint ||
       this.props.auth.getIn(["configure", "currentEndpointKey"]) ||
@@ -24,11 +25,11 @@ class DestroyAccountButton extends React.Component {
     );
   }
 
-  handleClick () {
+  handleClick() {
     this.props.dispatch(destroyAccount(this.getEndpoint()));
   }
 
-  render () {
+  render() {
     let disabled = !this.props.auth.getIn(["user", "isSignedIn"]);
     return (
       <ButtonLoader

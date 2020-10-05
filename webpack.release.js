@@ -48,18 +48,7 @@ module.exports = {
       "react-loader": "commonjs react-loader",
       "url": "commonjs url",
       "react-bootstrap": "commonjs react-bootstrap",
-      "material-ui/Dialog": "commonjs material-ui/Dialog",
-      "material-ui/RaisedButton": "commonjs material-ui/RaisedButton",
-      "material-ui/FlatButton": "commonjs material-ui/FlatButton",
-      "material-ui/TextField": "commonjs material-ui/TextField",
-      "material-ui/styles/colors": "commonjs material-ui/styles/colors",
-      "material-ui/styles/MuiThemeProvider": "commonjs material-ui/styles/MuiThemeProvider",
-      "material-ui/svg-icons/action/exit-to-app": "commonjs material-ui/svg-icons/action/exit-to-app",
-      "material-ui/svg-icons/action/favorite": "commonjs material-ui/svg-icons/action/favorite",
-      "material-ui/svg-icons/action/delete": "commonjs material-ui/svg-icons/action/delete",
-      "material-ui/svg-icons/content/send": "commonjs material-ui/svg-icons/content/send",
-      "material-ui/svg-icons/action/lock": "commonjs material-ui/svg-icons/action/lock",
-      "material-ui/svg-icons/alert/error": "commonjs material-ui/svg-icons/alert/error"
+      "@material-ui/core": "commonjs @material-ui/core",
     }
   ],
   plugins: [

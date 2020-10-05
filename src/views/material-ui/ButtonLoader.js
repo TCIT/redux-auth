@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import RaisedButton from "material-ui/RaisedButton";
-import ActionFavorite from "material-ui/svg-icons/action/favorite";
-import * as Colors from "material-ui/styles/colors";
+// import RaisedButton from "material-ui/RaisedButton";
+import { RaisedButton } from '@material-ui/core';
+// import ActionFavorite from "material-ui/svg-icons/action/favorite";
+import { ActionFavorite } from '@material-ui/core';
+// import * as Colors from "material-ui/styles/colors";
+import * as Colors from '@material-ui/core/colors';
 import Spinner from "react-loader";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class ButtonLoader extends React.Component {
   static propTypes = {
@@ -35,12 +39,12 @@ class ButtonLoader extends React.Component {
     style: {}
   };
 
-  handleClick (ev) {
+  handleClick(ev) {
     ev.preventDefault();
     this.props.onClick(ev);
   }
 
-  getColor () {
+  getColor() {
     if (this.props.disabled) {
       return this.props.spinColorDisabled;
     } else if (this.props.primary || this.props.secondary) {
@@ -50,13 +54,13 @@ class ButtonLoader extends React.Component {
     }
   }
 
-  renderIcon () {
+  renderIcon() {
     let icon,
         color = this.getColor();
 
     if (this.props.loading) {
       icon = (
-        <div style={{position: "absolute", top: 15, left: 7}}>
+        <div style={{ position: "absolute", top: 15, left: 7 }}>
           <Spinner
             ref="spinner"
             {...this.props.spinConfig}
@@ -85,7 +89,7 @@ class ButtonLoader extends React.Component {
     );
   }
 
-  render () {
+  render() {
     let color = this.getColor();
 
     const props = {

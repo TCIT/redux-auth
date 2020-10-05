@@ -4,7 +4,8 @@ import Input from "./Input";
 import ButtonLoader from "./ButtonLoader";
 import { emailSignUpFormUpdate, emailSignUp } from "../../actions/email-sign-up";
 import { connect } from "react-redux";
-import ContentSend from "material-ui/svg-icons/content/send";
+// import ContentSend from "material-ui/svg-icons/content/send";
+import { ContentSend } from '@material-ui/core';
 
 class EmailSignUpForm extends React.Component {
   static propTypes = {

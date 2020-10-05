@@ -1,10 +1,13 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import Dialog from "material-ui/Dialog";
-import FlatButton from "material-ui/FlatButton";
-import ErrorList from "../ErrorList";
 import { connect } from "react-redux";
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import PropTypes from 'prop-types';
+// import Dialog from "material-ui/Dialog";
+import { Dialog } from '@material-ui/core';
+// import FlatButton from "material-ui/FlatButton";
+import { FlatButton } from '@material-ui/core';
+import ErrorList from "../ErrorList";
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class BaseModal extends React.Component {
   static propTypes = {
