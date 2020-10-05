@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import ButtonLoader from "./ButtonLoader";
 // import ActionLock from "material-ui/svg-icons/action/lock";
-import { ActionLock } from "@material-ui/core";
+import Lock from "@material-ui/icons/Lock";
 import { connect } from "react-redux";
 import { signOut } from "../../actions/sign-out";
 
@@ -17,7 +17,7 @@ class SignOutButton extends React.Component {
   static defaultProps = {
     next: () => {},
     children: <span>Sign Out</span>,
-    icon: ActionLock
+    icon: Lock
   };
 
   getEndpoint() {
