@@ -4,9 +4,8 @@ import Immutable from "immutable";
 // import * as Colors from "material-ui/styles/colors";
 import * as Colors from "@material-ui/core/colors";
 // import TextField from "material-ui/TextField";
-import { TextField } from "@material-ui/core";
 // import AlertError from "material-ui/svg-icons/alert/error";
-import { AlertError } from "@material-ui/core";
+import { TextField, AlertError } from "@material-ui/core";
 // import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 

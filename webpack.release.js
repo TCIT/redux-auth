@@ -18,7 +18,13 @@ module.exports = {
     libraryTarget: "commonjs"
   },
   externals: [
-    {
+    function(rtx, req, cb) {
+      if (/\.\.\/\.\.\//.test(req)) {
+        return cb(null, "commonjs redux-auth");
+      } else {
+        cb();
+      }
+    }, {
       "react": "commonjs react",
       "classnames": "commonjs classnames",
       "browser-cookies": "commonjs browser-cookies",
@@ -42,17 +48,8 @@ module.exports = {
       "react-loader": "commonjs react-loader",
       "url": "commonjs url",
       "react-bootstrap": "commonjs react-bootstrap",
-      "@material-ui/core": {
-        commonjs: "@material-ui/core",
-        amd: "@material-ui/core"
-      }
-    },
-    function(rtx, req, cb) {
-      if (/\.\.\/\.\.\//.test(req)) {
-        return cb(null, "commonjs redux-auth");
-      } else {
-        cb();
-      }
+      "@material-ui/core": "commonjs @material-ui/core",
+      "@material-ui/core/styles": "commonjs @material-ui/core/styles",
     }
   ],
   plugins: [
