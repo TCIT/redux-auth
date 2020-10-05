@@ -2,23 +2,23 @@ var webpack = require("webpack");
 var path = require("path");
 
 module.exports = {
-  target:  "web",
-  cache:   false,
+  target: "web",
+  cache: false,
   context: __dirname,
   devtool: false,
-  entry:   {
-    "index":             "./src/index",
-    "bootstrap-theme":   "./src/views/bootstrap/index",
-    "default-theme":     "./src/views/default/index",
+  entry: {
+    "index": "./src/index",
+    "bootstrap-theme": "./src/views/bootstrap/index",
+    "default-theme": "./src/views/default/index",
     "material-ui-theme": "./src/views/material-ui/index"
   },
-  output:  {
-    path:          path.join(__dirname),
-    filename:      "[name].js",
+  output: {
+    path: path.join(__dirname),
+    filename: "[name].js",
     libraryTarget: "commonjs"
   },
   externals: [
-    function(rtx, req, cb) {
+    function (rtx, req, cb) {
       if (/\.\.\/\.\.\//.test(req)) {
         return cb(null, "commonjs redux-auth");
       } else {
@@ -48,23 +48,25 @@ module.exports = {
       "react-loader": "commonjs react-loader",
       "url": "commonjs url",
       "react-bootstrap": "commonjs react-bootstrap",
-      // "@material-ui/core": "commonjs @material-ui/core",
-      // "@material-ui/core/styles": "commonjs @material-ui/core/styles",
+      "@material-ui/core": "commonjs @material-ui/core",
+      "@material-ui/core/styles": "commonjs @material-ui/core/styles",
     }
   ],
   plugins: [
-    new webpack.DefinePlugin({__CLIENT__: true, __SERVER__: false}),
+    new webpack.DefinePlugin({ __CLIENT__: true, __SERVER__: false }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: "\"production\""
       },
-      'global.__MUI_GENERATOR_COUNTER__': 0
+      "global": {
+        __MUI_GENERATOR_COUNTER__: 0
+      }
     }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin()
   ],
-  module:  {
+  module: {
     loaders: [
       { include: /\.json$/, loaders: ["json"] },
       { include: /\.js$/, loaders: ["babel?cacheDirectory&presets[]=es2015&presets[]=react&presets[]=stage-0"], exclude: /node_modules/ }
@@ -81,8 +83,8 @@ module.exports = {
     ],
     extensions: ["", ".json", ".js"]
   },
-  node:    {
+  node: {
     __dirname: true,
-    fs:        "empty"
+    fs: "empty"
   }
 };
