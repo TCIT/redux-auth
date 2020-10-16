@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import ButtonLoader from "./ButtonLoader";
 import Input from "./Input";
 import { emailSignInFormUpdate, emailSignIn } from "../../actions/email-sign-in";
-// import ActionExitToApp from "material-ui/svg-icons/action/exit-to-app";
-import { ActionExitToApp } from '@material-ui/core';
+import { ExitToApp } from '@material-ui/icons';
 import { connect } from "react-redux";
 
 class EmailSignInForm extends React.Component {
@@ -79,7 +78,7 @@ class EmailSignInForm extends React.Component {
         <ButtonLoader loading={this.props.auth.getIn(["emailSignIn", "loading"])}
                       type="submit"
                       style={{float: "right"}}
-                      icon={ActionExitToApp}
+                      icon={ExitToApp}
                       className='email-sign-in-submit'
                       disabled={disabled}
                       onClick={this.handleSubmit.bind(this)}

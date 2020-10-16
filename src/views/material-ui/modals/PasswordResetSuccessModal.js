@@ -1,11 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
-// import ActionLock from "material-ui/svg-icons/action/lock";
 import { Dialog, Button } from "@material-ui/core";
-import Lock from "@material-ui/icons/Lock";
-// import Dialog from "material-ui/Dialog";
-// import FlatButton from "material-ui/FlatButton";
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Lock } from "@material-ui/icons";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import ButtonLoader from "../ButtonLoader";
 import Input from "../Input";

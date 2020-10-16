@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import * as Colors from "material-ui/styles/colors";
 import * as Colors from "@material-ui/core/colors";
 // import AlertError from "material-ui/svg-icons/alert/error";
-import Error from "@material-ui/icons/Error";
+import { Error } from "@material-ui/icons";
 import Immutable from "immutable";
 
 class ErrorList extends React.Component {
@@ -57,7 +57,7 @@ class ErrorList extends React.Component {
               left: 0,
               top: 3}}
             color={Colors.red500} /> There was an error processing this form.
-          Please check each field and try again.
+      Please check each field and try again.
         </p>
       );
     }

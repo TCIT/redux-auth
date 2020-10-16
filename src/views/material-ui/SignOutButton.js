@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import ButtonLoader from "./ButtonLoader";
 // import ActionLock from "material-ui/svg-icons/action/lock";
-import Lock from "@material-ui/icons/Lock";
+import { Lock } from "@material-ui/icons";
 import { connect } from "react-redux";
 import { signOut } from "../../actions/sign-out";
 

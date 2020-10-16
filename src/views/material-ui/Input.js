@@ -1,13 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import Immutable from "immutable";
-// import * as Colors from "material-ui/styles/colors";
 import * as Colors from "@material-ui/core/colors";
-// import TextField from "material-ui/TextField";
-// import AlertError from "material-ui/svg-icons/alert/error";
 import { TextField } from "@material-ui/core";
-import Error from "@material-ui/icons/Error";
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Error } from "@material-ui/icons";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 class AuthInput extends React.Component {
