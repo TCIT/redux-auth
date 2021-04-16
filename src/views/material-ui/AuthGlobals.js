@@ -25,7 +25,7 @@ class AuthGlobals extends React.Component {
   static defaultProps = {
     signOutSuccessEnabled: true,
     signOutErrorEnabled: true,
-    emailSignInSuccessEnabled: true,
+    emailSignInSuccessEnabled: false,
     emailSignInErrorEnabled: true,
     oAuthSignInSuccessEnabled: true,
     oAuthSignInErrorEnabled: true,
