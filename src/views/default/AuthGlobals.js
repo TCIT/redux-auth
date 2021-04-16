@@ -43,10 +43,10 @@ class AuthGlobals extends React.Component {
   };
 
   render () {
-    let showEmailSignInSuccess = (
-      this.props.emailSignInSuccessEnabled &&
-      this.props.auth.getIn(["ui", "emailSignInSuccessModalVisible"])
-    );
+    //let showEmailSignInSuccess = (
+    //  this.props.emailSignInSuccessEnabled &&
+    //  this.props.auth.getIn(["ui", "emailSignInSuccessModalVisible"])
+    //);
 
     let showEmailSignInError = (
       this.props.emailSignInErrorEnabled &&
@@ -135,7 +135,7 @@ class AuthGlobals extends React.Component {
 
     return (
       <div id="auth-modals">
-        <EmailSignInSuccessModal show={showEmailSignInSuccess} />
+        {/* <EmailSignInSuccessModal show={showEmailSignInSuccess} /> */}
         <EmailSignInErrorModal show={showEmailSignInError} />
         <OAuthSignInSuccessModal show={showOAuthSignInSuccess} />
         <OAuthSignInErrorModal show={showOAuthSignInError} />

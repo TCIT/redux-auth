@@ -44,10 +44,10 @@ class AuthGlobals extends React.Component {
   };
 
   render() {
-    let showEmailSignInSuccess = (
-      this.props.emailSignInSuccessEnabled &&
-      this.props.auth.getIn(["ui", "emailSignInSuccessModalVisible"])
-    );
+    //let showEmailSignInSuccess = (
+    //  this.props.emailSignInSuccessEnabled &&
+    //  this.props.auth.getIn(["ui", "emailSignInSuccessModalVisible"])
+    //);
 
     let showEmailSignInError = (
       this.props.emailSignInErrorEnabled &&
